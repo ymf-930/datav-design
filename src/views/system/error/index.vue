@@ -18,11 +18,11 @@
       <div class="bin-result-title">{{ status }}</div>
       <div class="bin-result-subtitle">{{ errorMessage }}</div>
       <div class="bin-result-extra">
-        <b-space>
+        <a-space>
           <router-link :to="{ name: HOME_PATH }">
-            <b-button type="primary">返回首页</b-button>
+            <a-button type="primary">返回首页</a-button>
           </router-link>
-        </b-space>
+        </a-space>
       </div>
     </div>
   </div>

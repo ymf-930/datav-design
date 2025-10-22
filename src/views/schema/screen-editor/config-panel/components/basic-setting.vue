@@ -4,13 +4,13 @@
       <template #label>
         <div flex="main:justify cross:center" class="pr-8">
           <span>尺寸</span>
-          <b-icon
+          <a-icon
             :name="data.lockedRatio ? 'link' : 'disconnect'"
             :color="data.lockedRatio ? 'var(--bin-color-primary)' : 'var(--s-text-color)'"
             :title="data.lockedRatio ? '解除锁定宽高关联' : '锁定宽高关联'"
             type="button"
             @click="data.lockedRatio = !data.lockedRatio"
-          ></b-icon>
+          ></a-icon>
         </div>
       </template>
 
@@ -106,7 +106,7 @@
 
     <g-field-collapse label="滤镜&变换">
       <g-field label="启用">
-        <b-switch v-model="data.filterShow" size="small" />
+        <a-switch v-model="data.filterShow" size="small" />
       </g-field>
       <g-field label="色相">
         <g-slider

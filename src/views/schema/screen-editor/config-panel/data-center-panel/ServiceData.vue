@@ -9,7 +9,7 @@
     />
   </g-field>
   <g-field label="参数信息" v-if="apiDataConfig.config.serviceId">
-    <b-button style="width: 100%" @click="openInfoModal = true" size="small">查看</b-button>
+    <a-button style="width: 100%" @click="openInfoModal = true" size="small">查看</a-button>
   </g-field>
   <g-field label="请求参数" v-if="apiDataConfig.config.reqParam.length > 0">
     <template v-for="(item, index) in apiDataConfig.config.reqParam" :key="index">
@@ -52,9 +52,9 @@
     label="配置"
     v-if="apiDataConfig.config.serviceId && lineConfig.includes(apiDataConfig.compType)"
   >
-    <b-button type="primary" style="width: 100%" @click="handleOpen" size="small">
+    <a-button type="primary" style="width: 100%" @click="handleOpen" size="small">
       {{ apiDataConfig.compType === SCROLL_TABLE ? '配置字段列' : '配置轴线' }}
-    </b-button>
+    </a-button>
 
     <ServiceFieldConfig
       v-model="openConfigModel"
@@ -76,7 +76,7 @@
   </g-field>
 
   <g-field label="测试">
-    <b-button
+    <a-button
       size="small"
       type="primary"
       transparent
@@ -85,7 +85,7 @@
       :disabled="!apiDataConfig.config.serviceId"
     >
       发送请求
-    </b-button>
+    </a-button>
   </g-field>
 </template>
 

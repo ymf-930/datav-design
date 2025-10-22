@@ -38,16 +38,16 @@
         />
       </g-field>
       <g-field tooltip="溢出文本加省略号" label="省略号">
-        <b-switch v-model="config.ellipsis" size="small" />
+        <a-switch v-model="config.ellipsis" size="small" />
       </g-field>
     </g-field-collapse>
     <g-field-collapse label="背景样式" v-model="config.backgroundStyle.show" toggle>
       <g-field label="背景类型">
-        <b-radio-group v-model="config.backgroundStyle.backgroundType" type="button" size="small">
-          <b-radio v-for="item in BackgroundTypeOptions" :key="item.value" :label="item.value">
+        <a-radio-group v-model:value="config.backgroundStyle.backgroundType" button size="small">
+          <a-radio v-for="item in BackgroundTypeOptions" :key="item.value" :value="item.value">
             {{ item.label }}
-          </b-radio>
-        </b-radio-group>
+          </a-radio>
+        </a-radio-group>
       </g-field>
       <template v-if="config.backgroundStyle.backgroundType === 'normal'">
         <g-field label="背景色">

@@ -1,5 +1,5 @@
 <template>
-  <b-modal
+  <a-modal
     title="快捷键指南"
     :model-value="modelValue"
     append-to-body
@@ -120,7 +120,7 @@
         </div>
       </div>
     </div>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script>

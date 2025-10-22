@@ -19,7 +19,7 @@
                     class="column-item"
                     :class="item.type"
                   >
-                    <b-dropdown trigger="contextmenu" append-to-body @command="legendChange">
+                    <a-dropdown trigger="contextmenu" getPopupContainer @click="legendChange">
                       <div class="field-title">
                         <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                         <span class="ml-5">
@@ -27,24 +27,21 @@
                         </span>
                       </div>
                       <template #dropdown>
-                        <b-dropdown-menu>
-                          <b-dropdown-item
-                            :name="{ index, key: '' }"
+                        <a-menu>
+                          <a-menu-item :key="{ index, key: '' }"
                             :selected="item.sortWay === ''"
                           >
                             不排序
-                          </b-dropdown-item>
-                          <b-dropdown-item
-                            v-for="(val, key) in SORT_FUN"
+                          </a-menu-item>
+                          <a-menu-item v-for="(val, key) in SORT_FUN"
                             :key="key"
-                            :name="{ index, key }"
                             :selected="item.sortWay === key"
                           >
                             {{ val }}
-                          </b-dropdown-item>
-                        </b-dropdown-menu>
+                          </a-menu-item>
+                        </a-menu>
                       </template>
-                    </b-dropdown>
+                    </a-dropdown>
                     <i class="b-iconfont b-icon-delete" @click="legendColumns.splice(index, 1)"></i>
                   </li>
                 </ul>
@@ -69,7 +66,7 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <b-dropdown trigger="contextmenu" append-to-body @command="sortChange">
+                  <a-dropdown trigger="contextmenu" getPopupContainer @click="sortChange">
                     <div class="field-title">
                       <i
                         class="b-iconfont b-icon-expand mr-5"
@@ -80,21 +77,19 @@
                       <span class="ml-5">{{ item.title }}</span>
                     </div>
                     <template #dropdown>
-                      <b-dropdown-menu>
-                        <b-dropdown-item :name="{ index, key: '' }" :selected="item.sortWay === ''">
+                      <a-menu>
+                        <a-menu-item :key="{ index, key: '' }" :selected="item.sortWay === ''">
                           不排序
-                        </b-dropdown-item>
-                        <b-dropdown-item
-                          v-for="(val, key) in SORT_FUN"
+                        </a-menu-item>
+                        <a-menu-item v-for="(val, key) in SORT_FUN"
                           :key="key"
-                          :name="{ index, key }"
                           :selected="item.sortWay === key"
                         >
                           {{ val }}
-                        </b-dropdown-item>
-                      </b-dropdown-menu>
+                        </a-menu-item>
+                      </a-menu>
                     </template>
-                  </b-dropdown>
+                  </a-dropdown>
                   <i
                     class="b-iconfont b-icon-apartment"
                     title="设置下钻"
@@ -124,7 +119,7 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <b-dropdown trigger="click" append-to-body @command="aggrChange">
+                  <a-dropdown trigger="click" getPopupContainer @click="aggrChange">
                     <div class="field-title">
                       <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                       <span class="ml-5">
@@ -132,18 +127,16 @@
                       </span>
                     </div>
                     <template #dropdown>
-                      <b-dropdown-menu>
-                        <b-dropdown-item
-                          v-for="(val, key) in AGGREGATOR_FUN"
+                      <a-menu>
+                        <a-menu-item v-for="(val, key) in AGGREGATOR_FUN"
                           :key="key"
-                          :name="{ index, key }"
                           :selected="item.aggregator === key"
                         >
                           {{ val }}
-                        </b-dropdown-item>
-                      </b-dropdown-menu>
+                        </a-menu-item>
+                      </a-menu>
                     </template>
-                  </b-dropdown>
+                  </a-dropdown>
                   <i class="b-iconfont b-icon-delete" @click="yColumns.splice(index, 1)"></i>
                 </li>
               </ul>
@@ -195,9 +188,9 @@
         </div>
         <div class="bottom-menus">
           <div class="refresh-panel p5">
-            <b-button type="primary" size="small" style="width: 100%" @click="setApiDataConfig">
+            <a-button type="primary" size="small" style="width: 100%" @click="setApiDataConfig">
               保 存
-            </b-button>
+            </a-button>
           </div>
         </div>
       </div>

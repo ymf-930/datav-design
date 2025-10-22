@@ -1,7 +1,7 @@
 <template>
   <div class="group-wrap">
     <div class="group-list">
-      <b-scrollbar native>
+      <div class="ant-scrollbar" style="overflow-y: auto;">
         <div v-if="loading">
           <g-loading spinning></g-loading>
         </div>
@@ -19,7 +19,7 @@
             <ImagesItem :group-id="group.key" @dragstart="dragStart" @click="click" />
           </Collapse>
           <div class="create-box" v-if="editStatus.create">
-            <b-input
+            <a-input
               v-model="groupObj.value"
               placeholder="输入名称，回车创建"
               v-focus
@@ -29,12 +29,12 @@
             />
           </div>
         </template>
-      </b-scrollbar>
+      </div>
     </div>
     <div class="create-group">
-      <b-button type="primary" size="small" transparent @click="handleCreateGroup">
+      <a-button type="primary" size="small" transparent @click="handleCreateGroup">
         创建图片分组
-      </b-button>
+      </a-button>
     </div>
   </div>
 </template>
@@ -108,7 +108,7 @@ async function modifyGroup(item, name) {
 // 移除一个分组
 async function removeGroup(item) {
   try {
-    await MessageBox.confirm({ type: 'error', title: '提示', message: '确定移除当前图片分组吗？' })
+    await Modal.confirm({ type: 'error', title: '提示', message: '确定移除当前图片分组吗？' })
     setGlobalLoading(true)
     await api.removeImagesGroup(item.key)
     getImagesGroup()

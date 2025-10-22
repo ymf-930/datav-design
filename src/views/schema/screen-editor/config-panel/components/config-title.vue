@@ -10,20 +10,19 @@
       <template #label>
         <div flex="main:justify cross:center" class="pr-8">
           <span>名称</span>
-          <b-icon
+          <a-icon
             v-if="showCfg"
             name="setting"
             title="查看配置项"
             type="button"
             @click="openDetail"
-          ></b-icon>
+          ></a-icon>
         </div>
       </template>
       <g-input v-model="selectedCom.alias" />
     </g-field>
 
-    <b-modal
-      v-model="detailVisible"
+    <a-modal v-model:visible="detailVisible"
       :title="`[${selectedCom.alias}] 配置项 `"
       append-to-body
       top="60px"
@@ -40,12 +39,12 @@
         />
       </div>
       <div class="t-right pt-8">
-        <b-button size="small" type="primary" icon="snippets" @click="putJson">应用配置项</b-button>
-        <b-button size="small" type="primary" icon="file-copy" @click="copyCom">
+        <a-button size="small" type="primary" icon="snippets" @click="putJson">应用配置项</a-button>
+        <a-button size="small" type="primary" icon="file-copy" @click="copyCom">
           复制配置项
-        </b-button>
+        </a-button>
       </div>
-    </b-modal>
+    </a-modal>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
       <div class="name">
         <div class="wrap-label">
           <div class="create-box" v-if="edit" @click.stop>
-            <b-input
+            <a-input
               v-model="editName"
               placeholder="输入名称，回车创建"
               v-focus
@@ -23,15 +23,15 @@
           <i class="b-iconfont b-icon-delete" @click.stop="handleRemove"></i>
         </span>
         <span class="wrap-arrow" :class="[{ active: isActive }]">
-          <b-icon name="right" size="12"></b-icon>
+          <a-icon name="right" size="12"></a-icon>
         </span>
       </div>
     </div>
-    <b-collapse-transition>
+    <a-collapse>
       <div v-show="isActive" class="content">
         <slot></slot>
       </div>
-    </b-collapse-transition>
+    </a-collapse>
   </div>
 </template>
 

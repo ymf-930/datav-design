@@ -1,5 +1,5 @@
 <template>
-  <b-drawer
+  <a-drawer
     v-model="open"
     :title="title"
     :width="width"
@@ -30,7 +30,7 @@
                 style="padding: 0px 16px; line-height: 30px; color: rgba(255, 255, 255, 0.8)"
               >
                 {{ element.title }}
-                <b-button type="text" @click="handleDelName(index)">删除</b-button>
+                <a-button type="text" @click="handleDelName(index)">删除</a-button>
               </div>
             </template>
           </draggable>
@@ -60,13 +60,13 @@
                 style="padding: 0px 16px; line-height: 30px; color: rgba(255, 255, 255, 0.8)"
               >
                 {{ element.title }}
-                <b-button type="text" @click="handleDelX(index)">删除</b-button>
+                <a-button type="text" @click="handleDelX(index)">删除</a-button>
               </div>
             </template>
           </draggable>
         </div>
 
-        <b-divider style="margin: 0px"></b-divider>
+        <a-divider style="margin: 0px"></a-divider>
         <div class="title" style="color: #52c41a">{{ isBox ? '分位值' : '值轴/度量' }}</div>
         <div
           style="height: calc(50% - 60px - 50px); overflow-y: auto"
@@ -92,12 +92,12 @@
                 style="padding: 0px 16px; line-height: 30px; color: rgba(255, 255, 255, 0.8)"
               >
                 {{ element.title }}
-                <b-button type="text" @click="handleDelY(index)">删除</b-button>
+                <a-button type="text" @click="handleDelY(index)">删除</a-button>
               </div>
             </template>
           </draggable>
         </div>
-        <b-button type="primary" style="width: 100%" @click="handleSave">保存</b-button>
+        <a-button type="primary" style="width: 100%" @click="handleSave">保存</a-button>
       </div>
 
       <div class="right">
@@ -133,7 +133,7 @@
         </draggable>
       </div>
     </div>
-  </b-drawer>
+  </a-drawer>
 </template>
 
 <script setup>

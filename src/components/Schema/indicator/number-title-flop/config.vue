@@ -97,7 +97,7 @@
       </g-field>
       <g-field label="开启动画">
         <div class="pt-5">
-          <b-switch v-model="config.counter.autoplay" size="small" />
+          <a-switch v-model="config.counter.autoplay" size="small" />
         </div>
       </g-field>
       <g-field label="动画时长">

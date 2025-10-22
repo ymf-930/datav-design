@@ -4,32 +4,32 @@
       <div v-if="selectedCom || isMultiSelect" class="page-config-panel">
         <template v-if="selectedCom">
           <div class="page-config-top">
-            <b-radio-group v-model="curTabIndex" size="large" type="capsule" style="width: 100%">
-              <b-radio :label="0">
+            <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
+              <a-radio :value="0">
                 <span class="mr-8">定制</span>
-                <b-icon name="project"></b-icon>
-              </b-radio>
-              <b-radio :label="1" :disabled="isGroupChild">
+                <a-icon name="project"></a-icon>
+              </a-radio>
+              <a-radio :value="1" :disabled="isGroupChild">
                 <span class="mr-8">动画</span>
-                <b-icon name="shake"></b-icon>
-              </b-radio>
-              <b-radio :label="2" :disabled="curComIsGroup">
+                <a-icon name="shake"></a-icon>
+              </a-radio>
+              <a-radio :value="2" :disabled="curComIsGroup">
                 <span class="mr-8">数据</span>
-                <b-icon name="thunderbolt"></b-icon>
-              </b-radio>
-              <b-radio :label="3" :disabled="curComIsGroup">
+                <a-icon name="thunderbolt"></a-icon>
+              </a-radio>
+              <a-radio :value="3" :disabled="curComIsGroup">
                 <span class="mr-8">事件</span>
-                <b-icon name="rocket"></b-icon>
-              </b-radio>
-            </b-radio-group>
+                <a-icon name="rocket"></a-icon>
+              </a-radio>
+            </a-radio-group>
           </div>
           <div class="page-config-content">
-            <b-scrollbar>
+            <div class="ant-scrollbar">
               <SettingPanel :key="selectedCom.id" v-if="curTabIndex === 0" />
               <AnimationsPanel :key="selectedCom.id" v-if="curTabIndex === 1" />
               <DataCenterPanel :key="selectedCom.id" v-if="curTabIndex === 2" />
               <EventsPanel :key="selectedCom.id" v-if="curTabIndex === 3" />
-            </b-scrollbar>
+            </div>
           </div>
         </template>
 

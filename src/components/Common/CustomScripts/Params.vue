@@ -1,15 +1,13 @@
 <template>
   <div class="example-wrap">
-    <b-collapse :model-value="'0'" simple>
-      <b-collapse-panel
-        v-for="(item, index) in newParams"
+    <a-collapse :v-model:activeKey="'0'" ghost>
+      <a-collapse-panel v-for="(item, index) in newParams"
         :key="index"
-        :name="index + ''"
         :title="item.name"
       >
         <div class="tip">{{ item.desc }}</div>
         <div class="code">
-          <b-ace-editor
+          <div
             v-if="item.json"
             theme="tomorrow_night"
             wrap
@@ -20,12 +18,12 @@
             :model-value="item.code"
             :options="{ showLineNumbers: false }"
             :styles="{ border: 'none' }"
-          ></b-ace-editor>
+          ></div>
           <highlightjs v-else language="js" :code="item.code" />
         </div>
-      </b-collapse-panel>
+      </a-collapse-panel>
 
-      <b-collapse-panel :name="(newParams.length + 1).toString()" title="util">
+      <a-collapse-panel :key="(newParams.length + 1).toString()" title="util">
         <div class="tip">工具对象，包含了便于处理业务的相关可用对象</div>
         <div class="code" style="padding: 8px">
           <div class="param-item mb-5" v-for="(p, index) in utilDesc" :key="index">
@@ -37,17 +35,17 @@
                   target="_blank"
                   title="点击跳转官方文档查看使用方法"
                 >
-                  <b-tag type="primary">{{ p.name }}</b-tag>
+                  <a-tag color="primary">{{ p.name }}</a-tag>
                 </a>
-                <b-tag v-else type="info">{{ p.name }}</b-tag>
+                <a-tag v-else color="info">{{ p.name }}</a-tag>
               </div>
-              <b-tag>{{ p.type }}</b-tag>
+              <a-tag>{{ p.type }}</a-tag>
             </div>
             <div class="mt-5">{{ p.desc }}</div>
           </div>
         </div>
-      </b-collapse-panel>
-    </b-collapse>
+      </a-collapse-panel>
+    </a-collapse>
   </div>
 </template>
 

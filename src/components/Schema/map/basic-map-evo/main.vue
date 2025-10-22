@@ -1,9 +1,9 @@
 <template>
   <div class="dv-wrapper">
     <div class="back-btn">
-      <b-button v-if="showBackBtn" size="mini" round @click="handleBackBtnClick" type="primary">
+      <a-button v-if="showBackBtn" size="mini" round @click="handleBackBtnClick" type="primary">
         返回
-      </b-button>
+      </a-button>
     </div>
     <b-charts :options="{}" style="width: 100%; height: 100%" ref="bChartsRef"></b-charts>
   </div>

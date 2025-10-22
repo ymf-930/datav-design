@@ -12,34 +12,34 @@
           </div>
           <!-- 表单 -->
           <div class="form">
-            <b-form ref="loginFormRef" label-position="top" :rules="rules" :model="formLogin">
-              <b-form-item prop="username">
-                <b-input
+            <a-form ref="loginFormRef" :rules="rules" :model="formLogin">
+              <a-form-item prop="username">
+                <a-input
                   type="text"
-                  v-model="formLogin.username"
+                  v-model:value="formLogin.username"
                   placeholder="用户名"
                   size="large"
                   @keydown.enter="submit"
                 >
                   <template #prefix>
-                    <b-icon name="user" size="16"></b-icon>
+                    <AntIcon name="user" />
                   </template>
-                </b-input>
-              </b-form-item>
-              <b-form-item prop="password">
-                <b-input
+                </a-input>
+              </a-form-item>
+              <a-form-item prop="password">
+                <a-input
                   type="password"
-                  v-model="formLogin.password"
+                  v-model:value="formLogin.password"
                   placeholder="密码"
                   size="large"
                   @keydown.enter="submit"
                 >
                   <template #prefix>
-                    <b-icon name="lock" size="16"></b-icon>
+                    <AntIcon name="lock" />
                   </template>
-                </b-input>
-              </b-form-item>
-              <b-button
+                </a-input>
+              </a-form-item>
+              <a-button
                 @click="submit"
                 :loading="loading"
                 type="primary"
@@ -47,8 +47,8 @@
                 size="large"
               >
                 登录
-              </b-button>
-            </b-form>
+              </a-button>
+            </a-form>
           </div>
         </div>
       </div>
@@ -64,6 +64,7 @@ import { useUserStoreWithOut } from '@/store/modules/user'
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import config from '../../../package.json'
+import AntIcon from '@/components/Common/AntIcon/index.vue'
 
 defineOptions({
   name: 'Login',
@@ -111,18 +112,19 @@ const title = ref(config.description)
 
 // 提交登录信息
 async function submit() {
-  loginFormRef.value.validate(async valid => {
-    if (valid) {
-      try {
-        loading.value = true
-        const { data } = await login(formLogin.value)
-        await loginSuccess(data)
-      } catch (e) {
-        throwError('login/requestFailed', e)
-      }
-      loading.value = false
+  try {
+    await loginFormRef.value.validate()
+    loading.value = true
+    const { data } = await login(formLogin.value)
+    await loginSuccess(data)
+  } catch (e) {
+    if (e.errorFields) {
+      // 表单验证失败
+      return
     }
-  })
+    throwError('login/requestFailed', e)
+  }
+  loading.value = false
 }
 async function loginSuccess(data) {
   if (data.code === '00') {

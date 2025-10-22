@@ -16,16 +16,16 @@
       </g-field>
 
       <g-field label="轮播方式">
-        <b-radio-group v-model="config.carousel" type="button" size="small">
-          <b-radio label="single">单行</b-radio>
-          <b-radio label="page">整页</b-radio>
-        </b-radio-group>
+        <a-radio-group v-model:value="config.carousel" button size="small">
+          <a-radio value="single">单行</a-radio>
+          <a-radio value="page">整页</a-radio>
+        </a-radio-group>
       </g-field>
       <g-field label="轮播间隔">
         <g-slider v-model="config.waitTime" :min="1000" :max="3000" :step="100" suffix="ms" />
       </g-field>
       <g-field label="悬停暂停">
-        <b-switch v-model="config.hoverPause" size="small" />
+        <a-switch v-model="config.hoverPause" size="small" />
       </g-field>
     </g-field-collapse>
     <g-field-collapse label="行号" toggle v-model="config.index">
@@ -41,26 +41,26 @@
         />
       </g-field>
       <g-field label="行号对齐">
-        <b-radio-group v-model="config.indexAlign" type="button" size="mini">
-          <b-radio label="left">左对齐</b-radio>
-          <b-radio label="center">居中</b-radio>
-          <b-radio label="right">右对齐</b-radio>
-        </b-radio-group>
+        <a-radio-group v-model:value="config.indexAlign" button size="mini">
+          <a-radio value="left">左对齐</a-radio>
+          <a-radio value="center">居中</a-radio>
+          <a-radio value="right">右对齐</a-radio>
+        </a-radio-group>
       </g-field>
     </g-field-collapse>
     <g-field-collapse label="列配置">
       <template #add>
-        <b-button type="text" @click="addSeries" title="新增一个列配置">
-          <b-icon name="plus" size="16"></b-icon>
-        </b-button>
-        <b-button
+        <a-button type="text" @click="addSeries" title="新增一个列配置">
+          <a-icon name="plus" size="16"></a-icon>
+        </a-button>
+        <a-button
           type="text"
           :disabled="config.columnWidth.length === 0"
           @click="deleteLast"
           title="移除最后一个列配置"
         >
-          <b-icon name="delete" size="16"></b-icon>
-        </b-button>
+          <a-icon name="delete" size="16"></a-icon>
+        </a-button>
       </template>
       <template v-for="(s, index) in config.columnWidth" :key="index">
         <g-field flat :label="`列${index + 1}`">

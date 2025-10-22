@@ -3,7 +3,7 @@
     <div class="slider-box" v-if="slider">
       <g-slider v-model="inputValue" :min="min" :max="max" :step="step" :show-input="false" />
     </div>
-    <b-input-number
+    <a-input-number
       v-model="inputValue"
       :size="size"
       :min="min"

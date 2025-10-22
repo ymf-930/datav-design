@@ -11,13 +11,13 @@
       :style="`transform: rotate(90deg) translateX(-${vScroll}px);`"
     ></div>
     <div class="ruler-corner">
-      <b-tooltip :content="toolbox.markLine ? '对齐线开启' : '对齐线关闭'">
-        <b-icon
+      <a-tooltip :content="toolbox.markLine ? '对齐线开启' : '对齐线关闭'">
+        <a-icon
           :name="toolbox.markLine ? 'eye' : 'eye-close'"
           type="button"
           @click="toolbox.markLine = !toolbox.markLine"
         />
-      </b-tooltip>
+      </a-tooltip>
     </div>
   </div>
 </template>

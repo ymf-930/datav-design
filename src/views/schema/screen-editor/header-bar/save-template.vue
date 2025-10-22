@@ -1,27 +1,26 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     append-to-body
     title="保存为模板"
     top="200px"
     custom-class="schema-modal"
     @close="visible = false"
   >
-    <b-form label-width="100px" ref="formRef" :model="formStatus" label-suffix=":">
-      <b-form-item
+    <a-form label-width="100px" ref="formRef" :model="formStatus" label-suffix=":">
+      <a-form-item
         label="模板名称"
         prop="name"
         :rules="{ required: true, message: '模板名称不能为空', trigger: 'blur' }"
       >
-        <b-input v-model="formStatus.name"></b-input>
-      </b-form-item>
-    </b-form>
+        <a-input v-model="formStatus.name"></a-input>
+      </a-form-item>
+    </a-form>
     <template #footer>
-      <b-button type="primary" icon="save" :loading="formStatus.loading" @click="saveAsTemplate">
+      <a-button type="primary" icon="save" :loading="formStatus.loading" @click="saveAsTemplate">
         保存模板
-      </b-button>
+      </a-button>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

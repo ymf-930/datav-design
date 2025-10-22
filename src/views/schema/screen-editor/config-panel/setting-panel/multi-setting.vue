@@ -1,9 +1,9 @@
 <template>
   <div class="setting-panel">
     <div class="page-config-top">
-      <b-radio-group model-value="多选区域" size="large" type="capsule" style="width: 100%">
-        <b-radio label="多选区域"></b-radio>
-      </b-radio-group>
+      <a-radio-group model-value="多选区域" size="large" type="capsule" style="width: 100%">
+        <a-radio value="多选区域"></a-radio>
+      </a-radio-group>
     </div>
 
     <div class="page-config-content">
@@ -31,9 +31,9 @@
       </g-field>
 
       <g-field label="组合">
-        <b-button-group>
-          <b-button size="small" icon="group" @click="schemaStore.group()">组合</b-button>
-        </b-button-group>
+        <a-button-group>
+          <a-button size="small" icon="group" @click="schemaStore.group()">组合</a-button>
+        </a-button-group>
       </g-field>
     </div>
   </div>

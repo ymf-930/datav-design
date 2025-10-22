@@ -1,13 +1,13 @@
 <template>
   <div class="dv-gui g-date-picker" :class="{ inline }">
-    <b-date-picker
+    <a-date-picker
       v-model="inputValue"
       :type="type"
       placeholder="可选择默认值"
       :size="size"
       style="width: 100%"
       :disabled="disabled"
-    ></b-date-picker>
+    ></a-date-picker>
     <span v-if="label" class="g-input__caption">{{ label }}</span>
   </div>
 </template>

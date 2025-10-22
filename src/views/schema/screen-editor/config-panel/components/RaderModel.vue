@@ -1,42 +1,40 @@
 <template>
   <g-field label="选择字段">
-    <b-select v-model="dimensionModelData">
-      <b-option
-        v-for="item in dimensionFields"
+    <a-select v-model:value="dimensionModelData">
+      <a-select-option v-for="item in dimensionFields"
         :key="item.name"
         :label="item.desc"
         :value="item.name"
-      ></b-option>
-    </b-select>
+      ></a-select-option>
+    </a-select>
   </g-field>
 
   <div style="padding: 0 10px 8px" flex>
-    <b-space>
-      <b-tag type="primary">指标配置</b-tag>
-      <b-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></b-button>
-    </b-space>
+    <a-space>
+      <a-tag color="primary">指标配置</a-tag>
+      <a-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></a-button>
+    </a-space>
   </div>
 
   <g-field flat v-for="(item, index) in mappingFields.y" :key="index">
     <template #label>
-      <b-dropdown
-        trigger="click"
+      <a-dropdown trigger="click"
         placement="bottom-start"
         appendToBody
-        @command="handleCommand($event, item)"
+        @click="handleCommand($event, item)"
       >
         <span class="mr-5 aggr">指标{{ index + 1 }}</span>
         <template #dropdown>
-          <b-dropdown-menu>
+          <a-menu>
             <template v-for="(value, key) in AGGREGATOR_FUN" :key="key">
-              <b-dropdown-item :name="key" :selected="item.aggregator === key">
+              <a-menu-item :key="key" :selected="item.aggregator === key">
                 {{ value }}
-              </b-dropdown-item>
+              </a-menu-item>
             </template>
-          </b-dropdown-menu>
+          </a-menu>
         </template>
-      </b-dropdown>
-      <b-button
+      </a-dropdown>
+      <a-button
         type="text"
         icon="close-circle"
         text-color="danger"

@@ -1,19 +1,19 @@
 <template>
   <div class="page-config-panel">
     <div class="page-config-top">
-      <b-radio-group v-model="curTabIndex" size="large" type="capsule" style="width: 100%">
-        <b-radio :label="0">
+      <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
+        <a-radio :value="0">
           <span class="mr-16">基础配置</span>
-          <b-icon name="desktop"></b-icon>
-        </b-radio>
-        <!-- <b-radio :label="1">
+          <a-icon name="desktop"></a-icon>
+        </a-radio>
+        <!-- <a-radio :value="1">
           <span class="mr-16">脚本配置</span>
-          <b-icon name="code"></b-icon>
-        </b-radio> -->
-      </b-radio-group>
+          <a-icon name="code"></a-icon>
+        </a-radio> -->
+      </a-radio-group>
     </div>
     <div class="page-config-content">
-      <b-scrollbar>
+      <div class="ant-scrollbar">
         <div v-if="curTabIndex === 0">
           <div class="page-config-wp">
             <g-field label="屏幕设置" style="padding-bottom: 8px; padding-top: 8px">
@@ -56,17 +56,17 @@
               <div class="image-thumb-wrap">
                 <img v-if="pageConfig.thumbnail" :src="pageConfig.thumbnail" alt="" />
                 <div v-else class="tip" flex="dir:top main:center cross:center">
-                  <b-icon name="image" size="52"></b-icon>
+                  <a-icon name="image" size="52"></a-icon>
                   <p>暂未截取缩略图</p>
                 </div>
               </div>
               <div class="pt-8">
-                <b-button type="primary" size="small" :loading="thumbLoading" @click="createThumb">
+                <a-button type="primary" size="small" :loading="thumbLoading" @click="createThumb">
                   截取
-                </b-button>
-                <b-button size="small" :loading="thumbLoading" @click="pageConfig.thumbnail = ''">
+                </a-button>
+                <a-button size="small" :loading="thumbLoading" @click="pageConfig.thumbnail = ''">
                   清除
-                </b-button>
+                </a-button>
               </div>
             </g-field>
           </div>
@@ -218,7 +218,7 @@
             :exampleDesc="exampleDesc"
           />
         </div>
-      </b-scrollbar>
+      </div>
     </div>
   </div>
 </template>

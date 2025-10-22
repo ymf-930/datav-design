@@ -1,15 +1,15 @@
 <template>
   <div class="top" style="width: 100%">
     <div flex>
-      <b-input
+      <a-input
         :size="size"
         :placeholder="placeholder"
         :model-value="name"
         readonly
         clearable
         @clear="handleClear"
-      ></b-input>
-      <b-button :size="size" background @click="handleOpen" style="margin-left: 2px">选择</b-button>
+      ></a-input>
+      <a-button :size="size" background @click="handleOpen" style="margin-left: 2px">选择</a-button>
     </div>
 
     <ModelSelectModal v-model="openModelModal" @select="handleSelect" />

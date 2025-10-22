@@ -1,16 +1,16 @@
 <template>
   <div class="animations-panel">
     <div style="padding: 0 10px">
-      <b-space>
+      <a-space>
         <g-field label="启用动画" style="padding: 4px 0">
-          <b-switch v-model="data.enable" size="small"></b-switch>
+          <a-switch v-model="data.enable" size="small"></a-switch>
         </g-field>
         <g-field label="循环播放" style="padding: 4px 0 4px 46px">
-          <b-switch v-model="data.loop" size="small"></b-switch>
+          <a-switch v-model="data.loop" size="small"></a-switch>
         </g-field>
-      </b-space>
+      </a-space>
       <g-field label="当前动画">
-        <b-tag type="primary">{{ getAnimationName(data.name) }}</b-tag>
+        <a-tag color="primary">{{ getAnimationName(data.name) }}</a-tag>
       </g-field>
       <g-field label="播放速度">
         <g-select v-model="data.timing" :data="TimingOptions" />
@@ -18,14 +18,14 @@
       <g-field label="交替方向">
         <g-select v-model="data.direction" :data="DirectionOptions" />
       </g-field>
-      <b-space>
+      <a-space>
         <g-field label="动画时长" style="padding: 4px 0">
           <g-input-number v-model="data.duration" suffix="秒" :min="0" inline-flex />
         </g-field>
         <g-field label="动画延迟" style="padding: 4px 0 4px 0">
           <g-input-number v-model="data.delay" suffix="秒" :min="0" inline-flex />
         </g-field>
-      </b-space>
+      </a-space>
     </div>
 
     <div class="p10">

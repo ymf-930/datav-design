@@ -1,13 +1,16 @@
 <template>
   <div class="dv-gui g-button" :class="{ inline }" :style="style">
-    <b-button :type="type" :icon="icon" :size="size" :disabled="disabled" @click="emit('click')">
+    <a-button :type="type" :icon="iconComponent" :size="size" :disabled="disabled" @click="emit('click')">
       {{ title }}
-    </b-button>
+    </a-button>
     <span v-if="label" class="g-input__caption">{{ label }}</span>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import AntIcon from '@/components/Common/AntIcon/index.vue'
+
 defineOptions({
   name: 'GButton',
 })
@@ -20,7 +23,7 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: 'text',
+    default: 'default',
   },
   icon: {
     type: String,
@@ -44,8 +47,12 @@ const props = defineProps({
   },
   style: {
     type: Object,
-    default: ()=>{},
+    default: () => ({}),
   },
+})
+
+const iconComponent = computed(() => {
+  return props.icon ? AntIcon : null
 })
 </script>
 

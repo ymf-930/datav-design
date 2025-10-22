@@ -1,9 +1,9 @@
 <template>
   <div class="footer-panel">
     <div class="screen-info" flex="cross:center">
-      <b-tooltip content="快捷键提示" :open-delay="500">
-        <b-icon name="read" size="16" type="button" @click="keycodeVisible = true"></b-icon>
-      </b-tooltip>
+      <a-tooltip content="快捷键提示" :open-delay="500">
+        <a-icon name="read" size="16" type="button" @click="keycodeVisible = true"></a-icon>
+      </a-tooltip>
       <span class="ml-8" style="transform: scale(0.9)">
         {{ pageConfig.width }} 像素 * {{ pageConfig.height }} 像素
       </span>
@@ -12,7 +12,7 @@
       </span>
     </div>
     <div flex="cross:center">
-      <b-dropdown trigger="click" @command="submitScale">
+      <a-dropdown trigger="click" @click="submitScale">
         <div class="scale-input-wp">
           <input
             v-model="inputScale"
@@ -24,16 +24,16 @@
           <i class="b-iconfont b-icon-down"></i>
         </div>
         <template #dropdown>
-          <b-dropdown-menu>
-            <b-dropdown-item v-for="s in scaleList" :key="s" :name="s">
+          <a-menu>
+            <a-menu-item v-for="s in scaleList" :key="s">
               {{ `${s}%` }}
-            </b-dropdown-item>
-            <b-dropdown-item :name="-1">自适应</b-dropdown-item>
-          </b-dropdown-menu>
+            </a-menu-item>
+            <a-menu-item :key="-1">自适应</a-menu-item>
+          </a-menu>
         </template>
-      </b-dropdown>
+      </a-dropdown>
       <div class="scale-slider-wp">
-        <b-slider
+        <a-slider
           v-model="scale"
           :min="10"
           :max="200"

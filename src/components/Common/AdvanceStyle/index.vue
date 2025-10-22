@@ -1,8 +1,7 @@
 <template>
   <div>
-    <b-button type="text" @click="open">{{ label }}</b-button>
-    <b-modal
-      v-model="visible"
+    <a-button type="text" @click="open">{{ label }}</a-button>
+    <a-modal v-model:visible="visible"
       :title="modalTitle"
       :mask-closable="false"
       :esc-closable="false"
@@ -16,7 +15,7 @@
       <div class="code-editor">
         <template v-if="render">
           <div class="fun">
-            <b-ace-editor
+            <div
               v-model="str"
               height="320px"
               theme="tomorrow_night"
@@ -24,48 +23,46 @@
             />
           </div>
           <div class="right-tip">
-            <b-radio-group :model-value="0" type="capsule" size="large" style="width: 100%">
-              <b-radio :label="0">样式示例</b-radio>
-            </b-radio-group>
+            <a-radio-group:model-value="0" type="capsule" size="large" style="width: 100%">
+              <a-radio :value="0">样式示例</a-radio>
+            </a-radio-group>
             <div class="tip-content">
-              <b-scrollbar>
-                <b-collapse :model-value="'0'" simple>
-                  <b-collapse-panel
-                    v-for="(item, index) in exampleDesc"
+              <div class="ant-scrollbar">
+                <a-collapse :v-model:activeKey="'0'" ghost>
+                  <a-collapse-panel v-for="(item, index) in exampleDesc"
                     :key="index"
-                    :name="index + ''"
                     :title="`示例${index + 1}: ${item.name}`"
                   >
                     <div class="code">
                       <highlightjs language="js" :code="item.code" />
                     </div>
-                  </b-collapse-panel>
-                </b-collapse>
-              </b-scrollbar>
+                  </a-collapse-panel>
+                </a-collapse>
+              </div>
             </div>
           </div>
         </template>
 
-        <b-skeleton animation v-else :rows="15"></b-skeleton>
+        <a-skeleton active v-else :paragraph="{ rows: 15 }"></b-skeleton>
       </div>
       <template #footer>
         <div flex="main:justify">
           <div flex="cross:center">
-            <b-tag type="primary">
-              <b-icon name="file-text"></b-icon>
+            <a-tag color="primary">
+              <a-icon name="file-text"></a-icon>
               说明
-            </b-tag>
+            </a-tag>
             <span class="pl-5" style="color: var(--bin-color-danger-light1)">
               高级样式配置，格式为style对象，会覆盖默认配置
             </span>
           </div>
           <div>
-            <b-button @click="visible = false">关闭</b-button>
-            <b-button type="primary" @click="handleSave">保存</b-button>
+            <a-button @click="visible = false">关闭</a-button>
+            <a-button type="primary" @click="handleSave">保存</a-button>
           </div>
         </div>
       </template>
-    </b-modal>
+    </a-modal>
   </div>
 </template>
 

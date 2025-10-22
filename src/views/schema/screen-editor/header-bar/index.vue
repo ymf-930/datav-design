@@ -1,100 +1,100 @@
 <template>
   <div class="header-container">
     <div class="left-actions">
-      <!-- <b-tooltip content="返回"> -->
+      <!-- <a-tooltip content="返回"> -->
       <div class="head-btn home">
-        <b-icon name="home"></b-icon>
+        <a-icon name="home"></a-icon>
       </div>
-      <!-- </b-tooltip> -->
+      <!-- </a-tooltip> -->
       <div class="page-info">
         <span v-if="pageInfo.name">{{ pageInfo.name }}</span>
         <span v-else style="color: rgba(255, 255, 255, 0.5)">未命名大屏</span>
       </div>
-      <b-space>
-        <b-tooltip content="图层">
+      <a-space>
+        <a-tooltip content="图层">
           <div
             class="head-btn"
             :class="{ active: toolbar.layer }"
             @click="schemaStore.toggleLayerPanel()"
           >
-            <b-icon name="container"></b-icon>
+            <a-icon name="container"></a-icon>
           </div>
-        </b-tooltip>
-        <b-tooltip content="配置面板">
+        </a-tooltip>
+        <a-tooltip content="配置面板">
           <div
             class="head-btn"
             :class="{ active: toolbar.config }"
             @click="schemaStore.toggleConfigPanel()"
           >
-            <b-icon name="control"></b-icon>
+            <a-icon name="control"></a-icon>
           </div>
-        </b-tooltip>
+        </a-tooltip>
 
-        <b-divider type="vertical" />
+        <a-divider type="vertical" />
 
-        <b-tooltip content="后退">
+        <a-tooltip content="后退">
           <div class="head-btn" :class="{ disabled: undoDisable }" @click="undo">
-            <b-icon name="arrowleft"></b-icon>
+            <a-icon name="arrowleft"></a-icon>
           </div>
-        </b-tooltip>
-        <b-tooltip content="前进">
+        </a-tooltip>
+        <a-tooltip content="前进">
           <div class="head-btn" :class="{ disabled: redoDisable }" @click="redo">
-            <b-icon name="arrowright"></b-icon>
+            <a-icon name="arrowright"></a-icon>
           </div>
-        </b-tooltip>
-      </b-space>
+        </a-tooltip>
+      </a-space>
     </div>
     <div class="global-actions">
-      <b-space>
-        <b-tooltip content="导入json (会覆盖所有内容！)">
-          <b-upload action="/" :show-upload-list="false" :before-upload="handleUpload">
+      <a-space>
+        <a-tooltip content="导入json (会覆盖所有内容！)">
+          <a-upload action="/" :show-upload-list="false" :before-upload="handleUpload">
             <div class="head-btn">
-              <b-icon name="Import"></b-icon>
+              <a-icon name="Import"></a-icon>
             </div>
-          </b-upload>
-        </b-tooltip>
+          </a-upload>
+        </a-tooltip>
 
-        <b-tooltip content="导出json">
+        <a-tooltip content="导出json">
           <div class="head-btn" @click="downloadCfg">
-            <b-icon name="export"></b-icon>
+            <a-icon name="export"></a-icon>
           </div>
-        </b-tooltip>
-        <b-divider type="vertical" />
+        </a-tooltip>
+        <a-divider type="vertical" />
 
         <div>
           <div class="head-btn" @click="handleSaveScreen">
-            <b-icon name="save" color="var(--bin-color-primary)"></b-icon>
+            <a-icon name="save" color="var(--bin-color-primary)"></a-icon>
             &nbsp;保&nbsp;存
           </div>
-          <b-dropdown trigger="hover" @command="saveCommand">
+          <a-dropdown trigger="hover" @click="saveCommand">
             <div class="head-btn" style="margin-left: -1px; padding: 0 4px">
-              <b-icon name="ellipsis"></b-icon>
+              <a-icon name="ellipsis"></a-icon>
             </div>
             <template #dropdown>
-              <b-dropdown-menu>
-                <b-dropdown-item name="saveTpl">保存模板</b-dropdown-item>
-                <b-dropdown-item name="saveImage">保存图片</b-dropdown-item>
-              </b-dropdown-menu>
+              <a-menu>
+                <a-menu-item key="saveTpl">保存模板</a-menu-item>
+                <a-menu-item key="saveImage">保存图片</a-menu-item>
+              </a-menu>
             </template>
-          </b-dropdown>
+          </a-dropdown>
         </div>
 
-        <b-divider type="vertical" />
+        <a-divider type="vertical" />
 
-        <b-tooltip content="预览">
+        <a-tooltip content="预览">
           <div class="head-btn" @click="handPreview">
-            <b-icon name="eye" color="var(--bin-color-primary)"></b-icon>
+            <a-icon name="eye" color="var(--bin-color-primary)"></a-icon>
             &nbsp;预&nbsp;览
           </div>
-        </b-tooltip>
+        </a-tooltip>
 
-        <b-tooltip content="发布">
+        <a-tooltip content="发布">
           <div class="head-btn" @click="handlePublish">
-            <b-icon name="send" color="var(--bin-color-primary)"></b-icon>
+            <a-icon name="send" color="var(--bin-color-primary)"></a-icon>
             &nbsp;发&nbsp;布
           </div>
-        </b-tooltip>
-      </b-space>
+        </a-tooltip>
+      </a-space>
     </div>
   </div>
   <head-loading />
@@ -145,7 +145,7 @@ const handleBack = () => {
     const route = router.resolve(path)
     window.open(route.href, props.backTarget)
   } else {
-    MessageBox.confirm({
+    Modal.confirm({
       type: 'warning',
       title: '提示',
       message: '返回时会丢失未保存的操作',

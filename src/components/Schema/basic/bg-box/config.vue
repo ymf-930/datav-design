@@ -24,11 +24,11 @@
 
     <g-field-collapse v-model="config.border.show" toggle label="边框">
       <g-field label="边框类型">
-        <b-radio-group v-model="config.border.type" type="button" size="small">
-          <b-radio v-for="em in borderTypes" :key="em.value" :label="em.value">
+        <a-radio-group v-model:value="config.border.type" button size="small">
+          <a-radio v-for="em in borderTypes" :key="em.value" :value="em.value">
             {{ em.label }}
-          </b-radio>
-        </b-radio-group>
+          </a-radio>
+        </a-radio-group>
       </g-field>
       <!--纯色边框配置-->
       <template v-if="config.border.type === 'flat'">
@@ -118,7 +118,7 @@
         <g-input v-model="config.urlConfig.url" />
       </g-field>
       <g-field label="新窗口打开">
-        <b-switch v-model="config.urlConfig.isBlank" size="small" />
+        <a-switch v-model="config.urlConfig.isBlank" size="small" />
       </g-field>
     </g-field-collapse>
   </div>

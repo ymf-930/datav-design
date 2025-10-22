@@ -4,7 +4,7 @@ import router, { setupRouter } from '@/router'
 import { setupStore } from '@/store'
 import { registerDirectives } from '@/directives'
 import { registerLazy } from '@/plugins/lazy-load'
-import { registerUI } from '@/plugins/bin-ui-design'
+import { registerAntd } from '@/plugins/ant-design-vue'
 import { registerCharts } from '@/plugins/bin-charts-next'
 import { registerEditor } from '@/plugins/bin-editor-next'
 import { registerDatav } from '@/plugins/bin-datav'
@@ -13,7 +13,7 @@ import { registerCommonComps } from '@/components/Common'
 import { registerGUI } from '@/components/GUI'
 import { registerVCharts } from '@/components/Schema'
 
-import 'bin-ui-design/dist/styles/index.css'
+import 'ant-design-vue/dist/antd.css'
 import 'bin-datav/lib/styles/index.css'
 // 引入动画
 import 'animate.css'
@@ -34,7 +34,7 @@ registerLazy(app)
 registerDirectives(app)
 
 registerDatav(app)
-registerUI(app)
+registerAntd(app)
 registerCharts(app)
 registerEditor(app)
 

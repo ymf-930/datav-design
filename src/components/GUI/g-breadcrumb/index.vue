@@ -1,7 +1,7 @@
 <template>
   <div class="dv-gui g-breadcrumb">
-    <b-breadcrumb separator=">">
-      <b-breadcrumb-item>
+    <a-breadcrumb separator=">">
+      <a-breadcrumb-item>
         <span
           class="dv-item"
           :class="{ 'dv-link': drillFilters.length }"
@@ -10,8 +10,8 @@
         >
           {{ drillData[0].title }}
         </span>
-      </b-breadcrumb-item>
-      <b-breadcrumb-item v-for="(item, index) in drillFilters" :key="item.fieldId">
+      </a-breadcrumb-item>
+      <a-breadcrumb-item v-for="(item, index) in drillFilters" :key="item.fieldId">
         <span
           class="dv-item"
           :class="{ 'dv-link': index < drillFilters.length - 1 }"
@@ -20,8 +20,8 @@
         >
           {{ item.complexFilter.items[0].value }}
         </span>
-      </b-breadcrumb-item>
-    </b-breadcrumb>
+      </a-breadcrumb-item>
+    </a-breadcrumb>
   </div>
 </template>
 
@@ -81,7 +81,7 @@ function handleClick(item, index) {
       cursor: pointer;
       color: #fff;
       &:hover {
-        color: var(--bin-color-primary) !important;
+        color: var(--ant-primary-color) !important;
       }
     }
   }

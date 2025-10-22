@@ -1,6 +1,6 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal
+    v-model:visible="visible"
     title="新建大屏"
     width="1000px"
     custom-class="schema-modal"
@@ -19,24 +19,23 @@
             <div class="h2">{{ webValue.label }}</div>
             <div class="h4">{{ webValue.width }}x{{ webValue.height }}</div>
           </div>
-          <b-dropdown
-            trigger="click"
+          <a-dropdown trigger="click"
             placement="bottom-end"
             style="width: 24px; height: 46px; line-height: 46px"
-            @command="handleWebTrigger"
+            @click="handleWebTrigger"
           >
-            <b-icon name="down" type="button"></b-icon>
+            <a-icon name="down" type="button"></a-icon>
             <template #dropdown>
-              <b-dropdown-menu>
-                <b-dropdown-item v-for="item in webScreenMap" :key="item.label" :name="item">
+              <a-menu>
+                <a-menu-item v-for="item in webScreenMap" :key="item.label">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
                   </div>
-                </b-dropdown-item>
-              </b-dropdown-menu>
+                </a-menu-item>
+              </a-menu>
             </template>
-          </b-dropdown>
+          </a-dropdown>
         </div>
         <div
           class="preset-item mobile-box"
@@ -48,24 +47,23 @@
             <div class="h2">{{ mobileValue.label }}</div>
             <div class="h4">{{ mobileValue.width }}x{{ mobileValue.height }}</div>
           </div>
-          <b-dropdown
-            trigger="click"
+          <a-dropdown trigger="click"
             placement="bottom-end"
             style="width: 24px; height: 46px; line-height: 46px"
-            @command="handleMobileTrigger"
+            @click="handleMobileTrigger"
           >
-            <b-icon name="down" type="button"></b-icon>
+            <a-icon name="down" type="button"></a-icon>
             <template #dropdown>
-              <b-dropdown-menu>
-                <b-dropdown-item v-for="item in mobileScreenMap" :key="item.label" :name="item">
+              <a-menu>
+                <a-menu-item v-for="item in mobileScreenMap" :key="item.label">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
                   </div>
-                </b-dropdown-item>
-              </b-dropdown-menu>
+                </a-menu-item>
+              </a-menu>
             </template>
-          </b-dropdown>
+          </a-dropdown>
         </div>
         <div
           class="preset-item custom-box"
@@ -77,7 +75,7 @@
             <p class="mb-5">自定义大小</p>
             <p class="custom-input">
               <span class="mr-5">W:</span>
-              <b-input-number
+              <a-input-number
                 v-model="customValue.width"
                 :min="100"
                 :step="1"
@@ -86,7 +84,7 @@
                 @change="changeSize(customValue)"
               />
               <span class="ml-5 mr-5">H:</span>
-              <b-input-number
+              <a-input-number
                 v-model="customValue.height"
                 :min="100"
                 :step="1"
@@ -118,13 +116,13 @@
                 />
               </div>
               <div class="tpl-remove">
-                <b-button
+                <a-button
                   type="text"
                   text-color="#f5222d"
                   title="移除模板"
                   icon="delete"
                   @click="removeTpl(tpl)"
-                ></b-button>
+                ></a-button>
               </div>
             </div>
             <div class="template-info">
@@ -141,10 +139,10 @@
       <b-empty v-show="templates.length === 0">暂无模板</b-empty>
     </div>
     <template #footer>
-      <b-button @click="closeModal">取消</b-button>
-      <b-button type="primary" @click="createScreen">开始设计</b-button>
+      <a-button @click="closeModal">取消</a-button>
+      <a-button type="primary" @click="createScreen">开始设计</a-button>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>
@@ -247,7 +245,7 @@ const getTplList = () => {
 }
 
 const removeTpl = tpl => {
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'error',
     title: '提示',
     message: '确定删除当前模板吗？',

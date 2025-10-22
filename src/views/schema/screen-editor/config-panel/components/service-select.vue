@@ -1,19 +1,18 @@
 <template>
   <div class="top" style="width: 100%">
     <div flex>
-      <b-input
+      <a-input
         :size="size"
         :placeholder="placeholder"
         :model-value="showText"
         readonly
         clearable
         @clear="handleClear"
-      ></b-input>
-      <b-button :size="size" background @click="handleOpen" style="margin-left: 2px">选择</b-button>
+      ></a-input>
+      <a-button :size="size" background @click="handleOpen" style="margin-left: 2px">选择</a-button>
     </div>
 
-    <b-modal
-      v-model="visible"
+    <a-modal v-model:visible="visible"
       title="接口选择"
       width="800px"
       append-to-body
@@ -37,27 +36,27 @@
 
           <b-col span="18">
             <div class="mb-8">
-              <b-space>
+              <a-space>
                 名称
-                <b-input
+                <a-input
                   v-model="query.interfaceName"
                   clearable
                   size="small"
                   @keyup.enter.stop="handleSearch"
                   :maxlength="100"
-                ></b-input>
-                <b-button type="primary" :loading="loading" @click="handleSearch" size="small">
+                ></a-input>
+                <a-button type="primary" :loading="loading" @click="handleSearch" size="small">
                   查询
-                </b-button>
-                <b-button @click="handleReset" size="small">重置</b-button>
-              </b-space>
+                </a-button>
+                <a-button @click="handleReset" size="small">重置</a-button>
+              </a-space>
             </div>
 
-            <b-table :columns="columns" :data="list" :loading="loading" size="small">
+            <a-table :columns="columns" :data="list" :loading="loading" size="small">
               <template #action="{ row }">
-                <b-button type="text" size="small" @click="handleSelect(row)">选择</b-button>
+                <a-button type="text" size="small" @click="handleSelect(row)">选择</a-button>
               </template>
-            </b-table>
+            </a-table>
           </b-col>
         </b-row>
 
@@ -71,7 +70,7 @@
           ></b-page>
         </div>
       </div>
-    </b-modal>
+    </a-modal>
   </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
-  <b-modal v-model="open" title="参数信息" width="750px" append-to-body custom-class="schema-modal">
+  <a-modal v-model:visible="open" title="参数信息" width="750px" append-to-body custom-class="schema-modal">
     <div style="margin: -16px; padding: 10px">
-      <b-table :columns="columns" :data="params" size="small" border />
+      <a-table :columns="columns" :data="params" size="small" border />
     </div>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

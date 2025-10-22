@@ -13,9 +13,9 @@
     label="配置"
     v-if="apiDataConfig.config.modelId && baseList.includes(apiDataConfig.compType)"
   >
-    <b-button type="primary" style="width: 100%" @click="handleOpen" size="small">
+    <a-button type="primary" style="width: 100%" @click="handleOpen" size="small">
       {{ apiDataConfig.compType === SCROLL_TABLE ? '配置字段列' : '配置轴线' }}
-    </b-button>
+    </a-button>
   </g-field>
 
   <OtherEchartField
@@ -51,7 +51,7 @@
   />
 
   <g-field label="测试">
-    <b-button
+    <a-button
       size="small"
       type="primary"
       transparent
@@ -60,7 +60,7 @@
       :disabled="!apiDataConfig.config.modelId"
     >
       发送请求
-    </b-button>
+    </a-button>
   </g-field>
 
 </template>

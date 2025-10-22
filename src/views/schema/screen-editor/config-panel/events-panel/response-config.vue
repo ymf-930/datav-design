@@ -1,9 +1,9 @@
 <template>
   <g-field-collapse v-if="hasRespEvent" label="响应事件" default-open>
     <template #add>
-      <b-button type="text" title="新增一个响应事件" @click="handleAddOnEvent">
-        <b-icon name="plus" size="16"></b-icon>
-      </b-button>
+      <a-button type="text" title="新增一个响应事件" @click="handleAddOnEvent">
+        <a-icon name="plus" size="16"></a-icon>
+      </a-button>
     </template>
 
     <template v-for="(event, index) in config.onEvents" :key="index">
@@ -53,16 +53,16 @@
             />
           </div>
         </template>
-        <b-button
+        <a-button
           v-if="!event.register"
           size="small"
           style="width: 100%; margin-bottom: 4px"
           @click="handleConfigParam(index)"
         >
           参数映射
-        </b-button>
+        </a-button>
         <span style="width: 49%; margin-right: 2%; margin-top: 2px">
-          <b-button
+          <a-button
             size="small"
             style="width: 100%"
             type="primary"
@@ -70,16 +70,16 @@
             @click="handleRegOnEvent(event)"
           >
             注册事件
-          </b-button>
+          </a-button>
         </span>
         <span style="width: 49%; margin-top: 2px">
-          <b-button
+          <a-button
             size="small"
             style="width: 100%"
             @click="handleDelOrCancelOnEvent(index, event)"
           >
             {{ event.register ? '取消' : '删除' }}
-          </b-button>
+          </a-button>
         </span>
       </g-field>
     </template>
@@ -91,7 +91,7 @@
     >
       暂无响应事件
     </div>
-    <b-drawer
+    <a-drawer
       v-model="openParamsMap"
       title="参数映射"
       :width="550"
@@ -106,7 +106,7 @@
         :onEvent="config.onEvents[curOnEventIndex]"
         @save="handleParamsMapSave"
       />
-    </b-drawer>
+    </a-drawer>
     <CustomScriptsEditor
       ref="editorRef"
       v-model="customScriptStr"

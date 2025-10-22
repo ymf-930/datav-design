@@ -1,6 +1,5 @@
 <template>
-  <b-modal
-    v-model="open"
+  <a-modal v-model:visible="open"
     title="选择模型"
     width="1000px"
     :mask-closable="false"
@@ -12,7 +11,7 @@
       <SelectModel v-if="open" @select="handleSelect" @open="handleView"/>
 <!--      <ModelDetail v-if="showDetail" :data="curData" @close="handleClose" />-->
     </div>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

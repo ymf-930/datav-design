@@ -1,6 +1,6 @@
 <template>
   <div class="dv-gui g-slider" :class="{ inline, 'show-input': showInput }">
-    <b-slider v-model="inputValue" :min="min" :max="max" :step="step" :show-tooltip="false" />
+    <a-slider v-model="inputValue" :min="min" :max="max" :step="step" :show-tooltip="false" />
     <span v-if="label" class="g-input__caption">{{ label }}</span>
     <div v-if="showInput" class="g-input__caption-input">
       <span class="g-input-number__number">

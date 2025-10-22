@@ -1,13 +1,13 @@
 <template>
   <div class="dv-wrapper" :style="wrapperStyle">
-    <b-select v-model="select" clearable @change="handleChange">
-      <b-option
+    <a-select v-model:value="select" clearable @change="handleChange">
+      <a-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
-      ></b-option>
-    </b-select>
+      ></a-option>
+    </a-select>
   </div>
 </template>
 

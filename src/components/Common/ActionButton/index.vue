@@ -1,20 +1,20 @@
 <template>
-  <b-popover v-model:visible="visible" :width="popperWidth" :disabled="!confirm">
-    <b-button v-bind="btnProps" @click="handleClick" :title="tooltip">
+  <a-popover v-model:visible="visible" :overlayStyle="{ width: 'popperWidth' }" :disabled="!confirm">
+    <a-button v-bind="btnProps" @click="handleClick" :title="tooltip">
       <i v-if="icon" :class="`b-iconfont b-icon-${icon}`" :style="iconStyle"></i>
       <slot></slot>
-    </b-button>
+    </a-button>
     <template #content>
       <p style="line-height: 22px; margin-bottom: 8px">
-        <b-icon name="question-circle" size="16" color="#fa8c16"></b-icon>
+        <a-icon name="question-circle" size="16" color="#fa8c16"></a-icon>
         {{ message }}
       </p>
       <div style="text-align: right; margin: 0">
-        <b-button size="mini" type="text" @click="handleCancel">取消</b-button>
-        <b-button type="primary" size="mini" @click="handleOk">确认</b-button>
+        <a-button size="mini" type="text" @click="handleCancel">取消</a-button>
+        <a-button type="primary" size="mini" @click="handleOk">确认</a-button>
       </div>
     </template>
-  </b-popover>
+  </a-popover>
 </template>
 
 <script>

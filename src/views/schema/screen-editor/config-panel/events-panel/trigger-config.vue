@@ -3,10 +3,10 @@
     <template v-for="key in eventList" :key="key">
       <g-field v-if="config[key]" :label="config[key].name">
         <div flex="main:justify cross:center">
-          <b-checkbox v-model="config[key].enable" />
-          <b-button type="text" title="查看事件参数" @click="handleViewParams(config[key].params)">
+          <a-checkbox v-model="config[key].enable" />
+          <a-button type="text" title="查看事件参数" @click="handleViewParams(config[key].params)">
             查看
-          </b-button>
+          </a-button>
         </div>
       </g-field>
     </template>

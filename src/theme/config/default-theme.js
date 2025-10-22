@@ -1,21 +1,23 @@
 /**
- * 默认主题变量配置,这里默认覆盖全部变量，默认都会覆盖默认主题。
+ * 默认主题变量配置 - 适配 Ant Design Vue
+ * 这里默认覆盖全部变量，默认都会覆盖默认主题。
  * 建议通过主题配置后导出css变量文本进行替换使用。或者导出对象文本酌情修改。
  * 其他部分的面板配置，不需要设定的则不需要放出进行配置
  */
 
-import { Utils } from 'bin-ui-design'
+// 移除 bin-ui-design 依赖
+// import { Utils } from 'bin-ui-design'
 
-const mainColor = '#1089ff'
+const mainColor = '#1890ff' // 使用 Ant Design 默认主色
 export const Theme = {
   // -----------------system---------------------//
-  binColorPrimary: mainColor,
-  binColorPrimaryAlpha1: Utils.color.alpha(mainColor, 0.1),
+  antColorPrimary: mainColor,
+  antColorPrimaryAlpha1: `${mainColor}1a`, // 10% 透明度
 }
 
-// 主题颜色面板
+// 主题颜色面板 - 使用 Ant Design 色彩体系
 export const ThemeMainColors = [
-  '#1089FF',
+  '#1890FF', // Ant Design 主色
   '#165DFF',
   '#14C9C9',
   '#00B42A',

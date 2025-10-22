@@ -2,10 +2,10 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="标题" default-open>
       <g-field label="顶端形状">
-        <b-radio-group v-model="config.linecap" type="button" size="small">
-          <b-radio label="round">圆形</b-radio>
-          <b-radio label="square">方形</b-radio>
-        </b-radio-group>
+        <a-radio-group v-model:value="config.linecap" button size="small">
+          <a-radio value="round">圆形</a-radio>
+          <a-radio value="square">方形</a-radio>
+        </a-radio-group>
       </g-field>
       <g-field label="环形样式" flat>
         <g-input-number v-model="config.width" :min="1" :max="20" :step="1" inline label="线宽" />
@@ -23,7 +23,7 @@
         <g-color-picker v-model="config.trailColor" inline label="颜色" />
       </g-field>
       <g-field label="仪表盘模式">
-        <b-switch v-model="config.dashboard" size="small" />
+        <a-switch v-model="config.dashboard" size="small" />
       </g-field>
     </g-field-collapse>
 

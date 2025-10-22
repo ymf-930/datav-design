@@ -1,13 +1,13 @@
 <template>
   <div class="dv-wrapper" :style="wrapperStyle">
-    <b-date-picker
+    <a-date-picker
       v-model="date"
       :type="config.prop.type"
       :placeholder="config.prop.placeholder"
-      :clearable="true"
+      :allowClear="true"
       style="width: 100%"
       @change="handleChange"
-    ></b-date-picker>
+    ></a-date-picker>
   </div>
 </template>
 

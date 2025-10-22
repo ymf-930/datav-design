@@ -1,26 +1,25 @@
 <template>
   <g-field label="选择字段">
-    <b-select v-model="apiDataConfig.config.dimension">
-      <b-option
-        v-for="item in apiDataConfig.config.resParam"
+    <a-select v-model:value="apiDataConfig.config.dimension">
+      <a-select-option v-for="item in apiDataConfig.config.resParam"
         :key="item.name"
         :label="item.desc"
         :value="item.name"
-      ></b-option>
-    </b-select>
+      ></a-select-option>
+    </a-select>
   </g-field>
 
   <div style="padding: 0 10px 8px" flex>
-    <b-space>
-      <b-tag type="primary">指标配置</b-tag>
-      <b-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></b-button>
-    </b-space>
+    <a-space>
+      <a-tag color="primary">指标配置</a-tag>
+      <a-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></a-button>
+    </a-space>
   </div>
 
   <g-field flat v-for="(item, index) in apiDataConfig.config.axisFields.y" :key="index">
     <template #label>
       <span class="mr-5">指标{{ index + 1 }}</span>
-      <b-button
+      <a-button
         type="text"
         icon="close-circle"
         text-color="danger"

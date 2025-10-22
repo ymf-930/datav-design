@@ -40,11 +40,11 @@
         <g-color-picker v-model="config.global.borderColor" label="颜色"></g-color-picker>
       </g-field>
       <g-field label="布局方式">
-        <b-radio-group v-model="config.global.areaColor.type" type="button" size="small">
-          <b-radio v-for="em in FillTypeOptions" :key="em.value" :label="em.value">
+        <a-radio-group v-model:value="config.global.areaColor.type" button size="small">
+          <a-radio v-for="em in FillTypeOptions" :key="em.value" :value="em.value">
             {{ em.label }}
-          </b-radio>
-        </b-radio-group>
+          </a-radio>
+        </a-radio-group>
       </g-field>
       <g-field label="颜色配置" v-if="config.global.areaColor.type === 'solid'">
         <g-color-picker v-model="config.global.areaColor.value"></g-color-picker>

@@ -5,14 +5,14 @@
       <span class="tip" v-else>点击选择图片</span>
     </div>
     <div class="g-resize" v-if="showResize">
-      <b-tooltip content="恢复默认尺寸">
-        <b-icon name="expend" type="button" @click="resetSize"></b-icon>
-      </b-tooltip>
+      <a-tooltip content="恢复默认尺寸">
+        <a-icon name="expend" type="button" @click="resetSize"></a-icon>
+      </a-tooltip>
     </div>
     <div class="g-resize" v-if="showClear">
-      <b-tooltip content="清除图片">
-        <b-icon name="clear" type="button" @click="clear"></b-icon>
-      </b-tooltip>
+      <a-tooltip content="清除图片">
+        <a-icon name="clear" type="button" @click="clear"></a-icon>
+      </a-tooltip>
     </div>
   </div>
   <ImageSelect

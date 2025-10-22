@@ -16,7 +16,7 @@
     />
     <slot>
       <div class="g-upload-image-wrap">
-        <b-icon name="plus"></b-icon>
+        <a-icon name="plus"></a-icon>
       </div>
     </slot>
   </div>

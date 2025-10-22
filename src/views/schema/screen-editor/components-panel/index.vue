@@ -6,7 +6,7 @@
       </div>
       <div class="components-panel-content" @dragover="dragOver">
         <div class="components-type">
-          <b-scrollbar native>
+          <div class="ant-scrollbar" style="overflow-y: auto;">
             <div
               class="components-item"
               v-for="(group, index) in componentList"
@@ -14,10 +14,10 @@
               :class="{ active: activeGroup.type === group.type }"
               @click="changeComp(group)"
             >
-              <b-icon class="com-tab-icon" :name="group.icon"></b-icon>
+              <a-icon class="com-tab-icon" :name="group.icon"></a-icon>
               <span class="com-tab-title">{{ group.name }}</span>
             </div>
-          </b-scrollbar>
+          </div>
         </div>
       </div>
       <div class="components-list" v-show="toolbar.components">
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="components-list-content">
-          <b-scrollbar native>
+          <div class="ant-scrollbar" style="overflow-y: auto;">
             <Collapse
               v-for="(group, index) in groups"
               :key="index"
@@ -62,7 +62,7 @@
               @dragstart="dragCustomCompStart"
               @click="toAddCustomComp"
             />
-          </b-scrollbar>
+          </div>
         </div>
       </div>
     </div>

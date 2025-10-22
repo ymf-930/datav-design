@@ -4,11 +4,10 @@
       <div class="wrap-name">
         <span class="wrap-label">{{ label }}</span>
         <span class="wrap-right" @click.stop>
-          <div class="bin-switch--mini" @click.stop>
-            <b-switch
+          <div class="ant-switch--mini" @click.stop>
+            <a-switch
               v-if="toggle"
-              v-model="visible"
-              class="--mini"
+              v-model:checked="visible"
               size="small"
               @change="toggleVisible"
             />
@@ -16,15 +15,17 @@
           <slot name="add"></slot>
         </span>
         <span class="wrap-arrow" :class="[{ show }]">
-          <b-icon name="right" size="12"></b-icon>
+          <AntIcon name="right" />
         </span>
       </div>
     </div>
-    <b-collapse-transition v-if="!modal">
-      <div v-if="show" class="g-field-content">
-        <slot></slot>
-      </div>
-    </b-collapse-transition>
+    <a-collapse v-if="!modal" v-model:activeKey="collapseActiveKey">
+      <a-collapse-panel v-if="show" key="1" :showArrow="false">
+        <div class="g-field-content">
+          <slot></slot>
+        </div>
+      </a-collapse-panel>
+    </a-collapse>
 
     <g-modal-config v-else v-model="show" :title="label">
       <div v-if="show" class="g-field-content" style="padding: 0 10px">
@@ -36,6 +37,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import AntIcon from '@/components/Common/AntIcon/index.vue'
 
 defineOptions({
   name: 'GFieldCollapse',
@@ -66,6 +68,7 @@ const props = defineProps({
 })
 
 const show = ref(props.defaultOpen)
+const collapseActiveKey = ref(props.defaultOpen ? ['1'] : [])
 
 const visible = computed({
   get: () => props.modelValue,
@@ -75,12 +78,18 @@ const visible = computed({
 const toggleVisible = () => {
   if (visible.value) {
     show.value = false
+    collapseActiveKey.value = []
+  } else {
+    show.value = true
+    collapseActiveKey.value = ['1']
   }
   emit('change', visible.value)
 }
+
 const toggleShow = () => {
   if (!props.modelValue) return
   show.value = !show.value
+  collapseActiveKey.value = show.value ? ['1'] : []
 }
 </script>
 
@@ -106,7 +115,7 @@ const toggleShow = () => {
     &.active {
       border-bottom: 1px solid var(--s-color-1);
       &::before {
-        background-color: var(--bin-color-primary);
+        background-color: var(--ant-primary-color);
       }
     }
     .wrap-name {
@@ -165,5 +174,24 @@ const toggleShow = () => {
     bottom: 0;
     border-bottom: 1px solid var(--s-color-1);
   }
+}
+
+/* 隐藏 ant-collapse 的默认样式 */
+:deep(.ant-collapse) {
+  border: none;
+  background: transparent;
+}
+
+:deep(.ant-collapse-item) {
+  border: none;
+}
+
+:deep(.ant-collapse-content) {
+  border: none;
+  background: transparent;
+}
+
+:deep(.ant-collapse-content-box) {
+  padding: 0;
 }
 </style>

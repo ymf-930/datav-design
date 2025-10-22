@@ -1,15 +1,14 @@
 <template>
   <div class="dv-gui g-select" :class="{ inline }">
-    <b-select
-      v-model="inputValue"
+    <a-select v-model:value="inputValue"
       :size="size"
       :disabled="disabled"
-      :clearable="clearable"
+      :allowClear="clearable"
       @change="handleChange"
       append-to-body
     >
-      <b-option v-for="item in data" :key="item.value" :label="item.label" :value="item.value" />
-    </b-select>
+      <a-option v-for="item in data" :key="item.value" :label="item.label" :value="item.value" />
+    </a-select>
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
   </div>
 </template>

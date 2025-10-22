@@ -13,18 +13,18 @@
       </b-col>
 
       <b-col span="18">
-        <b-form label-width="75px" flex>
-          <b-form-item label="模型名称" style="width: 30%">
-            <b-input v-model="query.name" @keyup.enter="handleSearch" clearable size="small" />
-          </b-form-item>
+        <a-form label-width="75px" flex>
+          <a-form-item label="模型名称" style="width: 30%">
+            <a-input v-model="query.name" @keyup.enter="handleSearch" clearable size="small" />
+          </a-form-item>
 
-          <b-form-item label-width="16px" style="width: 30%">
-            <b-button type="primary" @click="handleSearch" size="small">查询</b-button>
-            <b-button @click="handleReset" size="small">重置</b-button>
-          </b-form-item>
-        </b-form>
+          <a-form-item label-width="16px" style="width: 30%">
+            <a-button type="primary" @click="handleSearch" size="small">查询</a-button>
+            <a-button @click="handleReset" size="small">重置</a-button>
+          </a-form-item>
+        </a-form>
 
-        <b-table :columns="columns" :data="list" :loading="loading" border size="small">
+        <a-table :columns="columns" :data="list" :loading="loading" border size="small">
           <template #modelType="{ row }">
             {{ modelType[row.modelType] }}
           </template>
@@ -33,10 +33,10 @@
           </template>
 
           <template #action="{ row }">
-            <b-button v-if="showDetail" type="text" size="small" @click="handleView(row)">查看</b-button>
-            <b-button type="text" @click="handleSelect(row)">选择</b-button>
+            <a-button v-if="showDetail" type="text" size="small" @click="handleView(row)">查看</a-button>
+            <a-button type="text" @click="handleSelect(row)">选择</a-button>
           </template>
-        </b-table>
+        </a-table>
 
         <div class="mt-10 t-right">
           <b-page

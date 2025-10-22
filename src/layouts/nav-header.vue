@@ -18,23 +18,23 @@
       </div>
       <div class="user">
         <div class="header-item">
-          <b-dropdown @command="handleClick" append-to-body trigger="click">
+          <a-dropdown @click="handleClick" getPopupContainer trigger="click">
             <div class="user-link-wrap">
               <span class="user-link" v-if="userStore.userInfo">
                 {{ userStore.userInfo.realName }}
               </span>
             </div>
             <template #dropdown>
-              <b-dropdown-menu style="width: 120px">
-                <b-dropdown-item name="logout">
+              <a-menu style="width: 120px">
+                <a-menu-item key="logout">
                   <div flex="cross:center">
-                    <b-icon name="logout" size="16"></b-icon>
+                    <a-icon name="logout" size="16"></a-icon>
                     <span class="ml-5">退出登录</span>
                   </div>
-                </b-dropdown-item>
-              </b-dropdown-menu>
+                </a-menu-item>
+              </a-menu>
             </template>
-          </b-dropdown>
+          </a-dropdown>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import { MessageBox } from 'bin-ui-design'
+import { Modal } from 'ant-design-vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
 import config from '../../package.json'
@@ -83,7 +83,7 @@ function handleClick(name) {
   }
 
   if (name === 'logout') {
-    MessageBox.confirm({
+    Modal.confirm({
       type: 'warning',
       title: '确认退出登录吗？',
     })

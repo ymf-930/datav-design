@@ -19,7 +19,7 @@
             @drop="handleDropField($event, item)"
           >
             <div class="text t-left" :title="item.desc">
-              <b-button
+              <a-button
                 v-if="item.append"
                 type="text"
                 text-color="danger"
@@ -33,7 +33,7 @@
             <template v-if="Boolean(item.map) && isShow">
               <i class="b-iconfont b-icon-swap" style="color: white"></i>
               <div class="text t-right" :title="item.map.desc">
-                <b-button
+                <a-button
                   type="text"
                   text-color="danger"
                   icon="close-circle"
@@ -55,9 +55,9 @@
         </div>
 
         <div class="btn-con">
-          <b-button style="width: 100%" type="primary" size="small" @click="handleSave">
+          <a-button style="width: 100%" type="primary" size="small" @click="handleSave">
             保存
-          </b-button>
+          </a-button>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <b-drawer
+  <a-drawer
     v-model="visible"
     class-name="source-drawer"
     append-to-body
@@ -17,7 +17,7 @@
       :is-box="isBox"
       @save="close"
     ></ds-api>
-  </b-drawer>
+  </a-drawer>
 </template>
 
 <script>

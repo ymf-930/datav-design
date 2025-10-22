@@ -1,6 +1,5 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     :title="modalTitle"
     :mask-closable="false"
     :esc-closable="false"
@@ -20,7 +19,7 @@
             ){
           </p>
           <p class="code">
-            <b-ace-editor
+            <div
               theme="tomorrow_night"
               wrap
               lang="typescript"
@@ -29,46 +28,46 @@
               :font-size="14"
               :options="{ showLineNumbers: false }"
               :styles="{ border: 'none' }"
-            ></b-ace-editor>
+            ></div>
           </p>
           <p class="bottom">}</p>
         </div>
         <div class="right-tip">
-          <b-radio-group v-model="tipType" type="capsule" size="large" style="width: 100%">
-            <b-radio :label="0">变量说明</b-radio>
-            <b-radio :label="1">脚本示例</b-radio>
-          </b-radio-group>
+          <a-radio-group v-model:value="tipType" type="capsule" size="large" style="width: 100%">
+            <a-radio :value="0">变量说明</a-radio>
+            <a-radio :value="1">脚本示例</a-radio>
+          </a-radio-group>
           <div class="tip-content">
-            <b-scrollbar>
+            <div class="ant-scrollbar">
               <CustomScriptsParams v-if="tipType === 0" :paramsDesc="paramsDesc" />
               <CustomScriptsExamples v-if="tipType === 1" :exampleDesc="exampleDesc" />
-            </b-scrollbar>
+            </div>
           </div>
         </div>
       </template>
 
-      <b-skeleton animation v-else :rows="15"></b-skeleton>
+      <a-skeleton active v-else :paragraph="{ rows: 15 }"></b-skeleton>
     </div>
     <template #footer>
       <div flex="main:justify">
         <div flex="cross:center">
           <template v-if="funcExplain">
             <b-tag>
-              <b-icon name="file-text"></b-icon>
+              <a-icon name="file-text"></a-icon>
               说明
-            </b-tag>
+            </a-tag>
             <span class="pl-5" style="color: var(--bin-color-danger-light1)">
               {{ funcExplain }}
             </span>
           </template>
         </div>
         <div>
-          <b-button @click="visible = false">关闭</b-button>
-          <b-button type="primary" @click="handleSave">保存</b-button>
+          <a-button @click="visible = false">关闭</a-button>
+          <a-button type="primary" @click="handleSave">保存</a-button>
         </div>
       </div>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

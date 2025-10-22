@@ -1,21 +1,21 @@
 <template>
-  <b-modal v-model="open" title="参数信息" width="800px" custom-class="schema-modal">
+  <a-modal v-model:visible="open" title="参数信息" width="800px" custom-class="schema-modal">
     <div style="margin: -16px; padding: 10px">
       <g-field-collapse label="请求参数信息" :defaultOpen="true">
         <div class="p10">
-          <b-table :columns="reqCol" :data="reqParam" size="small">
+          <a-table :columns="reqCol" :data="reqParam" size="small">
             <template #isEmpty="{ row }">{{ row.isEmpty === 'Y' ? '是' : '否' }}</template>
-          </b-table>
+          </a-table>
         </div>
       </g-field-collapse>
       <div class="p8"></div>
       <g-field-collapse label="响应参数信息" :defaultOpen="true">
-        <b-table :columns="resCol" :data="resParam" size="small">
+        <a-table :columns="resCol" :data="resParam" size="small">
           <template #isEmpty="{ row }">{{ row.isEmpty === 'Y' ? '是' : '否' }}</template>
-        </b-table>
+        </a-table>
       </g-field-collapse>
     </div>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

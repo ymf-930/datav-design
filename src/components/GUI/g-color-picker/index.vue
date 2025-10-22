@@ -1,8 +1,8 @@
 <template>
   <div class="dv-gui g-color-picker" :class="{ inline }">
     <div class="g-color-picker__inner">
-      <b-input v-model="inputColor" :size="size" @input="debounceChange" />
-      <b-color-picker
+      <a-input v-model="inputColor" :size="size" @input="debounceChange" />
+      <a-color-picker
         v-model="inputColor"
         :size="size"
         :show-alpha="showAlpha"

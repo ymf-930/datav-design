@@ -1,43 +1,41 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     append-to-body
     :title="btnText"
     top="200px"
     custom-class="schema-modal"
     @close="visible = false"
   >
-    <b-form label-width="100px" ref="formRef" :model="pageInfo" label-suffix=":" v-if="visible">
-      <b-form-item label="所在目录" class="is-required" v-if="!route.query.isShow">
-        <b-tree-select
-          :data="dirTree"
-          v-model="pageInfo.pid"
+    <a-form label-width="100px" ref="formRef" :model="pageInfo" label-suffix=":" v-if="visible">
+      <a-form-item label="所在目录" class="is-required" v-if="!route.query.isShow">
+        <a-tree-select :data="dirTree"
+          v-model:value="pageInfo.pid"
           titleKey="text"
           default-expand
-        ></b-tree-select>
-      </b-form-item>
-      <b-form-item
+        ></a-tree-select>
+      </a-form-item>
+      <a-form-item
         label="大屏名称"
         prop="name"
         :rules="{ required: true, message: '大屏名称不能为空', trigger: 'blur' }"
       >
-        <b-input v-model="pageInfo.name"></b-input>
-      </b-form-item>
+        <a-input v-model="pageInfo.name"></a-input>
+      </a-form-item>
       <template v-if="status === 'audited' && $route.query.id">
-        <b-form-item label="预览地址">
+        <a-form-item label="预览地址">
           <g-input v-model="shareUrl" readonly type="textarea" :autosize="{ minRows: 3 }" />
-        </b-form-item>
-        <b-form-item>
-          <b-button type="text" @click="copyUrl">复制预览地址</b-button>
-        </b-form-item>
+        </a-form-item>
+        <a-form-item>
+          <a-button type="text" @click="copyUrl">复制预览地址</a-button>
+        </a-form-item>
       </template>
-    </b-form>
+    </a-form>
     <template #footer>
-      <b-button type="primary" icon="save" @click="saveKanban" :loading="loading">
+      <a-button type="primary" icon="save" @click="saveKanban" :loading="loading">
         {{ btnText }}
-      </b-button>
+      </a-button>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

@@ -1,49 +1,48 @@
 <template>
   <div class="action-bar-wrap" :style="actionStyle">
-    <b-tooltip content="适应尺寸" placement="left">
+    <a-tooltip content="适应尺寸" placement="left">
       <i class="action-btn b-iconfont b-icon-aim" @click.stop="schemaStore.autoCanvasScale()" />
-    </b-tooltip>
-    <b-tooltip content="原始尺寸" placement="left">
+    </a-tooltip>
+    <a-tooltip content="原始尺寸" placement="left">
       <i
         class="action-btn b-iconfont b-icon-icon-test"
         @click.stop="schemaStore.setCanvasScale(100)"
       />
-    </b-tooltip>
+    </a-tooltip>
 
-    <b-tooltip content="编辑配置" placement="left">
+    <a-tooltip content="编辑配置" placement="left">
       <i class="action-btn b-iconfont b-icon-edit-square" @click.stop="openDetail" />
-    </b-tooltip>
+    </a-tooltip>
 
-    <b-tooltip content="工具设置" placement="left">
+    <a-tooltip content="工具设置" placement="left">
       <i
         class="action-btn b-iconfont b-icon-setting"
         @click.stop="toolbar.toolbox = !toolbar.toolbox"
       />
-    </b-tooltip>
+    </a-tooltip>
 
     <!-- 工具设置 -->
-    <b-modal
-      title="工具设置"
-      v-model="toolbar.toolbox"
+    <a-modal title="工具设置"
+      v-model:visible="toolbar.toolbox"
       append-to-body
       custom-class="schema-modal"
       width="600px"
     >
-      <b-form label-position="left" label-width="100px">
-        <b-form-item label="参考线">
-          <b-space>
-            <b-switch v-model="toolbox.referLine"></b-switch>
+      <a-form label-position="left" label-width="100px">
+        <a-form-item label="参考线">
+          <a-space>
+            <a-switch v-model="toolbox.referLine"></a-switch>
             选中组件时，左上角距离标尺的参考线，方便对齐使用
-          </b-space>
-        </b-form-item>
-        <b-form-item label="对齐线">
-          <b-space>
-            <b-switch v-model="toolbox.markLine"></b-switch>
+          </a-space>
+        </a-form-item>
+        <a-form-item label="对齐线">
+          <a-space>
+            <a-switch v-model="toolbox.markLine"></a-switch>
             开启后，拖拽组件至相邻组件时，达到一定距离后会自动吸附
-          </b-space>
-        </b-form-item>
-        <b-form-item label="画布">
-          <b-space>
+          </a-space>
+        </a-form-item>
+        <a-form-item label="画布">
+          <a-space>
             <g-input-number
               v-model="toolbox.grid"
               :min="1"
@@ -52,31 +51,30 @@
               style="width: 120px"
             ></g-input-number>
             鼠标拖拽组件时移动的步长，单位px
-          </b-space>
-        </b-form-item>
-        <b-form-item label="清空画布">
-          <b-space>
-            <b-button style="width: 120px" size="small" @click.stop="clearCanvas">
+          </a-space>
+        </a-form-item>
+        <a-form-item label="清空画布">
+          <a-space>
+            <a-button style="width: 120px" size="small" @click.stop="clearCanvas">
               清空
               <i class="action-btn b-iconfont b-icon-clear" />
-            </b-button>
+            </a-button>
             画布清空会清除所有配置，请谨慎操作
-          </b-space>
-        </b-form-item>
+          </a-space>
+        </a-form-item>
 
-        <b-form-item label="跨屏粘贴">
+        <a-form-item label="跨屏粘贴">
           <textarea
             class="paste-inner"
             ref="textpasteRef"
             placeholder="复制组件内容后在此处粘贴即可"
             @paste="paseEvent"
           ></textarea>
-        </b-form-item>
-      </b-form>
-    </b-modal>
+        </a-form-item>
+      </a-form>
+    </a-modal>
 
-    <b-modal
-      v-model="detailVisible"
+    <a-modal v-model:visible="detailVisible"
       title="页面编辑器"
       append-to-body
       fullscreen
@@ -91,9 +89,9 @@
         />
       </div>
       <div class="t-right pt-16">
-        <b-button size="small" type="primary" icon="snippets" @click="putJson">应用配置</b-button>
+        <a-button size="small" type="primary" icon="snippets" @click="putJson">应用配置</a-button>
       </div>
-    </b-modal>
+    </a-modal>
   </div>
 </template>
 

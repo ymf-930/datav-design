@@ -2,9 +2,9 @@
   <div class="api-editor">
     <div style="padding: 0 10px">
       <g-field label="数据来源" style="padding-top: 8px">
-        <b-radio-group v-model="apiDataConfig.type" type="button" size="small">
-          <b-radio v-for="(val, key) in ApiTypeMap" :key="key" :label="key">{{ val }}</b-radio>
-        </b-radio-group>
+        <a-radio-group v-model:value="apiDataConfig.type" button size="small">
+          <a-radio v-for="(val, key) in ApiTypeMap" :key="key" :value="key">{{ val }}</a-radio>
+        </a-radio-group>
       </g-field>
       <g-field label="轮询间隔">
         <g-input-number
@@ -16,7 +16,7 @@
         />
       </g-field>
       <g-field label="启用轮询">
-        <b-switch v-model="apiDataConfig.config.polling" size="small" />
+        <a-switch v-model="apiDataConfig.config.polling" size="small" />
       </g-field>
     </div>
     <!--静态编辑器-->
@@ -30,13 +30,13 @@
     <!--接口服务-->
     <div v-if="apiDataConfig.type === ApiType.service" style="padding: 0 10px">
       演示环境暂不支持
-      <!-- <b-divider style="margin: 0 0 16px"></b-divider>
+      <!-- <a-divider style="margin: 0 0 16px"></a-divider>
       <ServiceData></ServiceData> -->
     </div>
     <!-- 分析模型 -->
     <div v-if="apiDataConfig.type === ApiType.model" style="padding: 0 10px">
       演示环境暂不支持
-      <!-- <b-divider style="margin: 0 0 16px"></b-divider>
+      <!-- <a-divider style="margin: 0 0 16px"></a-divider>
       <ModelData></ModelData> -->
     </div>
   </div>

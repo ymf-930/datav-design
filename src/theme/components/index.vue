@@ -1,23 +1,20 @@
 <template>
   <div class="theme-select">
     <div class="trigger" @click="visible = true">
-      <b-icon name="bg-colors"></b-icon>
+      <AntIcon name="bg-colors"></AntIcon>
     </div>
-    <b-modal
-      v-model="visible"
+    <a-modal
+      v-model:visible="visible"
       title="主题选择"
-      draggable
-      top="40px"
-      width="1400px"
-      append-to-body
-      :body-styles="{
+      :width="1400"
+      :bodyStyle="{
         maxHeight: '520px',
         overflowY: 'hidden',
       }"
-      destroy-on-close
+      :destroyOnClose="true"
     >
       <div class="main" style="height: 520px">
-        <b-scrollbar>
+        <div class="scrollbar-container">
           <div style="width: calc(100% - 300px)">
             <div
               class="color-item"
@@ -35,7 +32,7 @@
               </div>
             </div>
 
-            <b-divider />
+            <a-divider />
 
             <div
               class="color-item"
@@ -53,14 +50,14 @@
               </div>
             </div>
           </div>
-        </b-scrollbar>
+        </div>
         <div class="right-info" flex>
           <div style="width: 180px" flex="dir:top cross:center">
             <div class="current-name">{{ currentName }}</div>
             <div class="en-name">{{ currentNameEn }}</div>
             <div
               class="current-color"
-              :style="{ backgroundColor: themeConfigRef.binColorPrimary }"
+              :style="{ backgroundColor: themeConfigRef.antColorPrimary }"
             ></div>
           </div>
 
@@ -73,7 +70,7 @@
         <div class="color-a">
           中国色表参考：
           <a
-            :style="{ color: themeConfigRef.binColorPrimary }"
+            :style="{ color: themeConfigRef.antColorPrimary }"
             href="http://zhongguose.com"
             target="_blank"
           >
@@ -81,7 +78,7 @@
           </a>
         </div>
       </template>
-    </b-modal>
+    </a-modal>
   </div>
 </template>
 
@@ -94,7 +91,7 @@ import {
   ThemeMainColorsTextEn,
   zhongguose,
 } from '@/theme'
-import { Utils } from 'bin-ui-design'
+import AntIcon from '@/components/Common/AntIcon/index.vue'
 
 defineOptions({
   name: 'ThemeConfig',
@@ -103,12 +100,12 @@ defineOptions({
 const visible = ref(false)
 
 function setColor(color) {
-  themeConfigRef.value.binColorPrimary = color
-  themeConfigRef.value.binColorPrimaryAlpha1 = Utils.color.alpha(color, 0.1)
+  themeConfigRef.value.antColorPrimary = color
+  themeConfigRef.value.antColorPrimaryAlpha1 = color + '1a' // 添加透明度
 }
 
 const currentName = computed(() => {
-  const color = themeConfigRef.value.binColorPrimary
+  const color = themeConfigRef.value.antColorPrimary
 
   const defaultIndex = ThemeMainColors.findIndex(i => i.toLowerCase() === color.toLowerCase())
   if (defaultIndex > -1) return ThemeMainColorsText[defaultIndex]
@@ -119,7 +116,7 @@ const currentName = computed(() => {
 })
 
 const currentNameEn = computed(() => {
-  const color = themeConfigRef.value.binColorPrimary
+  const color = themeConfigRef.value.antColorPrimary
 
   const defaultIndex = ThemeMainColors.findIndex(i => i.toLowerCase() === color.toLowerCase())
   if (defaultIndex > -1) return ThemeMainColorsTextEn[defaultIndex]
@@ -150,6 +147,10 @@ const currentNameEn = computed(() => {
 
 .main {
   position: relative;
+  .scrollbar-container {
+    overflow-y: auto;
+    max-height: 520px;
+  }
   .right-info {
     position: absolute;
     top: 24px;

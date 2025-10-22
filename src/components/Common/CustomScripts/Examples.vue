@@ -1,17 +1,15 @@
 <template>
   <div class="example-wrap">
-    <b-collapse :model-value="'0'" simple>
-      <b-collapse-panel
-        v-for="(item, index) in newExamples"
+    <a-collapse :v-model:activeKey="'0'" ghost>
+      <a-collapse-panel v-for="(item, index) in newExamples"
         :key="index"
-        :name="index + ''"
         :title="`示例${index + 1}: ${item.name}`"
       >
         <div class="code">
           <highlightjs language="js" :code="item.code" />
         </div>
-      </b-collapse-panel>
-    </b-collapse>
+      </a-collapse-panel>
+    </a-collapse>
   </div>
 </template>
 

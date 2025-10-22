@@ -38,7 +38,7 @@
         />
       </g-field>
       <g-field tooltip="溢出文本加省略号" label="省略号">
-        <b-switch v-model="config.ellipsis" size="small" />
+        <a-switch v-model="config.ellipsis" size="small" />
       </g-field>
       <g-field tooltip="高级样式，直接编辑style对象，可编写高级样式" label="高级样式">
         <AdvanceStyle v-model="config.textStyle.advanceStyle" />
@@ -82,7 +82,7 @@
         <g-input v-model="config.urlConfig.url" />
       </g-field>
       <g-field label="新窗口打开">
-        <b-switch v-model="config.urlConfig.isBlank" size="small" />
+        <a-switch v-model="config.urlConfig.isBlank" size="small" />
       </g-field>
     </g-field-collapse>
   </div>

@@ -67,11 +67,11 @@
         <g-color-picker v-model="config.global.backgroundStyle.color" inline label="背景颜色" />
       </g-field>
       <g-field label="填充类型">
-        <b-radio-group v-model="config.global.itemStyle.type" type="button" size="small">
-          <b-radio v-for="em in FillTypeOptions" :key="em.value" :label="em.value">
+        <a-radio-group v-model:value="config.global.itemStyle.type" button size="small">
+          <a-radio v-for="em in FillTypeOptions" :key="em.value" :value="em.value">
             {{ em.label }}
-          </b-radio>
-        </b-radio-group>
+          </a-radio>
+        </a-radio-group>
       </g-field>
       <g-field label="渐变透明" flat v-if="config.global.itemStyle.type === 'gradient'">
         <g-input-number

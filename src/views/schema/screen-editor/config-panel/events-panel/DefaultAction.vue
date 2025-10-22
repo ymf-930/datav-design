@@ -1,7 +1,7 @@
 <template>
   <g-field-collapse v-if="hasRespEvent" label="默认动作" default-open>
     <g-field label="是否开启">
-      <b-switch v-model="config.defaultAction" size="small" />
+      <a-switch v-model="config.defaultAction" size="small" />
     </g-field>
   </g-field-collapse>
 </template>

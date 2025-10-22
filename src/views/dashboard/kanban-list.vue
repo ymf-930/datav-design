@@ -9,7 +9,7 @@
         <h2>{{ group ? group.name : '' }} ({{ listData.total }})</h2>
       </div>
       <div class="header-manager">
-        <b-input
+        <a-input
           v-model="query.name"
           size="small"
           placeholder="搜索"
@@ -21,7 +21,7 @@
               getSearchList()
             }
           "
-        ></b-input>
+        ></a-input>
       </div>
     </div>
     <!--列表-->
@@ -40,9 +40,9 @@
             </div>
             <div class="list-item-mask">
               <div class="action">
-                <b-button type="primary" transparent icon="edit-square" @click="handleEdit(item)">
+                <a-button type="primary" transparent icon="edit-square" @click="handleEdit(item)">
                   编辑
-                </b-button>
+                </a-button>
               </div>
               <div class="icon-box">
                 <i
@@ -71,13 +71,12 @@
                 {{ item.name }}
               </span>
             </div>
-            <b-tag
-              :type="item.status === 'audited' ? 'success' : 'warning'"
+            <a-tag :color="item.status === 'audited' ? 'success' : 'warning'"
               dot
               :tag-style="{ color: '#999' }"
             >
               {{ item.status === 'audited' ? '已发布' : '待发布' }}
-            </b-tag>
+            </a-tag>
           </div>
         </div>
       </li>
@@ -245,7 +244,7 @@ const handlePublish = async item => {
 
 // 删除模型或文件夹
 const removeDashboard = id => {
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'error',
     title: '提示',
     message: '删除后无法恢复，确认删除？',

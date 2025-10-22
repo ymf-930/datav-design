@@ -2,7 +2,7 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="图形" default-open>
       <g-field label="超出绘制" tooltip="是否允许词云图在外界渲染">
-        <b-switch v-model="global.drawOutOfBound" size="small" />
+        <a-switch v-model="global.drawOutOfBound" size="small" />
       </g-field>
       <g-field label="绘制形状">
         <g-select v-model="global.shape" :data="CloudShapeOptions" />

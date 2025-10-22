@@ -1,105 +1,105 @@
 <template>
   <template v-if="isWord">
     <g-field label="标签标题">
-      <b-select v-model="mappingFields.word" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.word" size="small">
+        <a-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
     <g-field label="标签值">
-      <b-select v-model="mappingFields.frequency" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.frequency" size="small">
+        <a-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
   </template>
 
   <template v-else-if="isSelect">
     <g-field label="选项标题">
-      <b-select v-model="mappingFields.lAbEl" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.lAbEl" size="small">
+        <a-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
     <g-field label="选项值">
-      <b-select v-model="mappingFields.vAlUe" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.vAlUe" size="small">
+        <a-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
   </template>
 
   <template v-else-if="isCircle">
     <g-field label="标题">
-      <b-select v-model="mappingFields.tItLe" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.tItLe" size="small">
+        <a-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
     <g-field label="选项值">
-      <b-select v-model="mappingFields.vAlUe" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.vAlUe" size="small">
+        <a-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
   </template>
 
   <template v-else>
     <g-field label="标签标题">
-      <b-select v-model="mappingFields.nAmE" size="small">
-        <b-option
+      <a-select v-model:value="mappingFields.nAmE" size="small">
+        <a-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
     <g-field label="标签值">
-      <b-select v-model="mappingFields.vAlUe" size="small" @change="handleChange">
-        <b-option
+      <a-select v-model:value="mappingFields.vAlUe" size="small" @change="handleChange">
+        <a-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></b-option>
-      </b-select>
+        ></a-option>
+      </a-select>
     </g-field>
   </template>
 
   <g-field label="计算方式" v-if="showAgg">
-    <b-select v-model="mappingFields.aGgReGaToR" size="small">
-      <b-option
+    <a-select v-model:value="mappingFields.aGgReGaToR" size="small">
+      <a-option
         v-for="(value, key) in AGGREGATOR_FUN"
         :key="key"
         :label="value"
         :value="key"
-      ></b-option>
-    </b-select>
+      ></a-option>
+    </a-select>
   </g-field>
 </template>
 

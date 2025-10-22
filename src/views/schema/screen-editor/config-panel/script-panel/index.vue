@@ -3,8 +3,8 @@
     <g-field-collapse label="初始化脚本" default-open>
       <g-field label="执行脚本">
         <div class="func-name" flex="main:justify cross:center">
-          <b-checkbox v-model="pageConfig.initScript.enable" />
-          <b-button type="text" icon="edit" size="small" @click="openEditor">编辑</b-button>
+          <a-checkbox v-model="pageConfig.initScript.enable" />
+          <a-button type="text" icon="edit" size="small" @click="openEditor">编辑</a-button>
         </div>
       </g-field>
       <div class="fun">

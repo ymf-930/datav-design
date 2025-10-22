@@ -1,7 +1,7 @@
 <template>
   <div class="group-wrap">
     <div class="group-list">
-      <b-scrollbar native>
+      <div class="ant-scrollbar" style="overflow-y: auto;">
         <Collapse
           v-for="group in groups"
           :key="group.key"
@@ -11,7 +11,7 @@
         >
           <TopoItem :group-id="group.key" @dragstart="dragStart" @click="click" />
         </Collapse>
-      </b-scrollbar>
+      </div>
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <div class="events-panel-content">
       <template v-if="!isEmpty(events)">
         <div class="scroll-container">
-          <b-scrollbar>
+          <div class="ant-scrollbar">
             <div class="setting-panel-gui">
               <DefaultAction :events="events" />
               <TriggerConfig :events="events" />
@@ -14,7 +14,7 @@
                 :exampleDesc="exampleDesc"
               />
             </div>
-          </b-scrollbar>
+          </div>
         </div>
       </template>
       <div v-else style="min-height: 300px" flex="main:center cross:center">

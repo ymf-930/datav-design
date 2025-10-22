@@ -58,7 +58,7 @@
                 @dblclick="schemaStore.renamingCom(com.id)"
                 @contextmenu="showMenu($event)"
               >
-                <b-icon :name="com.name === 'VIcon' ? com.config.src : com.icon" size="18"></b-icon>
+                <a-icon :name="com.name === 'VIcon' ? com.config.src : com.icon" size="18"></a-icon>
                 <input
                   v-if="com.id === renamingComId"
                   v-model.trim="com.alias"
@@ -89,7 +89,7 @@
                   @click="com.locked = !com.locked"
                 ></i>
               </div>
-              <b-collapse-transition>
+              <a-collapse>
                 <!-- 组内元素 -->
                 <template v-if="com.type === 'group' && com.expand">
                   <div class="group-list pl-16">
@@ -108,17 +108,17 @@
                       @mouseleave="onLeave"
                       @mousedown="selectCom(item)"
                     >
-                      <b-icon
+                      <a-icon
                         :name="item.name === 'VIcon' ? item.config.src : item.icon"
                         size="18"
-                      ></b-icon>
+                      ></a-icon>
                       <span class="layer-item-span">
                         <span class="layer-item-text">{{ item.alias }}</span>
                       </span>
                     </div>
                   </div>
                 </template>
-              </b-collapse-transition>
+              </a-collapse>
             </div>
           </template>
         </draggable>

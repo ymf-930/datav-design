@@ -1,14 +1,13 @@
 <template>
   <div class="dv-gui g-input" :class="{ inline }">
-    <b-input
-      v-model="inputValue"
+    <a-input
+      v-model:value="inputValue"
       :size="size"
       :placeholder="placeholder"
       :readonly="readonly"
       :type="type"
-      :autosize="autosize"
       :rows="rows"
-      :clearable="clearable"
+      :allowClear="clearable"
       @change="handleChange"
     />
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
@@ -72,7 +71,7 @@ const inputValue = computed({
   set: val => emit('update:modelValue', val),
 })
 
-const handleChange = (currentValue, oldValue) => {
-  emit('change', currentValue, oldValue)
+const handleChange = (e) => {
+  emit('change', e.target.value, props.modelValue)
 }
 </script>

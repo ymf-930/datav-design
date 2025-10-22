@@ -1,6 +1,5 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     title="选择图片"
     append-to-body
     top="60px"
@@ -9,7 +8,7 @@
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">
-        <b-scrollbar native>
+        <div class="ant-scrollbar" style="overflow-y: auto;">
           <div
             v-for="group in groups"
             :key="group.key"
@@ -19,10 +18,10 @@
           >
             {{ group.value }}
           </div>
-        </b-scrollbar>
+        </div>
       </div>
       <div class="img-wrap">
-        <b-scrollbar>
+        <div class="ant-scrollbar">
           <template v-if="!loading">
             <div class="img-inner">
               <div class="comp-item img-add" v-if="canEdit">
@@ -35,10 +34,10 @@
             </div>
           </template>
           <g-loading v-else spinning></g-loading>
-        </b-scrollbar>
+        </div>
       </div>
     </div>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

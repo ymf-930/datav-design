@@ -2,7 +2,7 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="属性" default-open>
       <g-field label="控制器" tooltip="开启控制器后，鼠标可以拖动旋转视角">
-        <b-switch v-model="config.control" size="small" />
+        <a-switch v-model="config.control" size="small" />
       </g-field>
       <g-field label="摄像机位置" tooltip="摄像机位置为vec3(x,y,z)，填写xyz，逗号隔开">
         <g-input v-model="config.cameraPos" placeholder="x,y,z" />
