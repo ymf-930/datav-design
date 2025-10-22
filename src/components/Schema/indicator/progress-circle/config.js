@@ -5,7 +5,7 @@ import { getBaseActions } from '@/utils/events'
 export default {
   name: 'VProgressCircle',
   alias: '进度环',
-  icon: 'redo',
+  icon: 'RedoOutlined',
   type: ComType.com,
   componentType: 'progress-circle',
   attr: { w: 200, h: 200 },

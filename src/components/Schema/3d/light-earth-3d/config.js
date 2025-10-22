@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VLightEarth3d',
   alias: '发光地球',
-  icon: 'earth',
+  icon: 'GlobalOutlined',
   type: ComType.com,
   attr: { w: 500, h: 500, lockedRatio: true },
   config: {

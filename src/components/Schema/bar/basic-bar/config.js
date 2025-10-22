@@ -37,7 +37,7 @@ export const basicBarConfig = mergeChartOptions({
 export default {
   name: 'VBasicBar',
   alias: '基本柱图',
-  icon: 'barchart',
+  icon: 'BarChartOutlined',
   type: ComType.com,
   componentType: 'bar',
   attr: { w: 500, h: 300, chartThemeColor: '' },

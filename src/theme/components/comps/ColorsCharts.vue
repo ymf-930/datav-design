@@ -3,9 +3,9 @@
     <div class="title" flex="main:justify cross:center">
       <div title="预览图表最多显示7条">预览图表</div>
       <div class="tab-box">
-        <b-radio-group v-model="type" type="capsule" size="small">
-          <b-radio label="bar">柱状图</a-radio>
-          <b-radio label="line">折线图</a-radio>
+        <a-radio-group v-model:value="type" type="capsule" size="small">
+          <a-radio value="bar">柱状图</a-radio>
+          <a-radio value="line">折线图</a-radio>
         </a-radio-group>
       </div>
     </div>

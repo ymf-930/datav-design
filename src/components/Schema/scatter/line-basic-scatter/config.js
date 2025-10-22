@@ -50,7 +50,7 @@ export const lineBasicScatterConfig = mergeChartOptions({
 export default {
   name: 'VLineBasicScatter',
   alias: '散点线图',
-  icon: 'pointmap',
+  icon: 'DotChartOutlined',
   type: ComType.com,
   componentType: 'scatter',
   attr: { w: 500, h: 300, chartThemeColor: '' },

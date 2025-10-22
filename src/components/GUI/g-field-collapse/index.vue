@@ -15,7 +15,7 @@
           <slot name="add"></slot>
         </span>
         <span class="wrap-arrow" :class="[{ show }]">
-          <AntIcon name="right" />
+          <AntIcon name="RightOutlined" />
         </span>
       </div>
     </div>

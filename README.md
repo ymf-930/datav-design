@@ -54,7 +54,7 @@
 ```javascript
 export const mainTitleConfig = {
   alias: '通用标题', // 组件别名
-  icon: 'file-word', // 组件的显示图标
+  icon: 'FileWordOutlined', // 组件的显示图标
   type: ComType.com, // 组件的类型 （暂时都是默认为com）
   attr: { w: 300, h: 48 }, // 组件初始的宽高数据
   config: { title: '我是标题数据' }, // 组件独有的配置项，完全自定义，在组件渲染的`main.vue` 和`config.vue`中进行配置操作

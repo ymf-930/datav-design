@@ -18,44 +18,8 @@ const props = defineProps({
   }
 })
 
-// 图标名称映射
-const iconNameMapping = {
-  'user': 'UserOutlined',
-  'lock': 'LockOutlined',
-  'home': 'HomeOutlined',
-  'container': 'AppstoreOutlined',
-  'control': 'SettingOutlined',
-  'arrowleft': 'LeftOutlined',
-  'arrowright': 'RightOutlined',
-  'edit': 'EditOutlined',
-  'edit-square': 'EditSquareOutlined',
-  'send': 'SendOutlined',
-  'plus': 'PlusOutlined',
-  'minus': 'MinusOutlined',
-  'right': 'RightOutlined',
-  'left': 'LeftOutlined',
-  'up': 'UpOutlined',
-  'down': 'DownOutlined',
-  'close': 'CloseOutlined',
-  'check': 'CheckOutlined',
-  'search': 'SearchOutlined',
-  'filter': 'FilterOutlined',
-  'refresh': 'ReloadOutlined',
-  'save': 'SaveOutlined',
-  'delete': 'DeleteOutlined',
-  'copy': 'CopyOutlined',
-  'download': 'DownloadOutlined',
-  'upload': 'UploadOutlined',
-  'eye': 'EyeOutlined',
-  'eye-invisible': 'EyeInvisibleOutlined',
-  'info': 'InfoCircleOutlined',
-  'warning': 'ExclamationCircleOutlined',
-  'error': 'CloseCircleOutlined',
-  'success': 'CheckCircleOutlined'
-}
-
 const iconComponent = computed(() => {
-  const iconName = iconNameMapping[props.name] || props.name
-  return Icons[iconName] || Icons['QuestionCircleOutlined']
+  // 直接使用传入的图标名称，不做映射
+  return Icons[props.name] || Icons['QuestionCircleOutlined']
 })
 </script>

@@ -2,17 +2,15 @@
   <div class="dv-wrapper" :style="wrapperStyle">
     <div :style="titleStyle">{{ titleText }}</div>
     <div :style="counterStyle" v-if="render">
-      <b-count-to
-        :startVal="0"
+      <a-statistic :startVal="0"
         :endVal="realNumber"
-        :duration="counter.duration"
-        :autoplay="counter.autoplay"
-        :decimals="counter.decimals"
+        :animationDuration="counter.duration"
+        :precision="counter.decimals"
         :decimal="counter.decimal"
         :separator="counter.separator"
         :prefix="counter.prefix"
         :suffix="counter.suffix"
-      ></b-count-to>
+      ></a-statistic>
     </div>
   </div>
 </template>

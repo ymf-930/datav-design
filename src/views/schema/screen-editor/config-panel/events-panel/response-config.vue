@@ -2,7 +2,7 @@
   <g-field-collapse v-if="hasRespEvent" label="响应事件" default-open>
     <template #add>
       <a-button type="text" title="新增一个响应事件" @click="handleAddOnEvent">
-        <a-icon name="plus" size="16"></a-icon>
+        <AntIcon name="PlusOutlined" size="16"></AntIcon>
       </a-button>
     </template>
 

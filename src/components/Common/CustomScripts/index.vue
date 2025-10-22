@@ -3,7 +3,10 @@
     <g-field label="脚本配置">
       <div class="func-name" flex="main:justify cross:center">
         <a-checkbox v-model="pageConfig.initScript.enable" />
-        <a-button type="text" icon="edit" size="small" @click="openEditor">编辑</a-button>
+        <a-button type="text" size="small" @click="openEditor">
+        <template #icon>
+          <AntIcon name="EditOutlined" />
+        </template>编辑</a-button>
       </div>
     </g-field>
     <CustomScriptsEditor

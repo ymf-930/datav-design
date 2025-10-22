@@ -4,11 +4,11 @@
       <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
         <a-radio :value="0">
           <span class="mr-16">基础配置</span>
-          <a-icon name="desktop"></a-icon>
+          <AntIcon name="DesktopOutlined"></AntIcon>
         </a-radio>
         <!-- <a-radio :value="1">
           <span class="mr-16">脚本配置</span>
-          <a-icon name="code"></a-icon>
+          <AntIcon name="CodeOutlined"></AntIcon>
         </a-radio> -->
       </a-radio-group>
     </div>
@@ -56,7 +56,7 @@
               <div class="image-thumb-wrap">
                 <img v-if="pageConfig.thumbnail" :src="pageConfig.thumbnail" alt="" />
                 <div v-else class="tip" flex="dir:top main:center cross:center">
-                  <a-icon name="image" size="52"></a-icon>
+                  <AntIcon name="ImageOutlined" size="52"></AntIcon>
                   <p>暂未截取缩略图</p>
                 </div>
               </div>

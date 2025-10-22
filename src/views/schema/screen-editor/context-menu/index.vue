@@ -3,7 +3,7 @@
     <div v-if="contextMenu.show" class="context-menu-wrap" :style="contextMenuStyle">
       <template v-if="isMultiSelect && !selectedCom">
         <div class="context-menu-item" @click="schemaStore.group()">
-          <i class="menu-icon b-iconfont b-icon-group"></i>
+          <AntIcon name="GroupOutlined" class="menu-icon" />
           创建分组
         </div>
         <div class="context-menu-divider"></div>
@@ -14,13 +14,13 @@
           @click="schemaStore.doAlign(em.value)"
           style="padding-right: 8px"
         >
-          <i :class="`menu-icon iconfont-align b-icon-${em.value}`" />
+          <AntIcon :name="alignIconMap[em.value]" class="menu-icon iconfont-align" />
           {{ em.label }}
         </div>
 
         <div class="context-menu-divider"></div>
         <div class="context-menu-item" @click="toDeleteCom">
-          <i class="menu-icon b-iconfont b-icon-delete"></i>
+          <AntIcon name="DeleteOutlined" class="menu-icon" />
           删除
           <span class="key-code">Delete</span>
         </div>
@@ -29,32 +29,29 @@
       <template v-if="selectedCom">
         <template v-if="curComIsGroup">
           <div class="context-menu-item" @click="schemaStore.ungroup()">
-            <i class="menu-icon b-iconfont b-icon-ungroup"></i>
+            <AntIcon name="UngroupOutlined" class="menu-icon" />
             解除分组
           </div>
           <div class="context-menu-divider"></div>
         </template>
 
         <div class="context-menu-item" @click="moveTop">
-          <i
-            class="menu-icon b-iconfont b-icon-vertical-align-botto"
-            style="transform: rotate(180deg)"
-          ></i>
+          <AntIcon name="VerticalAlignTopOutlined" class="menu-icon" />
           置顶
           <span class="key-code">Alt + Home</span>
         </div>
         <div class="context-menu-item" @click="moveBottom">
-          <i class="menu-icon b-iconfont b-icon-vertical-align-botto"></i>
+          <AntIcon name="VerticalAlignBottomOutlined" class="menu-icon" />
           置底
           <span class="key-code">Alt + End</span>
         </div>
         <div class="context-menu-item" @click="moveUp">
-          <i class="menu-icon b-iconfont b-icon-arrowup"></i>
+          <AntIcon name="ArrowUpOutlined" class="menu-icon" />
           上移一层
           <span class="key-code">Alt + ↑</span>
         </div>
         <div class="context-menu-item" @click="moveDown">
-          <i class="menu-icon b-iconfont b-icon-arrowdown"></i>
+          <AntIcon name="ArrowDownOutlined" class="menu-icon" />
           下移一层
           <span class="key-code">Alt + ↓</span>
         </div>
@@ -63,42 +60,42 @@
 
         <div class="context-menu-item" @click="lockCom">
           <template v-if="isLocked">
-            <i class="menu-icon b-iconfont b-icon-unlock"></i>
+            <AntIcon name="UnlockOutlined" class="menu-icon" />
             解锁
           </template>
           <template v-else>
-            <i class="menu-icon b-iconfont b-icon-lock"></i>
+            <AntIcon name="LockOutlined" class="menu-icon" />
             锁定
           </template>
         </div>
         <div class="context-menu-item" @click="hideCom">
           <template v-if="isHided">
-            <i class="menu-icon b-iconfont b-icon-eye"></i>
+            <AntIcon name="EyeOutlined" class="menu-icon" />
             显示
           </template>
           <template v-else>
-            <i class="menu-icon b-iconfont b-icon-eye-close"></i>
+            <AntIcon name="EyeInvisibleOutlined" class="menu-icon" />
             隐藏
           </template>
         </div>
         <div class="context-menu-item" @click="saveCom">
-          <i class="menu-icon b-iconfont b-icon-save"></i>
+          <AntIcon name="SaveOutlined" class="menu-icon" />
           保存
         </div>
 
         <div class="context-menu-divider"></div>
         <div class="context-menu-item" @click="renameCom">
-          <i class="menu-icon b-iconfont b-icon-edit"></i>
+          <AntIcon name="EditOutlined" class="menu-icon" />
           重命名
           <span class="key-code">F2</span>
         </div>
         <div class="context-menu-item" @click="toCopyCom">
-          <i class="menu-icon b-iconfont b-icon-file-copy"></i>
+          <AntIcon name="CopyOutlined" class="menu-icon" />
           复制
           <span class="key-code">Ctrl + C,V</span>
         </div>
         <div class="context-menu-item" @click="toDeleteCom">
-          <i class="menu-icon b-iconfont b-icon-delete"></i>
+          <AntIcon name="DeleteOutlined" class="menu-icon" />
           删除
           <span class="key-code">Delete</span>
         </div>
@@ -120,6 +117,16 @@ import { createPreviewThumb } from '@/hooks/usePreviewImg'
 import { dataURLtoFile } from '@/utils/file-helper'
 import { EventBus, EventMap } from '@/utils/event-bus'
 import { MultiplAlignOptions } from '@/config/select-options'
+
+// map align action to Ant Design icons
+const alignIconMap = {
+  'align-top': 'VerticalAlignTopOutlined',
+  'align-center': 'VerticalAlignMiddleOutlined', // vertical center
+  'align-bottom': 'VerticalAlignBottomOutlined',
+  'align-left': 'AlignLeftOutlined',
+  'align-middle': 'AlignCenterOutlined', // horizontal center
+  'align-right': 'AlignRightOutlined',
+}
 
 const groups = ref([]) // 组件库
 const selectGroup = ref({})

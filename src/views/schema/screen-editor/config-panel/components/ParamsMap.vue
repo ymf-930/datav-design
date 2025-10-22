@@ -19,27 +19,29 @@
             @drop="handleDropField($event, item)"
           >
             <div class="text t-left" :title="item.desc">
-              <a-button
-                v-if="item.append"
+              <a-button v-if="item.append"
                 type="text"
-                text-color="danger"
-                icon="close-circle"
-                title="取消"
+                text-color="danger" title="取消"
                 @click="handleDelField(index)"
-              />
+              >
+                <template #icon>
+                  <AntIcon name="CloseCircleOutlined" />
+                </template>
+              </a-button>
               <span :title="item.desc">{{ item.mapDesc ? item.mapDesc : item.desc }}</span>
             </div>
 
             <template v-if="Boolean(item.map) && isShow">
-              <i class="b-iconfont b-icon-swap" style="color: white"></i>
+              <AntIcon name="SwapOutlined" style="color: white"></AntIcon>
               <div class="text t-right" :title="item.map.desc">
-                <a-button
-                  type="text"
-                  text-color="danger"
-                  icon="close-circle"
-                  title="取消"
+                <a-button type="text"
+                  text-color="danger" title="取消"
                   @click="handleCancel(item)"
-                />
+                >
+                  <template #icon>
+                    <AntIcon name="CloseCircleOutlined" />
+                  </template>
+                </a-button>
                 <span :title="item.map.desc">
                   {{ item.map.mapDesc ? item.map.mapDesc : item.map.desc }}
                 </span>

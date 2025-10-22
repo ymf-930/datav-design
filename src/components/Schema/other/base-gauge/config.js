@@ -113,7 +113,7 @@ export const basicGauge = {
 export default {
   name: 'VBasicGauge',
   alias: '仪表盘',
-  icon: 'dashboard',
+  icon: 'DashboardOutlined',
   type: ComType.com,
   componentType: 'gauge',
   attr: { w: 500, h: 300, chartThemeColor: '' },

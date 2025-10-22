@@ -41,7 +41,7 @@ export const basicScatterConfig = mergeChartOptions({
 export default {
   name: 'VBasicScatter',
   alias: '基本散点图',
-  icon: 'pointmap',
+  icon: 'DotChartOutlined',
   type: ComType.com,
   componentType: 'scatter',
   attr: { w: 500, h: 300, chartThemeColor: '' },

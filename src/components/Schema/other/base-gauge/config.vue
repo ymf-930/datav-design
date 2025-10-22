@@ -126,7 +126,7 @@
       <g-field-collapse label="轴线样式" default-open>
         <template #add>
           <a-button type="text" @click="addSeries" title="新增一个轴线区域">
-            <a-icon name="plus" size="16"></a-icon>
+            <AntIcon name="PlusOutlined" size="16"></AntIcon>
           </a-button>
           <a-button
             type="text"
@@ -134,7 +134,7 @@
             @click="deleteLast"
             title="移除最后一个轴线区域"
           >
-            <a-icon name="delete" size="16"></a-icon>
+            <AntIcon name="DeleteOutlined" size="16"></AntIcon>
           </a-button>
         </template>
         <template v-for="(item, index) in config.axisLine.lineStyle.color" :key="index">

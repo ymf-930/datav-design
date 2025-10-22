@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VIcon',
   alias: '图标',
-  icon: 'smile',
+  icon: 'SmileOutlined',
   type: ComType.com,
   attr: { w: 100, h: 100, lockedRatio: true },
   config: {

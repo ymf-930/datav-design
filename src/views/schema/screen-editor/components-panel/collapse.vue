@@ -19,11 +19,11 @@
           </div>
         </div>
         <span class="wrap-edit" v-if="canEdit && !edit">
-          <i class="b-iconfont b-icon-edit" @click.stop="handleEdit"></i>
-          <i class="b-iconfont b-icon-delete" @click.stop="handleRemove"></i>
+          <AntIcon name="EditOutlined" @click.stop="handleEdit"></AntIcon>
+          <AntIcon name="DeleteOutlined" @click.stop="handleRemove"></AntIcon>
         </span>
         <span class="wrap-arrow" :class="[{ active: isActive }]">
-          <a-icon name="right" size="12"></a-icon>
+          <AntIcon name="RightOutlined" size="12"></AntIcon>
         </span>
       </div>
     </div>
@@ -128,7 +128,7 @@ const handleRemove = () => emit('remove')
         right: 28px;
         top: 6px;
         opacity: 0;
-        > i {
+        > .anticon {
           font-size: 14px;
           &.b-icon-edit {
             margin-right: 3px;

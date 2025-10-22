@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VBuilding3d',
   alias: '建筑扫描',
-  icon: 'bank',
+  icon: 'BankOutlined',
   type: ComType.com,
   attr: { w: 800, h: 800, lockedRatio: true },
   config: {

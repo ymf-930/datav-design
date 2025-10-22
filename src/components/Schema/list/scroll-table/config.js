@@ -4,7 +4,7 @@ import { getBaseActions } from '@/utils/events'
 export default {
   name: 'VScrollTable',
   alias: '滚动表格',
-  icon: 'table',
+  icon: 'TableOutlined',
   type: ComType.com,
   componentType: 'scrollTable',
   attr: { w: 500, h: 260 },

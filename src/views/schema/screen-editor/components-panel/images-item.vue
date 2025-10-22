@@ -21,11 +21,10 @@
             <img v-lazy="com.url ? com.url : com.src" v-if="!listLoading" />
             <img v-lazy="com.url ? com.url : com.src" v-else />
             <div class="hover-layer" v-if="canEdit">
-              <i
-                class="b-iconfont b-icon-delete-fill"
+              <AntIcon name="DeleteFilled"
                 title="删除图片"
                 @click.stop="removePic(com)"
-              ></i>
+              ></AntIcon>
             </div>
           </div>
           <div class="comp-item-text" :title="JSON.stringify(com, null, 2)">{{ com.name }}</div>
@@ -158,7 +157,7 @@ const click = comp => emit('click', comp)
       height: 100%;
       background: rgba(33, 33, 37, 0.7);
       display: none;
-      > i {
+      > .anticon {
         position: absolute;
         top: 4px;
         right: 4px;

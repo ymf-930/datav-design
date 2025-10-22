@@ -16,7 +16,7 @@
     />
     <slot>
       <div class="g-upload-image-wrap">
-        <a-icon name="plus"></a-icon>
+        <AntIcon name="PlusOutlined"></AntIcon>
       </div>
     </slot>
   </div>
@@ -110,7 +110,7 @@ function uploadImages(images) {
       display: flex;
       align-items: center;
       justify-content: center;
-      > i {
+      > .anticon {
         font-size: 28px;
       }
     }

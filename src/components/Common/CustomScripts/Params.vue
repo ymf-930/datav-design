@@ -7,7 +7,7 @@
       >
         <div class="tip">{{ item.desc }}</div>
         <div class="code">
-          <div
+          <b-ace-editor
             v-if="item.json"
             theme="tomorrow_night"
             wrap
@@ -18,7 +18,7 @@
             :model-value="item.code"
             :options="{ showLineNumbers: false }"
             :styles="{ border: 'none' }"
-          ></div>
+          ></b-ace-editor>
           <highlightjs v-else language="js" :code="item.code" />
         </div>
       </a-collapse-panel>

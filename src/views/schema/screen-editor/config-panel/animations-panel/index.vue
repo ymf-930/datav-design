@@ -31,13 +31,9 @@
     <div class="p10">
       <b-tabs v-model="activeTab" :data="tabs"></b-tabs>
       <div style="position: relative; overflow: hidden">
-        <b-move-transition>
-          <AnimationItem v-if="activeTab === 'tab0'" :list="Animations[0].children" />
-          <AnimationItem v-if="activeTab === 'tab1'" :list="Animations[1].children" />
-          <AnimationItem v-if="activeTab === 'tab2'" :list="Animations[2].children" />
-          <AnimationItem v-if="activeTab === 'tab3'" :list="Animations[3].children" />
-          <AnimationItem v-if="activeTab === 'tab4'" :list="Animations[4].children" />
-        </b-move-transition>
+        <Transition name="move" mode="out-in">
+          <AnimationItem :key="activeTab" :list="currentList" />
+        </Transition>
       </div>
     </div>
   </div>
@@ -66,6 +62,12 @@ const tabs = ref([
   { key: 'tab4', title: '其他' },
 ])
 const activeTab = ref('tab0')
+
+const currentList = computed(() => {
+  const map = { tab0: 0, tab1: 1, tab2: 2, tab3: 3, tab4: 4 }
+  const idx = map[activeTab.value] ?? 0
+  return Animations[idx].children
+})
 </script>
 
 <style scoped>

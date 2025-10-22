@@ -4,7 +4,7 @@ import { getComPath } from '@/utils/env'
 export const buttonConfig = {
   name: 'VButton',
   alias: '按钮',
-  icon: 'image',
+  icon: 'FileImageOutlined',
   type: ComType.com,
   attr: { w: 120, h: 32, lockedRatio: true },
   config: {

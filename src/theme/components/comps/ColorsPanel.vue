@@ -1,10 +1,10 @@
 <template>
   <div class="colors-panel mt-16">
-    <b-row :gutter="8">
-      <b-col span="12">
+    <a-row :gutter="8">
+      <a-col :span="12">
         <div class="color-edit bg-box">
           <div class="title">系统主题色</div>
-          <b-scrollbar style="height: 120px">
+          <div style="height: 120px">
             <div
               v-for="(item, key) in chartColors"
               :key="key"
@@ -21,10 +21,10 @@
               ></div>
               <div class="theme-bottom" :style="getThemeBottomStyle(item.color)"></div>
             </div>
-          </b-scrollbar>
+          </div>
         </div>
-      </b-col>
-      <b-col span="12">
+      </a-col>
+      <a-col :span="12">
         <div class="color-edit bg-box">
           <div class="title">扩展色{{ color }}</div>
           <div class="colors-list">
@@ -40,8 +40,8 @@
             </div>
           </div>
         </div>
-      </b-col>
-    </b-row>
+      </a-col>
+    </a-row>
   </div>
 </template>
 

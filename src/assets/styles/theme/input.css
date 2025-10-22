@@ -50,7 +50,7 @@
     }
   }
 
-  .bin-input-wrapper:hover .bin-input-icon-clear i {
+  .bin-input-wrapper:hover .bin-input-icon-clear .anticon {
     background-color: transparent;
     color: var(--s-text-color-3);
   }

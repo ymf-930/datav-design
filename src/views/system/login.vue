@@ -22,7 +22,7 @@
                   @keydown.enter="submit"
                 >
                   <template #prefix>
-                    <AntIcon name="user" />
+                    <AntIcon name="UserOutlined" />
                   </template>
                 </a-input>
               </a-form-item>
@@ -35,7 +35,7 @@
                   @keydown.enter="submit"
                 >
                   <template #prefix>
-                    <AntIcon name="lock" />
+                    <AntIcon name="LockOutlined" />
                   </template>
                 </a-input>
               </a-form-item>

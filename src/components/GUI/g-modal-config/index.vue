@@ -11,7 +11,7 @@
           <div class="modal-config" v-if="visible" ref="modalRef" :style="style" @click.stop="">
             <div class="modal-config-header">
               <span class="title">{{ title }}</span>
-              <i class="b-iconfont b-icon-close" @click="close"></i>
+              <AntIcon name="CloseOutlined" @click="close"></AntIcon>
             </div>
             <div class="content-body" :style="bodyStyle">
               <slot></slot>
@@ -260,11 +260,7 @@ watch(
         var(--bin-color-primary-light3) 74%
       );
     }
-    .b-iconfont {
-      cursor: pointer;
-      font-size: 18px;
-      color: var(--bin-color-primary);
-    }
+    
   }
 
   :deep(.series-title) {

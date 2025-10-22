@@ -76,7 +76,7 @@ function replaceComponent(template) {
         .replace(/draggable/g, '') // 移除不支持的属性
         .replace(/top="([^"]+)"/g, '') // 移除不支持的属性
         .replace(/width="([^"]+)"/g, ':width="$1"')
-      return `<a-modal${newAttrs}>`
+      return `<a-modal ${newAttrs}>`
     }
   )
   
@@ -87,7 +87,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/@command="([^"]+)"/g, '@click="$1"')
         .replace(/append-to-body/g, 'getPopupContainer')
-      return `<a-dropdown${newAttrs}>`
+      return `<a-dropdown ${newAttrs}>`
     }
   )
   
@@ -100,7 +100,7 @@ function replaceComponent(template) {
     /<b-dropdown-item\s+([^>]*)>/g,
     (match, attrs) => {
       let newAttrs = attrs.replace(/name="([^"]+)"/g, 'key="$1"')
-      return `<a-menu-item${newAttrs}>`
+      return `<a-menu-item ${newAttrs}>`
     }
   )
   result = result.replace(/<\/b-dropdown-item>/g, '</a-menu-item>')
@@ -112,7 +112,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/type="button"/g, 'button')
         .replace(/v-model="([^"]+)"/g, 'v-model:value="$1"')
-      return `<a-radio-group${newAttrs}>`
+      return `<a-radio-group ${newAttrs}>`
     }
   )
   
@@ -121,7 +121,7 @@ function replaceComponent(template) {
     /<b-radio\s+([^>]*)>/g,
     (match, attrs) => {
       let newAttrs = attrs.replace(/label="([^"]+)"/g, 'value="$1"')
-      return `<a-radio${newAttrs}>`
+      return `<a-radio ${newAttrs}>`
     }
   )
   
@@ -132,7 +132,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/v-model="([^"]+)"/g, 'v-model:value="$1"')
         .replace(/clearable/g, 'allowClear')
-      return `<a-select${newAttrs}>`
+      return `<a-select ${newAttrs}>`
     }
   )
   
@@ -143,7 +143,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/label="([^"]+)"/g, 'label="$1"')
         .replace(/value="([^"]+)"/g, 'value="$1"')
-      return `<a-select-option${newAttrs}>`
+      return `<a-select-option ${newAttrs}>`
     }
   )
   result = result.replace(/<\/b-option>/g, '</a-select-option>')
@@ -153,7 +153,7 @@ function replaceComponent(template) {
     /<a-option-group\s+([^>]*)>/g,
     (match, attrs) => {
       let newAttrs = attrs.replace(/label="([^"]+)"/g, 'label="$1"')
-      return `<a-select-opt-group${newAttrs}>`
+      return `<a-select-opt-group ${newAttrs}>`
     }
   )
   result = result.replace(/<\/b-option-group>/g, '</a-select-opt-group>')
@@ -165,7 +165,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/model-value="([^"]+)"/g, 'v-model:activeKey="$1"')
         .replace(/simple/g, 'ghost')
-      return `<a-collapse${newAttrs}>`
+      return `<a-collapse ${newAttrs}>`
     }
   )
   
@@ -176,7 +176,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/name="([^"]+)"/g, 'key="$1"')
         .replace(/show-arrow="([^"]+)"/g, 'showArrow="$1"')
-      return `<a-collapse-panel${newAttrs}>`
+      return `<a-collapse-panel ${newAttrs}>`
     }
   )
   result = result.replace(/<\/b-collapse-panel>/g, '</a-collapse-panel>')
@@ -200,7 +200,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/v-model="([^"]+)"/g, 'v-model:value="$1"')
         .replace(/clearable/g, 'allowClear')
-      return `<a-tree-select${newAttrs}>`
+      return `<a-tree-select ${newAttrs}>`
     }
   )
   
@@ -211,7 +211,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/v-model:visible="([^"]+)"/g, 'v-model:visible="$1"')
         .replace(/width="([^"]+)"/g, 'overlayStyle="{ width: \'$1\' }"')
-      return `<a-popover${newAttrs}>`
+      return `<a-popover ${newAttrs}>`
     }
   )
   
@@ -222,7 +222,7 @@ function replaceComponent(template) {
       let newAttrs = attrs
         .replace(/animation/g, 'active')
         .replace(/rows="([^"]+)"/g, 'paragraph="{ rows: $1 }"')
-      return `<a-skeleton${newAttrs}>`
+      return `<a-skeleton ${newAttrs}>`
     }
   )
   
@@ -231,7 +231,7 @@ function replaceComponent(template) {
     /<b-tag\s+([^>]*)>/g,
     (match, attrs) => {
       let newAttrs = attrs.replace(/type="([^"]+)"/g, 'color="$1"')
-      return `<a-tag${newAttrs}>`
+      return `<a-tag ${newAttrs}>`
     }
   )
   

@@ -31,7 +31,10 @@
       </template>
     </a-form>
     <template #footer>
-      <a-button type="primary" icon="save" @click="saveKanban" :loading="loading">
+      <a-button type="primary" @click="saveKanban" :loading="loading">
+        <template #icon>
+          <AntIcon name="SaveOutlined" />
+        </template>
         {{ btnText }}
       </a-button>
     </template>

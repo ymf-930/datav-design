@@ -1,8 +1,8 @@
 <template>
   <div class="dv-gui g-select">
     <a-select v-model:value="inputValue" :size="size" :disabled="disabled" @change="handleChange">
-      <a-option-group v-for="item in data" :key="item.group" :label="item.group">
-        <a-option
+      <a-select-opt-group v-for="item in data" :key="item.group" :label="item.group">
+        <a-select-option
           v-for="item in item.data"
           :key="item.value"
           :label="item.label"
@@ -10,8 +10,8 @@
         >
           <span>{{ item.label }}</span>
           <span style="float: right; color: var(--s-text-color-2)">{{ item.value }}</span>
-        </a-option>
-      </a-option-group>
+        </a-select-option>
+      </a-select-opt-group>
     </a-select>
 
     <span v-if="label" class="g-input__caption">{{ label }}</span>

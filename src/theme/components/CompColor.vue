@@ -3,7 +3,7 @@
     <div class="body-box">
       <div flex="main:justify cross:center">
         <div class="theme-color-item-box">
-          <b-color-picker
+          <a-color-picker
             v-for="(color, index) in showColors"
             :key="index"
             size="small"
@@ -18,18 +18,18 @@
           />
         </div>
         <div class="btn-box">
-          <b-button type="text" title="自定义组件颜色" @click="openCustomTheme">
-            <i class="b-iconfont b-icon-edit btn-text"></i>
-          </b-button>
-          <b-button
+          <a-button type="text" title="自定义组件颜色" @click="openCustomTheme">
+            <AntIcon name="EditOutlined" class="btn-text"></AntIcon>
+          </a-button>
+          <a-button
             type="text"
             style="margin-left: 4px"
             title="移除自定义颜色"
             :disabled="isSystemOrCustomTheme(selectedCom.attr.chartThemeColor)"
             @click="deleteCustomColor"
           >
-            <i class="b-iconfont b-icon-delete btn-text"></i>
-          </b-button>
+            <AntIcon name="DeleteOutlined" class="btn-text"></AntIcon>
+          </a-button>
         </div>
       </div>
       <div class="theme-bottom" :style="themeBottomStyle"></div>

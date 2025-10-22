@@ -6,7 +6,7 @@
           <g-loading spinning></g-loading>
         </div>
         <template v-else>
-          <b-empty v-if="groups.length === 0">暂无图片分组</b-empty>
+          <a-empty v-if="groups.length === 0">暂无图片分组</a-empty>
           <Collapse
             v-for="group in groups"
             :key="group.key"

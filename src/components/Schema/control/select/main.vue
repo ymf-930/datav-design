@@ -1,12 +1,12 @@
 <template>
   <div class="dv-wrapper" :style="wrapperStyle">
-    <a-select v-model:value="select" clearable @change="handleChange">
-      <a-option
+    <a-select v-model:value="select" allowClear @change="handleChange">
+      <a-select-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
-      ></a-option>
+      ></a-select-option>
     </a-select>
   </div>
 </template>
@@ -82,10 +82,10 @@ function handleChange(value) {
       border-radius: var(--border-radius);
       height: var(--select-height);
     }
-    .bin-select__caret.b-iconfont.b-icon-down {
+    .bin-select__caret.ant-icon.b-icon-down {
       color: var(--arrow-color);
     }
-    .bin-select__caret.b-iconfont.is-show-close {
+    .bin-select__caret.ant-icon.is-show-close {
       color: var(--arrow-color);
       background: transparent;
     }

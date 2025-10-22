@@ -6,7 +6,7 @@ import { deepMerge, deepCopy } from '@/utils/util'
 export const topoConfig = {
   name: 'VTopo',
   alias: '组态',
-  icon: 'cluster',
+  icon: 'ClusterOutlined',
   type: ComType.com,
   attr: { w: 300, h: 300, lockedRatio: true },
   config: {

@@ -25,14 +25,17 @@
             @click="schemaStore.doAlign(em.value)"
             class="align-btn"
           >
-            <i :class="`menu-icon iconfont-align b-icon-${em.value}`" />
+          <AntIcon :name="alignIconMap[em.value]" class="menu-icon iconfont-align" />
           </span>
         </div>
       </g-field>
 
       <g-field label="组合">
         <a-button-group>
-          <a-button size="small" icon="group" @click="schemaStore.group()">组合</a-button>
+          <a-button size="small" @click="schemaStore.group()">
+        <template #icon>
+          <AntIcon name="GroupOutlined" />
+        </template>组合</a-button>
         </a-button-group>
       </g-field>
     </div>
@@ -43,6 +46,15 @@
 import { useStore } from '@/store'
 import { computed } from 'vue'
 import { MultiplAlignOptions } from '@/config/select-options'
+
+const alignIconMap = {
+  'align-top': 'VerticalAlignTopOutlined',
+  'align-center': 'VerticalAlignMiddleOutlined',
+  'align-bottom': 'VerticalAlignBottomOutlined',
+  'align-left': 'AlignLeftOutlined',
+  'align-middle': 'AlignCenterOutlined',
+  'align-right': 'AlignRightOutlined',
+}
 
 const { schemaStore, storeToRefs } = useStore()
 const { areaData } = storeToRefs(schemaStore)
@@ -79,7 +91,7 @@ const attr = computed(() => {
   &:hover {
     background-color: var(--s-color-3);
   }
-  > i {
+  > .anticon {
     font-size: 18px;
   }
 }

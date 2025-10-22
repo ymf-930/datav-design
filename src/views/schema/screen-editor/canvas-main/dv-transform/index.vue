@@ -31,7 +31,7 @@
         />
       </div>
     </div>
-    <i v-if="data.locked" class="b-iconfont b-icon-lock" title="解锁"></i>
+    <AntIcon name="LockOutlined" v-if="data.locked"  title="解锁"></AntIcon>
   </div>
 </template>
 

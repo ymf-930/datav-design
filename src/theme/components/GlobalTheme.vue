@@ -13,29 +13,28 @@
 
     <div class="theme-item" @click="openCustomTheme">
       <span>自定义主题</span>
-      <b-icon name="plus"></b-icon>
+      <AntIcon name="PlusOutlined"></AntIcon>
     </div>
 
-    <b-modal
-      v-model="themeChooseVisible"
+    <a-modal v-model:visible="themeChooseVisible"
       title="全局主题设置"
       append-to-body
       width="600px"
       draggable
     >
-      <b-radio-group v-model="activeTab" size="large" type="capsule" style="width: 100%">
-        <b-radio label="system">
+      <a-radio-group v-model:value="activeTab" size="large" type="capsule" style="width: 100%">
+        <a-radio value="system">
           <span class="mr-8">系统主题</span>
-          <b-icon name="font-colors"></b-icon>
-        </b-radio>
-        <b-radio label="custom">
+          <AntIcon name="FontColorsOutlined"></AntIcon>
+        </a-radio>
+        <a-radio value="custom">
           <span class="mr-8">自定义主题</span>
-          <b-icon name="smile"></b-icon>
-        </b-radio>
-      </b-radio-group>
+          <AntIcon name="SmileOutlined"></AntIcon>
+        </a-radio>
+      </a-radio-group>
 
       <div class="theme-list">
-        <b-scrollbar>
+        <div>
           <div class="theme-grid">
             <div
               v-for="(item, key) in themeColors"
@@ -60,11 +59,11 @@
             style="height: 300px"
             flex="dir:top main:center cross:center"
           >
-            <b-empty>暂无主题</b-empty>
+            <a-empty>暂无主题</a-empty>
           </div>
-        </b-scrollbar>
+        </div>
       </div>
-    </b-modal>
+    </a-modal>
 
     <CustomTheme ref="customThereRef" />
   </div>

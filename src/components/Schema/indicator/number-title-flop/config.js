@@ -4,7 +4,7 @@ import { getBaseActions } from '@/utils/events'
 export default {
   name: 'VNumberTitleFlop',
   alias: '数字指标',
-  icon: 'orderedlist',
+  icon: 'OrderedListOutlined',
   type: ComType.com,
   attr: { w: 300, h: 74 },
   config: {

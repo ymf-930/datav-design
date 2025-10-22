@@ -5,7 +5,7 @@ import { getBaseActions } from '@/utils/events'
 export default {
   name: 'VBasicWordCloud',
   alias: '词云图',
-  icon: 'cloud',
+  icon: 'CloudOutlined',
   type: ComType.com,
   componentType: 'other',
   attr: { w: 500, h: 300, chartThemeColor: '' },

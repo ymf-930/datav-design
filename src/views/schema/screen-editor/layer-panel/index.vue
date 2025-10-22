@@ -4,38 +4,34 @@
       <div class="layer-top">
         <div class="layer-num pl-10">图层</div>
         <div class="layer-action" @click="schemaStore.toggleLayerPanel(false)">
-          <i class="b-iconfont b-icon-left" title="收起"></i>
+          <AntIcon name="LeftOutlined" title="收起"></AntIcon>
         </div>
       </div>
       <div class="layer-toolbar layer-toolbar-top">
-        <i
-          title="上移一层"
-          class="b-iconfont b-icon-arrowup toolbar-icon standard"
+        <AntIcon name="ArrowUpOutlined" class="toolbar-icon standard" title="上移一层"
+          
           :class="enableBtnClass"
           :style="enableBtnStyle"
           @click="moveUp"
-        ></i>
-        <i
-          title="下移一层"
-          class="b-iconfont b-icon-arrowdown toolbar-icon standard"
+        ></AntIcon>
+        <AntIcon name="ArrowDownOutlined" class="toolbar-icon standard" title="下移一层"
+          
           :class="enableBtnClass"
           :style="enableBtnStyle"
           @click="moveDown"
-        ></i>
-        <i
-          title="置顶"
-          class="b-iconfont b-icon-vertical-align-botto toolbar-icon standard"
+        ></AntIcon>
+        <AntIcon name="VerticalAlignBottomOutlined" class="toolbar-icon standard" title="置顶"
+          
           :class="enableBtnClass"
           :style="{ transform: `rotate(180deg)`, ...enableBtnStyle }"
           @click="moveTop"
-        ></i>
-        <i
-          title="置底"
-          class="b-iconfont b-icon-vertical-align-botto toolbar-icon standard"
+        ></AntIcon>
+        <AntIcon name="VerticalAlignBottomOutlined" class="toolbar-icon standard" title="置底"
+          
           :class="enableBtnClass"
           :style="enableBtnStyle"
           @click="moveBottom"
-        ></i>
+        ></AntIcon>
       </div>
       <div class="layer-manager-wrap">
         <draggable v-model="descComs" class="drag-area" item-key="id" v-bind="{ animation: 200 }">
@@ -58,7 +54,7 @@
                 @dblclick="schemaStore.renamingCom(com.id)"
                 @contextmenu="showMenu($event)"
               >
-                <a-icon :name="com.name === 'VIcon' ? com.config.src : com.icon" size="18"></a-icon>
+                <AntIcon :name="com.name === 'VIcon' ? com.config.src : com.icon" size="18"></AntIcon>
                 <input
                   v-if="com.id === renamingComId"
                   v-model.trim="com.alias"
@@ -70,24 +66,18 @@
                 <span v-else class="layer-item-span">
                   <span class="layer-item-text">{{ com.alias }}</span>
                 </span>
-                <i
-                  :class="[
-                    'b-iconfont',
-                    `b-icon-${com.hided ? 'eye-close' : 'eye'}`,
-                    'show-toggle-btn',
-                  ]"
+                <AntIcon
+                  :name="com.hided ? 'EyeInvisibleOutlined' : 'EyeOutlined'"
+                  class="show-toggle-btn"
                   :title="com.hided ? '显示' : '隐藏'"
                   @click="com.hided = !com.hided"
-                ></i>
-                <i
-                  :class="[
-                    'b-iconfont',
-                    `b-icon-${com.locked ? 'lock' : 'unlock'}`,
-                    'show-toggle-btn',
-                  ]"
+                />
+                <AntIcon
+                  :name="com.locked ? 'LockOutlined' : 'UnlockOutlined'"
+                  class="show-toggle-btn"
                   :title="com.locked ? '解锁' : '锁定'"
                   @click="com.locked = !com.locked"
-                ></i>
+                />
               </div>
               <a-collapse>
                 <!-- 组内元素 -->
@@ -108,10 +98,9 @@
                       @mouseleave="onLeave"
                       @mousedown="selectCom(item)"
                     >
-                      <a-icon
-                        :name="item.name === 'VIcon' ? item.config.src : item.icon"
+                      <AntIcon :name="item.name === 'VIcon' ? item.config.src : item.icon"
                         size="18"
-                      ></a-icon>
+                      ></AntIcon>
                       <span class="layer-item-span">
                         <span class="layer-item-text">{{ item.alias }}</span>
                       </span>
@@ -218,7 +207,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
       right: 0;
       width: 20px;
       height: 100%;
-      > i {
+      > .anticon {
         cursor: pointer;
         width: 20px;
         font-size: 14px;

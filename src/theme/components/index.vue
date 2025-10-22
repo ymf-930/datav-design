@@ -1,7 +1,7 @@
 <template>
   <div class="theme-select">
     <div class="trigger" @click="visible = true">
-      <AntIcon name="bg-colors"></AntIcon>
+      <AntIcon name="BgColorsOutlined"></AntIcon>
     </div>
     <a-modal
       v-model:visible="visible"
@@ -138,7 +138,7 @@ const currentNameEn = computed(() => {
     cursor: pointer;
     width: 32px;
     height: 32px;
-    > i {
+    > .anticon {
       color: #fff;
       font-size: 20px;
     }

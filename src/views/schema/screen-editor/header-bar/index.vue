@@ -3,7 +3,7 @@
     <div class="left-actions">
       <!-- <a-tooltip content="返回"> -->
       <div class="head-btn home">
-        <a-icon name="home"></a-icon>
+        <AntIcon name="HomeOutlined"></AntIcon>
       </div>
       <!-- </a-tooltip> -->
       <div class="page-info">
@@ -17,7 +17,7 @@
             :class="{ active: toolbar.layer }"
             @click="schemaStore.toggleLayerPanel()"
           >
-            <a-icon name="container"></a-icon>
+            <AntIcon name="AppstoreOutlined"></AntIcon>
           </div>
         </a-tooltip>
         <a-tooltip content="配置面板">
@@ -26,7 +26,7 @@
             :class="{ active: toolbar.config }"
             @click="schemaStore.toggleConfigPanel()"
           >
-            <a-icon name="control"></a-icon>
+            <AntIcon name="SettingOutlined"></AntIcon>
           </div>
         </a-tooltip>
 
@@ -34,12 +34,12 @@
 
         <a-tooltip content="后退">
           <div class="head-btn" :class="{ disabled: undoDisable }" @click="undo">
-            <a-icon name="arrowleft"></a-icon>
+            <AntIcon name="LeftOutlined"></AntIcon>
           </div>
         </a-tooltip>
         <a-tooltip content="前进">
           <div class="head-btn" :class="{ disabled: redoDisable }" @click="redo">
-            <a-icon name="arrowright"></a-icon>
+            <AntIcon name="RightOutlined"></AntIcon>
           </div>
         </a-tooltip>
       </a-space>
@@ -49,28 +49,28 @@
         <a-tooltip content="导入json (会覆盖所有内容！)">
           <a-upload action="/" :show-upload-list="false" :before-upload="handleUpload">
             <div class="head-btn">
-              <a-icon name="Import"></a-icon>
+              <AntIcon name="ImportOutlined"></AntIcon>
             </div>
           </a-upload>
         </a-tooltip>
 
         <a-tooltip content="导出json">
           <div class="head-btn" @click="downloadCfg">
-            <a-icon name="export"></a-icon>
+            <AntIcon name="ExportOutlined"></AntIcon>
           </div>
         </a-tooltip>
         <a-divider type="vertical" />
 
         <div>
           <div class="head-btn" @click="handleSaveScreen">
-            <a-icon name="save" color="var(--bin-color-primary)"></a-icon>
+            <AntIcon name="SaveOutlined" color="var(--bin-color-primary)"></AntIcon>
             &nbsp;保&nbsp;存
           </div>
-          <a-dropdown trigger="hover" @click="saveCommand">
+          <a-dropdown :trigger="['hover']" @click="saveCommand">
             <div class="head-btn" style="margin-left: -1px; padding: 0 4px">
-              <a-icon name="ellipsis"></a-icon>
+              <AntIcon name="EllipsisOutlined"></AntIcon>
             </div>
-            <template #dropdown>
+            <template #overlay>
               <a-menu>
                 <a-menu-item key="saveTpl">保存模板</a-menu-item>
                 <a-menu-item key="saveImage">保存图片</a-menu-item>
@@ -83,14 +83,14 @@
 
         <a-tooltip content="预览">
           <div class="head-btn" @click="handPreview">
-            <a-icon name="eye" color="var(--bin-color-primary)"></a-icon>
+            <AntIcon name="EyeOutlined" color="var(--bin-color-primary)"></AntIcon>
             &nbsp;预&nbsp;览
           </div>
         </a-tooltip>
 
         <a-tooltip content="发布">
           <div class="head-btn" @click="handlePublish">
-            <a-icon name="send" color="var(--bin-color-primary)"></a-icon>
+            <AntIcon name="SendOutlined" color="var(--bin-color-primary)"></AntIcon>
             &nbsp;发&nbsp;布
           </div>
         </a-tooltip>
@@ -268,7 +268,7 @@ defineExpose({
     &.home {
       border-color: transparent;
     }
-    > i {
+    > .anticon {
       font-size: 18px;
     }
     &:hover:not(.disabled) {
@@ -299,7 +299,7 @@ defineExpose({
   .left-actions {
     .back-icon {
       height: 24px;
-      > i {
+      > .anticon {
         position: relative;
         top: 1px;
         cursor: pointer;

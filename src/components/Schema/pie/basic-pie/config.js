@@ -35,7 +35,7 @@ export const basicPieConfig = mergeChartOptions({
 export default {
   name: 'VBasicPie',
   alias: '基本饼图',
-  icon: 'piechart',
+  icon: 'PieChartOutlined',
   type: ComType.com,
   componentType: 'pie',
   attr: { w: 500, h: 300, chartThemeColor: '' },

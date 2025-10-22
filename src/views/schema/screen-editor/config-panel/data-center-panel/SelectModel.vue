@@ -1,18 +1,17 @@
 <template>
   <div class="data-model">
-    <b-row :gutter="16">
-      <b-col span="6">
-        <b-tree
-          ref="treeRef"
+    <a-row :gutter="16">
+      <a-col :span="6">
+        <a-tree ref="treeRef"
           width="200px"
           tree-title="模型分组"
-          :data="treeData"
+          :treeData="treeData"
           :title-key="'text'"
           @select-change="handleSelectChange"
         />
-      </b-col>
+      </a-col>
 
-      <b-col span="18">
+      <a-col :span="18">
         <a-form label-width="75px" flex>
           <a-form-item label="模型名称" style="width: 30%">
             <a-input v-model="query.name" @keyup.enter="handleSearch" clearable size="small" />
@@ -39,17 +38,16 @@
         </a-table>
 
         <div class="mt-10 t-right">
-          <b-page
-            :total="total"
+          <a-pagination :total="total"
             v-model:current="query.page"
-            :page-size="query.size"
-            show-total
+            :pageSize="query.size"
+            showTotal
             :loading="loading"
             @change="pageChange"
           />
         </div>
-      </b-col>
-    </b-row>
+      </a-col>
+    </a-row>
   </div>
 </template>
 

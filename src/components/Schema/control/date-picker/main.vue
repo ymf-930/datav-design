@@ -108,7 +108,7 @@ function handleChange(val) {
     input:-ms-input-placeholder{   /* IE浏览器 */
       color: var(--font-color);
     }
-    .bin-input-prefix i ,.bin-input-suffix i {
+    .bin-input-prefix .anticon ,.bin-input-suffix .anticon {
       color: var(--icon-color);
     }
   }

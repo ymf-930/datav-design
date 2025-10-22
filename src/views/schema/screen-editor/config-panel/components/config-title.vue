@@ -10,13 +10,13 @@
       <template #label>
         <div flex="main:justify cross:center" class="pr-8">
           <span>名称</span>
-          <a-icon
+          <AntIcon
             v-if="showCfg"
-            name="setting"
+            name="SettingOutlined"
             title="查看配置项"
             type="button"
             @click="openDetail"
-          ></a-icon>
+          ></AntIcon>
         </div>
       </template>
       <g-input v-model="selectedCom.alias" />
@@ -39,9 +39,17 @@
         />
       </div>
       <div class="t-right pt-8">
-        <a-button size="small" type="primary" icon="snippets" @click="putJson">应用配置项</a-button>
-        <a-button size="small" type="primary" icon="file-copy" @click="copyCom">
-          复制配置项
+        <a-button size="small" type="primary" @click="putJson">
+          <template #icon>
+            <AntIcon name="SnippetsOutlined" />
+          </template>
+          应用配置项
+        </a-button>
+        <a-button size="small" type="primary" @click="copyCom">
+          <template #icon>
+            <AntIcon name="CopyOutlined" />
+          </template>
+          复制配置
         </a-button>
       </div>
     </a-modal>

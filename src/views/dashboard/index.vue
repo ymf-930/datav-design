@@ -4,11 +4,10 @@
       <div class="folder-manage">
         <div class="folder-manage-group">
           <span>大屏分组</span>
-          <i
-            class="b-iconfont b-icon-plus btn-add-icon"
+          <AntIcon name="PlusOutlined" class="btn-add-icon"
             title="新增文件夹"
             @click="adding = true"
-          ></i>
+          ></AntIcon>
         </div>
         <div class="folder-manage-main">
           <div
@@ -40,12 +39,11 @@
             <template v-else>
               <span class="folder-name">{{ item.name }}</span>
               <span class="group-btns">
-                <i class="b-iconfont b-icon-edit" title="编辑" @click="item.editing = true"></i>
-                <i
-                  class="b-iconfont b-icon-delete"
+                <AntIcon name="EditOutlined" title="编辑" @click="item.editing = true"></AntIcon>
+                <AntIcon name="DeleteOutlined"
                   title="删除"
                   @click="confirmDeleteGroup(item)"
-                ></i>
+                ></AntIcon>
               </span>
             </template>
           </div>
@@ -160,10 +158,10 @@ export default {
     .group-btns {
       display: none;
       color: var(--bin-color-primary);
-      > i {
+      > .anticon {
         font-size: 16px;
       }
-      i + i {
+      .anticon + .anticon {
         margin-left: 6px;
       }
     }

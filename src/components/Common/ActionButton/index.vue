@@ -1,12 +1,12 @@
 <template>
   <a-popover v-model:visible="visible" :overlayStyle="{ width: 'popperWidth' }" :disabled="!confirm">
     <a-button v-bind="btnProps" @click="handleClick" :title="tooltip">
-      <i v-if="icon" :class="`b-iconfont b-icon-${icon}`" :style="iconStyle"></i>
+      <AntIcon v-if="icon" :name="icon" :style="iconStyle" />
       <slot></slot>
     </a-button>
     <template #content>
       <p style="line-height: 22px; margin-bottom: 8px">
-        <a-icon name="question-circle" size="16" color="#fa8c16"></a-icon>
+        <AntIcon name="QuestionCircleOutlined" size="16" color="#fa8c16"></AntIcon>
         {{ message }}
       </p>
       <div style="text-align: right; margin: 0">

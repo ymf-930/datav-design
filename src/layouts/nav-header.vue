@@ -18,17 +18,17 @@
       </div>
       <div class="user">
         <div class="header-item">
-          <a-dropdown @click="handleClick" getPopupContainer trigger="click">
+          <a-dropdown @click="handleClick" :trigger="['click']">
             <div class="user-link-wrap">
               <span class="user-link" v-if="userStore.userInfo">
                 {{ userStore.userInfo.realName }}
               </span>
             </div>
-            <template #dropdown>
+            <template #overlay>
               <a-menu style="width: 120px">
                 <a-menu-item key="logout">
                   <div flex="cross:center">
-                    <a-icon name="logout" size="16"></a-icon>
+                    <AntIcon name="LogoutOutlined" size="16"></AntIcon>
                     <span class="ml-5">退出登录</span>
                   </div>
                 </a-menu-item>

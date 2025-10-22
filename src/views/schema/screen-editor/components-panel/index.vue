@@ -14,7 +14,7 @@
               :class="{ active: activeGroup.type === group.type }"
               @click="changeComp(group)"
             >
-              <a-icon class="com-tab-icon" :name="group.icon"></a-icon>
+              <AntIcon class="com-tab-icon" :name="group.icon"></AntIcon>
               <span class="com-tab-title">{{ group.name }}</span>
             </div>
           </div>
@@ -23,7 +23,7 @@
       <div class="components-list" v-show="toolbar.components">
         <div class="components-list-top">
           <div class="action" @click="closePanel">
-            <i class="b-iconfont b-icon-left" title="收起"></i>
+            <AntIcon name="LeftOutlined" title="收起"></AntIcon>
           </div>
         </div>
         <div class="components-list-content">
@@ -296,7 +296,7 @@ function closePanel() {
       right: 1px;
       letter-spacing: 4px;
 
-      > i {
+      > .anticon {
         text-indent: 0;
         cursor: pointer;
         transition: color 0.2s;

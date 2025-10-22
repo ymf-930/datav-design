@@ -26,7 +26,7 @@ export const basicBoxplotConfig = mergeChartOptions({
 export default {
   name: 'VBasicBoxplot',
   alias: '盒须图',
-  icon: 'boxplot',
+  icon: 'BoxPlotOutlined',
   type: ComType.com,
   componentType: 'boxplot',
   attr: { w: 500, h: 300, chartThemeColor: '' },

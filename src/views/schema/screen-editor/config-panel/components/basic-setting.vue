@@ -4,13 +4,12 @@
       <template #label>
         <div flex="main:justify cross:center" class="pr-8">
           <span>尺寸</span>
-          <a-icon
-            :name="data.lockedRatio ? 'link' : 'disconnect'"
+          <AntIcon :name="data.lockedRatio ? 'LinkOutlined' : 'DisconnectOutlined'"
             :color="data.lockedRatio ? 'var(--bin-color-primary)' : 'var(--s-text-color)'"
             :title="data.lockedRatio ? '解除锁定宽高关联' : '锁定宽高关联'"
             type="button"
             @click="data.lockedRatio = !data.lockedRatio"
-          ></a-icon>
+          ></AntIcon>
         </div>
       </template>
 
@@ -43,7 +42,7 @@
           class="align-btn"
           :class="{ disabled: readonly || isGroupChild }"
         >
-          <i class="b-iconfont b-icon-rotate-left" />
+          <AntIcon name="RotateLeftOutlined" />
         </span>
         <span
           title="右转90°"
@@ -51,7 +50,7 @@
           class="align-btn"
           :class="{ disabled: readonly || isGroupChild }"
         >
-          <i class="b-iconfont b-icon-rotate-right" />
+          <AntIcon name="RotateRightOutlined" />
         </span>
       </div>
       <g-input-number
@@ -97,7 +96,7 @@
           class="align-btn"
           :class="{ disabled: readonly || isGroupChild }"
         >
-          <i :class="`iconfont-align b-icon-${em.value}-vs`" />
+          <AntIcon :name="adsorbIconMap[em.value]" class="iconfont-align" />
         </span>
       </div>
     </g-field>
@@ -291,6 +290,14 @@
 import { computed } from 'vue'
 import { hueRotateColor, CompColor } from '@/theme'
 import { PositionOptions, BlendModeOptions } from '@/config/select-options'
+const adsorbIconMap = {
+  'align-to-top': 'VerticalAlignTopOutlined',
+  'align-to-center': 'VerticalAlignMiddleOutlined',
+  'align-to-bottom': 'VerticalAlignBottomOutlined',
+  'align-to-left': 'AlignLeftOutlined',
+  'align-to-middle': 'AlignCenterOutlined',
+  'align-to-right': 'AlignRightOutlined',
+}
 import { useStore } from '@/store'
 import { isEmpty } from '@/utils/util'
 
@@ -344,7 +351,7 @@ function rotateR() {
   &:hover {
     background-color: var(--s-color-3);
   }
-  > i {
+  > .anticon {
     font-size: 18px;
   }
   &.disabled {

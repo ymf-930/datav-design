@@ -228,7 +228,7 @@ export const componentList = [
   {
     type: 'analysis',
     name: '分析',
-    icon: 'barchart',
+    icon: 'BarChartOutlined',
     group: [
       {
         name: '指标',
@@ -268,21 +268,21 @@ export const componentList = [
   {
     type: 'topology',
     name: '组态',
-    icon: 'cluster',
+    icon: 'ClusterOutlined',
     group: [],
     comps: [],
   },
   {
     type: 'presets',
     name: '装饰',
-    icon: 'highlight',
+    icon: 'HighlightOutlined',
     group: [],
     comps: [],
   },
   {
     type: '3D',
     name: '3D',
-    icon: 'earth',
+    icon: 'GlobalOutlined',
     group: [
       {
         name: '预设模型',
@@ -298,14 +298,14 @@ export const componentList = [
   {
     type: 'images',
     name: '图片',
-    icon: 'image',
+    icon: 'FileImageOutlined',
     group: [],
     comps: [],
   },
   {
     type: 'comps',
     name: '组件',
-    icon: 'star',
+    icon: 'StarOutlined',
     group: [],
     comps: [],
   },

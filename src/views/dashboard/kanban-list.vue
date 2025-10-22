@@ -40,31 +40,32 @@
             </div>
             <div class="list-item-mask">
               <div class="action">
-                <a-button type="primary" transparent icon="edit-square" @click="handleEdit(item)">
+                <a-button type="primary" transparent @click="handleEdit(item)">
+                  <template #icon>
+                    <AntIcon name="EditOutlined" />
+                  </template>
                   编辑
                 </a-button>
               </div>
               <div class="icon-box">
-                <i
-                  v-if="item.status === 'edit'"
-                  class="b-iconfont b-icon-send"
+                <AntIcon name="SendOutlined" v-if="item.status === 'edit'"
+                  
                   @click="handlePublish(item)"
                   title="发布"
-                ></i>
-                <i class="b-iconfont b-icon-eye" @click="handlePreview(item)" title="预览"></i>
-                <i class="b-iconfont b-icon-file-copy" @click="handleCopy(item)" title="复制"></i>
-                <i
-                  class="b-iconfont b-icon-delete"
+                ></AntIcon>
+                <AntIcon name="EyeOutlined" @click="handlePreview(item)" title="预览"></AntIcon>
+                <AntIcon name="CopyOutlined" @click="handleCopy(item)" title="复制"></AntIcon>
+                <AntIcon name="DeleteOutlined"
                   @click="removeDashboard(item.id)"
                   title="删除"
-                ></i>
+                ></AntIcon>
               </div>
             </div>
           </div>
           <div class="list-item-info">
             <div class="item-title" t-ellipsis :title="item.name">
               <iconfont
-                :icon="item.directory === 'Y' ? 'folder' : 'linechart'"
+                :icon="item.directory === 'Y' ? 'FolderOutlined' : 'LineChartOutlined'"
                 :color="item.directory === 'Y' ? '#fa8c16' : '#1089ff'"
               />
               <span>
@@ -82,18 +83,17 @@
       </li>
     </ul>
     <div class="loading-wrap" flex="main:center cross:center" v-show="listData.loading">
-      <b-loading></b-loading>
+      <a-spin></a-spin>
     </div>
-    <b-empty v-show="!listData.loading && listData.rows.length === 0">
+    <a-empty v-show="!listData.loading && listData.rows.length === 0">
       {{ noData ? '查询无结果' : '该分组下没有大屏' }}
-    </b-empty>
+    </a-empty>
     <div class="t-center pb-24" v-show="!listData.loading && listData.total > 0">
-      <b-page
-        :total="listData.total"
+      <a-pagination :total="listData.total"
         :current="query.page"
-        :page-size="query.size"
+        :pageSize="query.size"
         @change="pageChange"
-      ></b-page>
+      ></a-pagination>
     </div>
   </div>
   <create-kanban ref="createRef"></create-kanban>
@@ -427,11 +427,11 @@ onBeforeUnmount(cancelListen)
         .icon-ctrl {
           display: flex;
           justify-content: center;
-          > i {
+          > .anticon {
             cursor: pointer;
             font-size: 16px;
             color: #fff;
-            + i {
+            + .anticon {
               margin-left: 8px;
             }
             &:hover {
@@ -446,11 +446,11 @@ onBeforeUnmount(cancelListen)
           display: flex;
           justify-content: center;
           z-index: 1;
-          > i {
+          > .anticon {
             cursor: pointer;
             font-size: 18px;
             color: #fff;
-            + i {
+            + .anticon {
               margin-left: 12px;
             }
             &:hover {

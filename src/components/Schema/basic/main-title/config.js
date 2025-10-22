@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VMainTitle',
   alias: '通用标题',
-  icon: 'file-word',
+  icon: 'FileWordOutlined',
   type: ComType.com,
   attr: { w: 300, h: 48 },
   config: {

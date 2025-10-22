@@ -7,7 +7,7 @@
       @change="handleChange"
       append-to-body
     >
-      <a-option v-for="item in data" :key="item.value" :label="item.label" :value="item.value" />
+      <a-select-option v-for="item in data" :key="item.value" :label="item.label" :value="item.value" />
     </a-select>
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
   </div>

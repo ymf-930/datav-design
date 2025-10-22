@@ -3,7 +3,7 @@ import { initApiData, ComType, FORM_SELECT as compType } from '@/config/data-sou
 export default {
   name: 'VSelect',
   alias: '下拉控件',
-  icon: 'select',
+  icon: 'SelectOutlined',
   type: ComType.com,
   attr: { w: 300, h: 32 },
   config: {

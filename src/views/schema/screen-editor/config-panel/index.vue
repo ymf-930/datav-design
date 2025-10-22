@@ -7,19 +7,19 @@
             <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
               <a-radio :value="0">
                 <span class="mr-8">定制</span>
-                <a-icon name="project"></a-icon>
+                <AntIcon name="ProjectOutlined"></AntIcon>
               </a-radio>
               <a-radio :value="1" :disabled="isGroupChild">
                 <span class="mr-8">动画</span>
-                <a-icon name="shake"></a-icon>
+                <AntIcon name="ShakeOutlined"></AntIcon>
               </a-radio>
               <a-radio :value="2" :disabled="curComIsGroup">
                 <span class="mr-8">数据</span>
-                <a-icon name="thunderbolt"></a-icon>
+                <AntIcon name="ThunderboltOutlined"></AntIcon>
               </a-radio>
               <a-radio :value="3" :disabled="curComIsGroup">
                 <span class="mr-8">事件</span>
-                <a-icon name="rocket"></a-icon>
+                <AntIcon name="RocketOutlined"></AntIcon>
               </a-radio>
             </a-radio-group>
           </div>

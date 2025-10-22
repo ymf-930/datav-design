@@ -7,7 +7,7 @@
         :class="{ 'nav-active': activeNav === index }"
         @click="toggleNav(nav, index)"
       >
-        <i :class="`b-iconfont b-icon-${nav.icon} nav-icon`"></i>
+        <AntIcon :name="nav.icon" class="nav-icon"></AntIcon>
         {{ nav.title }}
       </a>
     </span>

@@ -22,19 +22,18 @@
       <div>
 
 
-        <b-row :gutter="16">
-          <b-col span="6">
-            <b-tree
-              width="220px"
+        <a-row :gutter="16">
+          <a-col :span="6">
+            <a-tree width="220px"
               ref="treeRef"
               tree-title="服务类别"
               :title-key="'name'"
-              :data="dataTree"
+              :treeData="dataTree"
               @select-change="handleTreeSelect"
-            ></b-tree>
-          </b-col>
+            ></a-tree>
+          </a-col>
 
-          <b-col span="18">
+          <a-col :span="18">
             <div class="mb-8">
               <a-space>
                 名称
@@ -57,17 +56,16 @@
                 <a-button type="text" size="small" @click="handleSelect(row)">选择</a-button>
               </template>
             </a-table>
-          </b-col>
-        </b-row>
+          </a-col>
+        </a-row>
 
         <div class="pt-16 t-right">
-          <b-page
-            :total="total"
+          <a-pagination :total="total"
             :current="query.page"
-            :page-size="query.size"
-            show-total
+            :pageSize="query.size"
+            showTotal
             @change="pageChange"
-          ></b-page>
+          ></a-pagination>
         </div>
       </div>
     </a-modal>

@@ -53,7 +53,7 @@ export const horiBasicBarConfig = mergeChartOptions({
 export default {
   name: 'VHorizontalBar',
   alias: '基本条形图',
-  icon: 'menu',
+  icon: 'MenuOutlined',
   type: ComType.com,
   componentType: 'bar',
   attr: { w: 500, h: 300, chartThemeColor: '' },

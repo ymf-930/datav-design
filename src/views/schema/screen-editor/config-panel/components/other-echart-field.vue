@@ -2,22 +2,22 @@
   <template v-if="isWord">
     <g-field label="标签标题">
       <a-select v-model:value="mappingFields.word" size="small">
-        <a-option
+        <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
     <g-field label="标签值">
       <a-select v-model:value="mappingFields.frequency" size="small">
-        <a-option
+        <a-select-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -25,22 +25,22 @@
   <template v-else-if="isSelect">
     <g-field label="选项标题">
       <a-select v-model:value="mappingFields.lAbEl" size="small">
-        <a-option
+        <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
     <g-field label="选项值">
       <a-select v-model:value="mappingFields.vAlUe" size="small">
-        <a-option
+        <a-select-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -48,22 +48,22 @@
   <template v-else-if="isCircle">
     <g-field label="标题">
       <a-select v-model:value="mappingFields.tItLe" size="small">
-        <a-option
+        <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
     <g-field label="选项值">
       <a-select v-model:value="mappingFields.vAlUe" size="small">
-        <a-option
+        <a-select-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -71,34 +71,34 @@
   <template v-else>
     <g-field label="标签标题">
       <a-select v-model:value="mappingFields.nAmE" size="small">
-        <a-option
+        <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
     <g-field label="标签值">
       <a-select v-model:value="mappingFields.vAlUe" size="small" @change="handleChange">
-        <a-option
+        <a-select-option
           v-for="item in measureFields"
           :key="item.name"
           :label="item.desc"
           :value="item.name"
-        ></a-option>
+        ></a-select-option>
       </a-select>
     </g-field>
   </template>
 
   <g-field label="计算方式" v-if="showAgg">
     <a-select v-model:value="mappingFields.aGgReGaToR" size="small">
-      <a-option
+      <a-select-option
         v-for="(value, key) in AGGREGATOR_FUN"
         :key="key"
         :label="value"
         :value="key"
-      ></a-option>
+      ></a-select-option>
     </a-select>
   </g-field>
 </template>

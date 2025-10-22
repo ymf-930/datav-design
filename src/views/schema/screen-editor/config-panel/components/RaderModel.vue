@@ -1,58 +1,49 @@
 <template>
   <g-field label="选择字段">
     <a-select v-model:value="dimensionModelData">
-      <a-select-option v-for="item in dimensionFields"
-        :key="item.name"
-        :label="item.desc"
-        :value="item.name"
-      ></a-select-option>
+      <a-select-option v-for="item in dimensionFields" :key="item.name" :label="item.desc"
+        :value="item.name"></a-select-option>
     </a-select>
   </g-field>
 
   <div style="padding: 0 10px 8px" flex>
     <a-space>
       <a-tag color="primary">指标配置</a-tag>
-      <a-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></a-button>
+      <a-button type="text" title="新增指标配置" @click="handleAddSaveField">
+        <template #icon>
+          <AntIcon name="PlusOutlined" />
+        </template>
+      </a-button>
     </a-space>
   </div>
 
   <g-field flat v-for="(item, index) in mappingFields.y" :key="index">
     <template #label>
-      <a-dropdown trigger="click"
-        placement="bottom-start"
-        appendToBody
-        @click="handleCommand($event, item)"
-      >
+      <a-dropdown :trigger="['click']" :placement="'bottom-start'" :getPopupContainer="() => document.body"
+        @click="handleCommand($event, item)">
         <span class="mr-5 aggr">指标{{ index + 1 }}</span>
-        <template #dropdown>
+        <template #overlay>
           <a-menu>
-            <template v-for="(value, key) in AGGREGATOR_FUN" :key="key">
-              <a-menu-item :key="key" :selected="item.aggregator === key">
-                {{ value }}
-              </a-menu-item>
-            </template>
+            <a-menu-item v-for="(value, key) in AGGREGATOR_FUN" :key="key" :selected="item.aggregator === key">
+              {{ value }}
+            </a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>
-      <a-button
-        type="text"
-        icon="close-circle"
-        text-color="danger"
-        @click="handleRemoveSaveField(index)"
-      />
+      <a-button type="text" text-color="danger" @click="handleRemoveSaveField(index)">
+        <template #icon>
+          <AntIcon name="CloseCircleOutlined" />
+        </template>
+      </a-button>
     </template>
-    <g-select
-      :label="`字段(${AGGREGATOR_FUN[item.aggregator]})`"
-      inline
-      v-model="item.field"
-      :data="measureFields.map(i => ({ value: i.name, label: i.desc }))"
-    ></g-select>
+    <g-select :label="`字段(${AGGREGATOR_FUN[item.aggregator]})`" inline v-model="item.field"
+      :data="measureFields.map(i => ({ value: i.name, label: i.desc }))"></g-select>
     <g-input label="标题" inline v-model="item.title"></g-input>
   </g-field>
 </template>
 
 <script setup>
-import {computed, ref, watch} from 'vue'
+import { computed, ref, watch } from 'vue'
 import { AGGREGATOR_FUN } from '@/hooks/schema/useModelEnum'
 import { throwError } from '@/utils/util'
 
@@ -124,7 +115,7 @@ function handleRemoveSaveField(index) {
 </script>
 
 <style scoped>
-.aggr{
+.aggr {
   color: white;
   text-decoration: underline;
   text-decoration-style: dashed;

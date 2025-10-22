@@ -12,7 +12,7 @@ export const borderTypes = [
 export default {
   name: 'VBgBox',
   alias: '背景块',
-  icon: 'bg-colors',
+  icon: 'BgColorOutlined',
   type: ComType.com,
   attr: { w: 300, h: 180 },
   config: {

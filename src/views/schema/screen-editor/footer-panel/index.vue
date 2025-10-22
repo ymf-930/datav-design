@@ -2,7 +2,7 @@
   <div class="footer-panel">
     <div class="screen-info" flex="cross:center">
       <a-tooltip content="快捷键提示" :open-delay="500">
-        <a-icon name="read" size="16" type="button" @click="keycodeVisible = true"></a-icon>
+        <AntIcon name="ReadOutlined" size="16" type="button" @click="keycodeVisible = true"></AntIcon>
       </a-tooltip>
       <span class="ml-8" style="transform: scale(0.9)">
         {{ pageConfig.width }} 像素 * {{ pageConfig.height }} 像素
@@ -12,7 +12,7 @@
       </span>
     </div>
     <div flex="cross:center">
-      <a-dropdown trigger="click" @click="submitScale">
+      <a-dropdown :trigger="['click']" @click="submitScale">
         <div class="scale-input-wp">
           <input
             v-model="inputScale"
@@ -21,9 +21,9 @@
             @keydown.enter="submitScale(0)"
           />
           <span class="percent">%</span>
-          <i class="b-iconfont b-icon-down"></i>
+          <AntIcon name="DownOutlined"></AntIcon>
         </div>
-        <template #dropdown>
+        <template #overlay>
           <a-menu>
             <a-menu-item v-for="s in scaleList" :key="s">
               {{ `${s}%` }}
@@ -153,11 +153,7 @@ watch(
       margin-left: 1px;
       color: var(--s-text-color);
     }
-    .b-iconfont {
-      font-size: 12px;
-      margin-left: 2px;
-      color: var(--s-text-color);
-    }
+    
   }
   .scale-slider-wp {
     width: 190px;

@@ -17,7 +17,7 @@
     }
     .bin-modal-close {
       height: 46px;
-      .b-iconfont {
+      .ant-icon {
         color: var(--s-text-color-1);
         transition: 0.2s;
 

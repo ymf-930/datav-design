@@ -16,7 +16,7 @@
               :style="{ '--active-color': element }"
               @click="colorClick(index)"
             >
-              <b-color-picker
+              <a-color-picker
                 size="mini"
                 v-model="colors[index]"
                 :show-alpha="true"
@@ -26,17 +26,17 @@
                 color-format="hex"
               />
             </div>
-            <i class="b-iconfont b-icon-swap icon-move" title="拖动位置"></i>
-            <b-tooltip content="删除颜色" v-if="index > 5">
-              <i class="b-iconfont b-icon-close" @click="removeColor(index)"></i>
-            </b-tooltip>
+            <AntIcon name="SwapOutlined" class="icon-move" title="拖动位置"></AntIcon>
+            <a-tooltip content="删除颜色" v-if="index > 5">
+              <AntIcon name="CloseOutlined" @click="removeColor(index)"></AntIcon>
+            </a-tooltip>
           </div>
         </div>
       </template>
       <template #footer>
         <div class="color-list-item">
           <div class="item-inner">
-            <b-button
+            <a-button
               type="primary"
               plain
               style="width: 102px"
@@ -45,8 +45,8 @@
               @click="addColor"
             >
               <span class="mr-8">添加</span>
-              <b-icon name="plus"></b-icon>
-            </b-button>
+              <AntIcon name="PlusOutlined"></AntIcon>
+            </a-button>
           </div>
         </div>
       </template>
@@ -123,7 +123,7 @@ function removeColor(index) {
           font-size: 12px;
         }
       }
-      .b-iconfont {
+      .ant-icon {
         cursor: pointer;
         color: var(--s-text-color-3);
         font-size: 14px;

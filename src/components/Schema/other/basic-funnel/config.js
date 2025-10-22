@@ -56,7 +56,7 @@ export const basicFunnel = mergeChartOptions({
 export default {
   name: 'VBasicFunnel',
   alias: '漏斗图',
-  icon: 'funnelplot',
+  icon: 'FunnelPlotOutlined',
   type: ComType.com,
   componentType: 'funnel',
   attr: { w: 500, h: 300, chartThemeColor: '' },

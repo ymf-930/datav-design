@@ -19,7 +19,7 @@
             ){
           </p>
           <p class="code">
-            <div
+            <b-ace-editor
               theme="tomorrow_night"
               wrap
               lang="typescript"
@@ -28,7 +28,7 @@
               :font-size="14"
               :options="{ showLineNumbers: false }"
               :styles="{ border: 'none' }"
-            ></div>
+            ></b-ace-editor>
           </p>
           <p class="bottom">}</p>
         </div>
@@ -46,14 +46,14 @@
         </div>
       </template>
 
-      <a-skeleton active v-else :paragraph="{ rows: 15 }"></b-skeleton>
+      <a-skeleton active v-else :paragraph="{ rows: 15 }"></a-skeleton>
     </div>
     <template #footer>
       <div flex="main:justify">
         <div flex="cross:center">
           <template v-if="funcExplain">
-            <b-tag>
-              <a-icon name="file-text"></a-icon>
+            <a-tag>
+              <AntIcon name="FileTextOutlined"></AntIcon>
               说明
             </a-tag>
             <span class="pl-5" style="color: var(--bin-color-danger-light1)">

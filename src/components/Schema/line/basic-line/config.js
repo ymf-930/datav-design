@@ -27,7 +27,7 @@ export const basicLineConfig = mergeChartOptions({
 export default {
   name: 'VBasicLine',
   alias: '基本线图',
-  icon: 'linechart',
+  icon: 'LineChartOutlined',
   type: ComType.com,
   componentType: 'line',
   attr: { w: 500, h: 300, chartThemeColor: '' },

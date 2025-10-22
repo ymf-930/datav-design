@@ -1,6 +1,6 @@
 <template>
   <div class="icon-wrapper" :style="styles" @click="handleClick">
-    <i :class="`b-iconfont b-icon-${icon}`"></i>
+    <AntIcon :name="icon"></AntIcon>
   </div>
 </template>
 
@@ -85,9 +85,7 @@ export default {
   justify-content: center;
   width: 24px;
   height: 24px;
-  .b-iconfont {
-    font-size: inherit;
-  }
+  
   + .icon-wrapper {
     margin-left: 8px;
   }

@@ -35,7 +35,7 @@ export const basicRingConfig = mergeChartOptions({
 export default {
   name: 'VBasicRing',
   alias: '基本环图',
-  icon: 'piechart',
+  icon: 'PieChartOutlined',
   type: ComType.com,
   componentType: 'pie',
   attr: { w: 500, h: 300, chartThemeColor: '' },

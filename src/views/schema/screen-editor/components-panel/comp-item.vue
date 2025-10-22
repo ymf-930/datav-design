@@ -1,6 +1,6 @@
 <template>
   <div class="group-comps">
-    <b-empty v-if="list.length === 0">暂无组件</b-empty>
+    <a-empty v-if="list.length === 0">暂无组件</a-empty>
     <div class="comp-wrap" v-else>
       <div class="comp-item" v-for="(com, index) in list" :key="index">
         <div class="inner">
@@ -13,11 +13,10 @@
             <img v-lazy="com.thumbnail" v-if="!listLoading" />
             <img v-lazy="com.thumbnail" v-else />
             <div class="hover-layer">
-              <i
-                class="b-iconfont b-icon-delete-fill"
+              <AntIcon name="DeleteFilled"
                 title="删除组件"
                 @click.stop="removeCom(com)"
-              ></i>
+              ></AntIcon>
             </div>
           </div>
           <div class="comp-item-text">{{ com.comp.alias }}</div>
@@ -122,7 +121,7 @@ const click = comp => emit('click', comp)
       height: 100%;
       background: rgba(33, 33, 37, 0.7);
       display: none;
-      > i {
+      > .anticon {
         position: absolute;
         top: 4px;
         right: 4px;

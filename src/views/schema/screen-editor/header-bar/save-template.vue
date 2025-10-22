@@ -16,7 +16,10 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" icon="save" :loading="formStatus.loading" @click="saveAsTemplate">
+      <a-button type="primary" :loading="formStatus.loading" @click="saveAsTemplate">
+        <template #icon>
+          <AntIcon name="SaveOutlined" />
+        </template>
         保存模板
       </a-button>
     </template>

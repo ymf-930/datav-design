@@ -60,7 +60,7 @@ export const basicRadarConfig = mergeChartOptions({
 export default {
   name: 'VBasicRadar',
   alias: '基本雷达图',
-  icon: 'radarchart',
+  icon: 'RadarChartOutlined',
   type: ComType.com,
   componentType: 'radar',
   attr: { w: 500, h: 300, chartThemeColor: '' },

@@ -14,18 +14,18 @@
           :class="{ selected: createValue.type === 'web' }"
           @click="selectPreset('web')"
         >
-          <i class="b-iconfont b-icon-laptop"></i>
+          <AntIcon name="LaptopOutlined"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ webValue.label }}</div>
             <div class="h4">{{ webValue.width }}x{{ webValue.height }}</div>
           </div>
-          <a-dropdown trigger="click"
-            placement="bottom-end"
+          <a-dropdown :trigger="['click']"
+            :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
             @click="handleWebTrigger"
           >
-            <a-icon name="down" type="button"></a-icon>
-            <template #dropdown>
+            <AntIcon name="DownOutlined" type="button"></AntIcon>
+            <template #overlay>
               <a-menu>
                 <a-menu-item v-for="item in webScreenMap" :key="item.label">
                   <div flex="main:justify" style="width: 180px">
@@ -42,18 +42,18 @@
           :class="{ selected: createValue.type === 'mobile' }"
           @click="selectPreset('mobile')"
         >
-          <i class="b-iconfont b-icon-mobile"></i>
+          <AntIcon name="MobileOutlined"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ mobileValue.label }}</div>
             <div class="h4">{{ mobileValue.width }}x{{ mobileValue.height }}</div>
           </div>
-          <a-dropdown trigger="click"
-            placement="bottom-end"
+          <a-dropdown :trigger="['click']"
+            :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
             @click="handleMobileTrigger"
           >
-            <a-icon name="down" type="button"></a-icon>
-            <template #dropdown>
+            <AntIcon name="DownOutlined" type="button"></AntIcon>
+            <template #overlay>
               <a-menu>
                 <a-menu-item v-for="item in mobileScreenMap" :key="item.label">
                   <div flex="main:justify" style="width: 180px">
@@ -70,7 +70,7 @@
           :class="{ selected: createValue.type === 'custom' }"
           @click="selectPreset('custom')"
         >
-          <i class="b-iconfont b-icon-gateway"></i>
+          <AntIcon name="GatewayOutlined"></AntIcon>
           <div>
             <p class="mb-5">自定义大小</p>
             <p class="custom-input">
@@ -116,13 +116,12 @@
                 />
               </div>
               <div class="tpl-remove">
-                <a-button
-                  type="text"
+                <a-button type="text"
                   text-color="#f5222d"
-                  title="移除模板"
-                  icon="delete"
-                  @click="removeTpl(tpl)"
-                ></a-button>
+                  title="移除模板" @click="removeTpl(tpl)">
+        <template #icon>
+          <AntIcon name="DeleteOutlined" />
+        </template></a-button>
               </div>
             </div>
             <div class="template-info">
@@ -136,7 +135,7 @@
         </div>
       </div>
 
-      <b-empty v-show="templates.length === 0">暂无模板</b-empty>
+      <a-empty v-show="templates.length === 0">暂无模板</a-empty>
     </div>
     <template #footer>
       <a-button @click="closeModal">取消</a-button>
@@ -321,7 +320,7 @@ defineExpose({
     &.selected {
       border: 1px solid var(--bin-color-primary);
     }
-    > i {
+    > .anticon {
       font-size: 40px;
       padding: 0 20px;
       font-weight: lighter;

@@ -1,24 +1,18 @@
 <template>
   <div class="action-bar-wrap" :style="actionStyle">
     <a-tooltip content="适应尺寸" placement="left">
-      <i class="action-btn b-iconfont b-icon-aim" @click.stop="schemaStore.autoCanvasScale()" />
+      <AntIcon name="AimOutlined" class="action-btn" @click.stop="schemaStore.autoCanvasScale()" />
     </a-tooltip>
     <a-tooltip content="原始尺寸" placement="left">
-      <i
-        class="action-btn b-iconfont b-icon-icon-test"
-        @click.stop="schemaStore.setCanvasScale(100)"
-      />
+      <AntIcon name="BugOutlined" class="action-btn" @click.stop="schemaStore.setCanvasScale(100)" />
     </a-tooltip>
 
     <a-tooltip content="编辑配置" placement="left">
-      <i class="action-btn b-iconfont b-icon-edit-square" @click.stop="openDetail" />
+      <AntIcon name="EditOutlined" class="action-btn" @click.stop="openDetail" />
     </a-tooltip>
 
     <a-tooltip content="工具设置" placement="left">
-      <i
-        class="action-btn b-iconfont b-icon-setting"
-        @click.stop="toolbar.toolbox = !toolbar.toolbox"
-      />
+      <AntIcon name="SettingOutlined" class="action-btn" @click.stop="toolbar.toolbox = !toolbar.toolbox" />
     </a-tooltip>
 
     <!-- 工具设置 -->
@@ -57,7 +51,7 @@
           <a-space>
             <a-button style="width: 120px" size="small" @click.stop="clearCanvas">
               清空
-              <i class="action-btn b-iconfont b-icon-clear" />
+              <AntIcon name="ClearOutlined" class="action-btn" />
             </a-button>
             画布清空会清除所有配置，请谨慎操作
           </a-space>
@@ -89,7 +83,10 @@
         />
       </div>
       <div class="t-right pt-16">
-        <a-button size="small" type="primary" icon="snippets" @click="putJson">应用配置</a-button>
+        <a-button size="small" type="primary" @click="putJson">
+        <template #icon>
+          <AntIcon name="SnippetsOutlined" />
+        </template>应用配置</a-button>
       </div>
     </a-modal>
   </div>

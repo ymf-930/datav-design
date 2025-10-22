@@ -9,7 +9,7 @@ export const DEFAULT_MENUS = [
   {
     name: HOME_PATH,
     title: HOME_NAME,
-    icon: 'linechart',
+    icon: 'LineChartOutlined',
   },
 ]
 

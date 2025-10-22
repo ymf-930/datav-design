@@ -32,7 +32,7 @@ export const basicAreaConfig = mergeChartOptions({
 export default {
   name: 'VBasicArea',
   alias: '基本区域图',
-  icon: 'linechart',
+  icon: 'AreaChartOutlined',
   type: ComType.com,
   componentType: 'line',
   attr: { w: 500, h: 300, chartThemeColor: '' },

@@ -1,13 +1,12 @@
 <template>
   <div class="dv-wrapper">
-    <b-circle
-      :percent="realNumber"
+    <a-progress type="circle" :percent="realNumber"
       :size="attr.w"
       :stroke-linecap="config.linecap"
-      :stroke-width="config.width"
-      :stroke-color="config.color"
+      :strokeWidth="config.width"
+      :strokeColor="config.color"
       :trail-width="config.trailWidth"
-      :trail-color="config.trailColor"
+      :trailColor="config.trailColor"
       :dashboard="config.dashboard"
     >
       <div
@@ -33,7 +32,7 @@
       >
         {{ realNum }}
       </div>
-    </b-circle>
+    </a-progress>
   </div>
 </template>
 

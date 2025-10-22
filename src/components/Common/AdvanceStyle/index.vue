@@ -15,7 +15,7 @@
       <div class="code-editor">
         <template v-if="render">
           <div class="fun">
-            <div
+            <b-ace-editor
               v-model="str"
               height="320px"
               theme="tomorrow_night"
@@ -23,7 +23,7 @@
             />
           </div>
           <div class="right-tip">
-            <a-radio-group:model-value="0" type="capsule" size="large" style="width: 100%">
+            <a-radio-group :model-value="0" type="capsule" size="large" style="width: 100%">
               <a-radio :value="0">样式示例</a-radio>
             </a-radio-group>
             <div class="tip-content">
@@ -43,13 +43,13 @@
           </div>
         </template>
 
-        <a-skeleton active v-else :paragraph="{ rows: 15 }"></b-skeleton>
+        <a-skeleton active v-else :paragraph="{ rows: 15 }"></a-skeleton>
       </div>
       <template #footer>
         <div flex="main:justify">
           <div flex="cross:center">
             <a-tag color="primary">
-              <a-icon name="file-text"></a-icon>
+              <AntIcon name="FileTextOutlined"></AntIcon>
               说明
             </a-tag>
             <span class="pl-5" style="color: var(--bin-color-danger-light1)">

@@ -120,7 +120,7 @@ const click = comp => emit('click', comp)
       height: 100%;
       background: rgba(33, 33, 37, 0.7);
       display: none;
-      > i {
+      > .anticon {
         position: absolute;
         top: 4px;
         right: 4px;

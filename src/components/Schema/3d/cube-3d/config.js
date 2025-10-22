@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VCube3d',
   alias: '3d盒子',
-  icon: 'CodeSandbox',
+  icon: 'CodeSandboxOutlined',
   type: ComType.com,
   attr: { w: 500, h: 500, lockedRatio: true },
   config: {

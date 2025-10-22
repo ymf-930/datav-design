@@ -2,7 +2,7 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="属性" default-open>
       <g-field label="图标颜色">
-        <a-icon-select v-model="config.src" style="width: 100%" />
+        <AntIconSelect v-model="config.src" style="width: 100%" />
       </g-field>
       <g-field label="图标颜色">
         <g-color-picker v-model="config.color" />

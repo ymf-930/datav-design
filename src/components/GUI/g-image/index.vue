@@ -6,12 +6,12 @@
     </div>
     <div class="g-resize" v-if="showResize">
       <a-tooltip content="恢复默认尺寸">
-        <a-icon name="expend" type="button" @click="resetSize"></a-icon>
+        <AntIcon name="ExpandOutlined" type="button" @click="resetSize"></AntIcon>
       </a-tooltip>
     </div>
     <div class="g-resize" v-if="showClear">
       <a-tooltip content="清除图片">
-        <a-icon name="clear" type="button" @click="clear"></a-icon>
+        <AntIcon name="ClearOutlined" type="button" @click="clear"></AntIcon>
       </a-tooltip>
     </div>
   </div>

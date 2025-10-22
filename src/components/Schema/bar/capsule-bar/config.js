@@ -6,7 +6,7 @@ import { getBaseActions } from '@/utils/events'
 export default {
   name: 'VCapsuleBar',
   alias: '胶囊柱图',
-  icon: 'barchart',
+  icon: 'BarChartOutlined',
   type: ComType.com,
   componentType: 'bar',
   attr: { w: 500, h: 300, chartThemeColor: '' },

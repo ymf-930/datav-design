@@ -1,6 +1,5 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     draggable
     width="960px"
     top="50px"
@@ -13,15 +12,14 @@
       <div class="left-info pr-8">
         <div class="color-list mr-5">
           <div class="top-button">
-            <b-button
-              type="primary"
-              icon="plus-square"
-              :style="{ width: '100%' }"
+            <a-button type="primary" :style="{ width: '100%' }"
               plain
-              @click="createCustomTheme"
-            >
+              @click="createCustomTheme">
+        <template #icon>
+          <AntIcon name="PlusSquareOutlined" />
+        </template>
               创建自定义主题
-            </b-button>
+            </a-button>
           </div>
 
           <div v-if="customThemes.length || isComp" class="list-wrap">
@@ -59,7 +57,7 @@
                 :title="usedIds.includes(item.id) ? '当前主题已被使用不可删除' : ''"
                 @click="removeCustomTheme(item.id, usedIds.includes(item.id))"
               >
-                <i class="b-iconfont b-icon-delete"></i>
+                <AntIcon name="DeleteOutlined"></AntIcon>
               </div>
             </div>
           </div>
@@ -67,10 +65,10 @@
             暂无自定义主题
           </div>
         </div>
-        <b-timeline>
-          <b-timeline-item color="primary"></b-timeline-item>
-          <b-timeline-item color="success"></b-timeline-item>
-        </b-timeline>
+        <a-timeline>
+          <a-timeline-item color="primary"></a-timeline-item>
+          <a-timeline-item color="success"></a-timeline-item>
+        </a-timeline>
       </div>
       <div class="right-info">
         <template v-if="customThemes.length || isComp">
@@ -79,13 +77,12 @@
               <div flex="cross:center">
                 <span class="color-name">主题名称</span>
 
-                <b-input
-                  v-if="isComp && currentTheme.id === ''"
-                  :model-value="currentTheme.name"
+                <a-input v-if="isComp && currentTheme.id === ''"
+                  v-model:value="currentTheme.name"
                   style="width: 240px"
                   disabled
                 />
-                <b-input
+                <a-input
                   v-else
                   v-model="currentTheme.name"
                   show-word-count
@@ -108,14 +105,14 @@
             <ColorsCharts :colors="currentTheme.color" :id="currentTheme.id" />
           </div>
         </template>
-        <b-empty v-else style="padding-top: 200px">暂未选择自定义主题</b-empty>
+        <a-empty v-else style="padding-top: 200px">暂未选择自定义主题</a-empty>
       </div>
     </div>
     <template #footer>
-      <b-button @click="handleDown" transparent>关闭</b-button>
-      <b-button type="primary" @click="handleOk">应用全局主题</b-button>
+      <a-button @click="handleDown" type="text">关闭</a-button>
+      <a-button type="primary" @click="handleOk">应用全局主题</a-button>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>

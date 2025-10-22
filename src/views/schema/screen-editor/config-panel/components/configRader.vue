@@ -12,19 +12,22 @@
   <div style="padding: 0 10px 8px" flex>
     <a-space>
       <a-tag color="primary">指标配置</a-tag>
-      <a-button type="text" icon="plus" title="新增指标配置" @click="handleAddSaveField"></a-button>
+      <a-button type="text" title="新增指标配置" @click="handleAddSaveField">
+        <template #icon>
+          <AntIcon name="PlusOutlined" />
+        </template></a-button>
     </a-space>
   </div>
 
   <g-field flat v-for="(item, index) in apiDataConfig.config.axisFields.y" :key="index">
     <template #label>
       <span class="mr-5">指标{{ index + 1 }}</span>
-      <a-button
-        type="text"
-        icon="close-circle"
-        text-color="danger"
+      <a-button type="text" text-color="danger"
         @click="handleRemoveSaveField(index)"
       />
+        <template #icon>
+          <AntIcon name="CloseCircleOutlined" />
+        </template>
     </template>
     <g-select
       label="字段"

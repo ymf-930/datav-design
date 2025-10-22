@@ -24,7 +24,7 @@ export const iconMapping = {
   
   // 编辑图标
   'edit': 'EditOutlined',
-  'edit-square': 'EditSquareOutlined',
+  'edit-square': 'EditOutlined',
   'save': 'SaveOutlined',
   'delete': 'DeleteOutlined',
   'copy': 'CopyOutlined',

@@ -19,14 +19,14 @@
                     class="column-item"
                     :class="item.type"
                   >
-                    <a-dropdown trigger="contextmenu" getPopupContainer @click="legendChange">
+                    <a-dropdown :trigger="['contextmenu']" @click="legendChange">
                       <div class="field-title">
                         <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                         <span class="ml-5">
                           {{ item.title }}
                         </span>
                       </div>
-                      <template #dropdown>
+                      <template #overlay>
                         <a-menu>
                           <a-menu-item :key="{ index, key: '' }"
                             :selected="item.sortWay === ''"
@@ -42,7 +42,7 @@
                         </a-menu>
                       </template>
                     </a-dropdown>
-                    <i class="b-iconfont b-icon-delete" @click="legendColumns.splice(index, 1)"></i>
+                    <AntIcon name="DeleteOutlined" @click="legendColumns.splice(index, 1)"></AntIcon>
                   </li>
                 </ul>
                 <div
@@ -66,17 +66,16 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <a-dropdown trigger="contextmenu" getPopupContainer @click="sortChange">
+                  <a-dropdown :trigger="['contextmenu']" @click="sortChange">
                     <div class="field-title">
-                      <i
-                        class="b-iconfont b-icon-expand mr-5"
+                      <AntIcon name="ExpandOutlined" class="mr-5"
                         v-if="showDrill && item.drillEnabled === 'Y'"
                         title="下钻字段"
-                      ></i>
+                      ></AntIcon>
                       <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                       <span class="ml-5">{{ item.title }}</span>
                     </div>
-                    <template #dropdown>
+                    <template #overlay>
                       <a-menu>
                         <a-menu-item :key="{ index, key: '' }" :selected="item.sortWay === ''">
                           不排序
@@ -90,13 +89,12 @@
                       </a-menu>
                     </template>
                   </a-dropdown>
-                  <i
-                    class="b-iconfont b-icon-apartment"
+                  <AntIcon name="ApartmentOutlined"
                     title="设置下钻"
                     v-if="canDrill && !showDrill && item.drillEnabled === 'N'"
                     @click="setDrill(index)"
-                  ></i>
-                  <i class="b-iconfont b-icon-delete" @click="xColumns.splice(index, 1)"></i>
+                  ></AntIcon>
+                  <AntIcon name="DeleteOutlined" @click="xColumns.splice(index, 1)"></AntIcon>
                 </li>
               </ul>
               <div
@@ -119,14 +117,14 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <a-dropdown trigger="click" getPopupContainer @click="aggrChange">
+                  <a-dropdown :trigger="['click']" @click="aggrChange">
                     <div class="field-title">
                       <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                       <span class="ml-5">
                         {{ item.title }}{{ ` (${AGGREGATOR_FUN[item.aggregator]})` }}
                       </span>
                     </div>
-                    <template #dropdown>
+                    <template #overlay>
                       <a-menu>
                         <a-menu-item v-for="(val, key) in AGGREGATOR_FUN"
                           :key="key"
@@ -137,7 +135,7 @@
                       </a-menu>
                     </template>
                   </a-dropdown>
-                  <i class="b-iconfont b-icon-delete" @click="yColumns.splice(index, 1)"></i>
+                  <AntIcon name="DeleteOutlined" @click="yColumns.splice(index, 1)"></AntIcon>
                 </li>
               </ul>
               <div
@@ -156,10 +154,9 @@
             >
               <div class="area-name" flex="cross:center">
                 <span class="mr-5">下钻字段</span>
-                <i
-                  class="b-iconfont b-icon-question-circle f-s-14"
+                <AntIcon name="QuestionCircleOutlined" class="f-s-14"
                   title="可继续拖拽维度字段设置下层下钻字段"
-                ></i>
+                ></AntIcon>
               </div>
               <ul class="column-list drill-list">
                 <li
@@ -170,11 +167,11 @@
                   :style="{ width: index === 0 ? '100%' : '90%' }"
                 >
                   <div class="field-title">
-                    <i class="b-iconfont b-icon-branches mr-5 f-s-14" v-if="index === 0"></i>
+                    <AntIcon name="BranchesOutlined" class="mr-5 f-s-14" v-if="index === 0"></AntIcon>
                     <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                     <span class="ml-5">{{ item.title }}</span>
                   </div>
-                  <i class="b-iconfont b-icon-delete" @click="removeDrill(index)"></i>
+                  <AntIcon name="DeleteOutlined" @click="removeDrill(index)"></AntIcon>
                 </li>
               </ul>
               <div
@@ -197,30 +194,28 @@
     </div>
     <div class="data-config-right">
       <div class="tree-box">
-        <b-tree
-          default-expand
+        <a-tree default-expand
           draggable
           lock-select
           :allow-drop="allowDrop"
           :allow-drag="allowDrag"
-          :data="[dimensionTree]"
+          :treeData="[dimensionTree]"
           :render="renderContent"
           @node-drag-start="handleDimensionDragStart"
           @node-drag-end="dragging = false"
-        ></b-tree>
+        ></a-tree>
       </div>
       <div class="tree-box">
-        <b-tree
-          default-expand
+        <a-tree default-expand
           draggable
           lock-select
           :allow-drop="allowDrop"
           :allow-drag="allowDrag"
-          :data="[measureTree]"
+          :treeData="[measureTree]"
           :render="renderContent"
           @node-drag-start="handleMeasureDragStart"
           @node-drag-end="dragging = false"
-        ></b-tree>
+        ></a-tree>
       </div>
       <div class="tree-loading" v-show="loading">
         <g-loading spinning></g-loading>
@@ -469,10 +464,10 @@ export default {
       padding-left: 10px;
     }
     .bin-tree-render-title {
-      .D > i {
+      .D > .anticon {
         color: var(--bin-color-primary);
       }
-      .M > i {
+      .M > .anticon {
         color: var(--bin-color-success);
       }
     }

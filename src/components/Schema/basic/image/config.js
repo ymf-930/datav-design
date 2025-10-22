@@ -6,7 +6,7 @@ import { deepMerge, deepCopy } from '@/utils/util'
 export const imageConfig = {
   name: 'VImage',
   alias: '图片',
-  icon: 'image',
+  icon: 'FileImageOutlined',
   type: ComType.com,
   attr: { w: 500, h: 300, lockedRatio: true },
   config: {

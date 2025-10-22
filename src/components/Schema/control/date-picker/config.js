@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VDatePicker',
   alias: '日期选择器',
-  icon: 'time-circle',
+  icon: 'FieldTimeOutlined',
   type: ComType.com,
   attr: {w: 280, h: 32},
   config: {

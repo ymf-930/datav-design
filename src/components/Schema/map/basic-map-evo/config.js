@@ -4,7 +4,7 @@ import { initApiData, ComType } from '@/config/data-source'
 export default {
   name: 'VBasicMapEvo',
   alias: '省份地图',
-  icon: 'location',
+  icon: 'EnvironmentOutlined',
   type: ComType.com,
   componentType: 'gauge',
   attr: { w: 500, h: 300 },

@@ -3,7 +3,7 @@ import { ComType } from '@/config/data-source'
 export default {
   name: 'VTimer',
   alias: '时间器',
-  icon: 'time-circle',
+  icon: 'FieldTimeOutlined',
   type: ComType.com,
   attr: { w: 300, h: 56 },
   config: {

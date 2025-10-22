@@ -1,6 +1,5 @@
 <template>
-  <b-modal
-    v-model="visible"
+  <a-modal v-model:visible="visible"
     draggable
     width="640px"
     top="50px"
@@ -13,7 +12,7 @@
       <div class="top-color-edit bg-box">
         <div flex="cross:center">
           <span class="color-name">自定义组件颜色</span>
-          <b-input :model-value="currentChartTheme.name" style="width: 240px" disabled />
+          <a-input v-model:value="currentChartTheme.name" style="width: 240px" disabled />
         </div>
         <ColorsSetting v-model="currentChartTheme.color" v-model:selectIndex="currentColorIndex" />
       </div>
@@ -27,10 +26,10 @@
       </div>
     </div>
     <template #footer>
-      <b-button @click="handleDown" transparent>关闭</b-button>
-      <b-button type="primary" @click="handleOk">应用</b-button>
+      <a-button @click="handleDown" type="text">关闭</a-button>
+      <a-button type="primary" @click="handleOk">应用</a-button>
     </template>
-  </b-modal>
+  </a-modal>
 </template>
 
 <script setup>
