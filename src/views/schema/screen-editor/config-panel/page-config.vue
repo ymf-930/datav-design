@@ -13,7 +13,7 @@
       </a-radio-group>
     </div>
     <div class="page-config-content">
-      <div class="ant-scrollbar">
+      <ScrollContainer height="100%">
         <div v-if="curTabIndex === 0">
           <div class="page-config-wp">
             <g-field label="屏幕设置" style="padding-top: 8px; padding-bottom: 8px;">
@@ -220,7 +220,7 @@
             :exampleDesc="exampleDesc"
           />
         </div>
-      </div>
+      </ScrollContainer>
     </div>
   </div>
 </template>
@@ -232,6 +232,7 @@ import { ref, watch, computed } from 'vue'
 import { createPreviewThumb } from '@/hooks/usePreviewImg'
 import { message } from 'ant-design-vue'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 import { BlendModeOptions } from '@/config/select-options'
 import { hueRotateColor, GlobalTheme } from '@/theme'
 import { useParamsDesc } from '@/components/Common/CustomScripts/customScriptsUtil'

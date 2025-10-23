@@ -88,18 +88,18 @@ export default {
 .system-error-page {
   background-color: #1d2126;
   height: 100vh;
-  .bin-result {
+  .ant-result {
     padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .bin-result-image {
+  .ant-result-image {
     width: 400px;
     height: 340px;
   }
-  .bin-result-title {
+  .ant-result-title {
     margin-bottom: 24px;
     color: #fff;
     font-weight: bold;
@@ -110,7 +110,7 @@ export default {
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }
-  .bin-result-subtitle {
+  .ant-result-subtitle {
     margin-bottom: 24px;
     color: #808695;
     font-size: 16px;
@@ -121,7 +121,7 @@ export default {
     animation-delay: 0.1s;
     animation-fill-mode: forwards;
   }
-  .bin-result-extra {
+  .ant-result-extra {
     text-align: center;
     opacity: 0;
     animation-name: slideUp;

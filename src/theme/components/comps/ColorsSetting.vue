@@ -16,20 +16,20 @@
               :style="{ '--active-color': element }"
               @click="colorClick(index)"
             >
-              <a-color-picker
-                size="mini"
-                v-model="colors[index]"
+              <ColorPicker
+                :model-value="element"
+                :show-value="true"
+                :preset-colors="pickerColors"
                 :show-alpha="true"
-                :colors="pickerColors"
-                style="width: 94px"
-                popper-class="is-dark"
-                color-format="hex"
+                placement="bottom"
+                size="small"
+                @update:model-value="(color) => handleColorChange(color, index)"
               />
             </div>
-            <AntIcon name="SwapOutlined" class="icon-move" title="拖动位置"></AntIcon>
-            <a-tooltip content="删除颜色" v-if="index > 5">
-              <AntIcon name="CloseOutlined" @click="removeColor(index)"></AntIcon>
-            </a-tooltip>
+              <AntIcon name="SwapOutlined" class="icon-move pl-5" title="拖动位置"></AntIcon>
+              <a-tooltip content="删除颜色" v-if="index > 5">
+                <AntIcon name="CloseOutlined" @click="removeColor(index)" class="pl-5"></AntIcon>
+              </a-tooltip>
           </div>
         </div>
       </template>
@@ -38,8 +38,7 @@
           <div class="item-inner">
             <a-button
               type="primary"
-              plain
-              style="width: 102px"
+              size="small"
               :disabled="colors.length > 10"
               :title="colors.length > 10 ? '主题颜色为11个以内' : ''"
               @click="addColor"
@@ -56,8 +55,9 @@
 
 <script setup>
 import Draggable from 'vuedraggable'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { pickerColors } from '@/theme'
+import ColorPicker from '@/components/Common/ColorPicker/index.vue'
 
 const emit = defineEmits(['update:modelValue', 'update:selectIndex'])
 const props = defineProps({
@@ -83,6 +83,11 @@ const activeIndex = computed({
 
 function colorClick(index) {
   activeIndex.value = index
+}
+
+// 处理颜色变化
+function handleColorChange(color, index) {
+  colors.value[index] = color
 }
 
 //  新增一个颜色
@@ -116,11 +121,6 @@ function removeColor(index) {
         &.active {
           border: 2px solid var(--active-color);
           padding: 2px;
-        }
-      }
-      :deep(.b-color-picker) {
-        .ant-input {
-          font-size: var(--datav-font-size-sm);
         }
       }
       .ant-icon {

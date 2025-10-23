@@ -95,7 +95,7 @@ function uploadImages(images) {
   &.g-upload {
     width: 100%;
     height: 100%;
-    :deep(.bin-upload) {
+    :deep(.ant-upload) {
       width: 100%;
       height: 100%;
     }

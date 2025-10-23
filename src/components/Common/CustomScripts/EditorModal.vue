@@ -37,10 +37,10 @@
             <a-radio-button :value="1">脚本示例</a-radio-button>
           </a-radio-group>
           <div class="tip-content">
-            <div class="ant-scrollbar">
+            <ScrollContainer height="400px">
               <CustomScriptsParams v-if="tipType === 0" :paramsDesc="paramsDesc" />
               <CustomScriptsExamples v-if="tipType === 1" :exampleDesc="exampleDesc" />
-            </div>
+            </ScrollContainer>
           </div>
         </div>
       </template>
@@ -71,6 +71,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 defineOptions({
   name: 'CustomScriptsEditor',
 })
@@ -177,20 +178,20 @@ defineExpose({
     white-space: pre-wrap;
     line-height: 1.5715;
   }
-  :deep(.bin-collapse) {
+  :deep(.ant-collapse) {
     border: none;
     background-color: var(--schema-color-bg-2);
   }
-  :deep(.bin-collapse > .bin-collapse-item) {
+  :deep(.ant-collapse > .ant-collapse-item) {
     border: none;
   }
-  :deep(.bin-collapse > .bin-collapse-item > .bin-collapse-header) {
+  :deep(.ant-collapse > .ant-collapse-item > .ant-collapse-header) {
     border-bottom: 1px solid transparent;
   }
-  :deep(.bin-collapse-content) {
+  :deep(.ant-collapse-content) {
     padding: 0;
     background-color: var(--schema-color-bg-2);
-    .bin-collapse-content-box {
+    .ant-collapse-content-box {
       padding: 0;
       color: #fafafa;
       .tip {
@@ -199,7 +200,7 @@ defineExpose({
     }
   }
 }
-:deep(.bin-skeleton.is-animated .bin-skeleton__item) {
+:deep(.ant-skeleton.is-animated .ant-skeleton-content .ant-skeleton-title) {
   background: linear-gradient(90deg, #1e1e1f 25%, #232324 37%, #1e1e1f 63%);
 }
 </style>

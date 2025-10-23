@@ -462,12 +462,12 @@ export default {
       }
     }
   }
-  :deep(.bin-tree) {
+  :deep(.ant-tree) {
     color: var(--s-text-color);
-    .bin-tree-node-children {
+    .ant-tree-treenode {
       padding-left: 10px;
     }
-    .bin-tree-render-title {
+    .ant-tree-node-content-wrapper {
       .D > .anticon {
         color: var(--datav-primary-color);
       }

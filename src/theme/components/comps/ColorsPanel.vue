@@ -3,8 +3,8 @@
     <a-row :gutter="8">
       <a-col :span="12">
         <div class="color-edit bg-box">
-          <div class="title">系统主题色</div>
-          <div style="height: 120px">
+          <div class="title">系统主题色 ({{ Object.keys(chartColors).length }} 个主题)</div>
+          <ScrollContainer height="120px">
             <div
               v-for="(item, key) in chartColors"
               :key="key"
@@ -21,7 +21,7 @@
               ></div>
               <div class="theme-bottom" :style="getThemeBottomStyle(item.color)"></div>
             </div>
-          </div>
+          </ScrollContainer>
         </div>
       </a-col>
       <a-col :span="12">
@@ -49,6 +49,7 @@
 import { chartColors } from '@/theme'
 import { Modal } from 'ant-design-vue'
 import { computed } from 'vue'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 // Utils.color 已移除，使用自定义函数
 const mixWhite = (color, ratio) => {

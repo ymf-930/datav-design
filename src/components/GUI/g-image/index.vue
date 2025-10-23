@@ -79,7 +79,7 @@ function clear() {
     display: flex;
     align-items: center;
     height: 28px;
-    background: var(--s-color-1);
+    background: var(--s-color-0);
     border: 1px solid var(--s-color-1);
     border-radius: var(--datav-border-radius-base);
     .g-img {

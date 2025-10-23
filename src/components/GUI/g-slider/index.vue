@@ -97,9 +97,9 @@ watch(
       }
     }
   }
-  :deep(.bin-slider-wrapper) {
+  :deep(.ant-slider) {
     padding: 0 var(--datav-border-radius-base) 0 0;
-    .bin-slider__runway {
+    .ant-slider-rail {
       margin: 13px 0;
     }
   }

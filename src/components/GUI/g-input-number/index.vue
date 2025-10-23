@@ -95,8 +95,8 @@ const handleChange = (currentValue, oldValue) => {
     font-size: 12px;
     color: var(--s-text-color-3);
     top: 0;
-    right: 23px;
-    line-height: 26px;
+    right: 28px;
+    line-height: 24px;
     width: 16px;
     text-align: right;
   }

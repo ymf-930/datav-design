@@ -3,33 +3,40 @@
     <div class="body-box">
       <div flex="main:justify cross:center">
         <div class="theme-color-item-box">
-          <a-color-picker
+          <div
             v-for="(color, index) in showColors"
             :key="index"
-            size="small"
-            v-model="showColors[index]"
-            :show-alpha="true"
-            :colors="pickerColors"
-            :show-label="false"
-            popper-class="is-dark"
-            color-format="hex"
             class="theme-color-item"
-            @change="val => colorChange(val, index)"
-          />
+          >
+            <ColorPicker
+              :model-value="color"
+              :show-value="false"
+              :preset-colors="pickerColors"
+              :show-alpha="true"
+              placement="bottom"
+              size="small"
+              :custom-style="{ width: '28px', padding: '0' }"
+              @update:model-value="(newColor) => handleColorChange(newColor, index)"
+            />
+          </div>
         </div>
         <div class="btn-box">
-          <a-button type="text" title="自定义组件颜色" @click="openCustomTheme">
-            <AntIcon name="EditOutlined" class="btn-text"></AntIcon>
-          </a-button>
-          <a-button
-            type="text"
-            style="margin-left: 4px"
-            title="移除自定义颜色"
-            :disabled="isSystemOrCustomTheme(selectedCom.attr.chartThemeColor)"
-            @click="deleteCustomColor"
-          >
-            <AntIcon name="DeleteOutlined" class="btn-text"></AntIcon>
-          </a-button>
+            <a-button type="text" size="small" title="自定义组件颜色" @click="openCustomTheme">
+              <template #icon>
+                <AntIcon name="EditOutlined" class="btn-text"></AntIcon>
+              </template>
+            </a-button>
+            <a-button
+              type="text"
+              size="small"
+              title="移除自定义颜色"
+              :disabled="isSystemOrCustomTheme(selectedCom.attr.chartThemeColor)"
+              @click="deleteCustomColor"
+            >
+              <template #icon>
+                <AntIcon name="DeleteOutlined" class="btn-text"></AntIcon>
+              </template>
+            </a-button>
         </div>
       </div>
       <div class="theme-bottom" :style="themeBottomStyle"></div>
@@ -41,6 +48,7 @@
 <script setup>
 import { useChartThemeColor, SelfTheme, pickerColors } from '@/theme'
 import { computed, ref } from 'vue'
+import ColorPicker from '@/components/Common/ColorPicker/index.vue'
 
 defineOptions({
   name: 'CompColor',
@@ -58,6 +66,11 @@ const themeBottomStyle = computed(() => {
   const end = arr[arr.length - 1]
   return { backgroundImage: `linear-gradient(to right, ${start} 0%, ${end} 100%)` }
 })
+
+// 处理颜色变化
+function handleColorChange(color, index) {
+  colorChange(color, index)
+}
 
 // 弹出自定义颜色弹窗
 function openCustomTheme() {
@@ -100,14 +113,28 @@ function colorChange(color, index) {
       align-items: center;
       border-radius: 2px;
       overflow: hidden;
-      :deep(.bin-color-picker) {
+      :deep(.ant-color-picker) {
         &.theme-color-item {
           display: inline-block;
           width: 30px;
           height: 10px;
-          .bin-color-picker__trigger {
+          .ant-color-picker-trigger {
             padding: 0;
           }
+        }
+      }
+      .theme-color-item {
+        display: inline-block;
+        width: 28px;
+        height: 10px;
+        cursor: pointer;
+        border: 1px solid var(--s-border-color);
+        border-radius: 2px;
+        overflow: hidden;
+        margin-right: 2px;
+        .color-preview {
+          width: 100%;
+          height: 100%;
         }
       }
     }

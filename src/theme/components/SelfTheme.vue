@@ -184,16 +184,16 @@ defineExpose({ open })
       color: var(--s-text-color);
     }
   }
-  :deep(.bin-timeline) {
+  :deep(.ant-timeline) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .bin-timeline-item {
-      .bin-timeline-item-tail {
+    .ant-timeline-item {
+      .ant-timeline-item-tail {
         display: none;
       }
-      .bin-timeline-item-head {
+      .ant-timeline-item-head {
         background-color: transparent;
         border-width: 2px;
       }

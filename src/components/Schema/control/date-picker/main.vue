@@ -87,15 +87,13 @@ function handleChange(val) {
 </script>
 <style scoped>
 .dv-wrapper {
-  :deep(.bin-date-editor) {
-    .ant-input {
-      background-color: var(--bg-color);
-      color: var(--font-color);
-      font-size: var(--font-size);
-      border-color: var(--border-color);
-      border-radius: var(--border-radius);
-      height: var(--select-height);
-    }
+  :deep(.ant-picker) {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-size: var(--font-size);
+    border-color: var(--border-color);
+    border-radius: var(--border-radius);
+    height: var(--select-height);
     input::-webkit-input-placeholder{   /* 使用webkit内核的浏览器 */
       color: var(--font-color);
     }
@@ -108,7 +106,7 @@ function handleChange(val) {
     input:-ms-input-placeholder{   /* IE浏览器 */
       color: var(--font-color);
     }
-    .ant-input-prefix .anticon, .ant-input-suffix .anticon {
+    .ant-picker-suffix .anticon, .ant-picker-prefix .anticon {
       color: var(--icon-color);
     }
   }

@@ -296,3 +296,112 @@ export function hasProperty(obj, property) {
   // eslint-disable-next-line no-prototype-builtins
   return obj ? obj.hasOwnProperty(property) : false
 }
+
+// ==================== 颜色工具函数 ====================
+
+/**
+ * 将颜色字符串转换为颜色对象（用于 @ckpack/vue-color）
+ * @param {string} colorString - 颜色字符串
+ * @returns {string|object} - 颜色对象或字符串
+ */
+export function getColorObject(colorString) {
+  if (!colorString) return '#000000'
+  
+  // 如果是 rgba 格式
+  if (colorString.startsWith('rgba(')) {
+    const matches = colorString.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/)
+    if (matches) {
+      const [, r, g, b, a] = matches
+      return {
+        hex: `#${parseInt(r).toString(16).padStart(2, '0')}${parseInt(g).toString(16).padStart(2, '0')}${parseInt(b).toString(16).padStart(2, '0')}`,
+        rgba: { r: parseInt(r), g: parseInt(g), b: parseInt(b), a: parseFloat(a) }
+      }
+    }
+  }
+  
+  // 如果是 hex 格式
+  if (colorString.startsWith('#')) {
+    return colorString
+  }
+  
+  return colorString
+}
+
+/**
+ * 将颜色对象转换为颜色字符串
+ * @param {object|string} color - 颜色对象或字符串
+ * @returns {string} - 颜色字符串
+ */
+export function getColorString(color) {
+  if (!color) return '#000000'
+  
+  // 如果已经是字符串，直接返回
+  if (typeof color === 'string') {
+    return color
+  }
+  
+  // 如果是颜色对象
+  if (color.hex || color.rgba) {
+    let formatColor = color.hex || color
+    if (color.rgba && color.rgba.a < 1) {
+      formatColor = `rgba(${color.rgba.r}, ${color.rgba.g}, ${color.rgba.b}, ${color.rgba.a})`
+    }
+    return formatColor
+  }
+  
+  return '#000000'
+}
+
+/**
+ * 处理颜色变化事件
+ * @param {object|string} color - 颜色对象或字符串
+ * @param {function} callback - 回调函数
+ * @param {number} index - 颜色索引（可选）
+ */
+export function handleColorChange(color, callback, index = null) {
+  if (color && callback) {
+    try {
+      const formatColor = getColorString(color)
+      if (index !== null) {
+        callback(formatColor, index)
+      } else {
+        callback(formatColor)
+      }
+    } catch (error) {
+      console.log('Color conversion error:', error)
+    }
+  }
+}
+
+/**
+ * 验证颜色字符串是否有效
+ * @param {string} colorString - 颜色字符串
+ * @returns {boolean} - 是否有效
+ */
+export function isValidColor(colorString) {
+  if (!colorString) return false
+  
+  try {
+    // 使用 Color 库验证颜色
+    Color(colorString)
+    return true
+  } catch {
+    return false
+  }
+}
+
+/**
+ * 获取颜色的对比色（黑色或白色）
+ * @param {string} colorString - 颜色字符串
+ * @returns {string} - 对比色
+ */
+export function getContrastColor(colorString) {
+  if (!colorString) return '#000000'
+  
+  try {
+    const color = Color(colorString)
+    return color.isLight() ? '#000000' : '#ffffff'
+  } catch {
+    return '#000000'
+  }
+}
