@@ -55,7 +55,7 @@ const accountStyle = computed(() => ({
   position: absolute;
   left: 0;
   width: 0;
-  border-left: 1px dashed var(--bin-color-primary);
+  border-left: 1px dashed var(--datav-primary-color);
   transform: translateY(-100%);
 }
 
@@ -63,13 +63,13 @@ const accountStyle = computed(() => ({
   position: absolute;
   top: 0;
   height: 0;
-  border-top: 1px dashed var(--bin-color-primary);
+  border-top: 1px dashed var(--datav-primary-color);
   transform: translateX(-100%);
 }
 
 .nav-line-account {
   position: absolute;
-  color: var(--bin-color-primary);
+  color: var(--datav-primary-color);
   text-shadow: 1px 1px 1px #222;
   white-space: nowrap;
   transform: translate(-100%, -100%);

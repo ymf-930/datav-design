@@ -55,7 +55,7 @@
               <AntIcon name="FileTextOutlined"></AntIcon>
               说明
             </a-tag>
-            <span class="pl-5" style="color: var(--bin-color-danger-light1)">
+            <span class="pl-5" style="color: var(--datav-error-color)">
               {{ funcExplain }}
             </span>
           </template>
@@ -144,10 +144,10 @@ defineExpose({
     display: flex;
     flex-direction: column;
     width: calc(100% - 480px);
-    font-size: 14px;
+    font-size: var(--datav-font-size-base);
     color: #b478cf;
     .params {
-      color: var(--bin-color-primary);
+      color: var(--datav-primary-color);
     }
     .code {
       padding: 5px 5px 5px 0;
@@ -160,17 +160,17 @@ defineExpose({
   .right-tip {
     width: 480px;
     border-left: 1px solid var(--v-g-border-color);
-    padding-left: 8px;
+    padding-left: var(--datav-border-radius-lg);
     .tip-content {
       height: calc(100% - 40px);
-      margin-top: 6px;
+      margin-top: var(--datav-border-radius-base);
       overflow-y: auto;
     }
   }
 
   :deep(.hljs) {
-    padding: 16px;
-    border-radius: 8px;
+    padding: var(--datav-font-size-lg);
+    border-radius: var(--datav-border-radius-lg);
     font-size: 13px;
     font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
     /* background: #f5f6f7; */

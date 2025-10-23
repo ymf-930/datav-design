@@ -32,20 +32,20 @@ const click = name => emit('click', name)
 .comp-wrap {
   display: flex;
   flex-wrap: wrap;
-  padding: 8px 4px;
+  padding: var(--datav-border-radius-lg) var(--datav-border-radius-sm);
 }
 .comp-item {
   width: 50%;
   vertical-align: top;
   user-select: none;
-  margin-bottom: 6px;
-  padding: 0 4px;
+  margin-bottom: var(--datav-border-radius-base);
+  padding: 0 var(--datav-border-radius-sm);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
 
   .comp-item-text {
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     padding: 0 5px;
     text-align: center;
     overflow: hidden;
@@ -65,7 +65,7 @@ const click = name => emit('click', name)
       width: 100%;
     }
     &:hover {
-      border-color: var(--bin-color-primary-light2);
+      border-color: var(--datav-primary-color-active);
       background: #2a292f;
     }
   }

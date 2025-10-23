@@ -60,7 +60,7 @@
             style="height: 300px"
             flex="dir:top main:center cross:center"
           >
-            <a-empty>暂无主题</a-empty>
+            <a-empty description="暂无主题"></a-empty>
           </div>
         </div>
       </div>
@@ -136,8 +136,8 @@ function openCustomTheme() {
   align-items: center;
   text-align: center;
   justify-content: space-between;
-  margin-top: 16px;
-  padding: 12px 16px;
+  margin-top: var(--datav-font-size-lg);
+  padding: var(--datav-font-size-sm) var(--datav-font-size-lg);
   background-color: var(--schema-color-bg-2);
   border-radius: 10px;
   overflow: hidden;
@@ -151,12 +151,12 @@ function openCustomTheme() {
     height: 3px;
   }
   &.active {
-    border: 1px solid var(--bin-color-primary);
+    border: 1px solid var(--datav-primary-color);
     border-bottom: 1px solid rgba(0, 0, 0, 0);
   }
   &.current {
-    padding: 14px 16px;
-    margin-top: 16px;
+    padding: var(--datav-font-size-base) var(--datav-font-size-lg);
+    margin-top: var(--datav-font-size-lg);
   }
   .name {
     text-align: left;
@@ -171,16 +171,16 @@ function openCustomTheme() {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border-radius: 6px;
+    border-radius: var(--datav-border-radius-base);
   }
 }
 .theme-list {
   height: 400px;
-  padding: 16px 0;
+  padding: var(--datav-font-size-lg) 0;
   .theme-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: var(--datav-font-size-lg);
   }
   .theme-item {
     margin: 0;

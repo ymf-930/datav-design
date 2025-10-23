@@ -97,7 +97,7 @@ const debounceChange = debounce(change, 200)
   .g-color-picker__inner {
     position: relative;
   }
-  :deep(.bin-input) {
+  :deep(.ant-input) {
     padding-right: 30px;
   }
   :deep(.bin-color-picker) {

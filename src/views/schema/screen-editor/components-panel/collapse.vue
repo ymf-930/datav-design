@@ -93,7 +93,7 @@ const handleRemove = () => emit('remove')
 .collapse-group {
   position: relative;
   .header {
-    padding-left: 6px;
+    padding-left: var(--datav-border-radius-base);
     border-bottom: 1px solid transparent;
     cursor: pointer;
     &.active {
@@ -110,7 +110,7 @@ const handleRemove = () => emit('remove')
         transition: 0.2s;
         position: absolute;
         right: 10px;
-        top: 6px;
+        top: var(--datav-border-radius-base);
         &.active {
           transform: rotate(90deg);
         }
@@ -126,10 +126,10 @@ const handleRemove = () => emit('remove')
       .wrap-edit {
         position: absolute;
         right: 28px;
-        top: 6px;
+        top: var(--datav-border-radius-base);
         opacity: 0;
         > .anticon {
-          font-size: 14px;
+          font-size: var(--datav-font-size-base);
           &.b-icon-edit {
             margin-right: 3px;
           }
@@ -148,7 +148,7 @@ const handleRemove = () => emit('remove')
           left: 0;
           width: 3px;
           border-radius: 2px;
-          background-color: var(--bin-color-primary);
+          background-color: var(--datav-primary-color);
         }
       }
     }

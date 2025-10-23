@@ -148,14 +148,14 @@ function handleLogout() {
       height: 20px;
       margin-left: 5px;
       color: var(--s-text-color);
-      font-size: 14px;
+      font-size: var(--datav-font-size-base);
     }
   }
 }
 
 .top-tip {
-  padding: 6px 0;
-  font-size: 12px;
+  padding: var(--datav-border-radius-base) 0;
+  font-size: var(--datav-font-size-sm);
   color: var(--schema-font-color);
   display: flex;
   right: 0;
@@ -165,7 +165,7 @@ function handleLogout() {
 
   .tip-strong {
     white-space: nowrap;
-    padding-right: 8px;
+    padding-right: var(--datav-border-radius-lg);
   }
 }
 
@@ -239,8 +239,8 @@ function handleLogout() {
         font-size: 50px;
         font-weight: normal;
         background-image: linear-gradient(to right,
-            var(--bin-color-primary-light4),
-            var(--bin-color-primary));
+            var(--datav-primary-color-light),
+            var(--datav-primary-color));
         -webkit-background-clip: text;
         color: transparent;
         font-family: YouSheBiaoTiHei, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial,
@@ -249,10 +249,10 @@ function handleLogout() {
 
       h4 {
         font-weight: normal;
-        font-size: 14px;
+        font-size: var(--datav-font-size-base);
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--bin-color-primary-light5);
+        color: var(--datav-primary-color-lighter);
         font-family: Orbitron-Bold, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial,
           Helvetica, sans-serif;
       }

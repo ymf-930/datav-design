@@ -2,7 +2,7 @@
   <div class="page-config-panel">
     <div class="page-config-top">
       <a-radio-group v-model:value="curTabIndex" style="width: 100%">
-        <a-radio-button :value="0" style="width: 100%;" flex="main:center">
+        <a-radio-button :value="0" style="width: 100%;display: flex;" flex="main:center">
           <span class="mr-16">基础配置</span>
           <AntIcon name="DesktopOutlined"></AntIcon>
         </a-radio-button>
@@ -16,7 +16,7 @@
       <div class="ant-scrollbar">
         <div v-if="curTabIndex === 0">
           <div class="page-config-wp">
-            <g-field label="屏幕设置" style="padding-bottom: 8px; padding-top: 8px">
+            <g-field label="屏幕设置" style="padding-top: 8px; padding-bottom: 8px;">
               <g-group-select v-model="screenLabel" :data="pageMap" @change="sizeChange" style="width: 100%;"/>
             </g-field>
             <g-field label="屏幕大小" flat>
@@ -61,12 +61,14 @@
                 </div>
               </div>
               <div class="pt-8">
-                <a-button type="primary" size="small" :loading="thumbLoading" @click="createThumb">
-                  截取
-                </a-button>
-                <a-button size="small" :loading="thumbLoading" @click="pageConfig.thumbnail = ''">
-                  清除
-                </a-button>
+                <a-space>
+                  <a-button type="primary" size="small" :loading="thumbLoading" @click="createThumb">
+                    截取
+                  </a-button>
+                  <a-button size="small" :loading="thumbLoading" @click="pageConfig.thumbnail = ''">
+                    清除
+                  </a-button>
+                </a-space>
               </div>
             </g-field>
           </div>
@@ -95,7 +97,7 @@
                       width: 50px;
                     "
                   >
-                    <div style="width: 24px; height: 20px; line-height: 20px; font-size: 12px">
+                    <div style="width: 24px; height: 20px; line-height: 20px; font-size: var(--datav-font-size-sm)">
                       底色
                     </div>
 
@@ -361,7 +363,7 @@ watch(
     height: 140px;
     background: var(--schema-color-bg-2);
     border: 1px solid var(--s-border-color);
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
     > img {
       width: 100%;
       height: 100%;
@@ -373,14 +375,14 @@ watch(
 .preset-filter-box {
   position: relative;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: var(--datav-border-radius-lg);
   .pre-desc {
     position: absolute;
     right: 0;
     top: -20px;
     div {
       width: 20px;
-      height: 12px;
+      height: var(--datav-font-size-sm);
       border-radius: 2px;
     }
   }
@@ -390,7 +392,7 @@ watch(
     border-radius: 2px;
     overflow: hidden;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: var(--datav-border-radius-sm);
     height: 10px;
     width: 100%;
     .item {

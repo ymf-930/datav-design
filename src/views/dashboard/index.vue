@@ -90,7 +90,7 @@ export default {
   min-width: 240px;
   max-width: 240px;
   color: #fff;
-  font-size: 14px;
+  font-size: var(--datav-font-size-base);
   overflow-y: auto;
   height: calc(100vh - 150px);
   .folder-manage-group {
@@ -98,15 +98,15 @@ export default {
     align-items: center;
     justify-content: space-between;
     line-height: 36px;
-    padding-right: 8px;
+    padding-right: var(--datav-border-radius-lg);
     padding-left: 24px;
     height: 56px;
     border-bottom: 1px solid #27343e;
     .btn-add-icon {
-      font-size: 16px;
+      font-size: var(--datav-font-size-lg);
       cursor: pointer;
       &:hover {
-        color: var(--bin-color-primary);
+        color: var(--datav-primary-color);
       }
     }
   }
@@ -116,9 +116,9 @@ export default {
   .folder-item {
     position: relative;
     height: 36px;
-    padding: 0 16px 0 50px;
+    padding: 0 var(--datav-font-size-lg) 0 50px;
     display: flex;
-    font-size: 14px;
+    font-size: var(--datav-font-size-base);
     border-radius: 5px;
     margin-bottom: 5px;
     align-items: center;
@@ -128,7 +128,7 @@ export default {
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     &:hover {
-      color: var(--bin-color-primary);
+      color: var(--datav-primary-color);
       background: var(--s-color-1);
       .group-btns {
         display: inline-block;
@@ -136,10 +136,10 @@ export default {
     }
 
     &.folder-item-checked-color {
-      background: var(--bin-color-input-shadow);
-      color: var(--bin-color-primary);
+      background: var(--s-color-1);
+      color: var(--datav-primary-color);
       &:hover {
-        color: var(--bin-color-primary) !important;
+        color: var(--datav-primary-color) !important;
       }
     }
     &.folder-all {
@@ -149,7 +149,7 @@ export default {
     }
     .folder-name {
       width: 100px;
-      font-size: 14px;
+      font-size: var(--datav-font-size-base);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -157,12 +157,12 @@ export default {
     }
     .group-btns {
       display: none;
-      color: var(--bin-color-primary);
+      color: var(--datav-primary-color);
       > .anticon {
-        font-size: 16px;
+        font-size: var(--datav-font-size-lg);
       }
       .anticon + .anticon {
-        margin-left: 6px;
+        margin-left: var(--datav-border-radius-base);
       }
     }
   }
@@ -177,9 +177,9 @@ export default {
     line-height: 30px;
     width: 100%;
     height: 30px;
-    border: 1px solid var(--bin-color-primary);
+    border: 1px solid var(--datav-primary-color);
     transition: 0.2s;
-    box-shadow: 0 0 10px -6px #000;
+    box-shadow: 0 0 10px -var(--datav-border-radius-base) #000;
     outline: none;
   }
 }

@@ -240,30 +240,30 @@ function closePanel() {
       width: 100%;
       height: 100%;
       z-index: 2;
-      padding: 6px;
+      padding: var(--datav-border-radius-base);
 
       .components-item {
         position: relative;
         cursor: pointer;
         width: 100%;
         height: 50px;
-        margin-bottom: 6px;
+        margin-bottom: var(--datav-border-radius-base);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: 0.2s;
-        border-radius: var(--bin-border-radius-default);
+        border-radius: var(--datav-border-radius-base);
 
         .com-tab-icon {
           font-size: 20px;
-          color: var(--bin-color-text-secondary);
+          color: var(rgba(255, 255, 255, 0.45));
         }
 
         .com-tab-title {
           text-align: center;
           opacity: 1;
-          font-size: 12px;
+          font-size: var(--datav-font-size-sm);
           line-height: 18px;
         }
 
@@ -272,10 +272,10 @@ function closePanel() {
         }
 
         &.active {
-          color: var(--bin-color-primary);
-          background: var(--bin-color-input-shadow);
+          color: var(--datav-primary-color);
+          background: var(--s-color-1);
           .com-tab-icon {
-            color: var(--bin-color-primary);
+            color: var(--datav-primary-color);
           }
         }
       }
@@ -294,7 +294,7 @@ function closePanel() {
       position: absolute;
       top: 0;
       right: 1px;
-      letter-spacing: 4px;
+      letter-spacing: var(--datav-border-radius-sm);
 
       > .anticon {
         text-indent: 0;

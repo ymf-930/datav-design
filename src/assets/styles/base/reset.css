@@ -1,7 +1,7 @@
 body {
-  color: var(--bin-color-text-primary);
-  font-size: var(--bin-font-size-default);
-  font-family: var(--bin-font-family);
+  color: var(--datav-text-color-primary);
+  font-size: var(--datav-font-size-base);
+  font-family: var(--datav-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
@@ -54,36 +54,36 @@ ul {
 }
 
 a {
-  color: var(--bin-color-primary);
+  color: var(--datav-primary-color);
   text-decoration: none;
   &:hover {
-    color: var(--bin-color-primary-light1);
+    color: var(--datav-primary-color-hover);
     outline: none;
   }
 
   &:focus {
-    color: var(--bin-color-primary-light1);
+    color: var(--datav-primary-color-hover);
     outline: none;
   }
   &:active {
-    color: var(--bin-color-primary-active);
+    color: var(--datav-primary-color-active);
   }
 }
 
 sup,
 sub {
-  font-size: calc(--bin-font-size-default - 1px);
+  font-size: calc(var(--datav-font-size-base) - 1px);
 }
 
 small {
-  font-size: calc(--bin-font-size-default - 2px);
+  font-size: calc(var(--datav-font-size-base) - 2px);
 }
 
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: var(--bin-border-base-light);
+  border-top: var(--datav-border-color-split);
 }
 
 button,

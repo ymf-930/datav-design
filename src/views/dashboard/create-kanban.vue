@@ -133,7 +133,7 @@
         </div>
       </div>
 
-      <a-empty v-show="templates.length === 0">暂无模板</a-empty>
+      <a-empty v-show="templates.length === 0" description="暂无模板"></a-empty>
     </div>
     <template #footer>
       <a-button @click="closeModal">取消</a-button>
@@ -300,13 +300,13 @@ defineExpose({
 <style scoped>
 .title-bar {
   font-size: 18px;
-  margin-bottom: 8px;
+  margin-bottom: var(--datav-border-radius-lg);
   font-weight: normal;
 }
 .preset-wp {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: var(--datav-border-radius-lg);
   .preset-item {
     display: flex;
     align-items: center;
@@ -316,10 +316,10 @@ defineExpose({
     padding-right: 20px;
     background: var(--schema-color-bg-2);
     border: 1px solid var(--s-border-color);
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
     transition: 0.2s;
     &.selected {
-      border: 1px solid var(--bin-color-primary);
+      border: 1px solid var(--datav-primary-color);
     }
     > .anticon {
       font-size: 40px;
@@ -329,7 +329,7 @@ defineExpose({
     .label-title {
       width: 140px;
       .h2 {
-        font-size: 14px;
+        font-size: var(--datav-font-size-base);
       }
       .h4 {
         color: var(--s-text-color-2);
@@ -339,7 +339,7 @@ defineExpose({
       width: 24px;
       text-align: center;
       &:hover {
-        color: var(--bin-color-primary);
+        color: var(--datav-primary-color);
         background: var(--s-color-1);
         border-radius: 5px;
       }
@@ -347,9 +347,9 @@ defineExpose({
     .custom-input {
       display: flex;
       align-items: center;
-      :deep(.bin-input-number) {
+      :deep(.ant-input-number) {
         width: 75px;
-        .bin-input-number-handler {
+        .ant-input-number-handler {
           display: none;
         }
       }
@@ -363,31 +363,31 @@ defineExpose({
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -var(--datav-border-radius-lg);
+  margin-right: -var(--datav-border-radius-lg);
   color: #fff;
-  font-size: 12px;
+  font-size: var(--datav-font-size-sm);
   .template-grid {
     width: 25%;
-    padding: 0 8px;
+    padding: 0 var(--datav-border-radius-lg);
   }
   .template-item {
     cursor: pointer;
     height: 184px;
     border: 1px solid var(--s-border-color);
     outline: 1px solid transparent;
-    margin-bottom: 16px;
+    margin-bottom: var(--datav-font-size-lg);
     transition: 0.2s;
-    border-radius: 6px;
+    border-radius: var(--datav-border-radius-base);
     overflow: hidden;
     &:hover {
-      border: 1px solid var(--bin-color-primary);
+      border: 1px solid var(--datav-primary-color);
       .preview-image img {
         transform: scale(1.15);
       }
     }
     .template-image {
-      padding: 8px;
+      padding: var(--datav-border-radius-lg);
       width: 100%;
       height: 146px;
       display: flex;
@@ -408,8 +408,8 @@ defineExpose({
     }
     .tpl-remove {
       position: absolute;
-      top: 4px;
-      right: 8px;
+      top: var(--datav-border-radius-sm);
+      right: var(--datav-border-radius-lg);
     }
     .preview-image {
       width: 100%;
@@ -426,10 +426,10 @@ defineExpose({
       }
     }
     .template-name {
-      font-size: 12px;
+      font-size: var(--datav-font-size-sm);
     }
     .template-size {
-      font-size: 12px;
+      font-size: var(--datav-font-size-sm);
       transform: scale(0.8);
       transform-origin: right center;
       letter-spacing: 1px;
@@ -439,12 +439,12 @@ defineExpose({
         sans-serif;
     }
     &.selected {
-      border: 1px solid var(--bin-color-primary);
+      border: 1px solid var(--datav-primary-color);
     }
   }
   .template-item-placeholder {
     width: 258px;
-    margin: 16px;
+    margin: var(--datav-font-size-lg);
   }
 }
 </style>

@@ -49,7 +49,7 @@ const addAnimation = item => {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0px, 1fr));
-  gap: 10px 6px;
+  gap: 10px var(--datav-border-radius-base);
   margin-bottom: 30px;
   padding-top: 10px;
 }
@@ -63,8 +63,8 @@ const addAnimation = item => {
   border-radius: 3px;
   cursor: pointer;
   &.active {
-    color: var(--bin-color-primary);
-    border: 1px solid var(--bin-color-primary);
+    color: var(--datav-primary-color);
+    border: 1px solid var(--datav-primary-color);
   }
 }
 .animation-item {

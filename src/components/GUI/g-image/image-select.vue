@@ -139,7 +139,7 @@ defineExpose({ open })
 
 <style scoped>
 .images-modal-wrap {
-  margin: -16px;
+  margin: -var(--datav-font-size-lg);
   height: 350px;
   display: flex;
   background: rgba(0, 0, 0, 0.45);
@@ -166,7 +166,7 @@ defineExpose({ open })
         background: rgba(0, 0, 0, 0.25);
       }
       > span {
-        margin: 0 4px;
+        margin: 0 var(--datav-border-radius-sm);
       }
     }
   }
@@ -178,7 +178,7 @@ defineExpose({ open })
       flex-wrap: wrap;
       justify-content: flex-start;
       padding: 10px;
-      gap: 8px;
+      gap: var(--datav-border-radius-lg);
     }
     .comp-item {
       position: relative;
@@ -199,7 +199,7 @@ defineExpose({ open })
         max-height: 100%;
       }
       &:hover {
-        border-color: var(--bin-color-primary);
+        border-color: var(--datav-primary-color);
       }
     }
   }

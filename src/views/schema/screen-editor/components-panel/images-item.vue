@@ -112,19 +112,19 @@ const click = comp => emit('click', comp)
 .comp-wrap {
   display: flex;
   flex-wrap: wrap;
-  padding: 8px 4px;
+  padding: var(--datav-border-radius-lg) var(--datav-border-radius-sm);
 }
 .comp-item {
   width: 50%;
   vertical-align: top;
   user-select: none;
-  margin-bottom: 4px;
-  padding: 0 4px;
+  margin-bottom: var(--datav-border-radius-sm);
+  padding: 0 var(--datav-border-radius-sm);
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
   .comp-item-text {
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     padding: 0 5px;
     text-align: center;
     overflow: hidden;
@@ -160,14 +160,14 @@ const click = comp => emit('click', comp)
       display: none;
       > .anticon {
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: var(--datav-border-radius-sm);
+        right: var(--datav-border-radius-sm);
         cursor: pointer;
         color: #fff;
       }
     }
     &:hover {
-      border-color: var(--bin-color-primary-light2);
+      border-color: var(--datav-primary-color-active);
       background: #2a292f;
       .hover-layer {
         display: block;

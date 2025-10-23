@@ -83,9 +83,7 @@
     <div class="loading-wrap" flex="main:center cross:center" v-show="listData.loading">
       <a-spin></a-spin>
     </div>
-    <a-empty v-show="!listData.loading && listData.rows.length === 0">
-      {{ noData ? '查询无结果' : '该分组下没有大屏' }}
-    </a-empty>
+    <a-empty v-show="!listData.loading && listData.rows.length === 0" :description="noData ? '查询无结果' : '该分组下没有大屏'"></a-empty>
     <div class="t-center pb-24" v-show="!listData.loading && listData.total > 0">
       <a-pagination :total="listData.total"
         :current="query.page"
@@ -284,12 +282,12 @@ onBeforeUnmount(cancelListen)
   .new-box {
     width: 198px;
     height: 48px;
-    margin: 16px 0 8px 0;
-    padding: 0 8px;
+    margin: var(--datav-font-size-lg) 0 var(--datav-border-radius-lg) 0;
+    padding: 0 var(--datav-border-radius-lg);
     vertical-align: middle;
     border: 1px solid var(--s-border-color);
     background: #22272e;
-    border-radius: 4px;
+    border-radius: var(--datav-border-radius-sm);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -301,13 +299,13 @@ onBeforeUnmount(cancelListen)
       height: 100%;
     }
     .text-title {
-      padding-left: 4px;
+      padding-left: var(--datav-border-radius-sm);
       flex: 1;
       font-size: 18px;
       letter-spacing: 1px;
     }
     &:hover {
-      border-color: var(--bin-color-primary);
+      border-color: var(--datav-primary-color);
       &::after {
         content: '';
         position: absolute;
@@ -340,9 +338,9 @@ onBeforeUnmount(cancelListen)
         max-width: 200px;
         font-size: 20px;
         letter-spacing: 2px;
-        color: var(--bin-color-primary);
+        color: var(--datav-primary-color);
         padding: 0 10px;
-        border-left: 2px solid var(--bin-color-primary);
+        border-left: 2px solid var(--datav-primary-color);
         font-weight: normal;
       }
     }
@@ -352,7 +350,7 @@ onBeforeUnmount(cancelListen)
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding-top: 12px;
+    padding-top: var(--datav-font-size-sm);
     user-select: none;
     padding-bottom: 50px;
     margin: 0 -10px;
@@ -371,7 +369,7 @@ onBeforeUnmount(cancelListen)
       }
     }
     .list-item-inner {
-      border-radius: 6px;
+      border-radius: var(--datav-border-radius-base);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -379,7 +377,7 @@ onBeforeUnmount(cancelListen)
       outline: 1px solid transparent;
       transition: 0.2s;
       &:hover {
-        outline: 1px solid var(--bin-color-primary);
+        outline: 1px solid var(--datav-primary-color);
         .list-item-img .list-item-mask {
           opacity: 1;
         }
@@ -397,7 +395,7 @@ onBeforeUnmount(cancelListen)
       transition: 0.2s;
       position: relative;
       .preview-image {
-        padding: 8px;
+        padding: var(--datav-border-radius-lg);
         width: 100%;
         height: 100%;
         position: relative;
@@ -430,20 +428,20 @@ onBeforeUnmount(cancelListen)
           justify-content: center;
           > .anticon {
             cursor: pointer;
-            font-size: 16px;
+            font-size: var(--datav-font-size-lg);
             color: #fff;
             + .anticon {
-              margin-left: 8px;
+              margin-left: var(--datav-border-radius-lg);
             }
             &:hover {
-              color: var(--bin-color-primary);
+              color: var(--datav-primary-color);
             }
           }
         }
         .icon-box {
           position: absolute;
-          top: 6px;
-          right: 6px;
+          top: var(--datav-border-radius-base);
+          right: var(--datav-border-radius-base);
           display: flex;
           justify-content: center;
           z-index: 1;
@@ -452,10 +450,10 @@ onBeforeUnmount(cancelListen)
             font-size: 18px;
             color: #fff;
             + .anticon {
-              margin-left: 12px;
+              margin-left: var(--datav-font-size-sm);
             }
             &:hover {
-              color: var(--bin-color-primary);
+              color: var(--datav-primary-color);
             }
           }
         }
@@ -474,7 +472,7 @@ onBeforeUnmount(cancelListen)
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        font-size: 14px;
+        font-size: var(--datav-font-size-base);
       }
     }
   }

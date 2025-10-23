@@ -21,7 +21,7 @@
                   >
                     <a-dropdown :trigger="['contextmenu']">
                       <div class="field-title">
-                        <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
+                        <fieldTypeIcon :type="item.dataType" size="var(--datav-font-size-base)"></fieldTypeIcon>
                         <span class="ml-5">
                           {{ item.title }}
                         </span>
@@ -74,7 +74,7 @@
                         v-if="showDrill && item.drillEnabled === 'Y'"
                         title="下钻字段"
                       ></AntIcon>
-                      <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
+                      <fieldTypeIcon :type="item.dataType" size="var(--datav-font-size-base)"></fieldTypeIcon>
                       <span class="ml-5">{{ item.title }}</span>
                     </div>
                     <template #overlay>
@@ -122,7 +122,7 @@
                 >
                   <a-dropdown :trigger="['click']">
                     <div class="field-title">
-                      <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
+                      <fieldTypeIcon :type="item.dataType" size="var(--datav-font-size-base)"></fieldTypeIcon>
                       <span class="ml-5">
                         {{ item.title }}{{ ` (${AGGREGATOR_FUN[item.aggregator]})` }}
                       </span>
@@ -172,7 +172,7 @@
                 >
                   <div class="field-title">
                     <AntIcon name="BranchesOutlined" class="mr-5 f-s-14" v-if="index === 0"></AntIcon>
-                    <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
+                    <fieldTypeIcon :type="item.dataType" size="var(--datav-font-size-base)"></fieldTypeIcon>
                     <span class="ml-5">{{ item.title }}</span>
                   </div>
                   <AntIcon name="DeleteOutlined" @click="removeDrill(index)"></AntIcon>
@@ -280,8 +280,8 @@ export default {
               data.nodeType !== 'root'
                 ? h(fieldTypeIcon, {
                     type: data.dataType,
-                    size: '14px',
-                    style: { marginRight: '6px' },
+                    size: 'var(--datav-font-size-base)',
+                    style: { marginRight: 'var(--datav-border-radius-base)' },
                   })
                 : null,
             ],
@@ -289,7 +289,7 @@ export default {
           ],
         ),
       ]
-      return h('span', { style: { width: '100%', fontSize: '12px' }, flex: 'main:justify' }, inline)
+      return h('span', { style: { width: '100%', fontSize: 'var(--datav-font-size-sm)' }, flex: 'main:justify' }, inline)
     }
 
     return {
@@ -309,7 +309,7 @@ export default {
   .data-config-left,
   .data-config-right {
     width: 50%;
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     height: 100%;
   }
   .data-config-left {
@@ -320,9 +320,9 @@ export default {
   .data-config-right {
     position: relative;
     height: 100%;
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     .tree-box {
-      padding: 5px 12px 5px 4px;
+      padding: 5px var(--datav-font-size-sm) 5px var(--datav-border-radius-sm);
       height: 50%;
       overflow-y: auto;
     }
@@ -354,7 +354,7 @@ export default {
       overflow-y: auto;
       .config-data-item {
         position: relative;
-        padding: 0 6px 12px;
+        padding: 0 var(--datav-border-radius-base) var(--datav-font-size-sm);
         border-bottom: 1px solid var(--s-border-color-2);
         .area-name {
           white-space: nowrap;
@@ -363,10 +363,10 @@ export default {
           line-height: 42px;
           color: #fff;
           &.D {
-            color: var(--bin-color-primary);
+            color: var(--datav-primary-color);
           }
           &.M {
-            color: var(--bin-color-success);
+            color: var(--datav-success-color);
           }
         }
         .column-list {
@@ -378,21 +378,21 @@ export default {
             position: relative;
             display: flex;
             align-items: center;
-            padding: 0 8px;
+            padding: 0 var(--datav-border-radius-lg);
             width: 100%;
             height: 28px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 4px;
+            margin-bottom: var(--datav-border-radius-sm);
             color: var(--s-text-color);
-            background: var(--bin-color-primary-alpha1);
-            border: 1px solid var(--bin-color-primary);
+            background: var(--datav-primary-color-light);
+            border: 1px solid var(--datav-primary-color);
             &.D .svg-icon-wrapper {
-              color: var(--bin-color-primary);
+              color: var(--datav-primary-color);
             }
             &.M .svg-icon-wrapper {
-              color: var(--bin-color-success);
+              color: var(--datav-success-color);
             }
             .field-title {
               min-width: 100px;
@@ -407,21 +407,21 @@ export default {
               right: 26px;
               top: 2px;
               cursor: pointer;
-              font-size: 14px;
+              font-size: var(--datav-font-size-base);
               color: var(--s-text-color);
               &:hover {
-                color: var(--bin-color-primary-acitve);
+                color: var(--datav-primary-color-active);
               }
             }
             .b-icon-delete {
               position: absolute;
-              right: 8px;
+              right: var(--datav-border-radius-lg);
               top: 3px;
               cursor: pointer;
-              font-size: 14px;
+              font-size: var(--datav-font-size-base);
               color: var(--s-text-color);
               &:hover {
-                color: var(--bin-color-danger-light2);
+                color: var(--datav-error-color-hover);
               }
             }
           }
@@ -457,7 +457,7 @@ export default {
           }
         }
         .drag-enter {
-          background: var(--bin-color-input-shadow);
+          background: var(--s-color-1);
         }
       }
     }
@@ -469,10 +469,10 @@ export default {
     }
     .bin-tree-render-title {
       .D > .anticon {
-        color: var(--bin-color-primary);
+        color: var(--datav-primary-color);
       }
       .M > .anticon {
-        color: var(--bin-color-success);
+        color: var(--datav-success-color);
       }
     }
   }

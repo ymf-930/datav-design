@@ -167,7 +167,7 @@ function handleSave() {
   .title {
     padding-left: 5px;
     line-height: 30px;
-    color: var(--bin-color-primary);
+    color: var(--datav-primary-color);
   }
 
   .param-field {

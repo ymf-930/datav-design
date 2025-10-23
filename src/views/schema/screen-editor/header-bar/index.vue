@@ -63,11 +63,11 @@
 
         <div>
           <div class="head-btn" @click="handleSaveScreen">
-            <AntIcon name="SaveOutlined" color="var(--bin-color-primary)"></AntIcon>
+            <AntIcon name="SaveOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;保&nbsp;存
           </div>
           <a-dropdown :trigger="['hover']">
-            <div class="head-btn" style="margin-left: -1px; padding: 0 4px">
+            <div class="head-btn" style="margin-left: -1px; padding: 0 var(--datav-border-radius-sm)">
               <AntIcon name="EllipsisOutlined"></AntIcon>
             </div>
             <template #overlay>
@@ -83,14 +83,14 @@
 
         <a-tooltip content="预览">
           <div class="head-btn" @click="handPreview">
-            <AntIcon name="EyeOutlined" color="var(--bin-color-primary)"></AntIcon>
+            <AntIcon name="EyeOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;预&nbsp;览
           </div>
         </a-tooltip>
 
         <a-tooltip content="发布">
           <div class="head-btn" @click="handlePublish">
-            <AntIcon name="SendOutlined" color="var(--bin-color-primary)"></AntIcon>
+            <AntIcon name="SendOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;发&nbsp;布
           </div>
         </a-tooltip>
@@ -254,7 +254,7 @@ defineExpose({
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 0 80px 0 8px;
+  padding: 0 80px 0 var(--datav-border-radius-lg);
   z-index: 100;
   .head-btn {
     display: inline-flex;
@@ -275,12 +275,12 @@ defineExpose({
       font-size: 18px;
     }
     &:hover:not(.disabled) {
-      color: var(--bin-color-primary);
-      border-color: var(--bin-color-primary);
+      color: var(--datav-primary-color);
+      border-color: var(--datav-primary-color);
     }
     &.active {
-      color: var(--bin-color-primary);
-      border-color: var(--bin-color-primary);
+      color: var(--datav-primary-color);
+      border-color: var(--datav-primary-color);
     }
     &.disabled {
       cursor: not-allowed;
@@ -318,7 +318,7 @@ defineExpose({
     cursor: default;
     height: 100%;
     width: 180px;
-    margin: 0 16px;
+    margin: 0 var(--datav-font-size-lg);
   }
   .global-actions {
     justify-content: flex-end;

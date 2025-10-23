@@ -80,20 +80,20 @@ defineProps({
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      :deep(.bin-button-group) {
+      :deep(.ant-btn-group) {
         display: flex;
         width: 100%;
         align-items: center;
-        .bin-button {
+        .ant-btn {
           text-align: center;
           flex: 1;
         }
       }
-      :deep(.bin-radio-group) {
+      :deep(.ant-radio-group) {
         display: flex;
         width: 100%;
         align-items: center;
-        .bin-radio {
+        .ant-radio-wrapper {
           text-align: center;
           flex: 1;
         }

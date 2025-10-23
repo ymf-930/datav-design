@@ -5,7 +5,7 @@
         <div flex="main:justify cross:center" class="pr-8">
           <span>尺寸</span>
           <AntIcon :name="data.lockedRatio ? 'LinkOutlined' : 'DisconnectOutlined'"
-            :color="data.lockedRatio ? 'var(--bin-color-primary)' : 'var(--s-text-color)'"
+            :color="data.lockedRatio ? 'var(--datav-primary-color)' : 'var(--s-text-color)'"
             :title="data.lockedRatio ? '解除锁定宽高关联' : '锁定宽高关联'"
             type="button"
             @click="data.lockedRatio = !data.lockedRatio"
@@ -18,20 +18,20 @@
         suffix="X"
         inline
         :disabled="readonly || isGroupChild"
-        style="margin-bottom: 8px; width: 85px"
+        style="margin-bottom: var(--datav-border-radius-lg); width: 85px"
       />
       <g-input-number
         v-model="data.y"
         suffix="Y"
         inline
         :disabled="readonly || isGroupChild"
-        style="margin-bottom: 8px; width: 85px"
+        style="margin-bottom: var(--datav-border-radius-lg); width: 85px"
       />
       <div
         style="
           width: 81px;
-          padding: 0 4px;
-          margin-bottom: 8px;
+          padding: 0 var(--datav-border-radius-sm);
+          margin-bottom: var(--datav-border-radius-lg);
           display: inline-flex;
           justify-content: space-between;
         "
@@ -79,11 +79,11 @@
         inline
         suffix="°"
         :disabled="readonly || isGroupChild"
-        style="width: 81px; padding: 0 4px"
+        style="width: 81px; padding: 0 var(--datav-border-radius-sm)"
       />
     </g-field>
 
-    <g-field label="颜色" v-if="data.chartThemeColor !== undefined" style="padding: 6px 0 12px">
+    <g-field label="颜色" v-if="data.chartThemeColor !== undefined" style="padding: var(--datav-border-radius-base) 0 var(--datav-font-size-sm)">
       <CompColor />
     </g-field>
     <g-field label="对齐">
@@ -129,7 +129,7 @@
               width: 50px;
             "
           >
-            <div style="width: 24px; height: 20px; line-height: 20px; font-size: 12px">底色</div>
+            <div style="width: 24px; height: 20px; line-height: 20px; font-size: var(--datav-font-size-sm)">底色</div>
 
             <div :style="{ backgroundColor: hueRotateColor }"></div>
           </div>
@@ -338,13 +338,13 @@ function rotateR() {
   padding: 0 10px;
 }
 .align-btn {
-  padding: 0 8px;
+  padding: 0 var(--datav-border-radius-lg);
   background-color: var(--s-border-color);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 28px;
-  border-radius: 4px;
+  border-radius: var(--datav-border-radius-sm);
   cursor: pointer;
   transition: 0.2s;
   color: var(--s-text-color-2);
@@ -363,14 +363,14 @@ function rotateR() {
 .preset-filter-box {
   position: relative;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: var(--datav-border-radius-lg);
   .pre-desc {
     position: absolute;
     right: 0;
     top: -20px;
     div {
       width: 20px;
-      height: 12px;
+      height: var(--datav-font-size-sm);
       border-radius: 2px;
     }
   }
@@ -380,7 +380,7 @@ function rotateR() {
     border-radius: 2px;
     overflow: hidden;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: var(--datav-border-radius-sm);
     height: 10px;
     width: 100%;
     .item {

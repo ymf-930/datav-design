@@ -88,7 +88,7 @@ function handleChange(val) {
 <style scoped>
 .dv-wrapper {
   :deep(.bin-date-editor) {
-    .bin-input {
+    .ant-input {
       background-color: var(--bg-color);
       color: var(--font-color);
       font-size: var(--font-size);
@@ -108,7 +108,7 @@ function handleChange(val) {
     input:-ms-input-placeholder{   /* IE浏览器 */
       color: var(--font-color);
     }
-    .bin-input-prefix .anticon ,.bin-input-suffix .anticon {
+    .ant-input-prefix .anticon, .ant-input-suffix .anticon {
       color: var(--icon-color);
     }
   }

@@ -121,8 +121,8 @@ export default defineComponent({
     width: 5px;
     height: 5px;
     border-radius: 1px;
-    margin-right: 4px;
-    background: var(--bin-color-primary);
+    margin-right: var(--datav-border-radius-sm);
+    background: var(--datav-primary-color);
     transition: 0.2s;
     vertical-align: middle;
     &.validating {
@@ -152,7 +152,7 @@ export default defineComponent({
     content: 'loading...';
     display: block;
     padding-top: 25px;
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     text-align: center;
     letter-spacing: 5px;
   }
@@ -161,7 +161,7 @@ export default defineComponent({
 .dna-dot {
   width: inherit;
   height: inherit;
-  transform: translateZ(-8px);
+  transform: translateZ(-var(--datav-border-radius-lg));
   transform-style: preserve-3d;
 
   &::before {
@@ -169,7 +169,7 @@ export default defineComponent({
     width: inherit;
     height: inherit;
     display: block;
-    background: var(--bin-color-primary-light3);
+    background: var(--datav-primary-color-outline);
     border-radius: 50%;
     animation: dna-rotate 5s linear infinite reverse;
     transform: rotateX(-360deg) translateZ(0);
@@ -187,7 +187,7 @@ export default defineComponent({
   margin-left: 0;
 
   &:nth-of-type(2n) .dna-dot:before {
-    background: var(--bin-color-primary);
+    background: var(--datav-primary-color);
   }
 
   :nth-of-type(odd) {

@@ -219,7 +219,7 @@ watch(
   min-height: 300px;
   background: var(--schema-color-bg-2);
   margin: 0 auto;
-  border-radius: var(--bin-border-radius-default);
+  border-radius: var(--datav-border-radius-base);
   color: var(--schema-font-color);
   border: 1px solid var(--schema-color-border);
 
@@ -229,7 +229,7 @@ watch(
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 16px;
+    padding: 0 var(--datav-font-size-lg);
     .title {
       line-height: 22px;
       font-weight: 600;
@@ -256,8 +256,8 @@ watch(
       height: 2px;
       background-image: linear-gradient(
         270deg,
-        var(--bin-color-primary) 0,
-        var(--bin-color-primary-light3) 74%
+        var(--datav-primary-color) 0,
+        var(--datav-primary-color-outline) 74%
       );
     }
     
@@ -265,7 +265,7 @@ watch(
 
   :deep(.series-title) {
     position: relative;
-    padding: 12px 12px 8px 24px;
+    padding: var(--datav-font-size-sm) var(--datav-font-size-sm) var(--datav-border-radius-lg) 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,9 +274,9 @@ watch(
       position: absolute;
       top: 19px;
       left: 10px;
-      width: 6px;
-      height: 6px;
-      background: var(--bin-color-primary);
+      width: var(--datav-border-radius-base);
+      height: var(--datav-border-radius-base);
+      background: var(--datav-primary-color);
     }
   }
 }

@@ -18,7 +18,7 @@
         </div>
       </template>
       <div v-else style="min-height: 300px" flex="main:center cross:center">
-        <a-empty>该组件不需要配置事件</a-empty>
+        <a-empty description="该组件不需要配置事件"></a-empty>
       </div>
     </div>
   </div>

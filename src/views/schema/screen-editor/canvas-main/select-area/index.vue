@@ -81,7 +81,7 @@ function mouseDown(ev) {
 <style scoped>
 .select-area {
   position: absolute;
-  border: 1px solid var(--bin-color-primary);
-  background-color: var(--bin-color-primary-alpha1);
+  border: 1px solid var(--datav-primary-color);
+  background-color: var(--datav-primary-color-light);
 }
 </style>

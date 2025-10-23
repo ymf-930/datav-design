@@ -1,7 +1,7 @@
 <template>
   <template v-if="isWord">
     <g-field label="标签标题">
-      <a-select v-model:value="mappingFields.word" size="small"></a-select>
+      <a-select v-model:value="mappingFields.word" size="small">
         <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"

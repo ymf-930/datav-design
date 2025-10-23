@@ -210,7 +210,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
       > .anticon {
         cursor: pointer;
         width: 20px;
-        font-size: 14px;
+        font-size: var(--datav-font-size-base);
       }
     }
   }
@@ -237,7 +237,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
   .toolbar-icon {
     width: 24px;
     height: 24px;
-    font-size: 16px;
+    font-size: var(--datav-font-size-lg);
     transition: background 0.2s;
     margin: 0 10px;
     line-height: 24px;
@@ -259,9 +259,9 @@ const cancelSelectCom = () => schemaStore.selectCom()
   width: 100%;
   height: calc(100% - 62px);
   overflow-y: auto;
-  font-size: 12px;
+  font-size: var(--datav-font-size-sm);
   line-height: 2;
-  padding: 6px;
+  padding: var(--datav-border-radius-base);
   color: var(--schema-font-color);
   list-style: none;
   background: var(--schema-color-bg-2);
@@ -274,14 +274,14 @@ const cancelSelectCom = () => schemaStore.selectCom()
     display: flex;
     width: 100%;
     height: 40px;
-    padding: 0 6px;
-    padding-left: 8px;
-    margin-bottom: 4px;
+    padding: 0 var(--datav-border-radius-base);
+    padding-left: var(--datav-border-radius-lg);
+    margin-bottom: var(--datav-border-radius-sm);
     cursor: pointer;
     box-sizing: border-box;
     transition: background 0.2s;
     align-items: center;
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
     border: 1px solid transparent;
 
     &.hided,
@@ -294,7 +294,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 0 4px;
+      padding: 0 var(--datav-border-radius-sm);
       .layer-item-text {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -306,13 +306,13 @@ const cancelSelectCom = () => schemaStore.selectCom()
 
     .layer-item-input {
       width: 126px;
-      padding: 0 4px;
+      padding: 0 var(--datav-border-radius-sm);
       height: 20px;
       line-height: 20px;
       background: 0 0;
       border: none;
       outline: 0;
-      font-size: 12px;
+      font-size: var(--datav-font-size-sm);
     }
 
     .show-toggle-btn {
@@ -331,14 +331,14 @@ const cancelSelectCom = () => schemaStore.selectCom()
       .show-toggle-btn {
         display: block;
         &.b-icon-lock {
-          color: var(--bin-color-primary);
+          color: var(--datav-primary-color);
         }
       }
     }
 
     &.selected {
-      background: var(--bin-color-input-shadow);
-      border: 1px solid var(--bin-color-primary);
+      background: var(--s-color-1);
+      border: 1px solid var(--datav-primary-color);
       .show-toggle-btn {
         display: block;
       }
@@ -355,26 +355,26 @@ const cancelSelectCom = () => schemaStore.selectCom()
 }
 
 .group-list {
-  padding-left: 16px;
+  padding-left: var(--datav-font-size-lg);
   .group-item {
     display: flex;
     width: 100%;
     height: 40px;
-    padding: 0 6px;
-    padding-left: 8px;
-    margin-bottom: 4px;
+    padding: 0 var(--datav-border-radius-base);
+    padding-left: var(--datav-border-radius-lg);
+    margin-bottom: var(--datav-border-radius-sm);
     cursor: pointer;
     box-sizing: border-box;
     transition: background 0.2s;
     align-items: center;
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
     border: 1px solid transparent;
     .layer-item-span {
       width: 166px;
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 0 4px;
+      padding: 0 var(--datav-border-radius-sm);
       .layer-item-text {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -387,8 +387,8 @@ const cancelSelectCom = () => schemaStore.selectCom()
       background: var(--s-color-1);
     }
     &.selected {
-      background: var(--bin-color-input-shadow);
-      border: 1px solid var(--bin-color-primary);
+      background: var(--s-color-1);
+      border: 1px solid var(--datav-primary-color);
     }
   }
 }

@@ -99,10 +99,10 @@ function removeColor(index) {
 
 <style scoped>
 .color-setting {
-  margin-top: 16px;
+  margin-top: var(--datav-font-size-lg);
   display: flex;
   flex-wrap: wrap;
-  row-gap: 8px;
+  row-gap: var(--datav-border-radius-lg);
   .color-list-item {
     width: 25%;
     .item-inner {
@@ -112,23 +112,23 @@ function removeColor(index) {
         width: 102px;
         border: 1px solid var(--s-border-color-2);
         padding: 3px;
-        border-radius: var(--bin-border-radius-default);
+        border-radius: var(--datav-border-radius-base);
         &.active {
           border: 2px solid var(--active-color);
           padding: 2px;
         }
       }
       :deep(.b-color-picker) {
-        .bin-input {
-          font-size: 12px;
+        .ant-input {
+          font-size: var(--datav-font-size-sm);
         }
       }
       .ant-icon {
         cursor: pointer;
         color: var(--s-text-color-3);
-        font-size: 14px;
+        font-size: var(--datav-font-size-base);
         &.icon-move {
-          margin: 0 4px;
+          margin: 0 var(--datav-border-radius-sm);
         }
       }
     }

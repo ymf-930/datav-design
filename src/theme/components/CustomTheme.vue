@@ -104,7 +104,7 @@
             <ColorsCharts :colors="currentTheme.color" :id="currentTheme.id" />
           </div>
         </template>
-        <a-empty v-else style="padding-top: 200px">暂未选择自定义主题</a-empty>
+        <a-empty v-else style="padding-top: 200px" description="暂未选择自定义主题"></a-empty>
       </div>
     </div>
     <template #footer>
@@ -290,7 +290,7 @@ defineExpose({ open })
     overflow-y: auto;
   }
   .theme-color-item {
-    margin-bottom: 8px;
+    margin-bottom: var(--datav-border-radius-lg);
   }
   .theme-item {
     position: relative;
@@ -298,11 +298,11 @@ defineExpose({ open })
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    padding: 8px 7px 10px;
+    padding: var(--datav-border-radius-lg) 7px 10px;
     width: calc(100% - 22px);
     background-color: var(--s-color-1);
     border-bottom: 2px solid rgba(0, 0, 0, 0);
-    border-radius: 8px;
+    border-radius: var(--datav-border-radius-lg);
     overflow: hidden;
     border: 2px solid transparent;
     cursor: pointer;
@@ -314,7 +314,7 @@ defineExpose({ open })
       height: 3px;
     }
     &.active {
-      border: 2px solid var(--bin-color-primary);
+      border: 2px solid var(--datav-primary-color);
       border-bottom: 2px solid rgba(0, 0, 0, 0);
     }
     .name {
@@ -329,15 +329,15 @@ defineExpose({ open })
     }
     .color-box {
       display: inline-block;
-      width: 16px;
-      height: 16px;
+      width: var(--datav-font-size-lg);
+      height: var(--datav-font-size-lg);
       border-radius: 3px;
     }
   }
   .bg-box {
-    padding: 10px 16px;
+    padding: 10px var(--datav-font-size-lg);
     background: rgb(44, 44, 50);
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
   }
   .top-color-edit {
     .color-name {
@@ -345,9 +345,9 @@ defineExpose({ open })
       right: -1px;
       line-height: 32px;
       height: 32px;
-      padding: 0 12px;
+      padding: 0 var(--datav-font-size-sm);
       display: inline-block;
-      border-radius: var(--bin-border-radius-default) 0 0 var(--bin-border-radius-default);
+      border-radius: var(--datav-border-radius-base) 0 0 var(--datav-border-radius-base);
       background-color: var(--s-color-1);
       color: var(--s-text-color);
     }
@@ -356,7 +356,7 @@ defineExpose({ open })
       padding: 0 7px;
       height: 28px;
       line-height: 26px;
-      border-radius: var(--bin-border-radius-default);
+      border-radius: var(--datav-border-radius-base);
       color: #f2c97d;
       border: 1px solid rgba(242, 201, 125, 0.3);
     }
@@ -390,8 +390,8 @@ defineExpose({ open })
     &::after {
       content: '';
       position: absolute;
-      left: 6px;
-      top: 16px;
+      left: var(--datav-border-radius-base);
+      top: var(--datav-font-size-lg);
       bottom: 20px;
       border-left: 1px solid var(--s-color-1);
     }

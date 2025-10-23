@@ -91,14 +91,14 @@ watch(
   width: 100%;
   &.has-suffix {
     position: relative;
-    :deep(.bin-input-number) {
-      .bin-input-number-input {
+    :deep(.ant-input-number) {
+      .ant-input-number-input {
         padding-right: 42px;
       }
     }
   }
   :deep(.bin-slider-wrapper) {
-    padding: 0 6px 0 0;
+    padding: 0 var(--datav-border-radius-base) 0 0;
     .bin-slider__runway {
       margin: 13px 0;
     }
@@ -111,11 +111,11 @@ watch(
     line-height: 22px;
     > input {
       width: 60px;
-      font-size: 12px;
+      font-size: var(--datav-font-size-sm);
       color: var(--s-text-color);
       background: var(--s-color-1);
       border: 1px solid var(--s-border-color-3);
-      border-radius: var(--bin-border-radius-default);
+      border-radius: var(--datav-border-radius-base);
       outline: 0;
       padding: 0 10px 0 10px;
       &::-webkit-inner-spin-button,
@@ -127,11 +127,11 @@ watch(
     }
   }
   .g-input-number__suffix {
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     color: var(--s-text-color-2);
     line-height: 22px;
     width: 20px;
-    padding-left: 8px;
+    padding-left: var(--datav-border-radius-lg);
     text-align: left;
   }
 }

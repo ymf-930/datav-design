@@ -10,7 +10,7 @@
         </div>
         <div class="context-menu-divider"></div>
         <div class="context-menu-item" v-for="em in MultiplAlignOptions" :key="em.value"
-          @click="schemaStore.doAlign(em.value)" style="padding-right: 8px">
+          @click="schemaStore.doAlign(em.value)" style="padding-right: var(--datav-border-radius-lg)">
           <span>
             <AntIcon :name="alignIconMap[em.value]" class="menu-icon iconfont-align" />
             {{ em.label }}
@@ -299,7 +299,7 @@ defineExpose({
   z-index: 9999;
   width: 152px;
   background: var(--s-color-2);
-  border-radius: var(--bin-border-radius-default);
+  border-radius: var(--datav-border-radius-base);
   user-select: none;
 }
 
@@ -309,29 +309,29 @@ defineExpose({
   justify-content: space-between;
   align-items: center;
   height: 28px;
-  padding: 0 6px;
+  padding: 0 var(--datav-border-radius-base);
   padding-right: 3em;
   overflow: hidden;
   line-height: 28px;
   cursor: pointer;
-  margin: 4px;
+  margin: var(--datav-border-radius-sm);
   color: var(--s-text-color);
-  border-radius: var(--bin-border-radius-default);
+  border-radius: var(--datav-border-radius-base);
 
   &:hover {
     background-color: var(--s-color-1);
   }
 
   .menu-icon {
-    margin-right: 6px;
+    margin-right: var(--datav-border-radius-base);
   }
 
   .key-code {
     position: absolute;
     top: 0;
-    right: 6px;
+    right: var(--datav-border-radius-base);
     color: var(--s-text-color-3);
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
     transform: scale(0.9);
   }
 }

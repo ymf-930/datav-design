@@ -113,18 +113,18 @@ watch(
         padding: 0 10px 32px;
         .series-title {
           position: relative;
-          padding: 0 12px 0 16px;
+          padding: 0 var(--datav-font-size-sm) 0 var(--datav-font-size-lg);
           display: flex;
           justify-content: space-between;
           align-items: center;
           &::before {
             content: '';
             position: absolute;
-            top: 12px;
+            top: var(--datav-font-size-sm);
             left: 0px;
-            width: 6px;
-            height: 6px;
-            background: var(--bin-color-primary);
+            width: var(--datav-border-radius-base);
+            height: var(--datav-border-radius-base);
+            background: var(--datav-primary-color);
           }
         }
       }
@@ -147,10 +147,10 @@ watch(
     .cfg-toggle-bar__top,
     .cfg-toggle-bar__bottom {
       position: absolute;
-      width: 4px;
+      width: var(--datav-border-radius-sm);
       border-radius: 2px;
       height: 38px;
-      left: 14px;
+      left: var(--datav-font-size-base);
       background-color: rgb(64, 64, 67);
       transition: background-color 0.3s ease, transform 0.3s ease;
     }

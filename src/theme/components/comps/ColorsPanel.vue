@@ -123,15 +123,15 @@ function selectColor(color) {
 <style scoped>
 .colors-panel {
   .bg-box {
-    padding: 10px 16px 12px;
+    padding: 10px var(--datav-font-size-lg) var(--datav-font-size-sm);
     background: rgb(44, 44, 50);
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
   }
   .color-edit {
     .title {
-      padding-bottom: 8px;
+      padding-bottom: var(--datav-border-radius-lg);
       border-bottom: 1px solid var(--s-color-1);
-      margin-bottom: 8px;
+      margin-bottom: var(--datav-border-radius-lg);
     }
     .theme-item {
       position: relative;
@@ -140,7 +140,7 @@ function selectColor(color) {
       text-align: center;
       margin-bottom: 5px;
       justify-content: space-between;
-      padding: 6px 8px;
+      padding: var(--datav-border-radius-base) var(--datav-border-radius-lg);
       width: 100%;
       background-color: var(--s-color-1);
       border-bottom: 2px solid rgba(0, 0, 0, 0);
@@ -165,8 +165,8 @@ function selectColor(color) {
       }
       .color-box {
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        width: var(--datav-font-size-lg);
+        height: var(--datav-font-size-lg);
         border-radius: 3px;
       }
     }
@@ -176,8 +176,8 @@ function selectColor(color) {
       justify-content: center;
       flex-flow: wrap;
       justify-content: center;
-      padding-top: 6px;
-      gap: 0px 4px;
+      padding-top: var(--datav-border-radius-base);
+      gap: 0px var(--datav-border-radius-sm);
       .color-computed-item {
         position: relative;
         display: inline-block;
@@ -185,7 +185,7 @@ function selectColor(color) {
         width: 22px;
         cursor: pointer;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: var(--datav-border-radius-sm);
         .n-color-picker-checkboard {
           background-color: white;
           &::after {
@@ -193,8 +193,8 @@ function selectColor(color) {
               linear-gradient(-45deg, #ddd 25%, #0000 25%),
               linear-gradient(45deg, #0000 75%, #ddd 75%),
               linear-gradient(-45deg, #0000 75%, #ddd 75%);
-            background-size: 12px 12px;
-            background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+            background-size: var(--datav-font-size-sm) var(--datav-font-size-sm);
+            background-position: 0 0, 0 var(--datav-border-radius-base), var(--datav-border-radius-base) -var(--datav-border-radius-base), -var(--datav-border-radius-base) 0px;
             background-repeat: repeat;
             content: '';
             position: absolute;

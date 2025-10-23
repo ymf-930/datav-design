@@ -82,8 +82,8 @@ const handleChange = (currentValue, oldValue) => {
   width: 100%;
   &.has-suffix {
     position: relative;
-    :deep(.bin-input-number) {
-      .bin-input-number-input {
+    :deep(.ant-input-number) {
+      .ant-input-number-input {
         padding-right: 32px;
       }
     }

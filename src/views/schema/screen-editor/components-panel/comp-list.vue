@@ -6,7 +6,7 @@
           <g-loading spinning></g-loading>
         </div>
         <template v-else>
-          <a-empty v-if="groups.length === 0">暂无组件库</a-empty>
+          <a-empty v-if="groups.length === 0" description="暂无组件库"></a-empty>
           <Collapse
             v-for="group in groups"
             :key="group.key"

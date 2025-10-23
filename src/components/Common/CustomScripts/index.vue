@@ -83,18 +83,18 @@ function handleSuccess(val){
     width: 100%;
   }
   .fun {
-    padding: 4px 0;
+    padding: var(--datav-border-radius-sm) 0;
     font-size: 13px;
     color: #b478cf;
     .params {
-      color: var(--bin-color-warning);
+      color: var(--datav-warning-color);
     }
     .bottom {
       margin-bottom: 5px;
     }
     :deep(.hljs) {
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: var(--datav-border-radius-lg) var(--datav-font-size-lg);
+      border-radius: var(--datav-border-radius-lg);
       font-size: 13px;
       font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
       background: #fff;

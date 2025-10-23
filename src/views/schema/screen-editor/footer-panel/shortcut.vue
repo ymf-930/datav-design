@@ -139,7 +139,7 @@ export default {
 <style scoped>
 .shortcut-wp {
   position: relative;
-  margin: -16px;
+  margin: -var(--datav-font-size-lg);
   background: var(--schema-color-bg-2);
   user-select: none;
   .shortcut-box {
@@ -147,8 +147,8 @@ export default {
     border-bottom: 1px solid var(--schema-color-border);
     .key-title {
       width: 50px;
-      font-size: 16px;
-      padding: 8px 0;
+      font-size: var(--datav-font-size-lg);
+      padding: var(--datav-border-radius-lg) 0;
       -webkit-writing-mode: vertical-rl;
       writing-mode: vertical-rl;
       letter-spacing: 2px;
@@ -158,7 +158,7 @@ export default {
     }
     .key-wrap {
       width: calc(100% - 50px);
-      padding: 8px 0 0 16px;
+      padding: var(--datav-border-radius-lg) 0 0 var(--datav-font-size-lg);
       display: flex;
       flex-wrap: wrap;
     }
@@ -170,7 +170,7 @@ export default {
     display: flex;
     width: 250px;
     height: 28px;
-    margin: 0 16px 8px 0;
+    margin: 0 var(--datav-font-size-lg) var(--datav-border-radius-lg) 0;
     justify-content: space-between;
     align-items: center;
   }
@@ -178,13 +178,13 @@ export default {
   .shortcut-title {
     padding-right: 15px;
     color: var(--s-text-color);
-    font-size: 12px;
+    font-size: var(--datav-font-size-sm);
   }
 
   .shortcut-value {
-    padding: 4px 6px;
+    padding: var(--datav-border-radius-sm) var(--datav-border-radius-base);
     font-weight: 700;
-    color: var(--bin-color-primary);
+    color: var(--datav-primary-color);
   }
 }
 </style>

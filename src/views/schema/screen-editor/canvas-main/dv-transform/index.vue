@@ -184,7 +184,7 @@ const onRotate = e => {
 
     .dv-com {
       .dv-event-disable {
-        border: 1px solid var(--bin-color-primary);
+        border: 1px solid var(--datav-primary-color);
       }
     }
 
@@ -196,7 +196,7 @@ const onRotate = e => {
       bottom: 0;
       left: 0;
       z-index: -1;
-      border: 1px dashed var(--bin-color-primary);
+      border: 1px dashed var(--datav-primary-color);
     }
   }
 
@@ -207,8 +207,8 @@ const onRotate = e => {
   .b-icon-lock {
     font-size: 18px;
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: var(--datav-border-radius-sm);
+    right: var(--datav-border-radius-sm);
     z-index: 2;
   }
 }
@@ -243,7 +243,7 @@ const onRotate = e => {
       bottom: 0;
       left: 0;
       z-index: -1;
-      border: 1px dashed var(--bin-color-primary);
+      border: 1px dashed var(--datav-primary-color);
     }
   }
 }
@@ -273,23 +273,23 @@ const onRotate = e => {
     &::after {
       position: absolute;
       content: '';
-      top: 6px;
+      top: var(--datav-border-radius-base);
       left: 50%;
       transform: translate(-50%, 0);
       width: 1px;
       height: 18px;
-      background-color: var(--bin-color-primary);
+      background-color: var(--datav-primary-color);
     }
   }
 
   .control-point {
     z-index: 2;
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: var(--datav-border-radius-lg);
+    height: var(--datav-border-radius-lg);
     background: #fff;
     border-radius: 5px;
-    border: 1px solid var(--bin-color-primary);
+    border: 1px solid var(--datav-primary-color);
 
     &.top-handler {
       top: 0;

@@ -1,6 +1,6 @@
 <template>
   <div class="dv-gui g-select">
-    <a-select v-model:value="inputValue" :size="size" :disabled="disabled" @change="handleChange">
+    <a-select v-model:value="inputValue" :size="size" :disabled="disabled" @change="handleChange" style="width: 100%;">
       <a-select-opt-group v-for="item in data" :key="item.group" :label="item.group">
         <a-select-option
           v-for="item in item.data"

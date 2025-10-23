@@ -81,7 +81,7 @@ function clear() {
     height: 28px;
     background: var(--s-color-1);
     border: 1px solid var(--s-color-1);
-    border-radius: var(--bin-border-radius-default);
+    border-radius: var(--datav-border-radius-base);
     .g-img {
       position: relative;
       display: inline-block;
@@ -98,7 +98,7 @@ function clear() {
       }
       .tip {
         position: absolute;
-        left: 8px;
+        left: var(--datav-border-radius-lg);
         top: 3px;
         color: var(--s-text-color-3);
       }
@@ -113,7 +113,7 @@ function clear() {
       border-left: 1px solid var(--s-color-1);
     }
     &:hover {
-      border-color: var(--bin-color-primary);
+      border-color: var(--datav-primary-color);
     }
   }
 }
