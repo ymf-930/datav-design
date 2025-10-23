@@ -2,7 +2,8 @@
   <a-modal v-model:visible="open"
     title="选择模型"
     width="1000px"
-    :mask-closable="false"
+    :maskClosable="false"
+    :footer="null"
     @open="handleOpen"
     @closed="handleClosed"
     draggable

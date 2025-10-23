@@ -4,10 +4,10 @@
   "description": "大屏分析设计",
   "homepage": "https://github.com/ymf930/datav-design",
   "keywords": [
-    "bin-ui-design",
     "datav-design",
     "vue3",
-    "vite"
+    "vite",
+    "ant-design-vue"
   ],
   "author": "ymf930",
   "files": [
@@ -19,11 +19,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "replace-components": "node scripts/replace-components.js",
-    "safe-replace": "node scripts/safe-incremental-replace.js",
-    "verify-components": "node scripts/verify-components.js",
-    "migrate": "pnpm run safe-replace"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@ant-design/icons-vue": "7.0.1",
@@ -37,7 +33,6 @@
     "bin-charts-next": "^1.1.0",
     "bin-datav": "^0.2.0",
     "bin-editor-next": "^1.1.0",
-    "bin-ui-design": "^0.4.0",
     "brace": "^0.11.1",
     "color": "^5.0.2",
     "dayjs": "^1.11.13",

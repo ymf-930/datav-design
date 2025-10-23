@@ -3,13 +3,12 @@
     <a-button type="text" @click="open">{{ label }}</a-button>
     <a-modal v-model:visible="visible"
       :title="modalTitle"
-      :mask-closable="false"
-      :esc-closable="false"
+      :maskClosable="false"
+      :keyboard="false"
       width="1200px"
       top="60px"
       draggable
-      append-to-body
-      destroy-on-close
+      destroyOnClose
       @opened="render = true"
     >
       <div class="code-editor">
@@ -48,7 +47,7 @@
       <template #footer>
         <div flex="main:justify">
           <div flex="cross:center">
-            <a-tag color="primary">
+            <a-tag color="processing">
               <AntIcon name="FileTextOutlined"></AntIcon>
               说明
             </a-tag>

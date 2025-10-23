@@ -95,10 +95,9 @@
       v-model="openParamsMap"
       title="参数映射"
       :width="550"
-      :mask-closable="false"
+      :maskClosable="false"
       class-name="source-drawer"
       :styles="{ padding: 0 }"
-      append-to-body
     >
       <params-map
         v-if="openParamsMap"

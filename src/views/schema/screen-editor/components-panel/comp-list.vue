@@ -106,17 +106,28 @@ async function modifyGroup(item, name) {
   setGlobalLoading(false)
 }
 // 移除一个库
-async function removeGroup(item) {
-  try {
-    await Modal.confirm({ type: 'error', title: '提示', message: '确定移除当前组件分组吗？' })
-    setGlobalLoading(true)
-    await api.removeCompGroup(item.key)
-    getCompList()
-    message.success('删除成功！')
-  } catch (e) {
-    throwError('comp-list/removeGroup', e)
-  }
-  setGlobalLoading(false)
+function removeGroup(item) {
+  Modal.confirm({
+    title: '提示',
+    content: '确定移除当前组件分组吗？',
+    okText: '确认',
+    cancelText: '取消',
+    async onOk() {
+      try {
+        setGlobalLoading(true)
+        await api.removeCompGroup(item.key)
+        getCompList()
+        message.success('删除成功！')
+      } catch (e) {
+        throwError('comp-list/removeGroup', e)
+      } finally {
+        setGlobalLoading(false)
+      }
+    },
+    onCancel() {
+      console.log('取消移除')
+    }
+  })
 }
 
 // 新增一个库

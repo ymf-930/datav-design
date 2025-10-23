@@ -243,11 +243,11 @@ const handlePublish = async item => {
 // 删除模型或文件夹
 const removeDashboard = id => {
   Modal.confirm({
-    type: 'error',
     title: '提示',
-    message: '删除后无法恢复，确认删除？',
-  })
-    .then(async () => {
+    content: '删除后无法恢复，确认删除？',
+    okText: '确认',
+    cancelText: '取消',
+    async onOk() {
       try {
         await removeKanban(id)
         await getSearchList()
@@ -255,8 +255,11 @@ const removeDashboard = id => {
       } catch (e) {
         throwError('kanban-list/removeDashboard', e)
       }
-    })
-    .catch(() => {})
+    },
+    onCancel() {
+      console.log('取消删除')
+    }
+  })
 }
 
 watch(

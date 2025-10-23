@@ -2,11 +2,10 @@
   <a-drawer
     v-model="visible"
     class-name="source-drawer"
-    append-to-body
     :width="500"
     :title="`模型 [${selectedModelName}] 配置`"
     :styles="{ padding: 0 }"
-    :mask-closable="false"
+    :maskClosable="false"
     @close="close"
   >
     <ds-api

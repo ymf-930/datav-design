@@ -1,9 +1,9 @@
 <template>
   <a-modal v-model:visible="visible"
-    append-to-body
+    destroyOnClose
     title="保存为模板"
     top="200px"
-    custom-class="schema-modal"
+    class="schema-modal"
     @close="visible = false"
   >
     <a-form label-width="100px" ref="formRef" :model="formStatus" label-suffix=":">

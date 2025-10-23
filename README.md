@@ -1,6 +1,6 @@
 # 说明
 
-基于 bin-datav 、bin-ui-design 制作的分析大屏 BI 工程，预览地址
+基于 bin-datav 、ant-design-vue 制作的分析大屏 BI 工程，预览地址
 
 [预览地址](https://ymf930.github.io/datav-design/)
 

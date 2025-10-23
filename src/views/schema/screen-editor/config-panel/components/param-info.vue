@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model:visible="open" title="参数信息" width="800px" custom-class="schema-modal">
+  <a-modal v-model:visible="open" title="参数信息" width="800px" class="schema-modal" :footer="null">
     <div style="margin: -16px; padding: 10px">
       <g-field-collapse label="请求参数信息" :defaultOpen="true">
         <div class="p10">

@@ -1,10 +1,10 @@
 <template>
   <a-modal v-model:visible="visible"
     title="选择图片"
-    append-to-body
     top="60px"
     width="800px"
-    custom-class="schema-modal"
+    class="schema-modal"
+    :footer="null"
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">

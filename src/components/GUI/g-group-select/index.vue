@@ -5,7 +5,6 @@
         <a-select-option
           v-for="item in item.data"
           :key="item.value"
-          :label="item.label"
           :value="item.value"
         >
           <span>{{ item.label }}</span>

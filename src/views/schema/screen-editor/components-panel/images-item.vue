@@ -88,19 +88,20 @@ async function imageUpload(files) {
 }
 
 // 移除一个图片
-async function removePic({ groupKey, id }) {
+function removePic({ groupKey, id }) {
   Modal.confirm({
-    type: 'warning',
     title: '提示',
-    message: '是否删除当前图片？',
-  })
-    .then(async () => {
+    content: '是否删除当前图片？',
+    okText: '确认',
+    cancelText: '取消',
+    async onOk() {
       await api.removeImage(groupKey, id)
       getCompList()
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    },
+    onCancel() {
+      console.log('取消删除')
+    }
+  })
 }
 
 const dragStart = (e, comp) => emit('dragstart', e, comp)

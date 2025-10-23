@@ -93,11 +93,11 @@ export default function useFolder() {
   // 提示移除一个分组
   const confirmDeleteGroup = ({ id, name }) => {
     Modal.confirm({
-      type: 'error',
       title: '提示',
-      message: `确定要删除 [ ${name} ] 吗？`,
-    })
-      .then(async () => {
+      content: `确定要删除 [ ${name} ] 吗？`,
+      okText: '确认',
+      cancelText: '取消',
+      async onOk() {
         try {
           await removeFolder(id)
           toggleProject({ id: defaultValue.pid, name: defaultValue.name })
@@ -106,8 +106,11 @@ export default function useFolder() {
         } catch (error) {
           throwError('useModelFolder/confirmDeleteGroup', error)
         }
-      })
-      .catch(() => {})
+      },
+      onCancel() {
+        console.log('取消删除')
+      }
+    })
   }
 
   // 获取模型分组列表

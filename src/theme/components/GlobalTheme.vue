@@ -18,8 +18,9 @@
 
     <a-modal v-model:visible="themeChooseVisible"
       title="全局主题设置"
-      append-to-body
+      :getPopupContainer="() => document.body"
       width="600px"
+      :footer="null"
       draggable
     >
       <a-radio-group v-model:value="activeTab" size="large" style="width: 100%">

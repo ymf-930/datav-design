@@ -2,9 +2,10 @@
   <a-modal
     title="快捷键指南"
     :model-value="modelValue"
-    append-to-body
-    custom-class="schema-modal"
+    :getPopupContainer="() => document.body"
+    class="schema-modal"
     width="600px"
+    :footer="null"
     @close="$emit('update:modelValue', false)"
   >
     <div class="shortcut-wp">

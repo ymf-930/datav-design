@@ -3,8 +3,8 @@
     v-model:visible="visible"
     title="新建大屏"
     width="1000px"
-    custom-class="schema-modal"
-    destroy-on-close
+    class="schema-modal"
+    destroyOnClose
   >
     <div>
       <h2 class="title-bar">预设</h2>
@@ -22,12 +22,11 @@
           <a-dropdown :trigger="['click']"
             :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
-            @click="handleWebTrigger"
           >
             <AntIcon name="DownOutlined" type="button"></AntIcon>
             <template #overlay>
               <a-menu>
-                <a-menu-item v-for="item in webScreenMap" :key="item.label">
+                <a-menu-item v-for="item in webScreenMap" :key="item.label" @click="handleWebTrigger(item)">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -50,12 +49,11 @@
           <a-dropdown :trigger="['click']"
             :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
-            @click="handleMobileTrigger"
           >
             <AntIcon name="DownOutlined" type="button"></AntIcon>
             <template #overlay>
               <a-menu>
-                <a-menu-item v-for="item in mobileScreenMap" :key="item.label">
+                <a-menu-item v-for="item in mobileScreenMap" :key="item.label" @click="handleMobileTrigger(item)">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -245,11 +243,11 @@ const getTplList = () => {
 
 const removeTpl = tpl => {
   Modal.confirm({
-    type: 'error',
     title: '提示',
-    message: '确定删除当前模板吗？',
-  })
-    .then(async () => {
+    content: '确定删除当前模板吗？',
+    okText: '确认',
+    cancelText: '取消',
+    async onOk() {
       try {
         await removeTemplate(tpl.id)
         getTplList()
@@ -257,8 +255,11 @@ const removeTpl = tpl => {
       } catch (e) {
         throwError('create-screen/removeTpl', e)
       }
-    })
-    .catch(() => {})
+    },
+    onCancel() {
+      console.log('取消删除')
+    }
+  })
 }
 
 const selectPreset = type => {

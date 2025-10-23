@@ -3,10 +3,9 @@
     draggable
     width="640px"
     top="50px"
-    append-to-body
-    destroy-on-close
-    :body-styles="{ backgroundColor: 'var(--schema-color-bg-3)' }"
-    :show-close="false"
+    destroyOnClose
+    :bodyStyle="{ backgroundColor: 'var(--schema-color-bg-3)' }"
+    :closable="false"
   >
     <div class="custom-box" style="min-height: 540px">
       <div class="top-color-edit bg-box">

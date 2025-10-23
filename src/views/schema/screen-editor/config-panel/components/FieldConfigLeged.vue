@@ -3,10 +3,9 @@
     v-model="open"
     :title="title"
     :width="width"
-    :mask-closable="false"
+    :maskClosable="false"
     class-name="source-drawer"
     :styles="{ padding: 0 }"
-    append-to-body
   >
     <div class="axis-fields-config" flex>
       <div class="left">

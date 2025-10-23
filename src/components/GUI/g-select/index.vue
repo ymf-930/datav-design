@@ -5,9 +5,9 @@
       :disabled="disabled"
       :allowClear="allowClear"
       @change="handleChange"
-      append-to-body
+      style="width: 100%"
     >
-      <a-select-option v-for="item in data" :key="item.value" :label="item.label" :value="item.value" />
+      <a-select-option v-for="item in data" :key="item.value" :value="item.value">{{ item.label }}</a-select-option>
     </a-select>
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
   </div>

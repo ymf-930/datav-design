@@ -34,9 +34,6 @@ dependencies:
   bin-editor-next:
     specifier: ^1.1.0
     version: 1.1.0
-  bin-ui-design:
-    specifier: ^0.4.0
-    version: 0.4.0
   brace:
     specifier: ^0.11.1
     version: 0.11.1
@@ -1594,10 +1591,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.5.5
     dev: true
 
-  /@popperjs/core@2.11.8:
-    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-    dev: false
-
   /@rollup/rollup-android-arm-eabi@4.52.5:
     resolution: {integrity: sha512-8c1vW4ocv3UOMp9K+gToY5zL2XiiVw3k7f1ksf4yO1FlDFQ1C2u72iACFnSOceJFsWskc2WZNqeRhFRPzv+wtQ==}
     cpu: [arm]
@@ -2205,22 +2198,6 @@ packages:
     resolution: {integrity: sha512-5YX9319dS6k8XYA+sqTI959N1jAX8vqaZ5AW5tqXkgheuAQgOLber6yHOErfqpf3SRie3lhVvMHl12C/qGJw2g==}
     dependencies:
       brace: 0.11.1
-    dev: false
-
-  /bin-ui-design@0.4.0:
-    resolution: {integrity: sha512-bX4HbsIfC3LYnwfflnp785KBuhS6TCiEv7GtONVIrbjhDVfrEzngUd77EQXWdp20r3SjMA868+rc4H7gSs5mHw==}
-    dependencies:
-      '@popperjs/core': 2.11.8
-      async-validator: 4.2.5
-      color: 4.2.3
-      dayjs: 1.11.18
-      lodash: 4.17.21
-      mitt: 3.0.1
-      resize-observer-polyfill: 1.5.1
-      sortablejs: 1.15.6
-      vue: 3.5.22
-    transitivePeerDependencies:
-      - typescript
     dev: false
 
   /brace-expansion@1.1.12:

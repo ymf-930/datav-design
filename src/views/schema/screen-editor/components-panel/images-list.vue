@@ -106,17 +106,28 @@ async function modifyGroup(item, name) {
 }
 
 // 移除一个分组
-async function removeGroup(item) {
-  try {
-    await Modal.confirm({ type: 'error', title: '提示', message: '确定移除当前图片分组吗？' })
-    setGlobalLoading(true)
-    await api.removeImagesGroup(item.key)
-    getImagesGroup()
-    message.success('删除成功！')
-  } catch (e) {
-    throwError('images-list/removeGroup', e)
-  }
-  setGlobalLoading(false)
+function removeGroup(item) {
+  Modal.confirm({
+    title: '提示',
+    content: '确定移除当前图片分组吗？',
+    okText: '确认',
+    cancelText: '取消',
+    async onOk() {
+      try {
+        setGlobalLoading(true)
+        await api.removeImagesGroup(item.key)
+        getImagesGroup()
+        message.success('删除成功！')
+      } catch (e) {
+        throwError('images-list/removeGroup', e)
+      } finally {
+        setGlobalLoading(false)
+      }
+    },
+    onCancel() {
+      console.log('取消移除')
+    }
+  })
 }
 
 // 新增一个分组

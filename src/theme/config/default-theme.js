@@ -5,9 +5,6 @@
  * 其他部分的面板配置，不需要设定的则不需要放出进行配置
  */
 
-// 移除 bin-ui-design 依赖
-// import { Utils } from 'bin-ui-design'
-
 const mainColor = '#1890ff' // 使用 Ant Design 默认主色
 export const Theme = {
   // -----------------system---------------------//

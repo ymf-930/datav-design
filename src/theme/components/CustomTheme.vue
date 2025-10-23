@@ -3,10 +3,9 @@
     draggable
     width="960px"
     top="50px"
-    append-to-body
-    destroy-on-close
-    :body-styles="{ backgroundColor: 'var(--schema-color-bg-3)' }"
-    :show-close="false"
+    destroyOnClose
+    :bodyStyle="{ backgroundColor: 'var(--schema-color-bg-3)' }"
+    :closable="false"
   >
     <div class="custom-box" style="min-height: 540px">
       <div class="left-info pr-8">
@@ -218,14 +217,14 @@ async function createCustomTheme() {
 }
 
 // 移除一个
-async function removeCustomTheme(id, disabled) {
+function removeCustomTheme(id, disabled) {
   if (disabled) return
   Modal.confirm({
-    type: 'warning',
     title: '提示',
-    message: '是否删除当前自定义主题颜色?',
-  })
-    .then(() => {
+    content: '是否删除当前自定义主题颜色?',
+    okText: '确认',
+    cancelText: '取消',
+    onOk() {
       const idx = customThemes.value.findIndex(c => c.id === id)
       if (idx > -1) {
         customThemes.value.splice(idx, 1)
@@ -235,8 +234,11 @@ async function removeCustomTheme(id, disabled) {
           selectOneTheme(customThemes.value[idx - 1].id)
         }
       }
-    })
-    .catch(() => {})
+    },
+    onCancel() {
+      console.log('取消删除')
+    }
+  })
 }
 
 // 选择切换时

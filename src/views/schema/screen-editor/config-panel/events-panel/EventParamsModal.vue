@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model:visible="open" title="参数信息" width="750px" append-to-body custom-class="schema-modal">
+  <a-modal v-model:visible="open" title="参数信息" width="750px" destroyOnClose class="schema-modal" :footer="null">
     <div style="margin: -16px; padding: 10px">
       <a-table :columns="columns" :data="params" size="small" border />
     </div>

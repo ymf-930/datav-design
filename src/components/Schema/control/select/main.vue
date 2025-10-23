@@ -4,9 +4,8 @@
       <a-select-option
         v-for="item in options"
         :key="item.value"
-        :label="item.label"
         :value="item.value"
-      ></a-select-option>
+      >{{ item.label }}</a-select-option>
     </a-select>
   </div>
 </template>
@@ -70,22 +69,21 @@ function handleChange(value) {
 
 <style scoped>
 .dv-wrapper {
-  :deep(.bin-select) {
-    .bin-input-wrapper .bin-input-with-suffix{
+  :deep(.ant-select) {
+    .ant-select-selector {
       border-radius: var(--border-radius);
-    }
-    .bin-input {
       background-color: var(--bg-color);
-      color: var(--font-color);
-      font-size: var(--font-size);
       border-color: var(--border-color);
-      border-radius: var(--border-radius);
       height: var(--select-height);
     }
-    .bin-select__caret.ant-icon.b-icon-down {
+    .ant-select-selection-item {
+      color: var(--font-color);
+      font-size: var(--font-size);
+    }
+    .ant-select-arrow {
       color: var(--arrow-color);
     }
-    .bin-select__caret.ant-icon.is-show-close {
+    .ant-select-clear {
       color: var(--arrow-color);
       background: transparent;
     }

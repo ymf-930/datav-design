@@ -10,13 +10,13 @@
         </g-field>
       </a-space>
       <g-field label="当前动画">
-        <a-tag color="primary">{{ getAnimationName(data.name) }}</a-tag>
+        <a-tag color="processing">{{ getAnimationName(data.name) }}</a-tag>
       </g-field>
       <g-field label="播放速度">
-        <g-select v-model="data.timing" :data="TimingOptions" />
+        <g-select v-model="data.timing" :data="TimingOptions" style="width: 100%"/>
       </g-field>
       <g-field label="交替方向">
-        <g-select v-model="data.direction" :data="DirectionOptions" />
+        <g-select v-model="data.direction" :data="DirectionOptions" style="width: 100%" />
       </g-field>
       <a-space>
         <g-field label="动画时长" style="padding: 4px 0">

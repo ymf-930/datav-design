@@ -101,15 +101,18 @@ function getThemeBottomStyle(colors) {
 // 提示是否应用当前主题颜色
 function selectTheme(colors) {
   Modal.confirm({
-    type: 'warning',
     title: '提示',
-    message: '是否应用此系统颜色？会替换当前色自定义色板！',
-  })
-    .then(() => {
+    content: '是否应用此系统颜色？会替换当前色自定义色板！',
+    okText: '确认',
+    cancelText: '取消',
+    onOk() {
       const colorList = getColorsPane(colors)
       emit('selectSystem', colorList)
-    })
-    .catch(() => {})
+    },
+    onCancel() {
+      console.log('取消应用')
+    }
+  })
 }
 
 function selectColor(color) {

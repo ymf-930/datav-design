@@ -1,14 +1,13 @@
 <template>
   <g-field label="选择字段">
     <a-select v-model:value="dimensionModelData">
-      <a-select-option v-for="item in dimensionFields" :key="item.name" :label="item.desc"
-        :value="item.name"></a-select-option>
+      <a-select-option v-for="item in dimensionFields" :key="item.name" :value="item.name">{{ item.desc }}</a-select-option>
     </a-select>
   </g-field>
 
   <div style="padding: 0 10px 8px" flex>
     <a-space>
-      <a-tag color="primary">指标配置</a-tag>
+      <a-tag color="processing">指标配置</a-tag>
       <a-button type="text" title="新增指标配置" @click="handleAddSaveField">
         <template #icon>
           <AntIcon name="PlusOutlined" />
@@ -19,7 +18,7 @@
 
   <g-field flat v-for="(item, index) in mappingFields.y" :key="index">
     <template #label>
-      <a-dropdown :trigger="['click']" :placement="'bottom-start'" :getPopupContainer="() => document.body"
+      <a-dropdown :trigger="['click']" :placement="'bottom-start'"
         @click="handleCommand($event, item)">
         <span class="mr-5 aggr">指标{{ index + 1 }}</span>
         <template #overlay>

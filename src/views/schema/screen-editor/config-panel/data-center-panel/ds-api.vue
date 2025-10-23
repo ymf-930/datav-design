@@ -19,7 +19,7 @@
                     class="column-item"
                     :class="item.type"
                   >
-                    <a-dropdown :trigger="['contextmenu']" @click="legendChange">
+                    <a-dropdown :trigger="['contextmenu']">
                       <div class="field-title">
                         <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                         <span class="ml-5">
@@ -30,12 +30,14 @@
                         <a-menu>
                           <a-menu-item :key="{ index, key: '' }"
                             :selected="item.sortWay === ''"
+                            @click="legendChange({ index, key: '' })"
                           >
                             不排序
                           </a-menu-item>
                           <a-menu-item v-for="(val, key) in SORT_FUN"
                             :key="key"
                             :selected="item.sortWay === key"
+                            @click="legendChange({ index, key })"
                           >
                             {{ val }}
                           </a-menu-item>
@@ -66,7 +68,7 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <a-dropdown :trigger="['contextmenu']" @click="sortChange">
+                  <a-dropdown :trigger="['contextmenu']">
                     <div class="field-title">
                       <AntIcon name="ExpandOutlined" class="mr-5"
                         v-if="showDrill && item.drillEnabled === 'Y'"
@@ -77,12 +79,13 @@
                     </div>
                     <template #overlay>
                       <a-menu>
-                        <a-menu-item :key="{ index, key: '' }" :selected="item.sortWay === ''">
+                        <a-menu-item :key="{ index, key: '' }" :selected="item.sortWay === ''" @click="sortChange({ index, key: '' })">
                           不排序
                         </a-menu-item>
                         <a-menu-item v-for="(val, key) in SORT_FUN"
                           :key="key"
                           :selected="item.sortWay === key"
+                          @click="sortChange({ index, key })"
                         >
                           {{ val }}
                         </a-menu-item>
@@ -117,7 +120,7 @@
                   class="column-item"
                   :class="item.type"
                 >
-                  <a-dropdown :trigger="['click']" @click="aggrChange">
+                  <a-dropdown :trigger="['click']">
                     <div class="field-title">
                       <fieldTypeIcon :type="item.dataType" size="14px"></fieldTypeIcon>
                       <span class="ml-5">
@@ -129,6 +132,7 @@
                         <a-menu-item v-for="(val, key) in AGGREGATOR_FUN"
                           :key="key"
                           :selected="item.aggregator === key"
+                          @click="aggrChange({ index, key })"
                         >
                           {{ val }}
                         </a-menu-item>

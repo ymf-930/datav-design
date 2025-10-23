@@ -18,8 +18,9 @@
     <!-- 工具设置 -->
     <a-modal title="工具设置"
       v-model:visible="toolbar.toolbox"
-      append-to-body
-      custom-class="schema-modal"
+      destroyOnClose
+      class="schema-modal"
+      :footer="null"
       width="600px"
     >
       <a-form label-position="left" label-width="100px">
@@ -70,9 +71,10 @@
 
     <a-modal v-model:visible="detailVisible"
       title="页面编辑器"
-      append-to-body
+      destroyOnClose
       fullscreen
-      custom-class="schema-modal"
+      class="schema-modal"
+      :footer="null"
     >
       <div class="data-editor" style="margin: 0">
         <b-ace-editor
@@ -109,13 +111,17 @@ const textpasteRef = ref(null)
 
 const clearCanvas = () => {
   Modal.confirm({
-    type: 'error',
     title: '确认清空画布吗？请谨慎操作！',
-  })
-    .then(() => {
+    content: '清空后将无法恢复，请确认是否继续？',
+    okText: '确认',
+    cancelText: '取消',
+    onOk() {
       schemaStore.clearScreen()
-    })
-    .catch(() => {})
+    },
+    onCancel() {
+      console.log('取消清空')
+    }
+  })
 }
 
 // 粘贴图表TODO：目前情况暂时还有点问题

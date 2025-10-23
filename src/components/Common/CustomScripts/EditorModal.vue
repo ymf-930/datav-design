@@ -1,13 +1,12 @@
 <template>
   <a-modal v-model:visible="visible"
     :title="modalTitle"
-    :mask-closable="false"
-    :esc-closable="false"
-    :z-index="4000"
+    :maskClosable="false"
+    :keyboard="false"
+    :zIndex="4000"
     width="1200px"
     top="50px"
-    append-to-body
-    destroy-on-close
+    destroyOnClose
     @opened="render = true"
   >
     <div class="code-editor">

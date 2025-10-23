@@ -35,7 +35,7 @@
                   target="_blank"
                   title="点击跳转官方文档查看使用方法"
                 >
-                  <a-tag color="primary">{{ p.name }}</a-tag>
+                  <a-tag color="processing">{{ p.name }}</a-tag>
                 </a>
                 <a-tag v-else color="info">{{ p.name }}</a-tag>
               </div>

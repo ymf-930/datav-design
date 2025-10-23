@@ -66,14 +66,14 @@
             <AntIcon name="SaveOutlined" color="var(--bin-color-primary)"></AntIcon>
             &nbsp;保&nbsp;存
           </div>
-          <a-dropdown :trigger="['hover']" @click="saveCommand">
+          <a-dropdown :trigger="['hover']">
             <div class="head-btn" style="margin-left: -1px; padding: 0 4px">
               <AntIcon name="EllipsisOutlined"></AntIcon>
             </div>
             <template #overlay>
               <a-menu>
-                <a-menu-item key="saveTpl">保存模板</a-menu-item>
-                <a-menu-item key="saveImage">保存图片</a-menu-item>
+                <a-menu-item key="saveTpl" @click="saveCommand('saveTpl')">保存模板</a-menu-item>
+                <a-menu-item key="saveImage" @click="saveCommand('saveImage')">保存图片</a-menu-item>
               </a-menu>
             </template>
           </a-dropdown>
@@ -146,16 +146,19 @@ const handleBack = () => {
     window.open(route.href, props.backTarget)
   } else {
     Modal.confirm({
-      type: 'warning',
       title: '提示',
-      message: '返回时会丢失未保存的操作',
-    })
-      .then(() => {
+      content: '返回时会丢失未保存的操作',
+      okText: '确认',
+      cancelText: '取消',
+      onOk() {
         // router.push(path)
         window.open(path, props.backTarget)
         schemaStore.clearStore()
-      })
-      .catch(() => {})
+      },
+      onCancel() {
+        console.log('取消返回')
+      }
+    })
   }
 }
 

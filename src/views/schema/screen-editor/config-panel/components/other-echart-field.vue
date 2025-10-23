@@ -1,13 +1,12 @@
 <template>
   <template v-if="isWord">
     <g-field label="标签标题">
-      <a-select v-model:value="mappingFields.word" size="small">
+      <a-select v-model:value="mappingFields.word" size="small"></a-select>
         <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
     <g-field label="标签值">
@@ -15,9 +14,8 @@
         <a-select-option
           v-for="item in measureFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -28,9 +26,8 @@
         <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
     <g-field label="选项值">
@@ -38,9 +35,8 @@
         <a-select-option
           v-for="item in measureFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -51,9 +47,8 @@
         <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
     <g-field label="选项值">
@@ -61,9 +56,8 @@
         <a-select-option
           v-for="item in measureFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
   </template>
@@ -74,9 +68,8 @@
         <a-select-option
           v-for="item in dimensionFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
     <g-field label="标签值">
@@ -84,9 +77,8 @@
         <a-select-option
           v-for="item in measureFields"
           :key="item.name"
-          :label="item.desc"
           :value="item.name"
-        ></a-select-option>
+        >{{ item.desc }}</a-select-option>
       </a-select>
     </g-field>
   </template>

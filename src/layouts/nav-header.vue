@@ -18,7 +18,7 @@
       </div>
       <div class="user">
         <div class="header-item">
-          <a-dropdown @click="handleClick" :trigger="['click']">
+          <a-dropdown placement="bottom" :trigger="['click']">
             <div class="user-link-wrap">
               <span class="user-link" v-if="userStore.userInfo">
                 {{ userStore.userInfo.realName }}
@@ -26,7 +26,7 @@
             </div>
             <template #overlay>
               <a-menu style="width: 120px">
-                <a-menu-item key="logout">
+                <a-menu-item key="logout" @click="handleLogout">
                   <div flex="cross:center">
                     <AntIcon name="LogoutOutlined" size="16"></AntIcon>
                     <span class="ml-5">退出登录</span>
@@ -77,24 +77,20 @@ const route = useRoute()
 const router = useRouter()
 const { userStore } = useStore()
 
-function handleClick(name) {
-  if (name === 'userCenter') {
-    router.push('/userCenter')
-  }
-
-  if (name === 'logout') {
-    Modal.confirm({
-      type: 'warning',
-      title: '确认退出登录吗？',
-    })
-      .then(async () => {
-        userStore.clearToken()
-        router.push(`/login?redirect=${route.fullPath}`)
-      })
-      .catch(e => {
-        console.log(e)
-      })
-  }
+function handleLogout() {
+  Modal.confirm({
+    title: '确认退出登录吗？',
+    content: '退出后将需要重新登录',
+    okText: '确认',
+    cancelText: '取消',
+    onOk() {
+      userStore.clearToken()
+      router.push(`/login?redirect=${route.fullPath}`)
+    },
+    onCancel() {
+      console.log('取消退出')
+    }
+  })
 }
 </script>
 
@@ -110,12 +106,14 @@ function handleClick(name) {
   padding: 0 10px;
   color: #fff;
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 19%, #171717 100%);
+
   .logo {
     display: flex;
     flex: 1;
     align-items: center;
     padding-left: 18px;
   }
+
   .user {
     display: flex;
     justify-content: flex-end;
@@ -123,6 +121,7 @@ function handleClick(name) {
     align-items: center;
     z-index: 9;
     min-width: 540px;
+
     .header-item {
       margin: 0 5px;
       padding: 0 10px;
@@ -135,7 +134,8 @@ function handleClick(name) {
     .user-link-wrap {
       display: flex;
       align-items: center;
-      > img {
+
+      >img {
         height: 20px;
         width: 20px;
         line-height: 20px;
@@ -152,6 +152,7 @@ function handleClick(name) {
     }
   }
 }
+
 .top-tip {
   padding: 6px 0;
   font-size: 12px;
@@ -167,6 +168,7 @@ function handleClick(name) {
     padding-right: 8px;
   }
 }
+
 .dv-marquee {
   display: block;
   margin: 0 auto;
@@ -226,24 +228,25 @@ function handleClick(name) {
     user-select: none;
     display: flex;
     align-items: center;
-    > img {
+
+    >img {
       height: 100px;
       margin-right: 20px;
     }
+
     .nav-welcome {
       h2 {
         font-size: 50px;
         font-weight: normal;
-        background-image: linear-gradient(
-          to right,
-          var(--bin-color-primary-light4),
-          var(--bin-color-primary)
-        );
+        background-image: linear-gradient(to right,
+            var(--bin-color-primary-light4),
+            var(--bin-color-primary));
         -webkit-background-clip: text;
         color: transparent;
         font-family: YouSheBiaoTiHei, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial,
           Helvetica, sans-serif;
       }
+
       h4 {
         font-weight: normal;
         font-size: 14px;

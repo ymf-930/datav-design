@@ -3,15 +3,14 @@
     <a-select v-model:value="apiDataConfig.config.dimension">
       <a-select-option v-for="item in apiDataConfig.config.resParam"
         :key="item.name"
-        :label="item.desc"
         :value="item.name"
-      ></a-select-option>
+      >{{ item.desc }}</a-select-option>
     </a-select>
   </g-field>
 
   <div style="padding: 0 10px 8px" flex>
     <a-space>
-      <a-tag color="primary">指标配置</a-tag>
+      <a-tag color="processing">指标配置</a-tag>
       <a-button type="text" title="新增指标配置" @click="handleAddSaveField">
         <template #icon>
           <AntIcon name="PlusOutlined" />

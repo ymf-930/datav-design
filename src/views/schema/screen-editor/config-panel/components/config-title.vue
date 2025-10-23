@@ -24,9 +24,9 @@
 
     <a-modal v-model:visible="detailVisible"
       :title="`[${selectedCom.alias}] 配置项 `"
-      append-to-body
       top="60px"
-      custom-class="schema-modal"
+      class="schema-modal"
+      :footer="null"
       @opened="render = true"
     >
       <div class="data-editor" style="margin: 0; height: 350px">
@@ -39,18 +39,20 @@
         />
       </div>
       <div class="t-right pt-8">
-        <a-button size="small" type="primary" @click="putJson">
-          <template #icon>
-            <AntIcon name="SnippetsOutlined" />
-          </template>
-          应用配置项
-        </a-button>
-        <a-button size="small" type="primary" @click="copyCom">
-          <template #icon>
-            <AntIcon name="CopyOutlined" />
-          </template>
-          复制配置
-        </a-button>
+        <a-space>
+          <a-button type="primary" @click="putJson">
+            <template #icon>
+              <AntIcon name="SnippetsOutlined" />
+            </template>
+            应用配置项
+          </a-button>
+          <a-button type="primary" @click="copyCom">
+            <template #icon>
+              <AntIcon name="CopyOutlined" />
+            </template>
+            复制配置
+          </a-button>
+        </a-space>
       </div>
     </a-modal>
   </div>

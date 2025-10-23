@@ -12,7 +12,7 @@
       </span>
     </div>
     <div flex="cross:center">
-      <a-dropdown :trigger="['click']" @click="submitScale">
+      <a-dropdown :trigger="['click']">
         <div class="scale-input-wp">
           <input
             v-model="inputScale"
@@ -25,10 +25,10 @@
         </div>
         <template #overlay>
           <a-menu>
-            <a-menu-item v-for="s in scaleList" :key="s">
+            <a-menu-item v-for="s in scaleList" :key="s" @click="submitScale(s)">
               {{ `${s}%` }}
             </a-menu-item>
-            <a-menu-item :key="-1">自适应</a-menu-item>
+            <a-menu-item :key="-1" @click="submitScale(-1)">自适应</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>

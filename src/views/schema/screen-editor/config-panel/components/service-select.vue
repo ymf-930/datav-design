@@ -15,9 +15,9 @@
     <a-modal v-model:visible="visible"
       title="接口选择"
       width="800px"
-      append-to-body
-      custom-class="schema-modal"
-      destroy-on-close
+      class="schema-modal"
+      :footer="null"
+      destroyOnClose
     >
       <div>
 
