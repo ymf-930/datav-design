@@ -124,7 +124,7 @@
 import { deepCopy } from '@/utils/util'
 import { computed, ref } from 'vue'
 import { emitList, eventSourceList } from '@/hooks/schema/useEventBus'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import ParamsMap from '../components/ParamsMap.vue'
 
 const props = defineProps({
@@ -205,15 +205,15 @@ function handleAddOnEvent() {
 // 注册按钮回调
 function handleRegOnEvent(event) {
   if (event.eventSource === '') {
-    Message.warning('请选择事件源！')
+    message.warning('请选择事件源！')
     return
   }
   if (event.eventName === '') {
-    Message.warning('请绑定事件！')
+    message.warning('请绑定事件！')
     return
   }
   if (event.actionName === '') {
-    Message.warning('请绑定动作！')
+    message.warning('请绑定动作！')
     return
   }
   event.register = true
@@ -238,11 +238,11 @@ function handleParamsMapSave(actionParams) {
 function handleConfigParam(index) {
   const onEvent = config.value.onEvents[index]
   if (onEvent.eventName === '') {
-    Message.warning('请绑定事件！')
+    message.warning('请绑定事件！')
     return
   }
   if (onEvent.actionName === '') {
-    Message.warning('请绑定动作！')
+    message.warning('请绑定动作！')
     return
   }
   curOnEventIndex.value = index

@@ -95,7 +95,7 @@
 <script setup>
 import { computed, ref, onBeforeUnmount, onMounted } from 'vue'
 import { useStore } from '@/store'
-import { MessageBox, Message } from 'bin-ui-design'
+import { Modal, message } from 'ant-design-vue'
 import { generateId } from '@/utils/util'
 import { on, off } from '@/utils/util'
 
@@ -108,7 +108,7 @@ const actionStyle = computed(() => (schemaStore.toolbar.config ? { right: '360px
 const textpasteRef = ref(null)
 
 const clearCanvas = () => {
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'error',
     title: '确认清空画布吗？请谨慎操作！',
   })
@@ -136,11 +136,11 @@ function paseEvent(e) {
       }
       schemaStore.addCom({ component })
 
-      Message.success('粘贴图表成功！')
+      message.success('粘贴图表成功！')
     }
   } catch (error) {
     console.log(error)
-    Message.error('粘贴的内容不是图表组件！')
+    message.error('粘贴的内容不是图表组件！')
   }
 
   setTimeout(() => {
@@ -173,10 +173,10 @@ const putJson = () => {
     pageConfig.value = jsonData.pageConfig
     comps.value = jsonData.components
 
-    Message.success('应用成功！')
+    message.success('应用成功！')
     detailVisible.value = false
   } catch (error) {
-    Message.error('配置项格式不正确，请检查后再应用配置！')
+    message.error('配置项格式不正确，请检查后再应用配置！')
   }
 }
 

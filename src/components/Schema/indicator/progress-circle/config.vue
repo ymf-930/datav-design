@@ -2,9 +2,9 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="标题" default-open>
       <g-field label="顶端形状">
-        <a-radio-group v-model:value="config.linecap" button size="small">
-          <a-radio value="round">圆形</a-radio>
-          <a-radio value="square">方形</a-radio>
+        <a-radio-group v-model:value="config.linecap" size="small">
+          <a-radio-button value="round">圆形</a-radio-button>
+          <a-radio-button value="square">方形</a-radio-button>
         </a-radio-group>
       </g-field>
       <g-field label="环形样式" flat>

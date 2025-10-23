@@ -29,7 +29,7 @@
     </div>
 
     <div class="p10">
-      <b-tabs v-model="activeTab" :data="tabs"></b-tabs>
+      <a-tabs v-model="activeTab" :data="tabs"></a-tabs>
       <div style="position: relative; overflow: hidden">
         <Transition name="move" mode="out-in">
           <AnimationItem :key="activeTab" :list="currentList" />

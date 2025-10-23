@@ -3,7 +3,7 @@
     <a-select v-model:value="inputValue"
       :size="size"
       :disabled="disabled"
-      :allowClear="clearable"
+      :allowClear="allowClear"
       @change="handleChange"
       append-to-body
     >
@@ -47,7 +47,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  clearable: Boolean,
+  allowClear: Boolean,
   disabled: Boolean,
 })
 

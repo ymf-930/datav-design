@@ -2,8 +2,8 @@
   <div class="api-editor">
     <div style="padding: 0 10px">
       <g-field label="数据来源" style="padding-top: 8px">
-        <a-radio-group v-model:value="apiDataConfig.type" button size="small">
-          <a-radio v-for="(val, key) in ApiTypeMap" :key="key" :value="key">{{ val }}</a-radio>
+        <a-radio-group v-model:value="apiDataConfig.type" size="small">
+          <a-radio-button v-for="(val, key) in ApiTypeMap" :key="key" :value="key">{{ val }}</a-radio-button>
         </a-radio-group>
       </g-field>
       <g-field label="轮询间隔">

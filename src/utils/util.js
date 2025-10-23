@@ -1,83 +1,231 @@
-import { Utils, Notice } from 'bin-ui-design'
+// 使用成熟的依赖包替代自定义工具函数
 import { camelize, isObject } from '@vue/shared'
+import { message } from 'ant-design-vue'
 
-export const generateId = Utils.helper.generateId
+// 导入 lodash-es 函数
+import { 
+  debounce as lodashDebounce, 
+  throttle as lodashThrottle, 
+  isEmpty as lodashIsEmpty, 
+  isEqual, 
+  merge, 
+  cloneDeep,
+  uniqueId,
+  random
+} from 'lodash-es'
 
-export const uuid = Utils.util.uuid
+// 导入其他工具库
+import { v4 as uuidv4 } from 'uuid'
+import clone from 'rfdc'
+import Color from 'color'
 
-export const logger = Utils.log
+// ==================== 工具函数实现 ====================
 
-export const copyText = Utils.util.copy
+/**
+ * 生成唯一ID（使用 lodash 的 uniqueId）
+ */
+export const generateId = () => uniqueId()
 
-export const typeOf = Utils.util.typeOf
+/**
+ * 生成UUID（使用 uuid 库）
+ */
+export const uuid = () => uuidv4()
 
-export const deepCopy = Utils.util.deepCopy
-
-export const deepMerge = Utils.util.deepMerge
-
-export const isEqual = Utils.util.isEqual
-
-export const getRandomInt = Utils.util.getRandomInt
-
-export const throttle = Utils.util.throttle
-
-export const debounce = Utils.util.debounce
-
-export const isEmpty = Utils.helper.isEmpty
-
-export const windowOpen = Utils.util.open
-
-export const on = Utils.dom.on
-
-export const off = Utils.dom.off
-
-export const addClass = Utils.dom.addClass
-
-export const removeClass = Utils.dom.removeClass
-
-export const hasClass = Utils.dom.hasClass
-
-export const addResizeListener = Utils.resize.addResizeListener
-
-export const removeResizeListener = Utils.resize.removeResizeListener
-
-export const ColorHelper = Utils.color
-
-export function isColor(str) {
-  let type = ''
-  if (/^rgb\(/.test(str)) {
-    //如果是rgb开头，200-249，250-255，0-199
-    type =
-      '^[rR][gG][Bb][(]([\\s]*(2[0-4][0-9]|25[0-5]|[01]?[0-9][0-9]?)[\\s]*,){2}[\\s]*(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)[\\s]*[)]$'
-  } else if (/^rgba\(/.test(str)) {
-    //如果是rgba开头，判断0-255:200-249，250-255，0-199 判断0-1：0 1 1.0 0.0-0.9
-    type =
-      '^[rR][gG][Bb][Aa][(]([\\s]*(2[0-4][0-9]|25[0-5]|[01]?[0-9][0-9]?)[\\s]*,){3}[\\s]*(1|1.0|0|0.[0-9])[\\s]*[)]$'
-  } else if (/^#/.test(str)) {
-    //六位或者三位
-    type = '^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$'
-  } else if (/^hsl\(/.test(str)) {
-    //判断0-360 判断0-100%(0可以没有百分号)
-    type =
-      '^[hH][Ss][Ll][(]([\\s]*(2[0-9][0-9]|360｜3[0-5][0-9]|[01]?[0-9][0-9]?)[\\s]*,)([\\s]*((100|[0-9][0-9]?)%|0)[\\s]*,)([\\s]*((100|[0-9][0-9]?)%|0)[\\s]*)[)]$'
-  } else if (/^hsla\(/.test(str)) {
-    type =
-      '^[hH][Ss][Ll][Aa][(]([\\s]*(2[0-9][0-9]|360｜3[0-5][0-9]|[01]?[0-9][0-9]?)[\\s]*,)([\\s]*((100|[0-9][0-9]?)%|0)[\\s]*,){2}([\\s]*(1|1.0|0|0.[0-9])[\\s]*)[)]$'
-  }
-
-  let re = new RegExp(type)
-  return str.match(re) !== null
+/**
+ * 日志工具
+ */
+export const logger = {
+  pretty: (module, action, level = 'info') => {
+    const colors = {
+      info: '#1890ff',
+      success: '#52c41a',
+      warning: '#faad14',
+      danger: '#f5222d'
+    }
+    console.log(`%c[${module}] ${action}`, `color: ${colors[level] || colors.info}`)
+  },
+  info: (msg) => console.log(msg),
+  success: (msg) => console.log(`%c${msg}`, 'color: #52c41a'),
+  warning: (msg) => console.log(`%c${msg}`, 'color: #faad14'),
+  danger: (msg) => console.log(`%c${msg}`, 'color: #f5222d')
 }
 
 /**
- * arraybuffer 流文件转换为base64图像
- * @param data
+ * 复制文本到剪贴板
  */
-export function arraybuffer2Base64(data) {
-  return (
-    'data:image/png;base64,' +
-    window.btoa(new Uint8Array(data).reduce((data, byte) => data + String.fromCharCode(byte), ''))
-  )
+export const copyText = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text)
+    message.success('复制成功')
+  } catch (err) {
+    // 降级方案
+    const textArea = document.createElement('textarea')
+    textArea.value = text
+    document.body.appendChild(textArea)
+    textArea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textArea)
+    message.success('复制成功')
+  }
+}
+
+/**
+ * 获取数据类型
+ */
+export const typeOf = (obj) => {
+  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
+}
+
+/**
+ * 深拷贝（使用 rfdc，性能更好）
+ */
+export const deepCopy = clone()
+
+/**
+ * 深合并（使用 lodash merge）
+ */
+export const deepMerge = merge
+
+/**
+ * 获取随机整数（使用 lodash random）
+ */
+export const getRandomInt = (min, max) => random(min, max, false)
+
+/**
+ * 节流函数（使用 lodash throttle）
+ */
+export const throttle = lodashThrottle
+
+/**
+ * 防抖函数（使用 lodash debounce）
+ */
+export const debounce = lodashDebounce
+
+/**
+ * 判断是否为空（使用 lodash isEmpty）
+ */
+export const isEmpty = lodashIsEmpty
+
+/**
+ * DOM 事件监听
+ */
+export const on = (element, event, handler) => {
+  if (element && event && handler) {
+    element.addEventListener(event, handler, false)
+  }
+}
+
+export const off = (element, event, handler) => {
+  if (element && event && handler) {
+    element.removeEventListener(event, handler, false)
+  }
+}
+
+/**
+ * DOM 类名操作
+ */
+export const addClass = (element, className) => {
+  if (element && className) {
+    element.classList.add(className)
+  }
+}
+
+export const removeClass = (element, className) => {
+  if (element && className) {
+    element.classList.remove(className)
+  }
+}
+
+export const hasClass = (element, className) => {
+  return element && element.classList.contains(className)
+}
+
+/**
+ * 窗口大小监听
+ */
+const resizeHandlers = new Map()
+
+export const addResizeListener = (element, handler) => {
+  if (!element || !handler) return
+  
+  if (!resizeHandlers.has(element)) {
+    resizeHandlers.set(element, new Set())
+  }
+  
+  resizeHandlers.get(element).add(handler)
+  
+  // 添加全局 resize 监听
+  if (resizeHandlers.size === 1) {
+    window.addEventListener('resize', handleResize)
+  }
+}
+
+export const removeResizeListener = (element, handler) => {
+  if (!element || !handler) return
+  
+  const handlers = resizeHandlers.get(element)
+  if (handlers) {
+    handlers.delete(handler)
+    if (handlers.size === 0) {
+      resizeHandlers.delete(element)
+    }
+  }
+  
+  // 如果没有元素监听了，移除全局监听
+  if (resizeHandlers.size === 0) {
+    window.removeEventListener('resize', handleResize)
+  }
+}
+
+const handleResize = () => {
+  resizeHandlers.forEach((handlers, element) => {
+    handlers.forEach(handler => {
+      handler()
+    })
+  })
+}
+
+/**
+ * 颜色工具（使用 color 库）
+ */
+export const ColorHelper = {
+  // 颜色混合
+  mix: (color1, color2, ratio) => {
+    try {
+      const c1 = Color(color1)
+      const c2 = Color(color2)
+      return c1.mix(c2, ratio).hex()
+    } catch (e) {
+      return color1
+    }
+  },
+  
+  // 透明度
+  alpha: (color, alpha) => {
+    try {
+      return Color(color).alpha(alpha).toString()
+    } catch (e) {
+      return color
+    }
+  },
+  
+  // 亮度调整
+  lighten: (color, amount) => {
+    try {
+      return Color(color).lighten(amount).hex()
+    } catch (e) {
+      return color
+    }
+  },
+  
+  // 暗度调整
+  darken: (color, amount) => {
+    try {
+      return Color(color).darken(amount).hex()
+    } catch (e) {
+      return color
+    }
+  }
 }
 
 /**
@@ -90,70 +238,18 @@ export function arraybuffer2Base64(data) {
 export function throwError(callFun, e, title, log = true) {
   console.log('.........................', e)
   if (e.statusCode === 401 || e.code === '416') {
-    Notice.warning({ title: title || '提示', message: e.message || '操作错误！' })
+    message.warning(e.message || '操作错误！')
   } else {
-    Notice.error({ title: title || '错误', message: e.message || '操作错误！' })
+    message.error(e.message || '操作错误！')
   }
   if (log) {
     const str = callFun.split('/')
     if (str && str.length >= 2) {
-      Utils.log.pretty(str[0], str[1], 'danger')
+      logger.pretty(str[0], str[1], 'danger')
     }
     console.log(e)
-    Utils.log.danger('----------------------------------------------------------')
+    logger.danger('----------------------------------------------------------')
   }
-}
-
-/**
- * 数组转对象值
- */
-export function arrToObj(arr = [], keyCode = 'key', valueCode = 'value') {
-  const map = new Map()
-  if (arr.length === 0) return {}
-  arr.forEach(item => {
-    map.set(item[keyCode], item[valueCode])
-  })
-  const obj = {}
-  for (const [k, v] of map) {
-    obj[k] = v
-  }
-  return obj
-}
-
-/**
- * 处理拉平树结构
- * @param stateTree
- * @returns {*[]}
- */
-export function compileFlatState(stateTree) {
-  let keyCounter = 0
-  let childrenKey = 'children'
-  const flatTree = []
-
-  const flattenChildren = (node, parent, parentKeys) => {
-    if (isEmpty(node)) return
-    node.nodeKey = keyCounter++
-    flatTree[node.nodeKey] = { node: node, nodeKey: node.nodeKey }
-    if (typeof parent !== 'undefined') {
-      flatTree[node.nodeKey].parent = parent.nodeKey
-      flatTree[parent.nodeKey][childrenKey].push(node.nodeKey)
-    }
-    let parents = parentKeys ? parentKeys.split(',').map(i => +i) : []
-    // 拼接parents
-    if (typeof parentKeys !== 'undefined') {
-      parents.push(parent.nodeKey)
-      flatTree[node.nodeKey].parents = parents
-    }
-
-    if (node[childrenKey]) {
-      flatTree[node.nodeKey][childrenKey] = []
-      node[childrenKey].forEach(child => flattenChildren(child, node, parents.join(',')))
-    }
-  }
-
-  flattenChildren(stateTree)
-
-  return flatTree
 }
 
 /**
@@ -195,16 +291,6 @@ export function findIndex(data, value, key = 'id') {
   return data.findIndex(i => i[key] === value)
 }
 
-// 简单计算字符串宽度
-let TextCanvas = null
-export const calcStrWidth = (str, font) => {
-  if (!TextCanvas) {
-    TextCanvas = document.createElement('canvas')
-  }
-  const ctx = TextCanvas.getContext('2d')
-  ctx.font = font
-  return ctx.measureText(str).width
-}
 // 判断是否存在一个属性
 export function hasProperty(obj, property) {
   // eslint-disable-next-line no-prototype-builtins

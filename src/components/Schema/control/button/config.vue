@@ -43,10 +43,10 @@
     </g-field-collapse>
     <g-field-collapse label="背景样式" v-model="config.backgroundStyle.show" toggle>
       <g-field label="背景类型">
-        <a-radio-group v-model:value="config.backgroundStyle.backgroundType" button size="small">
-          <a-radio v-for="item in BackgroundTypeOptions" :key="item.value" :value="item.value">
+        <a-radio-group v-model:value="config.backgroundStyle.backgroundType" size="small">
+          <a-radio-button v-for="item in BackgroundTypeOptions" :key="item.value" :value="item.value">
             {{ item.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
       <template v-if="config.backgroundStyle.backgroundType === 'normal'">

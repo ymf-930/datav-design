@@ -1,0 +1,127 @@
+/* Flex 布局工具类 - 兼容 bin-ui-design 语法 */
+
+/* 基础 flex 容器 */
+[flex] {
+  display: flex;
+}
+
+/* 主轴方向 */
+[flex~="dir:top"] {
+  flex-direction: column;
+}
+
+[flex~="dir:bottom"] {
+  flex-direction: column-reverse;
+}
+
+[flex~="dir:left"] {
+  flex-direction: row;
+}
+
+[flex~="dir:right"] {
+  flex-direction: row-reverse;
+}
+
+/* 主轴对齐 */
+[flex~="main:start"] {
+  justify-content: flex-start;
+}
+
+[flex~="main:center"] {
+  justify-content: center;
+}
+
+[flex~="main:end"] {
+  justify-content: flex-end;
+}
+
+[flex~="main:justify"] {
+  justify-content: space-between;
+}
+
+[flex~="main:around"] {
+  justify-content: space-around;
+}
+
+[flex~="main:evenly"] {
+  justify-content: space-evenly;
+}
+
+/* 交叉轴对齐 */
+[flex~="cross:start"] {
+  align-items: flex-start;
+}
+
+[flex~="cross:center"] {
+  align-items: center;
+}
+
+[flex~="cross:end"] {
+  align-items: flex-end;
+}
+
+[flex~="cross:stretch"] {
+  align-items: stretch;
+}
+
+[flex~="cross:baseline"] {
+  align-items: baseline;
+}
+
+/* 换行 */
+[flex~="wrap"] {
+  flex-wrap: wrap;
+}
+
+[flex~="nowrap"] {
+  flex-wrap: nowrap;
+}
+
+[flex~="wrap-reverse"] {
+  flex-wrap: wrap-reverse;
+}
+
+/* 组合使用示例 */
+[flex="main:center cross:center"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[flex="main:justify cross:center"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[flex="dir:top main:center cross:center"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+[flex="dir:top"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 兼容更多组合 */
+[flex*="main:center"][flex*="cross:center"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[flex*="main:justify"][flex*="cross:center"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[flex*="dir:top"][flex*="main:center"][flex*="cross:center"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

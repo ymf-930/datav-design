@@ -16,9 +16,9 @@
       </g-field>
 
       <g-field label="轮播方式">
-        <a-radio-group v-model:value="config.carousel" button size="small">
-          <a-radio value="single">单行</a-radio>
-          <a-radio value="page">整页</a-radio>
+        <a-radio-group v-model:value="config.carousel" size="small">
+          <a-radio-button value="single">单行</a-radio-button>
+          <a-radio-button value="page">整页</a-radio-button>
         </a-radio-group>
       </g-field>
       <g-field label="轮播间隔">
@@ -41,10 +41,10 @@
         />
       </g-field>
       <g-field label="行号对齐">
-        <a-radio-group v-model:value="config.indexAlign" button size="mini">
-          <a-radio value="left">左对齐</a-radio>
-          <a-radio value="center">居中</a-radio>
-          <a-radio value="right">右对齐</a-radio>
+        <a-radio-group v-model:value="config.indexAlign" size="mini">
+          <a-radio-button value="left">左对齐</a-radio-button>
+          <a-radio-button value="center">居中</a-radio-button>
+          <a-radio-button value="right">右对齐</a-radio-button>
         </a-radio-group>
       </g-field>
     </g-field-collapse>

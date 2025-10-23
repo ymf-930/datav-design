@@ -3,25 +3,26 @@
     <div v-if="contextMenu.show" class="context-menu-wrap" :style="contextMenuStyle">
       <template v-if="isMultiSelect && !selectedCom">
         <div class="context-menu-item" @click="schemaStore.group()">
-          <AntIcon name="GroupOutlined" class="menu-icon" />
-          创建分组
+          <span>
+            <AntIcon name="GroupOutlined" class="menu-icon" />
+            创建分组
+          </span>
         </div>
         <div class="context-menu-divider"></div>
-        <div
-          class="context-menu-item"
-          v-for="em in MultiplAlignOptions"
-          :key="em.value"
-          @click="schemaStore.doAlign(em.value)"
-          style="padding-right: 8px"
-        >
-          <AntIcon :name="alignIconMap[em.value]" class="menu-icon iconfont-align" />
-          {{ em.label }}
+        <div class="context-menu-item" v-for="em in MultiplAlignOptions" :key="em.value"
+          @click="schemaStore.doAlign(em.value)" style="padding-right: 8px">
+          <span>
+            <AntIcon :name="alignIconMap[em.value]" class="menu-icon iconfont-align" />
+            {{ em.label }}
+          </span>
         </div>
 
         <div class="context-menu-divider"></div>
         <div class="context-menu-item" @click="toDeleteCom">
-          <AntIcon name="DeleteOutlined" class="menu-icon" />
-          删除
+          <span>
+            <AntIcon name="DeleteOutlined" class="menu-icon" />
+            删除
+          </span>
           <span class="key-code">Delete</span>
         </div>
       </template>
@@ -36,23 +37,31 @@
         </template>
 
         <div class="context-menu-item" @click="moveTop">
-          <AntIcon name="VerticalAlignTopOutlined" class="menu-icon" />
-          置顶
+          <span>
+            <AntIcon name="VerticalAlignTopOutlined" class="menu-icon" />
+            置顶
+          </span>
           <span class="key-code">Alt + Home</span>
         </div>
         <div class="context-menu-item" @click="moveBottom">
-          <AntIcon name="VerticalAlignBottomOutlined" class="menu-icon" />
-          置底
+          <span>
+            <AntIcon name="VerticalAlignBottomOutlined" class="menu-icon" />
+            置底
+          </span>
           <span class="key-code">Alt + End</span>
         </div>
         <div class="context-menu-item" @click="moveUp">
-          <AntIcon name="ArrowUpOutlined" class="menu-icon" />
-          上移一层
+          <span>
+            <AntIcon name="ArrowUpOutlined" class="menu-icon" />
+            上移一层
+          </span>
           <span class="key-code">Alt + ↑</span>
         </div>
         <div class="context-menu-item" @click="moveDown">
-          <AntIcon name="ArrowDownOutlined" class="menu-icon" />
-          下移一层
+          <span>
+            <AntIcon name="ArrowDownOutlined" class="menu-icon" />
+            下移一层
+          </span>
           <span class="key-code">Alt + ↓</span>
         </div>
 
@@ -60,43 +69,59 @@
 
         <div class="context-menu-item" @click="lockCom">
           <template v-if="isLocked">
-            <AntIcon name="UnlockOutlined" class="menu-icon" />
-            解锁
+            <span>
+              <AntIcon name="UnlockOutlined" class="menu-icon" />
+              解锁
+            </span>
           </template>
           <template v-else>
-            <AntIcon name="LockOutlined" class="menu-icon" />
-            锁定
+            <span>
+              <AntIcon name="LockOutlined" class="menu-icon" />
+              锁定
+            </span>
           </template>
         </div>
         <div class="context-menu-item" @click="hideCom">
           <template v-if="isHided">
-            <AntIcon name="EyeOutlined" class="menu-icon" />
-            显示
+            <span>
+              <AntIcon name="EyeOutlined" class="menu-icon" />
+              显示
+            </span>
           </template>
           <template v-else>
-            <AntIcon name="EyeInvisibleOutlined" class="menu-icon" />
-            隐藏
+            <span>
+              <AntIcon name="EyeInvisibleOutlined" class="menu-icon" />
+              隐藏
+            </span>
           </template>
         </div>
         <div class="context-menu-item" @click="saveCom">
-          <AntIcon name="SaveOutlined" class="menu-icon" />
-          保存
+          <span>
+            <AntIcon name="SaveOutlined" class="menu-icon" />
+            保存
+          </span>
         </div>
 
         <div class="context-menu-divider"></div>
         <div class="context-menu-item" @click="renameCom">
-          <AntIcon name="EditOutlined" class="menu-icon" />
-          重命名
+          <span>
+            <AntIcon name="EditOutlined" class="menu-icon" />
+            重命名
+          </span>
           <span class="key-code">F2</span>
         </div>
         <div class="context-menu-item" @click="toCopyCom">
-          <AntIcon name="CopyOutlined" class="menu-icon" />
-          复制
+          <span>
+            <AntIcon name="CopyOutlined" class="menu-icon" />
+            复制
+          </span>
           <span class="key-code">Ctrl + C,V</span>
         </div>
         <div class="context-menu-item" @click="toDeleteCom">
-          <AntIcon name="DeleteOutlined" class="menu-icon" />
-          删除
+          <span>
+            <AntIcon name="DeleteOutlined" class="menu-icon" />
+            删除
+          </span>
           <span class="key-code">Delete</span>
         </div>
       </template>
@@ -110,7 +135,7 @@ import { h, onBeforeUnmount, onMounted, ref } from 'vue'
 import { on, off, throwError } from '@/utils/util'
 import { MoveType } from '@/config/enum'
 import { useStore } from '@/store'
-import { Message, MessageBox, BSelect, BOption } from 'bin-ui-design'
+import { message, Modal } from 'ant-design-vue'
 import * as api from '@/api/comps/comps.api'
 import { uploadImagesToGroup } from '@/api/images/images.api'
 import { createPreviewThumb } from '@/hooks/usePreviewImg'
@@ -163,7 +188,7 @@ const hideCom = () => {
 const saveCom = async () => {
   groups.value = await api.getCompGroup()
   if (groups.value.length === 0) {
-    Message.warning('请先创建一个默认的组件分组在进行保存！')
+    message.warning('请先创建一个默认的组件分组在进行保存！')
     return
   }
   selectGroup.value = groups.value[0].key // 默认选中第一个组件库
@@ -198,7 +223,7 @@ const saveCom = async () => {
           // TODO 这里保存了base64格式的缩略图，实际可能需要调用一次上传后存储路径
           await api.saveComps(selectGroup.value, selectedCom.value, tumbUrl)
           instance.confirmButtonLoading = true
-          Message.success('保存成功!')
+          message.success('保存成功!')
           EventBus.emit(EventMap.SaveCompSuccess)
         } catch (error) {
           console.log(error)
@@ -212,15 +237,15 @@ const saveCom = async () => {
       }
     },
   })
-    .then(() => {})
-    .catch(() => {})
+    .then(() => { })
+    .catch(() => { })
 }
 
 const toDeleteCom = () => {
   const coms = selectedComs.value
   // 暂时去掉删除拦截
   if (coms && coms.length > 0) {
-    // MessageBox.confirm({
+    // Modal.confirm({
     //   type: 'error',
     //   title: '提示',
     //   message: '是否删除选中的组件?',
@@ -281,6 +306,8 @@ defineExpose({
 .context-menu-item {
   position: relative;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 28px;
   padding: 0 6px;
   padding-right: 3em;
@@ -290,6 +317,7 @@ defineExpose({
   margin: 4px;
   color: var(--s-text-color);
   border-radius: var(--bin-border-radius-default);
+
   &:hover {
     background-color: var(--s-color-1);
   }

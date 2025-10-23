@@ -139,7 +139,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import Draggable from 'vuedraggable'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 
 const emit = defineEmits(['update:modelValue', 'update:axisFields'])
 const props = defineProps({
@@ -207,7 +207,7 @@ watch(
     if (oldVal) {
       if (oldVal.find(v => v.field === newField.value.field && addStatus.value)) {
         xFields.value = oldVal
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       }
     }
     addStatus.value = false
@@ -220,7 +220,7 @@ watch(
     if (oldVal) {
       if (oldVal.find(v => v.field === newField.value.field && addStatus.value)) {
         name.value = oldVal
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       }
     }
     addStatus.value = false
@@ -233,7 +233,7 @@ watch(
     if (oldVal) {
       if (oldVal.find(v => v.field === newField.value.field && addStatus.value)) {
         yFields.value = oldVal
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       }
     }
     addStatus.value = false
@@ -242,7 +242,7 @@ watch(
 
 function handleSave() {
   if (yFields.value.length !== 5 && props.isBox) {
-    Message.error('y轴请配置5条数据')
+    message.error('y轴请配置5条数据')
     return
   }
   const axisFields = {
@@ -251,7 +251,7 @@ function handleSave() {
     nAmE: [...name.value],
   }
   emit('update:axisFields', axisFields)
-  Message.success('保存成功')
+  message.success('保存成功')
   open.value = false
 }
 

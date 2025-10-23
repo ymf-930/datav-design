@@ -3,7 +3,7 @@ import { useStore } from '@/store'
 import { AGGREGATOR_FUN, SORT_FUN } from '@/hooks/schema/useModelEnum'
 import { addClass, deepCopy, removeClass, throwError } from '@/utils/util'
 import { getCubeById } from '@/api/modules/analysis-dashboard.api'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 
 export default function useDsApi(props, emit) {
   const status = reactive({
@@ -141,7 +141,7 @@ export default function useDsApi(props, emit) {
     removeClass(e.target, 'drag-enter')
     if (dragNodeType === 'D') {
       if (status.xColumns.find(v => v.fieldId === dragNode.fieldId)) {
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       } else {
         status.xColumns.push({
           ...buildAttr(),
@@ -157,7 +157,7 @@ export default function useDsApi(props, emit) {
     removeClass(e.target, 'drag-enter')
     if (dragNodeType === 'D') {
       if (status.legendColumns.find(v => v.fieldId === dragNode.fieldId)) {
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       } else {
         status.legendColumns.push({
           ...buildAttr(),
@@ -174,7 +174,7 @@ export default function useDsApi(props, emit) {
     if (dragNodeType === 'M') {
       // status.yColumns = []
       if (status.yColumns.find(v => v.fieldId === dragNode.fieldId)) {
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       } else {
         status.yColumns.push({
           ...buildAttr(),
@@ -191,7 +191,7 @@ export default function useDsApi(props, emit) {
     removeClass(e.target, 'drag-enter')
     if (dragNodeType === 'D') {
       if (status.drill.find(v => v.fieldId === dragNode.fieldId)) {
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       } else {
         status.drill.push({
           tableId: dragNode.tableId,
@@ -227,7 +227,7 @@ export default function useDsApi(props, emit) {
     // apiDataConfig.value.config.modelId = props.selectedModelId
     // apiDataConfig.value.config.modelName = props.selectedModelName
     if (status.yColumns.length !== 5 && props.isBox) {
-      Message.error('y轴请配置5条数据')
+      message.error('y轴请配置5条数据')
       return
     }
     apiDataConfig.value.config.x = deepCopy(unref(status.xColumns))

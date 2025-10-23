@@ -45,7 +45,7 @@ import Collapse from './collapse.vue'
 import CompItem from './comp-item.vue'
 import { reactive, ref } from 'vue'
 import { generateId, throwError } from '@/utils/util'
-import { Message, MessageBox } from 'bin-ui-design'
+import { message, Modal } from 'ant-design-vue'
 import { defaultGroupKeys } from '@/api/images/default'
 import { useCollapse } from '@/hooks/collapseHook'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
@@ -99,7 +99,7 @@ async function modifyGroup(item, name) {
     const data = { key: item.key, value: name }
     await api.modifyCompGroup(data)
     getCompList()
-    Message.success('修改成功')
+    message.success('修改成功')
   } catch (e) {
     throwError('comp-list/modifyGroup', e)
   }
@@ -112,7 +112,7 @@ async function removeGroup(item) {
     setGlobalLoading(true)
     await api.removeCompGroup(item.key)
     getCompList()
-    Message.success('删除成功！')
+    message.success('删除成功！')
   } catch (e) {
     throwError('comp-list/removeGroup', e)
   }
@@ -126,7 +126,7 @@ async function addGroup() {
     await api.createCompGroup(groupObj.value)
     getCompList()
     editStatus.create = false
-    Message.success('新增成功！')
+    message.success('新增成功！')
   } catch (e) {
     throwError('comp-list/addGroup', e)
   }

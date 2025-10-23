@@ -23,8 +23,8 @@
             />
           </div>
           <div class="right-tip">
-            <a-radio-group :model-value="0" type="capsule" size="large" style="width: 100%">
-              <a-radio :value="0">样式示例</a-radio>
+            <a-radio-group :model-value="0" size="large" style="width: 100%">
+              <a-radio-button :value="0">样式示例</a-radio-button>
             </a-radio-group>
             <div class="tip-content">
               <div class="ant-scrollbar">

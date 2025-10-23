@@ -1,7 +1,7 @@
 import { baseEventsList } from '@/utils/events'
 import mitt from 'mitt'
 import { reactive, watch, computed, onUnmounted, nextTick, inject } from 'vue'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 
 /**
  * 事件总线
@@ -210,7 +210,7 @@ function clearOnListActionAndTips(onList, actionName) {
   const exist = clearOnListAction(onList, actionName)
   // 如果清理的action存在则进行提示
   if (exist) {
-    Message.warning({ message: '接口变动，请重新配置事件内相关绑定动作！' })
+    message.warning({ message: '接口变动，请重新配置事件内相关绑定动作！' })
   }
 }
 

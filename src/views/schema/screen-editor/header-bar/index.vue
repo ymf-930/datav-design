@@ -108,7 +108,7 @@ import { ref } from 'vue'
 import HeadLoading from './head-loading.vue'
 import SaveScreen from './save-screen.vue'
 import SaveTemplate from './save-template.vue'
-import { Message, MessageBox } from 'bin-ui-design'
+import { message, Modal } from 'ant-design-vue'
 import { readFileText, downloadFile } from '@/utils/file-helper'
 import { useStore } from '@/store'
 import useSavePreview from '@/hooks/schema/useSavePreview'
@@ -162,7 +162,7 @@ const handleBack = () => {
 // 导入
 const handleUpload = file => {
   if (file.type !== 'application/json') {
-    Message.warning('请选择正确的json配置文件')
+    message.warning('请选择正确的json配置文件')
     return false
   }
   readFileText(file).then(data => {
@@ -181,7 +181,7 @@ const handleUpload = file => {
 const downloadCfg = () => {
   const { templateName, pageJson } = buildPageJson()
   downloadFile(pageJson, `${templateName}.json`)
-  Message.success({ message: '模板文件已保存！', showClose: true })
+  message.success({ message: '模板文件已保存！', showClose: true })
 }
 
 // 保存
@@ -218,7 +218,7 @@ async function handleExportImg() {
   // 取消选中
   schemaStore.selectCom()
   areaData.value.showArea = false
-  Message.warning('正在导出图片，请勿进行其他操作！')
+  message.warning('正在导出图片，请勿进行其他操作！')
   try {
     const el = document.getElementById('canvas-components')
     const base64 = await createPreviewThumb(el)
@@ -228,7 +228,7 @@ async function handleExportImg() {
     link.click()
   } catch (error) {
     console.error(error)
-    Message.warning('图片导出失败，请重试。')
+    message.warning('图片导出失败，请重试。')
   }
   setGlobalLoading(false)
 }

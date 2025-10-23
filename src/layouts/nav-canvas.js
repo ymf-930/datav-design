@@ -1,7 +1,16 @@
-import { Utils } from 'bin-ui-design'
+// Utils 已移除，使用自定义工具函数
 
-// nav-canvas class
-export class NavCanvas {
+// 十六进制颜色转RGB数组
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result ? [
+    parseInt(result[1], 16),
+    parseInt(result[2], 16),
+    parseInt(result[3], 16)
+  ] : [0, 0, 0]
+}
+
+class NavCanvas {
   constructor(
     el,
     tabSelector,
@@ -70,7 +79,7 @@ export class NavCanvas {
   }
 
   createPattern(canvas) {
-    const [R, G, B] = Utils.color.toRgbArr(this.hightlightColor)
+    const [R, G, B] = hexToRgb(this.hightlightColor)
 
     const w = 140,
       h = 63,
@@ -258,3 +267,5 @@ export class NavCanvas {
     this.startDraw(0)
   }
 }
+
+export default NavCanvas

@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { LoadingBar, Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import { scrollBehavior } from './scrollBehavior'
 import { constantRoutes } from './routes'
 import { useStore } from '@/store'
@@ -7,6 +7,18 @@ import { ERROR_PATH_LIST } from './menus'
 import cookies from '../utils/util.cookies'
 import { ACCESS_TOKEN } from '@/config/token-const'
 import { throwError } from '@/utils/util'
+
+// 简单的加载条实现
+const LoadingBar = {
+  start() {
+    // 可以在这里添加加载条开始逻辑
+    console.log('Loading started')
+  },
+  done() {
+    // 可以在这里添加加载条完成逻辑
+    console.log('Loading done')
+  }
+}
 
 /**
  * @description 创建路由
@@ -76,7 +88,7 @@ router.beforeEach(async (to, from) => {
     // 否则就去拉取用户信息
     try {
       await userStore.getUserInfo()
-      if (from.name === 'Login') Message.success('登录成功!')
+      if (from.name === 'Login') message.success('登录成功!')
       return { path: to.path, query: to.query }
     } catch (e) {
       throwError('router/beforeEach', e, '初始化信息出错')

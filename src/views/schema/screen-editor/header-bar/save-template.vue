@@ -30,7 +30,7 @@
 import { computed, reactive, ref, watch } from 'vue'
 import { useStore } from '@/store'
 import { generateId, throwError } from '@/utils/util'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import { saveTemplate } from '@/api/modules/template.api'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
 
@@ -78,7 +78,7 @@ const saveAsTemplate = async () => {
         setGlobalLoading(false)
         formStatus.loading = false
         visible.value = false
-        Message.success({ message: '模板已保存！', showClose: true })
+        message.success({ message: '模板已保存！', showClose: true })
       }
     })
 }

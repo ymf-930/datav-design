@@ -32,17 +32,17 @@
         <g-input-number v-model="config.time.duration" :min="0" :step="100" suffix="ms" />
       </g-field>
       <g-field label="水平对齐">
-        <a-radio-group v-model:value="config.time.horizontal" button size="small">
-          <a-radio v-for="em in JustifyContentOptions" :key="em.value" :value="em.value">
+        <a-radio-group v-model:value="config.time.horizontal" size="small">
+          <a-radio-button v-for="em in JustifyContentOptions" :key="em.value" :value="em.value">
             {{ em.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
       <g-field label="垂直对齐">
-        <a-radio-group v-model:value="config.time.vertical" button size="small">
-          <a-radio v-for="em in AlignOptions" :key="em.value" :value="em.value">
+        <a-radio-group v-model:value="config.time.vertical" size="small">
+          <a-radio-button v-for="em in AlignOptions" :key="em.value" :value="em.value">
             {{ em.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
     </g-field-collapse>

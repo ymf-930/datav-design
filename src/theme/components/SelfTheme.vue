@@ -34,7 +34,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { MessageBox } from 'bin-ui-design'
+import { Modal } from 'ant-design-vue'
 import { useChartThemeColor } from '@/theme'
 import ColorsCharts from './comps/ColorsCharts.vue'
 import ColorsSetting from './comps/ColorsSetting.vue'

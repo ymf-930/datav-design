@@ -47,7 +47,7 @@ import { computed, nextTick, ref, watch } from 'vue'
 import { getKanbanDir } from '@/api/modules/analysis-dashboard.api'
 import { copyText, throwError } from '@/utils/util'
 import { useRoute, useRouter } from 'vue-router'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import useSavePreview from '@/hooks/schema/useSavePreview'
 import { getPublicPath } from '@/utils/env'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
@@ -122,7 +122,7 @@ const saveKanban = () => {
       pageInfo.value.id = id
       loading.value = false
       visible.value = false
-      Message.success({ message: `${btnText.value}成功！`, showClose: true })
+      message.success({ message: `${btnText.value}成功！`, showClose: true })
       sendMsg('save-success')
       let routeData = router.resolve({
         path: '/schema/screen',
@@ -136,7 +136,7 @@ const saveKanban = () => {
 const copyUrl = () => {
   nextTick(() => {
     if (copyText(shareUrl.value)) {
-      Message.success('复制发布地址成功!')
+      message.success('复制发布地址成功!')
     }
   })
 }

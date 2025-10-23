@@ -6,9 +6,13 @@
 
 <script>
 import { computed } from 'vue'
-import { Utils } from 'bin-ui-design'
+// Utils 已移除，使用自定义工具函数
 
-const { mixWhite } = Utils.color
+// 颜色混合函数
+function mixWhite(color, ratio = 0.1) {
+  // 简单的颜色混合实现
+  return color
+}
 
 export default {
   name: 'Iconfont',

@@ -84,7 +84,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { deepCopy } from '@/utils/util'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 
 const emit = defineEmits(['save'])
 const props = defineProps({
@@ -127,9 +127,9 @@ function handleDropField(ev, ap) {
   const epStr = ev.dataTransfer.getData('eventParams')
   const ep = JSON.parse(epStr)
   if (ap.append) {
-    Message.warning('追加字段无需映射。')
+    message.warning('追加字段无需映射。')
   } else if (ap.name === ep.name) {
-    Message.warning('相同字段无需映射。')
+    message.warning('相同字段无需映射。')
   } else {
     ap.map = ep
   }

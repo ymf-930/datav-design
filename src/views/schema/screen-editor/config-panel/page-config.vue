@@ -1,11 +1,11 @@
 <template>
   <div class="page-config-panel">
     <div class="page-config-top">
-      <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
-        <a-radio :value="0">
+      <a-radio-group v-model:value="curTabIndex" style="width: 100%">
+        <a-radio-button :value="0" style="width: 100%;" flex="main:center">
           <span class="mr-16">基础配置</span>
           <AntIcon name="DesktopOutlined"></AntIcon>
-        </a-radio>
+        </a-radio-button>
         <!-- <a-radio :value="1">
           <span class="mr-16">脚本配置</span>
           <AntIcon name="CodeOutlined"></AntIcon>
@@ -17,7 +17,7 @@
         <div v-if="curTabIndex === 0">
           <div class="page-config-wp">
             <g-field label="屏幕设置" style="padding-bottom: 8px; padding-top: 8px">
-              <g-group-select v-model="screenLabel" :data="pageMap" @change="sizeChange" />
+              <g-group-select v-model="screenLabel" :data="pageMap" @change="sizeChange" style="width: 100%;"/>
             </g-field>
             <g-field label="屏幕大小" flat>
               <g-input-number
@@ -228,7 +228,7 @@ import { useStore } from '@/store'
 import { mobileScreenMap, webScreenMap } from '@/config/enum'
 import { ref, watch, computed } from 'vue'
 import { createPreviewThumb } from '@/hooks/usePreviewImg'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
 import { BlendModeOptions } from '@/config/select-options'
 import { hueRotateColor, GlobalTheme } from '@/theme'
@@ -284,7 +284,7 @@ const sizeChange = value => {
 // 截屏操作
 async function createThumb() {
   setGlobalLoading(true)
-  Message.warning('正在截取画布缩略图，请勿进行其他操作！')
+  message.warning('正在截取画布缩略图，请勿进行其他操作！')
 
   thumbLoading.value = true
   const pageEl = document.getElementById('canvas-components')
@@ -292,7 +292,7 @@ async function createThumb() {
     // 截取缩略图
     const thumb = await createPreviewThumb(pageEl)
     pageConfig.value.thumbnail = thumb
-    Message.success('截取缩略图成功！')
+    message.success('截取缩略图成功！')
   } catch (error) {
     console.log(error)
   }

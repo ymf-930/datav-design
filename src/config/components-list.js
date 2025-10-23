@@ -217,7 +217,7 @@ export const componentList = [
   {
     type: 'basic',
     name: '基础',
-    icon: 'block',
+    icon: 'BlockOutlined',
     group: [
       { name: '文本', comps: [VMainTitle] },
       { name: '控件', comps: [VSelect, VTimer, VButton, VDatePicker] },

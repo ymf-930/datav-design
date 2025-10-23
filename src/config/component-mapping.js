@@ -33,7 +33,7 @@ export const propsMapping = {
     'size': 'size',
     'placeholder': 'placeholder',
     'readonly': 'readonly',
-    'clearable': 'allowClear',
+    'allowClear': 'allowClear',
     'type': 'type'
   },
   'b-button': {

@@ -7,7 +7,7 @@
       :readonly="readonly"
       :type="type"
       :rows="rows"
-      :allowClear="clearable"
+      :allowClear="allowClear"
       @change="handleChange"
     />
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
@@ -56,7 +56,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  clearable: {
+  allowClear: {
     type: Boolean,
     default: true,
   },

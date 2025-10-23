@@ -1,5 +1,5 @@
 import { reactive, toRefs } from 'vue'
-import { MessageBox, Message } from 'bin-ui-design'
+import { Modal, message } from 'ant-design-vue'
 import { throwError } from '@/utils/util'
 import {
   createFolder,
@@ -48,7 +48,7 @@ export default function useFolder() {
         await createFolder({ ...defaultValue, name })
         folderData.adding = false
         getFolders()
-        Message.success('新增成功！')
+        message.success('新增成功！')
       } catch (error) {
         throwError('useModelFolder/addGroup', error)
       }
@@ -80,7 +80,7 @@ export default function useFolder() {
         await modifyFolder({ id: group.id, name: newName })
         group.name = newName
         toggleProject({ id: group.id, name: newName })
-        Message.success('修改成功！')
+        message.success('修改成功！')
       } catch (error) {
         throwError('useModelFolder/editGroup', error)
       }
@@ -92,7 +92,7 @@ export default function useFolder() {
 
   // 提示移除一个分组
   const confirmDeleteGroup = ({ id, name }) => {
-    MessageBox.confirm({
+    Modal.confirm({
       type: 'error',
       title: '提示',
       message: `确定要删除 [ ${name} ] 吗？`,
@@ -102,7 +102,7 @@ export default function useFolder() {
           await removeFolder(id)
           toggleProject({ id: defaultValue.pid, name: defaultValue.name })
           getFolders()
-          Message.success('删除成功！')
+          message.success('删除成功！')
         } catch (error) {
           throwError('useModelFolder/confirmDeleteGroup', error)
         }

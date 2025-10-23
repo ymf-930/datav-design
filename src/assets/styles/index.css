@@ -1,5 +1,7 @@
 @import './base/vars.css';
 @import './base/reset.css';
 @import './base/base.css';
+@import './base/flex.css';
+@import './base/common.css';
 @import './icons/icon.css';
 @import './theme/index.css';

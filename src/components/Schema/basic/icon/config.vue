@@ -8,10 +8,10 @@
         <g-color-picker v-model="config.color" />
       </g-field>
       <g-field label="图标类型">
-        <a-radio-group v-model:value="config.pointerType" button size="small">
-          <a-radio v-for="item in pointerType" :key="item.value" :value="item.value">
+        <a-radio-group v-model:value="config.pointerType" size="small">
+          <a-radio-button v-for="item in pointerType" :key="item.value" :value="item.value">
             {{ item.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
     </g-field-collapse>

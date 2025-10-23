@@ -22,15 +22,15 @@
       width="600px"
       draggable
     >
-      <a-radio-group v-model:value="activeTab" size="large" type="capsule" style="width: 100%">
-        <a-radio value="system">
+      <a-radio-group v-model:value="activeTab" size="large" style="width: 100%">
+        <a-radio-button value="system">
           <span class="mr-8">系统主题</span>
           <AntIcon name="FontColorsOutlined"></AntIcon>
-        </a-radio>
-        <a-radio value="custom">
+        </a-radio-button>
+        <a-radio-button value="custom">
           <span class="mr-8">自定义主题</span>
           <AntIcon name="SmileOutlined"></AntIcon>
-        </a-radio>
+        </a-radio-button>
       </a-radio-group>
 
       <div class="theme-list">

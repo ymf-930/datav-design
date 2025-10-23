@@ -149,7 +149,7 @@ import { reactive, ref } from 'vue'
 import { defaultCreateObj, saveCreateData } from '@/api/database.api'
 import { getTemplateList, removeTemplate } from '@/api/modules/template.api'
 import { throwError } from '@/utils/util'
-import { MessageBox, Message } from 'bin-ui-design'
+import { Modal, message } from 'ant-design-vue'
 import { webScreenMap, mobileScreenMap } from '@/config/enum'
 import { useRouter } from 'vue-router'
 
@@ -253,7 +253,7 @@ const removeTpl = tpl => {
       try {
         await removeTemplate(tpl.id)
         getTplList()
-        Message.success('删除模板成功！')
+        message.success('删除模板成功！')
       } catch (e) {
         throwError('create-screen/removeTpl', e)
       }

@@ -33,9 +33,9 @@
           <p class="bottom">}</p>
         </div>
         <div class="right-tip">
-          <a-radio-group v-model:value="tipType" type="capsule" size="large" style="width: 100%">
-            <a-radio :value="0">变量说明</a-radio>
-            <a-radio :value="1">脚本示例</a-radio>
+          <a-radio-group v-model:value="tipType" size="large" style="width: 100%">
+            <a-radio-button :value="0">变量说明</a-radio-button>
+            <a-radio-button :value="1">脚本示例</a-radio-button>
           </a-radio-group>
           <div class="tip-content">
             <div class="ant-scrollbar">

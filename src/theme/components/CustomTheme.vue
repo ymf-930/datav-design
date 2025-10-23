@@ -117,7 +117,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { MessageBox } from 'bin-ui-design'
+import { Modal } from 'ant-design-vue'
 import { useChartThemeColor, createNewCustomColors } from '@/theme'
 import ColorsCharts from './comps/ColorsCharts.vue'
 import ColorsSetting from './comps/ColorsSetting.vue'
@@ -220,7 +220,7 @@ async function createCustomTheme() {
 // 移除一个
 async function removeCustomTheme(id, disabled) {
   if (disabled) return
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'warning',
     title: '提示',
     message: '是否删除当前自定义主题颜色?',

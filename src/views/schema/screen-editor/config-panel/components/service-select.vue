@@ -6,7 +6,7 @@
         :placeholder="placeholder"
         :model-value="showText"
         readonly
-        clearable
+        allowClear
         @clear="handleClear"
       ></a-input>
       <a-button :size="size" background @click="handleOpen" style="margin-left: 2px">选择</a-button>
@@ -39,7 +39,7 @@
                 名称
                 <a-input
                   v-model="query.interfaceName"
-                  clearable
+                  allowClear
                   size="small"
                   @keyup.enter.stop="handleSearch"
                   :maxlength="100"

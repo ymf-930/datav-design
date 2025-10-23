@@ -14,7 +14,7 @@
       <a-col :span="18">
         <a-form label-width="75px" flex>
           <a-form-item label="模型名称" style="width: 30%">
-            <a-input v-model="query.name" @keyup.enter="handleSearch" clearable size="small" />
+            <a-input-search v-model="query.name" @keyup.enter="handleSearch" allowClear size="small" />
           </a-form-item>
 
           <a-form-item label-width="16px" style="width: 30%">

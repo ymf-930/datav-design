@@ -59,7 +59,7 @@
 <script setup>
 import { ref } from 'vue'
 import { copyText } from '@/utils/util'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import { useStore } from '@/store'
 
 const { schemaStore, storeToRefs } = useStore()
@@ -89,7 +89,7 @@ const openDetail = () => {
 
 const copyCom = () => {
   copyText(JSON.stringify(selectedCom.value))
-  Message.success('已复制配置项至剪切板')
+  message.success('已复制配置项至剪切板')
   detailVisible.value = false
 }
 
@@ -100,10 +100,10 @@ const putJson = () => {
     // 再次格式化一下
     compJson.value = JSON.stringify(data, null, 2)
     paseComp(data)
-    Message.success('图表应用成功！')
+    message.success('图表应用成功！')
     detailVisible.value = false
   } catch (error) {
-    Message.error('配置项格式不正确，请检查后再应用配置！')
+    message.error('配置项格式不正确，请检查后再应用配置！')
   }
 }
 

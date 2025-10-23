@@ -39,7 +39,7 @@ import { ref, computed } from 'vue'
 import * as api from '@/api/images/images.api'
 import { defaultGroupKeys } from '@/api/images/default'
 import { throwError } from '@/utils/util'
-import { MessageBox } from 'bin-ui-design'
+import { Modal } from 'ant-design-vue'
 
 const emit = defineEmits(['dragstart', 'click'])
 const props = defineProps({
@@ -89,7 +89,7 @@ async function imageUpload(files) {
 
 // 移除一个图片
 async function removePic({ groupKey, id }) {
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'warning',
     title: '提示',
     message: '是否删除当前图片？',

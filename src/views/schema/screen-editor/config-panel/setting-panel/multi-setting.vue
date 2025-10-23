@@ -1,8 +1,8 @@
 <template>
   <div class="setting-panel">
     <div class="page-config-top">
-      <a-radio-group model-value="多选区域" size="large" type="capsule" style="width: 100%">
-        <a-radio value="多选区域"></a-radio>
+      <a-radio-group model-value="多选区域" size="large" style="width: 100%">
+        <a-radio-button value="多选区域"></a-radio-button>
       </a-radio-group>
     </div>
 

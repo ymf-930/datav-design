@@ -2,10 +2,10 @@
   <div class="setting-panel-gui">
     <g-field-collapse label=" 属性" default-open>
       <g-field label="图片类型">
-        <a-radio-group v-model:value="config.imageType" button size="small">
-          <a-radio v-for="item in ImageTypeOptions" :key="item.value" :value="item.value">
+        <a-radio-group v-model:value="config.imageType" size="small">
+          <a-radio-button v-for="item in ImageTypeOptions" :key="item.value" :value="item.value">
             {{ item.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
       <g-field label="图片">

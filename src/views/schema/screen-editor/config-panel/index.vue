@@ -4,23 +4,23 @@
       <div v-if="selectedCom || isMultiSelect" class="page-config-panel">
         <template v-if="selectedCom">
           <div class="page-config-top">
-            <a-radio-group v-model:value="curTabIndex" size="large" type="capsule" style="width: 100%">
-              <a-radio :value="0">
+            <a-radio-group v-model:value="curTabIndex" style="width: 100%">
+              <a-radio-button :value="0">
                 <span class="mr-8">定制</span>
                 <AntIcon name="ProjectOutlined"></AntIcon>
-              </a-radio>
-              <a-radio :value="1" :disabled="isGroupChild">
+              </a-radio-button>
+              <a-radio-button :value="1" :disabled="isGroupChild">
                 <span class="mr-8">动画</span>
                 <AntIcon name="ShakeOutlined"></AntIcon>
-              </a-radio>
-              <a-radio :value="2" :disabled="curComIsGroup">
+              </a-radio-button>
+              <a-radio-button :value="2" :disabled="curComIsGroup">
                 <span class="mr-8">数据</span>
                 <AntIcon name="ThunderboltOutlined"></AntIcon>
-              </a-radio>
-              <a-radio :value="3" :disabled="curComIsGroup">
+              </a-radio-button>
+              <a-radio-button :value="3" :disabled="curComIsGroup">
                 <span class="mr-8">事件</span>
                 <AntIcon name="RocketOutlined"></AntIcon>
-              </a-radio>
+              </a-radio-button>
             </a-radio-group>
           </div>
           <div class="page-config-content">

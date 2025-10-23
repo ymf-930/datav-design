@@ -9,19 +9,17 @@
         <h2>{{ group ? group.name : '' }} ({{ listData.total }})</h2>
       </div>
       <div class="header-manager">
-        <a-input
+        <a-input-search
           v-model="query.name"
-          size="small"
           placeholder="搜索"
-          search
-          clearable
+          allowClear
           @search="
             () => {
               noData = true
               getSearchList()
             }
           "
-        ></a-input>
+        ></a-input-search>
       </div>
     </div>
     <!--列表-->
@@ -110,7 +108,7 @@ import {
   saveKanban,
 } from '@/api/modules/analysis-dashboard.api'
 import { useRouter, useRoute } from 'vue-router'
-import { Message, MessageBox } from 'bin-ui-design'
+import { message, Modal } from 'ant-design-vue'
 import Iconfont from '@/components/Common/Iconfont/iconfont.vue'
 import CreateKanban from './create-kanban.vue'
 import { listenMsg } from '@/utils/cross-tab-msg'
@@ -223,7 +221,7 @@ const handleCopy = async item => {
     delete kanban['id']
     await saveKanban({...kanban, status: 'edit'})
     await getSearchList()
-    Message.success('复制成功！')
+    message.success('复制成功！')
   } catch (e) {
     throwError('kanban-list/handleCopy', e)
   }
@@ -236,7 +234,7 @@ const handlePublish = async item => {
     Message(`正在发布[${item.name}]`)
     await publishKanban(item.id)
     await getSearchList()
-    Message.success('发布成功！')
+    message.success('发布成功！')
   } catch (e) {
     throwError('kanban-list/handlePublish', e)
   }
@@ -253,7 +251,7 @@ const removeDashboard = id => {
       try {
         await removeKanban(id)
         await getSearchList()
-        Message.success('删除成功！')
+        message.success('删除成功！')
       } catch (e) {
         throwError('kanban-list/removeDashboard', e)
       }

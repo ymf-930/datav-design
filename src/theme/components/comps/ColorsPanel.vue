@@ -47,10 +47,22 @@
 
 <script setup>
 import { chartColors } from '@/theme'
-import { MessageBox, Utils } from 'bin-ui-design'
+import { Modal } from 'ant-design-vue'
 import { computed } from 'vue'
 
-const { mixWhite, mixBlack, alpha } = Utils.color
+// Utils.color 已移除，使用自定义函数
+const mixWhite = (color, ratio) => {
+  // 简单的颜色混合函数
+  return color + Math.round(255 * ratio).toString(16).padStart(2, '0')
+}
+const mixBlack = (color, ratio) => {
+  // 简单的颜色混合函数
+  return color + Math.round(0 * ratio).toString(16).padStart(2, '0')
+}
+const alpha = (color, ratio) => {
+  // 简单的透明度函数
+  return color + Math.round(255 * ratio).toString(16).padStart(2, '0')
+}
 
 const emit = defineEmits(['selectSystem', 'selectColor'])
 const props = defineProps({
@@ -88,7 +100,7 @@ function getThemeBottomStyle(colors) {
 
 // 提示是否应用当前主题颜色
 function selectTheme(colors) {
-  MessageBox.confirm({
+  Modal.confirm({
     type: 'warning',
     title: '提示',
     message: '是否应用此系统颜色？会替换当前色自定义色板！',

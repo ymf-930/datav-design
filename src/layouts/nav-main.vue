@@ -15,12 +15,28 @@
 </template>
 
 <script setup>
+// 生成颜色调色板函数
+function generateColorPalette(color) {
+  // 简单的颜色调色板生成
+  const baseColor = color || '#1890ff'
+  return [
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor,
+    baseColor
+  ]
+}
 import { useRoute } from 'vue-router'
 import { onMounted, onUnmounted, ref } from 'vue'
 import { debounce } from '@/utils/util'
-import { NavCanvas } from './nav-canvas'
+import NavCanvas from './nav-canvas'
 import { themeConfigRef } from '@/theme'
-import { Utils } from 'bin-ui-design'
+// Utils 已移除，使用自定义工具函数
 
 defineOptions({
   name: 'nav-main',
@@ -54,7 +70,8 @@ const debNavResize = debounce(() => {
 
 function getMainColor() {
   const color = themeConfigRef.value.binColorPrimary
-  const colorList = Utils.color.getPalette(color)
+  // 生成颜色调色板
+      const colorList = generateColorPalette(color)
   const lineColor = colorList[7]
   const hightlightColor = colorList[4]
   return [lineColor, hightlightColor]

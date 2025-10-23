@@ -24,10 +24,10 @@
 
     <g-field-collapse v-model="config.border.show" toggle label="边框">
       <g-field label="边框类型">
-        <a-radio-group v-model:value="config.border.type" button size="small">
-          <a-radio v-for="em in borderTypes" :key="em.value" :value="em.value">
+        <a-radio-group v-model:value="config.border.type" size="small">
+          <a-radio-button v-for="em in borderTypes" :key="em.value" :value="em.value">
             {{ em.label }}
-          </a-radio>
+          </a-radio-button>
         </a-radio-group>
       </g-field>
       <!--纯色边框配置-->

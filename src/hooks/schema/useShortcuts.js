@@ -2,7 +2,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { off, on, copyText, hasClass } from '@/utils/util'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 import useSavePreview from './useSavePreview'
 import { sendMsg } from '@/utils/cross-tab-msg'
 
@@ -99,7 +99,7 @@ export default function useShortcuts() {
           const isEdit = pageInfo.value.id || route.query.id
           if (isEdit) {
             saveScreenData('edit').then(() => {
-              Message.success('保存成功！')
+              message.success('保存成功！')
               sendMsg('save-success')
             })
           } else {

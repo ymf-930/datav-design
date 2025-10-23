@@ -81,7 +81,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import Draggable from 'vuedraggable'
-import { Message } from 'bin-ui-design'
+import { message } from 'ant-design-vue'
 
 const emit = defineEmits(['update:modelValue', 'update:axisFields'])
 const props = defineProps({
@@ -139,7 +139,7 @@ watch(
     if (oldVal) {
       if (oldVal.find(v => v.field === newField.value.field && addStatus.value)) {
         headerFields.value = oldVal
-        Message.warning('已存在同名字段！无需重复配置。')
+        message.warning('已存在同名字段！无需重复配置。')
       }
     }
     addStatus.value = false
@@ -151,7 +151,7 @@ function handleSave() {
     header: [...headerFields.value],
   }
   emit('update:axisFields', axisFields)
-  Message.success('保存成功')
+  message.success('保存成功')
   open.value = false
 }
 
