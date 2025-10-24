@@ -6,7 +6,7 @@
       </div>
       <div class="components-panel-content" @dragover="dragOver">
         <div class="components-type">
-          <div class="ant-scrollbar" style="overflow-y: auto;">
+          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
             <div
               class="components-item"
               v-for="(group, index) in componentList"
@@ -17,7 +17,7 @@
               <AntIcon class="com-tab-icon" :name="group.icon"></AntIcon>
               <span class="com-tab-title">{{ group.name }}</span>
             </div>
-          </div>
+          </ScrollContainer>
         </div>
       </div>
       <div class="components-list" v-show="toolbar.components">
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="components-list-content">
-          <div class="ant-scrollbar" style="overflow-y: auto;">
+          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
             <Collapse
               v-for="(group, index) in groups"
               :key="index"
@@ -62,7 +62,7 @@
               @dragstart="dragCustomCompStart"
               @click="toAddCustomComp"
             />
-          </div>
+          </ScrollContainer>
         </div>
       </div>
     </div>
@@ -87,6 +87,7 @@ import ImagesList from './images-list.vue'
 import CompList from './comp-list.vue'
 import { useCollapse } from '@/hooks/collapseHook'
 import { deepCopy } from '@/utils/util'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 const { schemaStore, storeToRefs } = useStore()
 const { pageConfig, toolbar } = storeToRefs(schemaStore)

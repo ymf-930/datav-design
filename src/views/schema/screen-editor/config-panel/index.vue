@@ -24,12 +24,12 @@
             </a-radio-group>
           </div>
           <div class="page-config-content">
-            <div class="ant-scrollbar">
+            <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
               <SettingPanel :key="selectedCom.id" v-if="curTabIndex === 0" />
               <AnimationsPanel :key="selectedCom.id" v-if="curTabIndex === 1" />
               <DataCenterPanel :key="selectedCom.id" v-if="curTabIndex === 2" />
               <EventsPanel :key="selectedCom.id" v-if="curTabIndex === 3" />
-            </div>
+            </ScrollContainer>
           </div>
         </template>
 
@@ -61,6 +61,7 @@ import AnimationsPanel from '@/views/schema/screen-editor/config-panel/animation
 import MultiSetting from '@/views/schema/screen-editor/config-panel/setting-panel/multi-setting.vue'
 import { isEmpty } from '@/utils/util'
 import EventsPanel from './events-panel/index.vue'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 const { schemaStore, storeToRefs } = useStore()
 const { toolbar, selectedCom, isMultiSelect, curComIsGroup } = storeToRefs(schemaStore)

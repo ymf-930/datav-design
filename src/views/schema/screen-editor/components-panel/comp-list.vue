@@ -1,7 +1,7 @@
 <template>
   <div class="group-wrap">
     <div class="group-list">
-      <div class="ant-scrollbar" style="overflow-y: auto;">
+      <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
         <div v-if="loading">
           <g-loading spinning></g-loading>
         </div>
@@ -29,7 +29,7 @@
             />
           </div>
         </template>
-      </div>
+      </ScrollContainer>
     </div>
     <div class="create-group">
       <a-button type="primary" size="small" transparent @click="handleCreateGroup">
@@ -48,6 +48,7 @@ import { generateId, throwError } from '@/utils/util'
 import { message, Modal } from 'ant-design-vue'
 import { defaultGroupKeys } from '@/api/images/default'
 import { useCollapse } from '@/hooks/collapseHook'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 import { setGlobalLoading } from '@/hooks/schema/useGlobalLoading'
 
 const emit = defineEmits(['dragstart', 'click'])

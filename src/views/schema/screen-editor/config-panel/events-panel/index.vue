@@ -3,7 +3,7 @@
     <div class="events-panel-content">
       <template v-if="!isEmpty(events)">
         <div class="scroll-container">
-          <div class="ant-scrollbar">
+          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
             <div class="setting-panel-gui">
               <DefaultAction :events="events" />
               <TriggerConfig :events="events" />
@@ -14,7 +14,7 @@
                 :exampleDesc="exampleDesc"
               />
             </div>
-          </div>
+          </ScrollContainer>
         </div>
       </template>
       <div v-else style="min-height: 300px" flex="main:center cross:center">
@@ -32,6 +32,7 @@ import ResponseConfig from './response-config.vue'
 import DefaultAction from './DefaultAction.vue'
 import { useParamsDesc } from '@/components/Common/CustomScripts/customScriptsUtil'
 import { isEmpty } from '@/utils/util'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 const { schemaStore, storeToRefs } = useStore()
 

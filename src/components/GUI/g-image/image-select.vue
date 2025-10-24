@@ -8,7 +8,7 @@
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">
-        <div class="ant-scrollbar" style="overflow-y: auto;">
+        <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
           <div
             v-for="group in groups"
             :key="group.key"
@@ -18,10 +18,10 @@
           >
             {{ group.value }}
           </div>
-        </div>
+        </ScrollContainer>
       </div>
       <div class="img-wrap">
-        <div class="ant-scrollbar">
+        <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
           <template v-if="!loading">
             <div class="img-inner">
               <div class="comp-item img-add" v-if="canEdit">
@@ -34,7 +34,7 @@
             </div>
           </template>
           <g-loading v-else spinning></g-loading>
-        </div>
+        </ScrollContainer>
       </div>
     </div>
   </a-modal>
@@ -44,6 +44,7 @@
 import { ref, computed } from 'vue'
 import { getImagesGroup, getImagesByGroup, uploadImagesToGroup } from '@/api/images/images.api'
 import { defaultGroupKeys, defaultGroup } from '@/api/images/default'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 const emit = defineEmits(['update:modelValue', 'change', 'resize'])
 const props = defineProps({

@@ -1,7 +1,7 @@
 <template>
   <div class="group-wrap">
     <div class="group-list">
-      <div class="ant-scrollbar" style="overflow-y: auto;">
+      <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
         <Collapse
           v-for="group in groups"
           :key="group.key"
@@ -11,7 +11,7 @@
         >
           <TopoItem :group-id="group.key" @dragstart="dragStart" @click="click" />
         </Collapse>
-      </div>
+      </ScrollContainer>
     </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ import Collapse from './collapse.vue'
 import { ref } from 'vue'
 import { useCollapse } from '@/hooks/collapseHook'
 import TopoItem from './topo-item.vue'
+import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 
 const emit = defineEmits(['dragstart', 'click'])
 const groups = ref([
