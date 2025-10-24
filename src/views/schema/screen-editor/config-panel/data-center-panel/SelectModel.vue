@@ -12,12 +12,12 @@
       </a-col>
 
       <a-col :span="18">
-        <a-form label-width="75px" flex>
+        <a-form ref="formRef" :model="query" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" flex>
           <a-form-item label="模型名称" style="width: 30%">
             <a-input-search v-model="query.name" @keyup.enter="handleSearch" allowClear size="small" />
           </a-form-item>
 
-          <a-form-item label-width="16px" style="width: 30%">
+          <a-form-item :wrapper-col="{ span: 16 }" style="width: 30%">
             <a-button type="primary" @click="handleSearch" size="small">查询</a-button>
             <a-button @click="handleReset" size="small">重置</a-button>
           </a-form-item>

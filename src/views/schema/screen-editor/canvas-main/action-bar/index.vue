@@ -23,16 +23,16 @@
       :footer="null"
       width="600px"
     >
-      <a-form label-position="left" label-width="100px">
+      <a-form ref="formRef" :model="toolbox" :label-col="{ span: 4 }" :wrapper-col="{ span: 20 }">
         <a-form-item label="参考线">
           <a-space>
-            <a-switch v-model:checked="toolbox.referLine" size="small"></a-switch>
+            <a-switch v-model:checked="toolbox.referLine"></a-switch>
             选中组件时，左上角距离标尺的参考线，方便对齐使用
           </a-space>
         </a-form-item>
         <a-form-item label="对齐线">
           <a-space>
-            <a-switch v-model:checked="toolbox.markLine" size="small"></a-switch>
+            <a-switch v-model:checked="toolbox.markLine"></a-switch>
             开启后，拖拽组件至相邻组件时，达到一定距离后会自动吸附
           </a-space>
         </a-form-item>

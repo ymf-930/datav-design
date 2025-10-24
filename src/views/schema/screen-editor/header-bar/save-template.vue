@@ -6,7 +6,7 @@
     class="schema-modal"
     @close="visible = false"
   >
-    <a-form label-width="100px" ref="formRef" :model="formStatus" label-suffix=":">
+    <a-form ref="formRef" :model="formStatus" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
       <a-form-item
         label="模板名称"
         prop="name"

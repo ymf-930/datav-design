@@ -6,7 +6,7 @@
     class="schema-modal"
     @close="visible = false"
   >
-    <a-form label-width="100px" ref="formRef" :model="pageInfo" label-suffix=":" v-if="visible">
+    <a-form ref="formRef" :model="pageInfo" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" v-if="visible">
       <a-form-item label="所在目录" class="is-required" v-if="!route.query.isShow">
         <a-tree-select :data="dirTree"
           v-model:value="pageInfo.pid"
