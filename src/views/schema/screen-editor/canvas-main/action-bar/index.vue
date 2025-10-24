@@ -4,7 +4,7 @@
       <AntIcon name="AimOutlined" class="action-btn" @click.stop="schemaStore.autoCanvasScale()" />
     </a-tooltip>
     <a-tooltip content="原始尺寸" placement="left">
-      <AntIcon name="BugOutlined" class="action-btn" @click.stop="schemaStore.setCanvasScale(100)" />
+      <AntIcon name="OneToOneOutlined" class="action-btn" @click.stop="schemaStore.setCanvasScale(100)" />
     </a-tooltip>
 
     <a-tooltip content="编辑配置" placement="left">
@@ -26,13 +26,13 @@
       <a-form label-position="left" label-width="100px">
         <a-form-item label="参考线">
           <a-space>
-            <a-switch v-model="toolbox.referLine"></a-switch>
+            <a-switch v-model:checked="toolbox.referLine" size="small"></a-switch>
             选中组件时，左上角距离标尺的参考线，方便对齐使用
           </a-space>
         </a-form-item>
         <a-form-item label="对齐线">
           <a-space>
-            <a-switch v-model="toolbox.markLine"></a-switch>
+            <a-switch v-model:checked="toolbox.markLine" size="small"></a-switch>
             开启后，拖拽组件至相邻组件时，达到一定距离后会自动吸附
           </a-space>
         </a-form-item>
@@ -72,7 +72,8 @@
     <a-modal v-model:visible="detailVisible"
       title="页面编辑器"
       destroyOnClose
-      fullscreen
+      :width="'100vw'"
+      :style="{ top: 0, paddingBottom: 0, maxWidth: '100%' }"
       class="schema-modal"
       :footer="null"
     >

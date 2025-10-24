@@ -3,10 +3,10 @@
     <div style="padding: 0 10px">
       <a-space>
         <g-field label="启用动画" style="padding: 4px 0">
-          <a-switch v-model="data.enable" size="small"></a-switch>
+          <a-switch v-model:checked="data.enable" size="small"></a-switch>
         </g-field>
         <g-field label="循环播放" style="padding: 4px 0 4px 46px">
-          <a-switch v-model="data.loop" size="small"></a-switch>
+          <a-switch v-model:checked="data.loop" size="small"></a-switch>
         </g-field>
       </a-space>
       <g-field label="当前动画">

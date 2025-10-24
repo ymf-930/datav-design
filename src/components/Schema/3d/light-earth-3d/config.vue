@@ -2,7 +2,7 @@
   <div class="setting-panel-gui">
     <g-field-collapse label="属性" default-open>
       <g-field label="控制器" tooltip="开启控制器后，鼠标可以拖动旋转视角">
-        <a-switch v-model="config.control" size="small" />
+        <a-switch v-model:checked="config.control" size="small" />
       </g-field>
       <g-field label="转动速度">
         <g-slider v-model="config.rotateSpeed" :min="0" :max="10" :step="1" />

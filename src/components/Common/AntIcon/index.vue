@@ -1,5 +1,5 @@
 <template>
-  <component :is="iconComponent" v-bind="$attrs" />
+  <component :is="iconComponent" v-bind="$attrs" :style="{ fontSize: size + 'px' }" />
 </template>
 
 <script setup>
@@ -15,6 +15,10 @@ const props = defineProps({
   name: {
     type: String,
     required: true
+  },
+  size: {
+    type: [Number, String],
+    default: 16
   }
 })
 

@@ -21,7 +21,6 @@
       :getPopupContainer="() => document.body"
       width="600px"
       :footer="null"
-      draggable
     >
       <a-radio-group v-model:value="activeTab" size="large" style="width: 100%">
         <a-radio-button value="system">

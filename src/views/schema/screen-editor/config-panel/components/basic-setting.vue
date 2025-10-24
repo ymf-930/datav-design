@@ -105,7 +105,7 @@
 
     <g-field-collapse label="滤镜&变换">
       <g-field label="启用">
-        <a-switch v-model="data.filterShow" size="small" />
+        <a-switch v-model:checked="data.filterShow" size="small" />
       </g-field>
       <g-field label="色相">
         <g-slider

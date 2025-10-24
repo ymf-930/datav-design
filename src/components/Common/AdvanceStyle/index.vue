@@ -7,7 +7,6 @@
       :keyboard="false"
       width="1200px"
       top="60px"
-      draggable
       destroyOnClose
       @opened="render = true"
     >

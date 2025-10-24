@@ -1,6 +1,6 @@
 <template>
   <div class="dv-gui g-switch" :class="{ inline }">
-    <a-switch v-model="inputValue" :size="size" :disabled="disabled" />
+    <a-switch v-model:checked="inputValue" :size="size" :disabled="disabled" />
     <span v-if="label" class="g-input__caption">{{ label }}</span>
   </div>
 </template>

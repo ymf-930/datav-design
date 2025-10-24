@@ -4,21 +4,21 @@
       <div v-if="selectedCom || isMultiSelect" class="page-config-panel">
         <template v-if="selectedCom">
           <div class="page-config-top">
-            <a-radio-group v-model:value="curTabIndex" style="width: 100%">
+            <a-radio-group v-model:value="curTabIndex" style="width: 100%;display: flex;">
               <a-radio-button :value="0">
-                <span class="mr-8">定制</span>
+                <span class="mr-5">定制</span>
                 <AntIcon name="ProjectOutlined"></AntIcon>
               </a-radio-button>
               <a-radio-button :value="1" :disabled="isGroupChild">
-                <span class="mr-8">动画</span>
+                <span class="mr-5">动画</span>
                 <AntIcon name="ShakeOutlined"></AntIcon>
               </a-radio-button>
               <a-radio-button :value="2" :disabled="curComIsGroup">
-                <span class="mr-8">数据</span>
+                <span class="mr-5">数据</span>
                 <AntIcon name="ThunderboltOutlined"></AntIcon>
               </a-radio-button>
               <a-radio-button :value="3" :disabled="curComIsGroup">
-                <span class="mr-8">事件</span>
+                <span class="mr-5">事件</span>
                 <AntIcon name="RocketOutlined"></AntIcon>
               </a-radio-button>
             </a-radio-group>
@@ -78,6 +78,9 @@ watch(
 </script>
 
 <style scoped>
+:deep(.ant-radio-button-wrapper){
+  flex: 1;
+}
 .config-panel-wp {
   position: relative;
   z-index: 90;

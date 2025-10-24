@@ -16,7 +16,7 @@
         />
       </g-field>
       <g-field label="启用轮询">
-        <a-switch v-model="apiDataConfig.config.polling" size="small" />
+        <a-switch v-model:checked="apiDataConfig.config.polling" size="small" />
       </g-field>
     </div>
     <!--静态编辑器-->

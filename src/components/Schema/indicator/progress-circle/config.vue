@@ -23,7 +23,7 @@
         <g-color-picker v-model="config.trailColor" inline label="颜色" />
       </g-field>
       <g-field label="仪表盘模式">
-        <a-switch v-model="config.dashboard" size="small" />
+        <a-switch v-model:checked="config.dashboard" size="small" />
       </g-field>
     </g-field-collapse>
 

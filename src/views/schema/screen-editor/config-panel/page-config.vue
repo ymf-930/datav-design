@@ -56,7 +56,7 @@
               <div class="image-thumb-wrap">
                 <img v-if="pageConfig.thumbnail" :src="pageConfig.thumbnail" alt="" />
                 <div v-else class="tip" flex="dir:top main:center cross:center">
-                  <AntIcon name="ImageOutlined" size="52"></AntIcon>
+                  <AntIcon name="PictureOutlined" size="46"></AntIcon>
                   <p>暂未截取缩略图</p>
                 </div>
               </div>

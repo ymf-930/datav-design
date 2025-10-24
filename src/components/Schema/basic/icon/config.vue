@@ -21,7 +21,7 @@
         <g-input v-model="config.urlConfig.url" placeholder="目标地址" />
       </g-field>
       <g-field label="新窗口打开">
-        <a-switch v-model="config.urlConfig.isBlank" size="small" />
+        <a-switch v-model:checked="config.urlConfig.isBlank" size="small" />
       </g-field>
     </g-field-collapse>
   </div>

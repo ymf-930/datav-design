@@ -1,6 +1,5 @@
 <template>
   <a-modal v-model:visible="visible"
-    draggable
     width="960px"
     top="50px"
     destroyOnClose

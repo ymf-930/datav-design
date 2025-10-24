@@ -6,7 +6,6 @@
     :footer="null"
     @open="handleOpen"
     @closed="handleClosed"
-    draggable
   >
     <div style="margin: -16px; padding: 8px">
       <SelectModel v-if="open" @select="handleSelect" @open="handleView"/>

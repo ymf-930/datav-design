@@ -25,7 +25,7 @@
         <g-slider v-model="config.waitTime" :min="1000" :max="3000" :step="100" suffix="ms" />
       </g-field>
       <g-field label="悬停暂停">
-        <a-switch v-model="config.hoverPause" size="small" />
+        <a-switch v-model:checked="config.hoverPause" size="small" />
       </g-field>
     </g-field-collapse>
     <g-field-collapse label="行号" toggle v-model="config.index">
