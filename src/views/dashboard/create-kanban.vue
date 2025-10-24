@@ -110,7 +110,7 @@
                   v-else
                   src="@/assets/images/logo.png"
                   alt="default"
-                  style="width: 147px; height: 147px"
+                  style="width: 147px; height: 147px; padding: 30px;"
                 />
               </div>
               <div class="tpl-remove">

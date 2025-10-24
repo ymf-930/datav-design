@@ -81,7 +81,7 @@ function handleClick(item, index) {
       cursor: pointer;
       color: #fff;
       &:hover {
-        color: var(--ant-primary-color) !important;
+        color: var(--datav-primary-color) !important;
       }
     }
   }

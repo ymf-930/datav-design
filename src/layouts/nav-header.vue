@@ -232,12 +232,14 @@ function handleLogout() {
     >img {
       height: 100px;
       margin-right: 20px;
+      padding: 15px;
     }
 
     .nav-welcome {
       h2 {
         font-size: 50px;
         font-weight: normal;
+        margin-bottom: 10px;
         background-image: linear-gradient(to right,
             var(--datav-primary-color-light),
             var(--datav-primary-color));

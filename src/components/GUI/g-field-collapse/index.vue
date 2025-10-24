@@ -15,17 +15,15 @@
           <slot name="add"></slot>
         </span>
         <span class="wrap-arrow" :class="[{ show }]">
-          <AntIcon name="RightOutlined" />
+          <AntIcon name="RightOutlined" size="12"/>
         </span>
       </div>
     </div>
-    <a-collapse v-if="!modal" v-model:activeKey="collapseActiveKey">
-      <a-collapse-panel v-if="show" key="1" :showArrow="false">
-        <div class="g-field-content">
-          <slot></slot>
-        </div>
-      </a-collapse-panel>
-    </a-collapse>
+    <div v-if="!modal" class="g-field-content-wrapper" :class="{ 'is-expanded': show }">
+      <div class="g-field-content">
+        <slot></slot>
+      </div>
+    </div>
 
     <g-modal-config v-else v-model="show" :title="label">
       <div v-if="show" class="g-field-content" style="padding: 0 10px">
@@ -68,7 +66,6 @@ const props = defineProps({
 })
 
 const show = ref(props.defaultOpen)
-const collapseActiveKey = ref(props.defaultOpen ? ['1'] : [])
 
 const visible = computed({
   get: () => props.modelValue,
@@ -78,10 +75,8 @@ const visible = computed({
 const toggleVisible = () => {
   if (visible.value) {
     show.value = false
-    collapseActiveKey.value = []
   } else {
     show.value = true
-    collapseActiveKey.value = ['1']
   }
   emit('change', visible.value)
 }
@@ -89,7 +84,6 @@ const toggleVisible = () => {
 const toggleShow = () => {
   if (!props.modelValue) return
   show.value = !show.value
-  collapseActiveKey.value = show.value ? ['1'] : []
 }
 </script>
 
@@ -109,13 +103,13 @@ const toggleShow = () => {
       bottom: 10px;
       width: 3px;
       border-radius: 2px;
-      background-color: var(--s-border-color);
+      background-color: var(--datav-primary-color);
       transition: 0.2s;
     }
     &.active {
       border-bottom: 1px solid var(--s-color-1);
       &::before {
-        background-color: var(--ant-primary-color);
+        background-color: var(--datav-primary-color);
       }
     }
     .wrap-name {
@@ -154,6 +148,16 @@ const toggleShow = () => {
       }
     }
   }
+  .g-field-content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    
+    &.is-expanded {
+      max-height: 1000px; /* 足够大的值 */
+    }
+  }
+  
   .g-field-content {
     background-color: var(--schema-color-bg-2);
     padding: 0;
@@ -176,22 +180,5 @@ const toggleShow = () => {
   }
 }
 
-/* 隐藏 ant-collapse 的默认样式 */
-:deep(.ant-collapse) {
-  border: none;
-  background: transparent;
-}
-
-:deep(.ant-collapse-item) {
-  border: none;
-}
-
-:deep(.ant-collapse-content) {
-  border: none;
-  background: transparent;
-}
-
-:deep(.ant-collapse-content-box) {
-  padding: 0;
-}
+/* 移除不再需要的 ant-collapse 样式覆盖 */
 </style>

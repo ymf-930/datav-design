@@ -99,9 +99,6 @@ watch(
   }
   :deep(.ant-slider) {
     padding: 0 var(--datav-border-radius-base) 0 0;
-    .ant-slider-rail {
-      margin: 13px 0;
-    }
   }
   .g-input__caption-input {
     display: flex;
