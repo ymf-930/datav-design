@@ -6,6 +6,7 @@ const username = ['admin', 'yang']
 const password = ['admin', '123456']
 
 const login = (options) => {
+  console.log('login',options)
   // 拼装请求体
   const body = getBody(options)
   if (username.includes(body.username) && password.includes(body.password)) {

@@ -177,6 +177,12 @@ const VIcon = {
   alias: '图标',
   img: getComPath('icon.svg'),
 }
+// 连线
+const VLine = {
+  name: 'VLine',
+  alias: '连线',
+  img: getComPath('line.svg'),
+}
 
 // -------------------------表格-------------------------//
 
@@ -222,7 +228,7 @@ export const componentList = [
       { name: '文本', comps: [VMainTitle] },
       { name: '控件', comps: [VSelect, VTimer, VButton, VDatePicker] },
       { name: '列表', comps: [VScrollTable] },
-      { name: '更多', comps: [VMainImg, VBgBox, VBorderBox, VIcon] },
+      { name: '更多', comps: [VMainImg, VBgBox, VBorderBox, VIcon, VLine] },
     ],
   },
   {

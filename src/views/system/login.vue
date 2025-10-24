@@ -112,10 +112,12 @@ const title = ref(config.description)
 
 // 提交登录信息
 async function submit() {
+  console.log('submit',formLogin.value)
   try {
     await loginFormRef.value.validate()
     loading.value = true
     const { data } = await login(formLogin.value)
+    console.log('data',data)
     await loginSuccess(data)
   } catch (e) {
     if (e.errorFields) {

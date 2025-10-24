@@ -1,10 +1,10 @@
 <template>
-  <div class="dv-gui g-input-number" :class="{ inline, 'has-suffix': !!suffix }">
+  <div class="dv-gui g-input-number" :class="{ inline }">
     <div class="slider-box" v-if="slider">
       <g-slider v-model="inputValue" :min="min" :max="max" :step="step" :show-input="false" />
     </div>
     <a-input-number
-      v-model="inputValue"
+      v-model:value="inputValue"
       :size="size"
       :min="min"
       :max="max"
@@ -14,10 +14,11 @@
       arrow-down-icon="minus"
       style="width: 100%"
       @change="handleChange"
-    />
-    <span v-if="suffix" class="g-input-number__suffix" :style="{ top: slider ? '30px' : null }">
-      {{ suffix }}
-    </span>
+    >
+      <template v-if="suffix" #addonAfter>
+        <span class="g-input-number__suffix">{{ suffix }}</span>
+      </template>
+    </a-input-number>
     <span v-if="label" class="g-input__caption" :title="tooltip">{{ label }}</span>
   </div>
 </template>
@@ -78,27 +79,18 @@ const handleChange = (currentValue, oldValue) => {
 </script>
 
 <style scoped>
+:deep(.ant-input-number-group-addon){
+  padding: 0 4px;
+}
 .g-input-number {
   width: 100%;
-  &.has-suffix {
-    position: relative;
-    :deep(.ant-input-number) {
-      .ant-input-number-input {
-        padding-right: 32px;
-      }
-    }
-  }
 
   .g-input-number__suffix {
-    position: absolute;
     font-family: Consolas, Monaco;
     font-size: 12px;
     color: var(--s-text-color-3);
-    top: 0;
-    right: 28px;
-    line-height: 24px;
-    width: 16px;
-    text-align: right;
+    padding: 0;
+    white-space: nowrap;
   }
 }
 </style>
