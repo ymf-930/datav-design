@@ -1,7 +1,7 @@
 <template>
   <div class="header-container">
     <div class="left-actions">
-      <!-- <a-tooltip content="返回"> -->
+      <!-- <a-tooltip title="返回"> -->
       <div class="head-btn home">
         <AntIcon name="HomeOutlined"></AntIcon>
       </div>
@@ -11,7 +11,7 @@
         <span v-else style="color: rgba(255, 255, 255, 0.5)">未命名大屏</span>
       </div>
       <a-space>
-        <a-tooltip content="图层">
+        <a-tooltip title="图层">
           <div
             class="head-btn"
             :class="{ active: toolbar.layer }"
@@ -20,7 +20,7 @@
             <AntIcon name="AppstoreOutlined"></AntIcon>
           </div>
         </a-tooltip>
-        <a-tooltip content="配置面板">
+        <a-tooltip title="配置面板">
           <div
             class="head-btn"
             :class="{ active: toolbar.config }"
@@ -32,12 +32,12 @@
 
         <a-divider type="vertical" />
 
-        <a-tooltip content="后退">
+        <a-tooltip title="后退">
           <div class="head-btn" :class="{ disabled: undoDisable }" @click="undo">
             <AntIcon name="LeftOutlined"></AntIcon>
           </div>
         </a-tooltip>
-        <a-tooltip content="前进">
+        <a-tooltip title="前进">
           <div class="head-btn" :class="{ disabled: redoDisable }" @click="redo">
             <AntIcon name="RightOutlined"></AntIcon>
           </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="global-actions">
       <a-space>
-        <a-tooltip content="导入json (会覆盖所有内容！)">
+        <a-tooltip title="导入json (会覆盖所有内容！)">
           <a-upload action="/" :show-upload-list="false" :before-upload="handleUpload">
             <div class="head-btn">
               <AntIcon name="ImportOutlined"></AntIcon>
@@ -54,7 +54,7 @@
           </a-upload>
         </a-tooltip>
 
-        <a-tooltip content="导出json">
+        <a-tooltip title="导出json">
           <div class="head-btn" @click="downloadCfg">
             <AntIcon name="ExportOutlined"></AntIcon>
           </div>
@@ -81,14 +81,14 @@
 
         <a-divider type="vertical" />
 
-        <a-tooltip content="预览">
+        <a-tooltip title="预览">
           <div class="head-btn" @click="handPreview">
             <AntIcon name="EyeOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;预&nbsp;览
           </div>
         </a-tooltip>
 
-        <a-tooltip content="发布">
+        <a-tooltip title="发布">
           <div class="head-btn" @click="handlePublish">
             <AntIcon name="SendOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;发&nbsp;布

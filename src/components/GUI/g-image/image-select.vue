@@ -1,13 +1,16 @@
 <template>
-  <a-modal v-model:visible="visible"
+  <a-modal
+    v-model:visible="visible"
     title="选择图片"
     top="60px"
     width="800px"
+    :bodyStyle="{ padding: '10px' }"
     class="schema-modal"
     :footer="null"
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">
+        {{ groups }}
         <ScrollContainer height="100%" :scrollbar-size="6">
           <div
             v-for="group in groups"

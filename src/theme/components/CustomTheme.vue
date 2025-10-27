@@ -82,7 +82,7 @@
                 />
                 <a-input
                   v-else
-                  v-model="currentTheme.name"
+                  v-model:value="currentTheme.name"
                   show-word-count
                   :maxlength="8"
                   style="width: 240px"
@@ -406,6 +406,9 @@ defineExpose({ open })
         border-width: 2px;
         width: 14px;
         height: 14px;
+      }
+      .ant-timeline-item-content{
+        min-height: 0;
       }
     }
 

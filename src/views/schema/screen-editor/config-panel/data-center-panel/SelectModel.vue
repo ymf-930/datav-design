@@ -14,7 +14,7 @@
       <a-col :span="18">
         <a-form ref="formRef" :model="query" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" flex>
           <a-form-item label="模型名称" style="width: 30%">
-            <a-input-search v-model="query.name" @keyup.enter="handleSearch" allowClear size="small" />
+            <a-input-search v-model:value="query.name" @keyup.enter="handleSearch" allowClear size="small" />
           </a-form-item>
 
           <a-form-item :wrapper-col="{ span: 16 }" style="width: 30%">

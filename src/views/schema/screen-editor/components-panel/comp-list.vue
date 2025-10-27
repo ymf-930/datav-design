@@ -20,7 +20,7 @@
           </Collapse>
           <div class="create-box" v-if="editStatus.create">
             <a-input
-              v-model="groupObj.value"
+              v-model:value="groupObj.value"
               placeholder="输入名称，回车创建"
               v-focus
               size="small"

@@ -38,7 +38,7 @@
               <a-space>
                 名称
                 <a-input
-                  v-model="query.interfaceName"
+                  v-model:value="query.interfaceName"
                   allowClear
                   size="small"
                   @keyup.enter.stop="handleSearch"

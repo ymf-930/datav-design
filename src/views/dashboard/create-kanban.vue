@@ -74,7 +74,7 @@
             <p class="custom-input">
               <span class="mr-5">W:</span>
               <a-input-number
-                v-model="customValue.width"
+                v-model:value="customValue.width"
                 :min="100"
                 :step="1"
                 :precision="0"
@@ -83,7 +83,7 @@
               />
               <span class="ml-5 mr-5">H:</span>
               <a-input-number
-                v-model="customValue.height"
+                v-model:value="customValue.height"
                 :min="100"
                 :step="1"
                 :precision="0"

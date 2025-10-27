@@ -12,7 +12,7 @@
         prop="name"
         :rules="{ required: true, message: '模板名称不能为空', trigger: 'blur' }"
       >
-        <a-input v-model="formStatus.name"></a-input>
+        <a-input v-model:value="formStatus.name"></a-input>
       </a-form-item>
     </a-form>
     <template #footer>

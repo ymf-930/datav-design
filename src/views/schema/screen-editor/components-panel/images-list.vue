@@ -6,7 +6,7 @@
           <g-loading spinning></g-loading>
         </div>
         <template v-else>
-          <a-empty v-if="groups.length === 0" description="暂无图片分组"></a-empty>
+          <a-empty v-if="groups.length === 0" description="暂无图片分组" style="padding: 40px 0 20px 0;"></a-empty>
           <Collapse
             v-for="group in groups"
             :key="group.key"
@@ -20,7 +20,7 @@
           </Collapse>
           <div class="create-box" v-if="editStatus.create">
             <a-input
-              v-model="groupObj.value"
+              v-model:value="groupObj.value"
               placeholder="输入名称，回车创建"
               v-focus
               size="small"

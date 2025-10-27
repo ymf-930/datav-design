@@ -5,7 +5,7 @@
         <div class="wrap-label">
           <div class="create-box" v-if="edit" @click.stop>
             <a-input
-              v-model="editName"
+              v-model:value="editName"
               placeholder="输入名称，回车创建"
               v-focus
               size="mini"

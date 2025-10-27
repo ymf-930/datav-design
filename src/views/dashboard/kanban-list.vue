@@ -10,7 +10,7 @@
       </div>
       <div class="header-manager">
         <a-input-search
-          v-model="query.name"
+          v-model:value="query.name"
           placeholder="搜索"
           allowClear
           @search="

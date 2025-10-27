@@ -19,7 +19,7 @@
         prop="name"
         :rules="{ required: true, message: '大屏名称不能为空', trigger: 'blur' }"
       >
-        <a-input v-model="pageInfo.name"></a-input>
+        <a-input v-model:value="pageInfo.name"></a-input>
       </a-form-item>
       <template v-if="status === 'audited' && $route.query.id">
         <a-form-item label="预览地址">

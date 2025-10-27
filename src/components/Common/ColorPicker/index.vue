@@ -4,7 +4,7 @@
     <template v-if="showValue">
       <div class="color-display">
         <a-input 
-          v-model="inputValue"
+          v-model:value="inputValue"
           :size="size"
           :placeholder="placeholder"
           @change="handleInputChange"

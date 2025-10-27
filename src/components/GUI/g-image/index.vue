@@ -5,12 +5,12 @@
       <span class="tip" v-else>点击选择图片</span>
     </div>
     <div class="g-resize" v-if="showResize">
-      <a-tooltip content="恢复默认尺寸">
+      <a-tooltip title="恢复默认尺寸">
         <AntIcon name="ExpandOutlined" @click="resetSize"></AntIcon>
       </a-tooltip>
     </div>
     <div class="g-resize" v-if="showClear">
-      <a-tooltip content="清除图片">
+      <a-tooltip title="清除图片">
         <AntIcon name="ClearOutlined" @click="clear"></AntIcon>
       </a-tooltip>
     </div>

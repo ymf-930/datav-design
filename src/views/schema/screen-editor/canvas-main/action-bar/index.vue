@@ -1,17 +1,17 @@
 <template>
   <div class="action-bar-wrap" :style="actionStyle">
-    <a-tooltip content="适应尺寸" placement="left">
+    <a-tooltip title="适应尺寸" placement="left">
       <AntIcon name="AimOutlined" class="action-btn" @click.stop="schemaStore.autoCanvasScale()" />
     </a-tooltip>
-    <a-tooltip content="原始尺寸" placement="left">
+    <a-tooltip title="原始尺寸" placement="left">
       <AntIcon name="OneToOneOutlined" class="action-btn" @click.stop="schemaStore.setCanvasScale(100)" />
     </a-tooltip>
 
-    <a-tooltip content="编辑配置" placement="left">
+    <a-tooltip title="编辑配置" placement="left">
       <AntIcon name="EditOutlined" class="action-btn" @click.stop="openDetail" />
     </a-tooltip>
 
-    <a-tooltip content="工具设置" placement="left">
+    <a-tooltip title="工具设置" placement="left">
       <AntIcon name="SettingOutlined" class="action-btn" @click.stop="toolbar.toolbox = !toolbar.toolbox" />
     </a-tooltip>
 

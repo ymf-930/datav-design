@@ -27,7 +27,7 @@
               />
             </div>
               <AntIcon name="SwapOutlined" class="icon-move pl-5" title="拖动位置"></AntIcon>
-              <a-tooltip content="删除颜色" v-if="index > 5">
+              <a-tooltip title="删除颜色" v-if="index > 5">
                 <AntIcon name="CloseOutlined" @click="removeColor(index)" class="pl-5"></AntIcon>
               </a-tooltip>
           </div>
