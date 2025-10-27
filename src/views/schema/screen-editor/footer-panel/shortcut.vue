@@ -1,12 +1,13 @@
 <template>
   <a-modal
     title="快捷键指南"
-    :model-value="modelValue"
+    :visible="modelValue"
     :getPopupContainer="() => document.body"
     class="schema-modal"
-    width="600px"
+    :bodyStyle="{ padding: '10px' }"
+    width="620px"
     :footer="null"
-    @close="$emit('update:modelValue', false)"
+    @update:visible="$emit('update:modelValue', $event)"
   >
     <div class="shortcut-wp">
       <div class="shortcut-box">

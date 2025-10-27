@@ -23,7 +23,7 @@
             :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
           >
-            <AntIcon name="DownOutlined" type="button"></AntIcon>
+            <AntIcon name="DownOutlined"></AntIcon>
             <template #overlay>
               <a-menu>
                 <a-menu-item v-for="item in webScreenMap" :key="item.label" @click="handleWebTrigger(item)">
@@ -50,7 +50,7 @@
             :placement="'bottom-end'"
             style="width: 24px; height: 46px; line-height: 46px"
           >
-            <AntIcon name="DownOutlined" type="button"></AntIcon>
+            <AntIcon name="DownOutlined"></AntIcon>
             <template #overlay>
               <a-menu>
                 <a-menu-item v-for="item in mobileScreenMap" :key="item.label" @click="handleMobileTrigger(item)">

@@ -125,47 +125,9 @@ function scrollToTop() {
 </template>
 ```
 
-## 替换 b-scrollbar
-
-### 替换前 (bin-datav-schema)
-```vue
-<b-scrollbar style="height: 300px">
-  <div>内容</div>
-</b-scrollbar>
-```
-
-### 替换后 (当前项目)
-```vue
-<ScrollContainer height="300px">
-  <div>内容</div>
-</ScrollContainer>
-```
-
 ## 注意事项
 
 1. **性能**: 组件使用 ResizeObserver 监听内容变化，在不需要时记得销毁
 2. **样式**: 滚动条样式会自动适配暗色主题
 3. **兼容性**: 支持现代浏览器，IE 需要 polyfill
 4. **事件**: 滚动事件会频繁触发，建议使用防抖处理
-
-## 已替换的文件
-
-- `src/views/schema/screen-editor/config-panel/page-config.vue`
-- `src/components/Common/AdvanceStyle/index.vue`
-- `src/theme/components/comps/ColorsPanel.vue`
-- `src/components/Common/CustomScripts/EditorModal.vue`
-
-## 待替换的文件
-
-以下文件仍在使用 `ant-scrollbar` 类名，建议替换为 `ScrollContainer` 组件：
-
-- `src/views/schema/screen-editor/components-panel/comp-list.vue`
-- `src/views/schema/screen-editor/components-panel/images-list.vue`
-- `src/views/schema/screen-editor/config-panel/events-panel/index.vue`
-- `src/views/schema/screen-editor/components-panel/index.vue`
-- `src/views/schema/screen-editor/config-panel/index.vue`
-- `src/components/GUI/g-image/image-select.vue`
-- `src/views/schema/screen-editor/components-panel/topo-list.vue`
-- `src/views/schema/screen-editor/components-panel/preset-list.vue`
-
-

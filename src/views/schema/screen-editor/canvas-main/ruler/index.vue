@@ -13,7 +13,6 @@
     <div class="ruler-corner">
       <a-tooltip :content="toolbox.markLine ? '对齐线开启' : '对齐线关闭'">
         <AntIcon :name="toolbox.markLine ? 'EyeOutlined' : 'EyeInvisibleOutlined'"
-          type="button"
           @click="toolbox.markLine = !toolbox.markLine"
         />
       </a-tooltip>

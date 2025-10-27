@@ -2,7 +2,7 @@
   <div class="footer-panel">
     <div class="screen-info" flex="cross:center">
       <a-tooltip content="快捷键提示" :open-delay="500">
-        <AntIcon name="ReadOutlined" size="16" type="button" @click="keycodeVisible = true"></AntIcon>
+        <AntIcon name="ReadOutlined" size="16" @click="keycodeVisible = true"></AntIcon>
       </a-tooltip>
       <span class="ml-8" style="transform: scale(0.9)">
         {{ pageConfig.width }} 像素 * {{ pageConfig.height }} 像素
