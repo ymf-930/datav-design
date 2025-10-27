@@ -38,7 +38,8 @@
           <div class="item-inner">
             <a-button
               type="primary"
-              size="small"
+              ghost
+              style="width: 102px"
               :disabled="colors.length > 10"
               :title="colors.length > 10 ? '主题颜色为11个以内' : ''"
               @click="addColor"

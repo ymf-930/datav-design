@@ -3,7 +3,7 @@
     <div class="title" flex="main:justify cross:center">
       <div title="预览图表最多显示7条">预览图表</div>
       <div class="tab-box">
-        <a-radio-group v-model:value="type" size="small">
+        <a-radio-group v-model:value="type" size="small" button-style="solid">
           <a-radio-button value="bar">柱状图</a-radio-button>
           <a-radio-button value="line">折线图</a-radio-button>
         </a-radio-group>
