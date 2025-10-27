@@ -1,7 +1,7 @@
 <template>
   <div class="group-wrap">
     <div class="group-list">
-      <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+      <ScrollContainer height="100%" :scrollbar-size="6">
         <div v-if="loading">
           <g-loading spinning></g-loading>
         </div>

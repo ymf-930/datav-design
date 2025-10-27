@@ -6,7 +6,7 @@
       </div>
       <div class="components-panel-content" @dragover="dragOver">
         <div class="components-type">
-          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+          <ScrollContainer height="100%" :scrollbar-size="6">
             <div
               class="components-item"
               v-for="(group, index) in componentList"
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="components-list-content">
-          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+          <ScrollContainer height="100%" :scrollbar-size="6">
             <Collapse
               v-for="(group, index) in groups"
               :key="index"

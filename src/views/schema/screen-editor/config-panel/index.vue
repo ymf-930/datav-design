@@ -24,7 +24,7 @@
             </a-radio-group>
           </div>
           <div class="page-config-content">
-            <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+            <ScrollContainer height="100%" :scrollbar-size="6">
               <SettingPanel :key="selectedCom.id" v-if="curTabIndex === 0" />
               <AnimationsPanel :key="selectedCom.id" v-if="curTabIndex === 1" />
               <DataCenterPanel :key="selectedCom.id" v-if="curTabIndex === 2" />

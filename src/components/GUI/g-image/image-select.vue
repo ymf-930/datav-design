@@ -8,7 +8,7 @@
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">
-        <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+        <ScrollContainer height="100%" :scrollbar-size="6">
           <div
             v-for="group in groups"
             :key="group.key"
@@ -21,7 +21,7 @@
         </ScrollContainer>
       </div>
       <div class="img-wrap">
-        <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+        <ScrollContainer height="100%" :scrollbar-size="6">
           <template v-if="!loading">
             <div class="img-inner">
               <div class="comp-item img-add" v-if="canEdit">

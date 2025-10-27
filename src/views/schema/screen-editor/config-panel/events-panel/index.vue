@@ -3,7 +3,7 @@
     <div class="events-panel-content">
       <template v-if="!isEmpty(events)">
         <div class="scroll-container">
-          <ScrollContainer height="100%" scrollbar-size="6" scrollbar-color="rgba(255, 255, 255, 0.2)" scrollbar-hover-color="rgba(255, 255, 255, 0.4)">
+          <ScrollContainer height="100%" :scrollbar-size="6">
             <div class="setting-panel-gui">
               <DefaultAction :events="events" />
               <TriggerConfig :events="events" />
