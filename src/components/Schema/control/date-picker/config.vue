@@ -18,7 +18,7 @@
             v-model="config.prop.defaultValue"
             :type="config.prop.type"
             placeholder="可选择默认值"
-            size="mini"
+            size="small"
             style="width: 180%"
             :disabled="config.prop.defaultValueByCurrent"
             label="选择默认"

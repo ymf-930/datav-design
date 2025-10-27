@@ -1,7 +1,7 @@
 <template>
   <div class="dv-wrapper">
     <div class="back-btn">
-      <a-button v-if="showBackBtn" size="mini" round @click="handleBackBtnClick" type="primary">
+      <a-button v-if="showBackBtn" size="small" round @click="handleBackBtnClick" type="primary">
         返回
       </a-button>
     </div>

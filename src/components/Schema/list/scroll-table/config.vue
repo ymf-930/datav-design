@@ -41,7 +41,7 @@
         />
       </g-field>
       <g-field label="行号对齐">
-        <a-radio-group v-model:value="config.indexAlign" size="mini">
+        <a-radio-group v-model:value="config.indexAlign" size="small">
           <a-radio-button value="left">左对齐</a-radio-button>
           <a-radio-button value="center">居中</a-radio-button>
           <a-radio-button value="right">右对齐</a-radio-button>

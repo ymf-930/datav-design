@@ -10,7 +10,6 @@
   >
     <div class="images-modal-wrap">
       <div class="group-wrap">
-        {{ groups }}
         <ScrollContainer height="100%" :scrollbar-size="6">
           <div
             v-for="group in groups"

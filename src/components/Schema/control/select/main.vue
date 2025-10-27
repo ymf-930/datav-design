@@ -1,6 +1,6 @@
 <template>
   <div class="dv-wrapper" :style="wrapperStyle">
-    <a-select v-model:value="select" allowClear @change="handleChange">
+    <a-select v-model:value="select" allowClear @change="handleChange" style="width: 100%;">
       <a-select-option
         v-for="item in options"
         :key="item.value"

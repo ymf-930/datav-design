@@ -66,7 +66,7 @@
             <AntIcon name="SaveOutlined" color="var(--datav-primary-color)"></AntIcon>
             &nbsp;保&nbsp;存
           </div>
-          <a-dropdown :trigger="['hover']">
+          <a-dropdown :trigger="['hover']" placement="bottom">
             <div class="head-btn" style="margin-left: -1px; padding: 0 var(--datav-border-radius-sm)">
               <AntIcon name="EllipsisOutlined"></AntIcon>
             </div>

@@ -10,8 +10,8 @@
         {{ message }}
       </p>
       <div style="text-align: right; margin: 0">
-        <a-button size="mini" type="text" @click="handleCancel">取消</a-button>
-        <a-button type="primary" size="mini" @click="handleOk">确认</a-button>
+        <a-button size="small" type="text" @click="handleCancel">取消</a-button>
+        <a-button type="primary" size="small" @click="handleOk">确认</a-button>
       </div>
     </template>
   </a-popover>

@@ -8,7 +8,7 @@
               v-model:value="editName"
               placeholder="输入名称，回车创建"
               v-focus
-              size="mini"
+              size="small"
               style="width: 150px; top: -2px"
               @blur="onAddInputBlur"
               @keyup.enter="onAddInputEnter"

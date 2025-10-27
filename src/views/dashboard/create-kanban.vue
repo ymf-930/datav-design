@@ -78,7 +78,7 @@
                 :min="100"
                 :step="1"
                 :precision="0"
-                size="mini"
+                size="small"
                 @change="changeSize(customValue)"
               />
               <span class="ml-5 mr-5">H:</span>
@@ -87,7 +87,7 @@
                 :min="100"
                 :step="1"
                 :precision="0"
-                size="mini"
+                size="small"
                 @change="changeSize(customValue)"
               />
             </p>
