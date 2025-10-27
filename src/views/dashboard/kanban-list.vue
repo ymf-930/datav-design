@@ -33,7 +33,7 @@
                 v-else
                 src="@/assets/images/logo.png"
                 alt="default"
-                style="width: 147px; height: 147px; padding: 30px;"
+                style="width: 147px; height: 147px; padding: 30px"
               />
             </div>
             <div class="list-item-mask">
@@ -46,17 +46,21 @@
                 </a-button>
               </div>
               <div class="icon-box">
-                <AntIcon name="SendOutlined" v-if="item.status === 'edit'"
-                  
-                  @click="handlePublish(item)"
-                  title="发布"
-                ></AntIcon>
-                <AntIcon name="EyeOutlined" @click="handlePreview(item)" title="预览"></AntIcon>
-                <AntIcon name="CopyOutlined" @click="handleCopy(item)" title="复制"></AntIcon>
-                <AntIcon name="DeleteOutlined"
-                  @click="removeDashboard(item.id)"
-                  title="删除"
-                ></AntIcon>
+                <a-space>
+                  <AntIcon
+                    name="SendOutlined"
+                    v-if="item.status === 'edit'"
+                    @click="handlePublish(item)"
+                    title="发布"
+                  ></AntIcon>
+                  <AntIcon name="EyeOutlined" @click="handlePreview(item)" title="预览"></AntIcon>
+                  <AntIcon name="CopyOutlined" @click="handleCopy(item)" title="复制"></AntIcon>
+                  <AntIcon
+                    name="DeleteOutlined"
+                    @click="removeDashboard(item.id)"
+                    title="删除"
+                  ></AntIcon>
+                </a-space>
               </div>
             </div>
           </div>
@@ -70,7 +74,8 @@
                 {{ item.name }}
               </span>
             </div>
-            <a-tag :color="item.status === 'audited' ? 'success' : 'warning'"
+            <a-tag
+              :color="item.status === 'audited' ? 'success' : 'warning'"
               dot
               :tag-style="{ color: '#999' }"
             >
@@ -83,9 +88,13 @@
     <div class="loading-wrap" flex="main:center cross:center" v-show="listData.loading">
       <a-spin></a-spin>
     </div>
-    <a-empty v-show="!listData.loading && listData.rows.length === 0" :description="noData ? '查询无结果' : '该分组下没有大屏'"></a-empty>
+    <a-empty
+      v-show="!listData.loading && listData.rows.length === 0"
+      :description="noData ? '查询无结果' : '该分组下没有大屏'"
+    ></a-empty>
     <div class="t-center pb-24" v-show="!listData.loading && listData.total > 0">
-      <a-pagination :total="listData.total"
+      <a-pagination
+        :total="listData.total"
         :current="query.page"
         :pageSize="query.size"
         @change="pageChange"
@@ -217,7 +226,7 @@ const handleCopy = async item => {
     const kanban = await loadKanban(item.id)
     kanban.name = `${kanban.name}_copy`
     delete kanban['id']
-    await saveKanban({...kanban, status: 'edit'})
+    await saveKanban({ ...kanban, status: 'edit' })
     await getSearchList()
     message.success('复制成功！')
   } catch (e) {
@@ -256,7 +265,7 @@ const removeDashboard = id => {
     },
     onCancel() {
       console.log('取消删除')
-    }
+    },
   })
 }
 

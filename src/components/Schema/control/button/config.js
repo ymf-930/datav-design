@@ -25,7 +25,7 @@ export const buttonConfig = {
       borderColor: '#fff',
       borderStyle: 'solid',
       borderWidth: 1,
-      src: getComPath('img.svg'),
+      src: getComPath('btn.svg'),
       attr: { w: 120, h: 48 },
     },
     radius: 5,

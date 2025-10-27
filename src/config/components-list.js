@@ -139,7 +139,7 @@ const VSelect = {
 const VButton = {
   name: 'VButton',
   alias: '按钮',
-  img: getComPath('img.svg'),
+  img: getComPath('btn.svg'),
 }
 const VDatePicker = {
   name: 'VDatePicker',
@@ -225,10 +225,11 @@ export const componentList = [
     name: '基础',
     icon: 'BlockOutlined',
     group: [
+      { name: '线段', comps: [VLine] },
       { name: '文本', comps: [VMainTitle] },
       { name: '控件', comps: [VSelect, VTimer, VButton, VDatePicker] },
       { name: '列表', comps: [VScrollTable] },
-      { name: '更多', comps: [VMainImg, VBgBox, VBorderBox, VIcon, VLine] },
+      { name: '更多', comps: [VMainImg, VBgBox, VBorderBox, VIcon] },
     ],
   },
   {

@@ -1,11 +1,9 @@
 <template>
   <div class="header-container">
     <div class="left-actions">
-      <!-- <a-tooltip title="返回"> -->
-      <div class="head-btn home">
+      <div class="head-btn home" @click="handleBack">
         <AntIcon name="HomeOutlined"></AntIcon>
       </div>
-      <!-- </a-tooltip> -->
       <div class="page-info">
         <span v-if="pageInfo.name">{{ pageInfo.name }}</span>
         <span v-else style="color: rgba(255, 255, 255, 0.5)">未命名大屏</span>
