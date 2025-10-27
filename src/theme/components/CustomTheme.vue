@@ -1,5 +1,6 @@
 <template>
-  <a-modal v-model:visible="visible"
+  <a-modal
+    v-model:visible="visible"
     width="960px"
     top="50px"
     destroyOnClose
@@ -10,12 +11,10 @@
       <div class="left-info pr-8">
         <div class="color-list mr-5">
           <div class="top-button">
-            <a-button type="primary" :style="{ width: '100%' }"
-              plain
-              @click="createCustomTheme">
-        <template #icon>
-          <AntIcon name="PlusSquareOutlined" />
-        </template>
+            <a-button type="primary" :style="{ width: '100%' }" plain @click="createCustomTheme">
+              <template #icon>
+                <AntIcon name="PlusSquareOutlined" />
+              </template>
               创建自定义主题
             </a-button>
           </div>
@@ -64,8 +63,8 @@
           </div>
         </div>
         <a-timeline>
-          <a-timeline-item color="primary"></a-timeline-item>
-          <a-timeline-item color="success"></a-timeline-item>
+          <a-timeline-item color="blue"></a-timeline-item>
+          <a-timeline-item color="green"></a-timeline-item>
         </a-timeline>
       </div>
       <div class="right-info">
@@ -75,7 +74,8 @@
               <div flex="cross:center">
                 <span class="color-name">主题名称</span>
 
-                <a-input v-if="isComp && currentTheme.id === ''"
+                <a-input
+                  v-if="isComp && currentTheme.id === ''"
                   v-model:value="currentTheme.name"
                   style="width: 240px"
                   disabled
@@ -236,7 +236,7 @@ function removeCustomTheme(id, disabled) {
     },
     onCancel() {
       console.log('取消删除')
-    }
+    },
   })
 }
 
@@ -268,29 +268,36 @@ defineExpose({ open })
 <style scoped>
 .custom-box {
   display: flex;
+
   .left-info {
     display: flex;
     width: 308px;
+
     .color-list {
       flex: 1;
     }
   }
+
   .right-info {
     flex: 1;
   }
+
   .top-button {
     width: 283px;
     padding: 0 0 10px;
     border-bottom: 1px solid var(--s-color-1);
     margin-bottom: 10px;
   }
+
   .list-wrap {
     height: 500px;
     overflow-y: auto;
   }
+
   .theme-color-item {
     margin-bottom: var(--datav-border-radius-lg);
   }
+
   .theme-item {
     position: relative;
     display: flex;
@@ -305,6 +312,7 @@ defineExpose({ open })
     overflow: hidden;
     border: 2px solid transparent;
     cursor: pointer;
+
     .theme-bottom {
       position: absolute;
       left: 0;
@@ -312,10 +320,12 @@ defineExpose({ open })
       width: 100%;
       height: 3px;
     }
+
     &.active {
       border: 2px solid var(--datav-primary-color);
       border-bottom: 2px solid rgba(0, 0, 0, 0);
     }
+
     .name {
       text-align: left;
       width: 60px;
@@ -326,6 +336,7 @@ defineExpose({ open })
       vertical-align: middle;
       overflow: hidden;
     }
+
     .color-box {
       display: inline-block;
       width: var(--datav-font-size-lg);
@@ -333,11 +344,13 @@ defineExpose({ open })
       border-radius: 3px;
     }
   }
+
   .bg-box {
     padding: 10px var(--datav-font-size-lg);
     background: rgb(44, 44, 50);
     border-radius: var(--datav-border-radius-base);
   }
+
   .top-color-edit {
     .color-name {
       position: relative;
@@ -350,6 +363,7 @@ defineExpose({ open })
       background-color: var(--s-color-1);
       color: var(--s-text-color);
     }
+
     .tip {
       display: inline-block;
       padding: 0 7px;
@@ -360,37 +374,46 @@ defineExpose({ open })
       border: 1px solid rgba(242, 201, 125, 0.3);
     }
   }
+
   .delete-icon {
     width: 22px;
     cursor: pointer;
     text-align: right;
+
     &::before {
       cursor: pointer;
     }
+
     &.disabled {
       cursor: not-allowed;
       color: var(--s-text-color-3);
     }
   }
+
   :deep(.ant-timeline) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     .ant-timeline-item {
       .ant-timeline-item-tail {
         display: none;
       }
+
       .ant-timeline-item-head {
         background-color: transparent;
         border-width: 2px;
+        width: 14px;
+        height: 14px;
       }
     }
+
     &::after {
       content: '';
       position: absolute;
-      left: var(--datav-border-radius-base);
-      top: var(--datav-font-size-lg);
+      left: 6px;
+      top: 16px;
       bottom: 20px;
       border-left: 1px solid var(--s-color-1);
     }
