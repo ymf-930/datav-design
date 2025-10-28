@@ -19,8 +19,10 @@
           </div>
         </div>
         <span class="wrap-edit" v-if="canEdit && !edit">
-          <AntIcon name="EditOutlined" @click.stop="handleEdit"></AntIcon>
-          <AntIcon name="DeleteOutlined" @click.stop="handleRemove"></AntIcon>
+          <a-space>
+            <AntIcon name="EditOutlined" size="13" title="编辑" @click.stop="handleEdit"></AntIcon>
+            <AntIcon name="DeleteOutlined" size="13" title="删除" @click.stop="handleRemove"></AntIcon>
+          </a-space>
         </span>
         <span class="wrap-arrow" :class="[{ active: isActive }]">
           <AntIcon name="RightOutlined" size="12"></AntIcon>
