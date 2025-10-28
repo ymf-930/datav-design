@@ -84,6 +84,7 @@
 
 <script setup>
 import { computed, ref, watch, inject } from 'vue'
+import { useStore } from '@/store'
 
 defineOptions({
   name: 'VStraightLine',
@@ -102,6 +103,11 @@ const config = computed(() => props.data.config)
 // 获取渲染模式
 const renderMode = inject('RenderModel', 'editor')
 const isEditorMode = computed(() => renderMode === 'editor')
+
+// 获取画布缩放比例
+const { schemaStore, storeToRefs } = useStore()
+const { canvas } = storeToRefs(schemaStore)
+const scale = computed(() => canvas.value.scale)
 
 // 悬停时显示手柄
 const showHandles = ref(false)
@@ -222,9 +228,10 @@ function startDragEndpoint(event, index) {
   const handleMouseMove = (e) => {
     if (!isDragging) return
     
-    // 转换为百分比坐标（考虑箭头偏移）
-    const x = ((e.clientX - rect.left - offset) / w) * 100
-    const y = ((e.clientY - rect.top - offset) / h) * 100
+    // 转换为百分比坐标（考虑箭头偏移和画布缩放）
+    const currentScale = scale.value
+    const x = (((e.clientX - rect.left) / currentScale - offset) / w) * 100
+    const y = (((e.clientY - rect.top) / currentScale - offset) / h) * 100
     
     // 更新端点位置（限制范围2-98%以容纳手柄和箭头）
     if (draggedIndex === 0) {

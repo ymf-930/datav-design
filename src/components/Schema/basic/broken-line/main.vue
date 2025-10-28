@@ -94,6 +94,7 @@
 
 <script setup>
 import { computed, ref, watch, inject } from 'vue'
+import { useStore } from '@/store'
 
 defineOptions({
   name: 'VBrokenLine',
@@ -112,6 +113,11 @@ const config = computed(() => props.data.config)
 // 获取渲染模式
 const renderMode = inject('RenderModel', 'editor')
 const isEditorMode = computed(() => renderMode === 'editor')
+
+// 获取画布缩放比例
+const { schemaStore, storeToRefs } = useStore()
+const { canvas } = storeToRefs(schemaStore)
+const scale = computed(() => canvas.value.scale)
 
 // 悬停时显示手柄（仅编辑模式）
 const showHandles = ref(false)
@@ -244,9 +250,10 @@ function startDrag(event, index) {
 
     const rect = svg.getBoundingClientRect()
     const offset = arrowOffset.value
-    // 使用内容区域宽高计算百分比（考虑箭头偏移）
-    const x = ((e.clientX - rect.left - offset) / contentWidth.value) * 100
-    const y = ((e.clientY - rect.top - offset) / contentHeight.value) * 100
+    // 使用内容区域宽高计算百分比（考虑箭头偏移和画布缩放）
+    const currentScale = scale.value
+    const x = (((e.clientX - rect.left) / currentScale - offset) / contentWidth.value) * 100
+    const y = (((e.clientY - rect.top) / currentScale - offset) / contentHeight.value) * 100
 
     // 更新折点位置，限制范围避免折点太靠近边界和箭头
     if (draggedPointIndex >= 0 && draggedPointIndex < pointsArray.value.length) {
@@ -278,9 +285,10 @@ function addPointAtSegment(event, segmentIndex) {
   const svg = event.target.parentElement
   const rect = svg.getBoundingClientRect()
   const offset = arrowOffset.value
-  // 使用内容区域宽高计算百分比（考虑箭头偏移）
-  const x = ((event.clientX - rect.left - offset) / contentWidth.value) * 100
-  const y = ((event.clientY - rect.top - offset) / contentHeight.value) * 100
+  // 使用内容区域宽高计算百分比（考虑箭头偏移和画布缩放）
+  const currentScale = scale.value
+  const x = (((event.clientX - rect.left) / currentScale - offset) / contentWidth.value) * 100
+  const y = (((event.clientY - rect.top) / currentScale - offset) / contentHeight.value) * 100
 
   // 在指定线段后插入新点
   pointsArray.value.splice(segmentIndex + 1, 0, {
