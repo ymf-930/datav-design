@@ -10,7 +10,7 @@
       <defs>
         <marker
           v-if="config.arrowStyle !== 'none'"
-          id="arrowhead"
+          id="arrowhead-straight"
           :markerWidth="arrowSize"
           :markerHeight="arrowSize"
           refX="8"
@@ -32,11 +32,11 @@
         :x2="lineConfig.x2"
         :y2="lineConfig.y2"
         :stroke="config.color"
-        :stroke-width="props.data.attr.h"
+        :stroke-width="strokeWidth"
         :stroke-dasharray="dashArray"
         stroke-linecap="round"
-        :marker-end="config.arrowStyle === 'end' || config.arrowStyle === 'both' ? 'url(#arrowhead)' : undefined"
-        :marker-start="config.arrowStyle === 'start' || config.arrowStyle === 'both' ? 'url(#arrowhead)' : undefined"
+        :marker-end="config.arrowStyle === 'end' || config.arrowStyle === 'both' ? 'url(#arrowhead-straight)' : undefined"
+        :marker-start="config.arrowStyle === 'start' || config.arrowStyle === 'both' ? 'url(#arrowhead-straight)' : undefined"
       />
     </svg>
   </div>
@@ -46,7 +46,7 @@
 import { computed } from 'vue'
 
 defineOptions({
-  name: 'VLine',
+  name: 'VStraightLine',
 })
 
 const props = defineProps({
@@ -86,11 +86,30 @@ const svgHeight = computed(() => {
   return h
 })
 
-// 计算线段的位置 - 简化为水平线段
+// 计算线段的位置
 const lineConfig = computed(() => {
   const { w, h } = props.data.attr
+  const { direction } = config.value
   
-  // 默认绘制水平线段
+  if (direction === 'horizontal') {
+    // 水平线段
+    return {
+      x1: 0,
+      y1: h / 2,
+      x2: w,
+      y2: h / 2
+    }
+  } else if (direction === 'vertical') {
+    // 垂直线段
+    return {
+      x1: w / 2,
+      y1: 0,
+      x2: w / 2,
+      y2: h
+    }
+  }
+  
+  // 默认水平
   return {
     x1: 0,
     y1: h / 2,
@@ -99,20 +118,23 @@ const lineConfig = computed(() => {
   }
 })
 
+// 计算线段粗细 - 使用config中的width
+const strokeWidth = computed(() => {
+  return config.value.width
+})
+
 // 计算虚线样式
 const dashArray = computed(() => {
   const { dashStyle } = config.value
   if (dashStyle === 'solid') return 'none'
   if (dashStyle === 'dashed') return '5,5'
-  if (dashStyle === 'dotted') return '1,3'
-  if (dashStyle === 'dashdot') return '5,3,1,3'
   return 'none'
 })
 
-// 计算箭头尺寸 - 根据线条粗细动态调整
+// 计算箭头尺寸
 const arrowSize = computed(() => {
-  const strokeWidth = props.data.attr.h
-  return Math.max(strokeWidth * 2, 6) // 最小6px，根据线条粗细放大
+  const strokeWidth = config.value.width
+  return Math.max(strokeWidth * 2, 6)
 })
 
 // 计算箭头形状点坐标

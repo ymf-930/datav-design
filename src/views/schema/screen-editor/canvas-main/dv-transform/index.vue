@@ -31,7 +31,7 @@
         />
       </div>
     </div>
-    <AntIcon name="LockOutlined" v-if="data.locked"  title="解锁"></AntIcon>
+    <AntIcon name="LockOutlined" v-if="data.locked" title="解锁"></AntIcon>
   </div>
 </template>
 
@@ -98,10 +98,19 @@ const handlerStyle = computed(() => ({
   transform: `rotateZ(${props.data.attr.rotate}deg)`,
 }))
 
-const disableEventStyle = computed(() => ({
-  width: `${props.data.attr.w}px`,
-  height: `${props.data.attr.h}px`,
-}))
+const disableEventStyle = computed(() => {
+  // 折线组件需要禁用事件蒙版层，以便折点可以正常交互
+  if (props.data.name === 'VBrokenLine') {
+    return {
+      width: '0px',
+      height: '0px',
+    }
+  }
+  return {
+    width: `${props.data.attr.w}px`,
+    height: `${props.data.attr.h}px`,
+  }
+})
 const hideStyle = computed(() => ({
   display: props.data.hided ? 'none' : 'block',
 }))

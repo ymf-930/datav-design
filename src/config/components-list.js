@@ -177,11 +177,19 @@ const VIcon = {
   alias: '图标',
   img: getComPath('icon.svg'),
 }
-// 连线
-const VLine = {
-  name: 'VLine',
-  alias: '连线',
-  img: getComPath('line.svg'),
+
+// 直线（简单直线组件，继承现有的VLine功能）
+const VStraightLine = {
+  name: 'VStraightLine',
+  alias: '直线',
+  img: getComPath('straight-line.svg'),
+}
+
+// 折线（复杂折线组件）
+const VBrokenLine = {
+  name: 'VBrokenLine',
+  alias: '折线',
+  img: getComPath('broken-line.svg'),
 }
 
 // -------------------------表格-------------------------//
@@ -225,7 +233,7 @@ export const componentList = [
     name: '基础',
     icon: 'BlockOutlined',
     group: [
-      { name: '线段', comps: [VLine] },
+      { name: '线段', comps: [VStraightLine, VBrokenLine] },
       { name: '文本', comps: [VMainTitle] },
       { name: '控件', comps: [VSelect, VTimer, VButton, VDatePicker] },
       { name: '列表', comps: [VScrollTable] },

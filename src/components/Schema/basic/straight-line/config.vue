@@ -1,8 +1,21 @@
 <template>
   <div class="setting-panel-gui">
-    <g-field-collapse label="样式设置" default-open>
-      <g-field label="颜色">
-        <g-color-picker v-model="config.color" />
+    <g-field-collapse label="属性设置" default-open>
+      <g-field label="方向">
+        <g-select v-model="config.direction" :data="directionOptions" />
+      </g-field>
+      
+      <g-field label="线条" flat>
+        <g-input-number
+          v-model="config.width"
+          :min="1"
+          :max="20"
+          :step="1"
+          suffix="px"
+          inline
+          label="宽度"
+        />
+        <g-color-picker v-model="config.color" inline label="颜色"/>
       </g-field>
       
       <g-field label="线条样式">
@@ -28,12 +41,16 @@ const props = defineProps({
 
 const config = computed(() => props.data.config)
 
+// 方向选项
+const directionOptions = [
+  { value: 'horizontal', label: '水平' },
+  { value: 'vertical', label: '垂直' },
+]
+
 // 线条样式选项
 const dashStyleOptions = [
   { value: 'solid', label: '实线' },
   { value: 'dashed', label: '虚线' },
-  { value: 'dotted', label: '点线' },
-  { value: 'dashdot', label: '点划线' },
 ]
 
 // 箭头样式选项
