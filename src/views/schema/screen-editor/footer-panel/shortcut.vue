@@ -185,7 +185,7 @@ export default {
   .shortcut-value {
     padding: var(--datav-border-radius-sm) var(--datav-border-radius-base);
     font-weight: 700;
-    color: var(--datav-primary-color);
+    color: var(--ant-primary-color);
   }
 }
 </style>

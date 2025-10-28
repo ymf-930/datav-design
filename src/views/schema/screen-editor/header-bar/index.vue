@@ -61,7 +61,7 @@
 
         <div>
           <div class="head-btn" @click="handleSaveScreen">
-            <AntIcon name="SaveOutlined" color="var(--datav-primary-color)"></AntIcon>
+            <AntIcon name="SaveOutlined" color="var(--ant-primary-color)"></AntIcon>
             &nbsp;保&nbsp;存
           </div>
           <a-dropdown :trigger="['hover']" placement="bottom">
@@ -81,14 +81,14 @@
 
         <a-tooltip title="预览">
           <div class="head-btn" @click="handPreview">
-            <AntIcon name="EyeOutlined" color="var(--datav-primary-color)"></AntIcon>
+            <AntIcon name="EyeOutlined" color="var(--ant-primary-color)"></AntIcon>
             &nbsp;预&nbsp;览
           </div>
         </a-tooltip>
 
         <a-tooltip title="发布">
           <div class="head-btn" @click="handlePublish">
-            <AntIcon name="SendOutlined" color="var(--datav-primary-color)"></AntIcon>
+            <AntIcon name="SendOutlined" color="var(--ant-primary-color)"></AntIcon>
             &nbsp;发&nbsp;布
           </div>
         </a-tooltip>
@@ -273,12 +273,12 @@ defineExpose({
       font-size: 18px;
     }
     &:hover:not(.disabled) {
-      color: var(--datav-primary-color);
-      border-color: var(--datav-primary-color);
+      color: var(--ant-primary-color);
+      border-color: var(--ant-primary-color);
     }
     &.active {
-      color: var(--datav-primary-color);
-      border-color: var(--datav-primary-color);
+      color: var(--ant-primary-color);
+      border-color: var(--ant-primary-color);
     }
     &.disabled {
       cursor: not-allowed;

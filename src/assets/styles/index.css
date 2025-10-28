@@ -1,9 +1,8 @@
 @import './base/vars.css';
-@import './base/custom-vars.css';
 @import './base/reset.css';
 @import './base/base.css';
 @import './base/flex.css';
 @import './base/common.css';
 @import './icons/icon.css';
-/* 暗黑主题 */
-@import 'ant-design-vue/dist/antd.dark.css';
+@import './theme/index.css'; 
+

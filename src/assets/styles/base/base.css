@@ -80,13 +80,13 @@ ul {
 
 /* webkit, opera, IE9 */
 ::selection {
-  background: var(--datav-primary-color);
+  background: var(--ant-primary-color);
   color: #fff;
 }
 
 /* mozilla firefox */
 ::-moz-selection {
-  background: var(--datav-primary-color);
+  background: var(--ant-primary-color);
   color: #fff;
 }
 

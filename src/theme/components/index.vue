@@ -57,7 +57,7 @@
             <div class="en-name">{{ currentNameEn }}</div>
             <div
               class="current-color"
-              :style="{ backgroundColor: themeConfigRef.antColorPrimary }"
+              :style="{ backgroundColor: themeConfigRef.antPrimaryColor }"
             ></div>
           </div>
 
@@ -70,7 +70,7 @@
         <div class="color-a">
           中国色表参考：
           <a
-            :style="{ color: themeConfigRef.antColorPrimary }"
+            :style="{ color: themeConfigRef.antPrimaryColor }"
             href="http://zhongguose.com"
             target="_blank"
           >
@@ -100,12 +100,11 @@ defineOptions({
 const visible = ref(false)
 
 function setColor(color) {
-  themeConfigRef.value.antColorPrimary = color
-  themeConfigRef.value.antColorPrimaryAlpha1 = color + '1a' // 添加透明度
+  themeConfigRef.value.antPrimaryColor = color
 }
 
 const currentName = computed(() => {
-  const color = themeConfigRef.value.antColorPrimary
+  const color = themeConfigRef.value.antPrimaryColor
 
   const defaultIndex = ThemeMainColors.findIndex(i => i.toLowerCase() === color.toLowerCase())
   if (defaultIndex > -1) return ThemeMainColorsText[defaultIndex]
@@ -116,7 +115,7 @@ const currentName = computed(() => {
 })
 
 const currentNameEn = computed(() => {
-  const color = themeConfigRef.value.antColorPrimary
+  const color = themeConfigRef.value.antPrimaryColor
 
   const defaultIndex = ThemeMainColors.findIndex(i => i.toLowerCase() === color.toLowerCase())
   if (defaultIndex > -1) return ThemeMainColorsTextEn[defaultIndex]

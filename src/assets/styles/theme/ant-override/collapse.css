@@ -1,0 +1,101 @@
+/* Ant Design Vue Collapse 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 折叠面板容器 */
+  .ant-collapse {
+    background-color: transparent;
+    border: none;
+    /* border-color: var(--datav-border-color-base); */
+  }
+
+  /* 折叠面板项 */
+  .ant-collapse-item {
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-collapse-item:last-child {
+    border-bottom-color: var(--datav-border-color-split);
+  }
+
+  /* 折叠面板头部 */
+  .ant-collapse-header {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-collapse-header:hover {
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  .ant-collapse-item-active .ant-collapse-header {
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  /* 折叠面板图标 */
+  .ant-collapse-arrow {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-collapse-item-active .ant-collapse-arrow {
+    color: var(--ant-primary-color);
+  }
+
+  /* 折叠面板内容 */
+  .ant-collapse-content {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-primary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-collapse-content-box {
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  /* 无边框模式 */
+  .ant-collapse-borderless {
+    background-color: transparent;
+  }
+
+  .ant-collapse-borderless > .ant-collapse-item {
+    border-bottom: 1px solid var(--datav-border-color-split);
+  }
+
+  .ant-collapse-borderless > .ant-collapse-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Ghost 模式 (用于嵌套) */
+  .ant-collapse-ghost {
+    background-color: transparent;
+  }
+
+  .ant-collapse-ghost > .ant-collapse-item {
+    border-bottom: none;
+  }
+
+  .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-content {
+    background-color: transparent;
+    border-top: none;
+  }
+
+  .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-header {
+    background-color: transparent;
+  }
+
+  /* 禁用状态 */
+  .ant-collapse-item-disabled > .ant-collapse-header {
+    color: var(--datav-text-color-disabled);
+    cursor: not-allowed;
+  }
+
+  .ant-collapse-item-disabled > .ant-collapse-header:hover {
+    background-color: var(--datav-bg-color-secondary);
+  }
+}
+

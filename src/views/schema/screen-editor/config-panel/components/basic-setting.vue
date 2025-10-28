@@ -5,7 +5,7 @@
         <div flex="main:justify cross:center" class="pr-8">
           <span>尺寸</span>
           <AntIcon :name="data.lockedRatio ? 'LinkOutlined' : 'DisconnectOutlined'"
-            :color="data.lockedRatio ? 'var(--datav-primary-color)' : 'var(--s-text-color)'"
+            :color="data.lockedRatio ? 'var(--ant-primary-color)' : 'var(--s-text-color)'"
             :title="data.lockedRatio ? '解除锁定宽高关联' : '锁定宽高关联'"
             type="button"
             @click="data.lockedRatio = !data.lockedRatio"

@@ -1,0 +1,58 @@
+/* Ant Design Vue Statistic 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 统计数值组件容器 */
+  .ant-statistic {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 统计标题 */
+  .ant-statistic-title {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 统计内容区域 */
+  .ant-statistic-content {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 统计数值 */
+  .ant-statistic-content-value {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 统计数值整数部分 */
+  .ant-statistic-content-value-int {
+    color: inherit;
+  }
+
+  /* 统计数值小数部分 */
+  .ant-statistic-content-value-decimal {
+    color: inherit;
+  }
+
+  /* 统计前缀 */
+  .ant-statistic-content-prefix {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 统计后缀 */
+  .ant-statistic-content-suffix {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 倒计时组件 */
+  .ant-statistic-countdown {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-statistic-countdown .ant-statistic-content {
+    color: var(--ant-primary-color);
+  }
+
+  /* 倒计时数值格式 */
+  .ant-statistic-countdown .ant-statistic-content-value {
+    color: var(--ant-primary-color);
+  }
+}
+

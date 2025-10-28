@@ -80,7 +80,7 @@ propValue.value.forEach(com => {
           bottom: 0;
           left: 0;
           z-index: -1;
-          border: 1px dashed var(--datav-primary-color);
+          border: 1px dashed var(--ant-primary-color);
         }
       }
       &.selected {
@@ -91,7 +91,7 @@ propValue.value.forEach(com => {
           right: 0;
           bottom: 0;
           left: 0;
-          border: 1px solid var(--datav-primary-color);
+          border: 1px solid var(--ant-primary-color);
         }
       }
     }

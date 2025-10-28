@@ -122,7 +122,7 @@ export default defineComponent({
     height: 5px;
     border-radius: 1px;
     margin-right: var(--datav-border-radius-sm);
-    background: var(--datav-primary-color);
+    background: var(--ant-primary-color);
     transition: 0.2s;
     vertical-align: middle;
     &.validating {
@@ -169,7 +169,7 @@ export default defineComponent({
     width: inherit;
     height: inherit;
     display: block;
-    background: var(--datav-primary-color-outline);
+    background: var(--ant-primary-color-outline);
     border-radius: 50%;
     animation: dna-rotate 5s linear infinite reverse;
     transform: rotateX(-360deg) translateZ(0);
@@ -187,7 +187,7 @@ export default defineComponent({
   margin-left: 0;
 
   &:nth-of-type(2n) .dna-dot:before {
-    background: var(--datav-primary-color);
+    background: var(--ant-primary-color);
   }
 
   :nth-of-type(odd) {

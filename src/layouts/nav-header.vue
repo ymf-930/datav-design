@@ -241,8 +241,8 @@ function handleLogout() {
         font-weight: normal;
         margin-bottom: 10px;
         background-image: linear-gradient(to right,
-            var(--datav-primary-color-light),
-            var(--datav-primary-color));
+            var(--ant-primary-2),
+            var(--ant-primary-color));
         -webkit-background-clip: text;
         color: transparent;
         font-family: YouSheBiaoTiHei, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial,
@@ -254,7 +254,7 @@ function handleLogout() {
         font-size: var(--datav-font-size-base);
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--datav-primary-color-lighter);
+        color: var(--ant-primary-1);
         font-family: Orbitron-Bold, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial,
           Helvetica, sans-serif;
       }

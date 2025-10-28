@@ -150,7 +150,7 @@ const handleRemove = () => emit('remove')
           left: 0;
           width: 3px;
           border-radius: 2px;
-          background-color: var(--datav-primary-color);
+          background-color: var(--ant-primary-color);
         }
       }
     }
@@ -158,7 +158,7 @@ const handleRemove = () => emit('remove')
   .content {
     background-color: var(--schema-color-bg-3);
     padding: 0;
-    color: var(--text-color);
+    color: var(--datav-text-color-primary);
   }
   &:after {
     content: '';

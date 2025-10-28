@@ -1,0 +1,87 @@
+/* Ant Design Vue Tabs 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 标签页 */
+  .ant-tabs {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 标签栏 */
+  .ant-tabs-nav {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tabs-nav::before {
+    border-bottom-color: var(--datav-border-color-split);
+  }
+
+  /* 标签项 */
+  .ant-tabs-tab {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-tabs-tab:hover {
+    color: var(--ant-primary-color);
+  }
+
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--ant-primary-color);
+  }
+
+  .ant-tabs-tab-disabled {
+    color: var(--datav-text-color-disabled);
+  }
+
+  /* 墨水条 */
+  .ant-tabs-ink-bar {
+    background-color: var(--ant-primary-color);
+  }
+
+  /* 新增按钮 */
+  .ant-tabs-nav-add {
+    color: var(--datav-text-color-secondary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-tabs-nav-add:hover {
+    color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 卡片式标签 */
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+    background-color: var(--datav-bg-color-primary);
+    border-bottom-color: var(--datav-bg-color-primary);
+  }
+
+  /* 内容区 */
+  .ant-tabs-content {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 下拉菜单 */
+  .ant-tabs-dropdown {
+    background-color: var(--datav-bg-color-primary);
+    border: 1px solid var(--datav-border-color-base);
+    box-shadow: var(--datav-box-shadow-base);
+  }
+
+  .ant-tabs-dropdown-menu-item {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tabs-dropdown-menu-item:hover {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-tabs-dropdown-menu-item-active {
+    color: var(--ant-primary-color);
+  }
+}
+

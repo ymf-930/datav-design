@@ -107,7 +107,7 @@
       </div>
     </div>
     <template #footer>
-      <a-button @click="handleDown" type="text">关闭</a-button>
+      <a-button @click="handleDown" ghost>关闭</a-button>
       <a-button type="primary" @click="handleOk">应用全局主题</a-button>
     </template>
   </a-modal>
@@ -322,7 +322,7 @@ defineExpose({ open })
     }
 
     &.active {
-      border: 2px solid var(--datav-primary-color);
+      border: 2px solid var(--ant-primary-color);
       border-bottom: 2px solid rgba(0, 0, 0, 0);
     }
 

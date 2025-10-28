@@ -113,7 +113,7 @@ function clear() {
       border-left: 1px solid var(--s-color-1);
     }
     &:hover {
-      border-color: var(--datav-primary-color);
+      border-color: var(--ant-primary-color);
     }
   }
 }

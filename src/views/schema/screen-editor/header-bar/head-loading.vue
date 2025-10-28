@@ -26,8 +26,8 @@ const loading = computed(() => toolbar.value.loading)
     linear,
     80% 46%,
     10% 21%,
-    from(var(--datav-primary-color-lighter)),
-    to(var(--datav-primary-color))
+    from(var(--ant-primary-1)),
+    to(var(--ant-primary-color))
   );
   transition: height 0.5s;
 

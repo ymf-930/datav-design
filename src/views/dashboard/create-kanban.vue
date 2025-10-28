@@ -319,7 +319,7 @@ defineExpose({
     border-radius: var(--datav-border-radius-base);
     transition: 0.2s;
     &.selected {
-      border: 1px solid var(--datav-primary-color);
+      border: 1px solid var(--ant-primary-color);
     }
     > .anticon {
       font-size: 40px;
@@ -339,7 +339,7 @@ defineExpose({
       width: 24px;
       text-align: center;
       &:hover {
-        color: var(--datav-primary-color);
+        color: var(--ant-primary-color);
         background: var(--s-color-1);
         border-radius: 5px;
       }
@@ -381,7 +381,7 @@ defineExpose({
     border-radius: var(--datav-border-radius-base);
     overflow: hidden;
     &:hover {
-      border: 1px solid var(--datav-primary-color);
+      border: 1px solid var(--ant-primary-color);
       .preview-image img {
         transform: scale(1.15);
       }
@@ -439,7 +439,7 @@ defineExpose({
         sans-serif;
     }
     &.selected {
-      border: 1px solid var(--datav-primary-color);
+      border: 1px solid var(--ant-primary-color);
     }
   }
   .template-item-placeholder {

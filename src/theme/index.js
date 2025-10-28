@@ -7,6 +7,9 @@ export * from './config/chart-theme'
 // 导出hooks
 export * from './hooks'
 
+// 导出 CSS 变量工具
+export * from './utils/css-vars'
+
 // 导出默认配置组件
 export { default as ThemeConfig } from './components/index.vue'
 

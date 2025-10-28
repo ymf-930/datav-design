@@ -150,7 +150,7 @@ function openCustomTheme() {
     height: 3px;
   }
   &.active {
-    border: 1px solid var(--datav-primary-color);
+    border: 1px solid var(--ant-primary-color);
     border-bottom: 1px solid rgba(0, 0, 0, 0);
   }
   &.current {

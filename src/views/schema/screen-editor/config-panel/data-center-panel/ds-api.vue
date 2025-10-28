@@ -363,10 +363,10 @@ export default {
           line-height: 42px;
           color: #fff;
           &.D {
-            color: var(--datav-primary-color);
+            color: var(--ant-primary-color);
           }
           &.M {
-            color: var(--datav-success-color);
+            color: var(--ant-success-color);
           }
         }
         .column-list {
@@ -386,13 +386,13 @@ export default {
             text-overflow: ellipsis;
             margin-bottom: var(--datav-border-radius-sm);
             color: var(--s-text-color);
-            background: var(--datav-primary-color-light);
-            border: 1px solid var(--datav-primary-color);
+            background: var(--ant-primary-2);
+            border: 1px solid var(--ant-primary-color);
             &.D .svg-icon-wrapper {
-              color: var(--datav-primary-color);
+              color: var(--ant-primary-color);
             }
             &.M .svg-icon-wrapper {
-              color: var(--datav-success-color);
+              color: var(--ant-success-color);
             }
             .field-title {
               min-width: 100px;
@@ -410,7 +410,7 @@ export default {
               font-size: var(--datav-font-size-base);
               color: var(--s-text-color);
               &:hover {
-                color: var(--datav-primary-color-active);
+                color: var(--ant-primary-color-active);
               }
             }
             .b-icon-delete {
@@ -421,7 +421,7 @@ export default {
               font-size: var(--datav-font-size-base);
               color: var(--s-text-color);
               &:hover {
-                color: var(--datav-error-color-hover);
+                color: var(--ant-error-color-hover);
               }
             }
           }
@@ -469,10 +469,10 @@ export default {
     }
     .ant-tree-node-content-wrapper {
       .D > .anticon {
-        color: var(--datav-primary-color);
+        color: var(--ant-primary-color);
       }
       .M > .anticon {
-        color: var(--datav-success-color);
+        color: var(--ant-success-color);
       }
     }
   }

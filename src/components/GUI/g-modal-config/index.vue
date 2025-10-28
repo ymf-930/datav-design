@@ -256,8 +256,8 @@ watch(
       height: 2px;
       background-image: linear-gradient(
         270deg,
-        var(--datav-primary-color) 0,
-        var(--datav-primary-color-outline) 74%
+        var(--ant-primary-color) 0,
+        var(--ant-primary-color-outline) 74%
       );
     }
     
@@ -276,7 +276,7 @@ watch(
       left: 10px;
       width: var(--datav-border-radius-base);
       height: var(--datav-border-radius-base);
-      background: var(--datav-primary-color);
+      background: var(--ant-primary-color);
     }
   }
 }

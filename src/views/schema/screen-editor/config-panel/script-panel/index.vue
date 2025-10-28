@@ -97,7 +97,7 @@ function handleSuccess(val) {
     font-size: 13px;
     color: #b478cf;
     .params {
-      color: var(--datav-warning-color);
+      color: var(--ant-warning-color);
     }
     .bottom {
       margin-bottom: 5px;

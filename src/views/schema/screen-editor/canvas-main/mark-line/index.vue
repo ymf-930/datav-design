@@ -262,7 +262,7 @@ onBeforeUnmount(() => {
   right: 0;
 }
 .line {
-  background: var(--datav-primary-color);
+  background: var(--ant-primary-color);
   position: absolute;
   z-index: 1000;
 }

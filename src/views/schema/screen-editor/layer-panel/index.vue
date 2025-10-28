@@ -331,14 +331,14 @@ const cancelSelectCom = () => schemaStore.selectCom()
       .show-toggle-btn {
         display: block;
         &.b-icon-lock {
-          color: var(--datav-primary-color);
+          color: var(--ant-primary-color);
         }
       }
     }
 
     &.selected {
       background: var(--s-color-1);
-      border: 1px solid var(--datav-primary-color);
+      border: 1px solid var(--ant-primary-color);
       .show-toggle-btn {
         display: block;
       }
@@ -388,7 +388,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
     }
     &.selected {
       background: var(--s-color-1);
-      border: 1px solid var(--datav-primary-color);
+      border: 1px solid var(--ant-primary-color);
     }
   }
 }

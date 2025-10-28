@@ -7,9 +7,16 @@
 
 const mainColor = '#1890ff' // 使用 Ant Design 默认主色
 export const Theme = {
-  // -----------------system---------------------//
-  antColorPrimary: mainColor,
-  antColorPrimaryAlpha1: `${mainColor}1a`, // 10% 透明度
+  // 主题色配置 - 会自动生成 Ant Design 官方规范的衍生色
+  // 生成：--ant-primary-color, --ant-primary-color-hover, --ant-primary-color-active, --ant-primary-color-outline
+  //      --ant-primary-1 ~ --ant-primary-7 (色板)
+  antPrimaryColor: mainColor,
+  
+  // 其他颜色（可选配置）
+  // antSuccessColor: '#52c41a',
+  // antWarningColor: '#faad14',
+  // antErrorColor: '#ff4d4f',
+  // antInfoColor: '#1890ff',
 }
 
 // 主题颜色面板 - 使用 Ant Design 色彩体系

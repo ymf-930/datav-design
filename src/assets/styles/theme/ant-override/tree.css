@@ -1,0 +1,65 @@
+/* Ant Design Vue Tree 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 树节点 */
+  .ant-tree {
+    background-color: transparent;
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tree-node-content-wrapper {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tree-node-content-wrapper:hover {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-tree-node-selected .ant-tree-node-content-wrapper {
+    background-color: var(--ant-primary-2);
+    color: var(--ant-primary-color);
+  }
+
+  /* 展开/收起图标 */
+  .ant-tree-switcher {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-tree-switcher:hover {
+    color: var(--ant-primary-color);
+  }
+
+  /* 复选框 */
+  .ant-tree-checkbox {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tree-checkbox-inner {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 目录树 */
+  .ant-tree-directory .ant-tree-treenode:hover::before {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-tree-directory .ant-tree-treenode-selected::before {
+    background-color: var(--ant-primary-2);
+  }
+
+  /* 拖拽 */
+  .ant-tree-treenode-draggable {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-tree-drop-indicator {
+    background-color: var(--ant-primary-color);
+  }
+}
+

@@ -1,0 +1,93 @@
+/* Ant Design Vue Modal 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 遮罩层 */
+  .ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  /* 模态框容器 */
+  .ant-modal-content {
+    background-color: var(--datav-bg-color-primary);
+    border: 1px solid var(--datav-border-color-base);
+    box-shadow: var(--datav-box-shadow-base);
+    backdrop-filter: blur(20px);
+  }
+
+  /* 模态框头部 */
+  .ant-modal-header {
+    background-color: var(--datav-bg-color-secondary);
+    border-bottom-color: var(--datav-border-color-split);
+  }
+
+  .ant-modal-title {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 关闭按钮 */
+  .ant-modal-close {
+    color: var(--datav-text-color-secondary);
+    background-color: transparent;
+  }
+
+  .ant-modal-close:hover {
+    color: var(--ant-error-color);
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  .ant-modal-close-x {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-modal-close:hover .ant-modal-close-x {
+    color: var(--ant-error-color);
+  }
+
+  .ant-modal-close .anticon {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-modal-close:hover .anticon {
+    color: var(--ant-error-color);
+  }
+
+  /* 模态框主体 */
+  .ant-modal-body {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  /* 模态框底部 */
+  .ant-modal-footer {
+    background-color: var(--datav-bg-color-secondary);
+    border-top-color: var(--datav-border-color-split);
+  }
+
+  /* 确认对话框 */
+  .ant-modal-confirm-body .ant-modal-confirm-title {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-modal-confirm-body .ant-modal-confirm-content {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 图标颜色 */
+  .ant-modal-confirm-warning .ant-modal-confirm-body > .anticon,
+  .ant-modal-confirm-confirm .ant-modal-confirm-body > .anticon {
+    color: var(--ant-warning-color);
+  }
+
+  .ant-modal-confirm-error .ant-modal-confirm-body > .anticon {
+    color: var(--ant-error-color);
+  }
+
+  .ant-modal-confirm-success .ant-modal-confirm-body > .anticon {
+    color: var(--ant-success-color);
+  }
+
+  .ant-modal-confirm-info .ant-modal-confirm-body > .anticon {
+    color: var(--ant-primary-color);
+  }
+}
+

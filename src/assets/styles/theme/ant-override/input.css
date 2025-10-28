@@ -1,0 +1,173 @@
+/* Ant Design Vue Input 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 输入框基础样式 */
+  .ant-input,
+  .ant-input-affix-wrapper {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input::placeholder,
+  .ant-input-affix-wrapper input::placeholder {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-input:hover,
+  .ant-input-affix-wrapper:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-input:focus,
+  .ant-input-focused,
+  .ant-input-affix-wrapper-focused {
+    border-color: var(--ant-primary-color);
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+
+  .ant-input[disabled],
+  .ant-input-affix-wrapper-disabled {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  /* 输入框前后缀 */
+  .ant-input-prefix,
+  .ant-input-suffix {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 清除图标 */
+  .ant-input-clear-icon {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-input-clear-icon:hover {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 数字输入框 */
+  .ant-input-number {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-number:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-input-number:focus,
+  .ant-input-number-focused {
+    border-color: var(--ant-primary-color);
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+
+  /* 数字输入框内部输入元素 */
+  .ant-input-number-input {
+    color: var(--datav-text-color-primary);
+    background-color: transparent;
+  }
+
+  .ant-input-number-input::placeholder {
+    color: var(--datav-text-color-disabled);
+  }
+
+  /* 数字输入框操作按钮容器 */
+  .ant-input-number-handler-wrap {
+    background: var(--datav-bg-color-secondary);
+    border-left-color: var(--datav-border-color-base);
+  }
+
+  /* 数字输入框操作按钮 */
+  .ant-input-number-handler {
+    color: var(--datav-text-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-number-handler:hover {
+    color: var(--ant-primary-color);
+  }
+
+  .ant-input-number-handler:active {
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  .ant-input-number-handler-up-inner,
+  .ant-input-number-handler-down-inner {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-input-number-handler:hover .ant-input-number-handler-up-inner,
+  .ant-input-number-handler:hover .ant-input-number-handler-down-inner {
+    color: var(--ant-primary-color);
+  }
+
+  /* 数字输入框操作按钮禁用状态 */
+  .ant-input-number-handler-up-disabled,
+  .ant-input-number-handler-down-disabled {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-input-number-handler-up-disabled:hover,
+  .ant-input-number-handler-down-disabled:hover {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-input-number-handler-up-disabled .ant-input-number-handler-up-inner,
+  .ant-input-number-handler-down-disabled .ant-input-number-handler-down-inner {
+    color: var(--datav-text-color-disabled);
+  }
+
+  /* 数字输入框禁用状态 */
+  .ant-input-number-disabled {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-input-number-disabled .ant-input-number-input {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-input-number-disabled .ant-input-number-handler-wrap {
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  /* 数字输入框组 */
+  .ant-input-number-group-addon {
+    color: var(--datav-text-color-secondary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-number-group-wrapper .ant-input-number-group-addon:first-child {
+    border-right-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-number-group-wrapper .ant-input-number-group-addon:last-child {
+    border-left-color: var(--datav-border-color-base);
+  }
+
+  /* 文本域 */
+  .ant-input-textarea-show-count::after {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 搜索框 */
+  .ant-input-search .ant-input-group-addon {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 密码输入框 */
+  .ant-input-password-icon {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-input-password-icon:hover {
+    color: var(--datav-text-color-primary);
+  }
+}
+

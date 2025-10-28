@@ -1,0 +1,95 @@
+/* Ant Design Vue Message 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 消息提示 */
+  .ant-message-notice-content {
+    background-color: var(--datav-bg-color-secondary);
+    border: 1px solid var(--datav-border-color-base);
+    box-shadow: var(--datav-box-shadow-base);
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 不同类型的消息 */
+  .ant-message-success .anticon {
+    color: var(--ant-success-color);
+  }
+
+  .ant-message-error .anticon {
+    color: var(--ant-error-color);
+  }
+
+  .ant-message-warning .anticon {
+    color: var(--ant-warning-color);
+  }
+
+  .ant-message-info .anticon,
+  .ant-message-loading .anticon {
+    color: var(--ant-primary-color);
+  }
+
+  /* 通知 */
+  .ant-notification-notice {
+    background-color: var(--datav-bg-color-secondary);
+    border: 1px solid var(--datav-border-color-base);
+    box-shadow: var(--datav-box-shadow-base);
+  }
+
+  .ant-notification-notice-message {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-notification-notice-description {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-notification-notice-close {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-notification-notice-close:hover {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 不同类型的通知图标 */
+  .ant-notification-notice-with-icon .ant-notification-notice-icon-success {
+    color: var(--ant-success-color);
+  }
+
+  .ant-notification-notice-with-icon .ant-notification-notice-icon-error {
+    color: var(--ant-error-color);
+  }
+
+  .ant-notification-notice-with-icon .ant-notification-notice-icon-warning {
+    color: var(--ant-warning-color);
+  }
+
+  .ant-notification-notice-with-icon .ant-notification-notice-icon-info {
+    color: var(--ant-primary-color);
+  }
+
+  /* Alert 警告提示 */
+  .ant-alert {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-alert-success {
+    background-color: var(--ant-success-color-deprecated-bg);
+    border-color: var(--ant-success-color-deprecated-border);
+  }
+
+  .ant-alert-info {
+    background-color: var(--ant-info-color-deprecated-bg);
+    border-color: var(--ant-info-color-deprecated-border);
+  }
+
+  .ant-alert-warning {
+    background-color: var(--ant-warning-color-deprecated-bg);
+    border-color: var(--ant-warning-color-deprecated-border);
+  }
+
+  .ant-alert-error {
+    background-color: var(--ant-error-color-deprecated-bg);
+    border-color: var(--ant-error-color-deprecated-border);
+  }
+}
+

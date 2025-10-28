@@ -13,7 +13,8 @@ import { registerCommonComps } from '@/components/Common'
 import { registerGUI } from '@/components/GUI'
 import { registerVCharts } from '@/components/Schema'
 
-import 'ant-design-vue/dist/antd.css'
+// 使用 variable 版本支持动态主题切换
+import 'ant-design-vue/dist/antd.variable.css'
 import 'bin-datav/lib/styles/index.css'
 // 引入动画
 import 'animate.css'

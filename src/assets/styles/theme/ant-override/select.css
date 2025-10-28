@@ -1,0 +1,90 @@
+/* Ant Design Vue Select 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 选择器 */
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: var(--ant-primary-color);
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+
+  .ant-select-selector {
+    background-color: var(--datav-bg-color-secondary) !important;
+    border-color: var(--datav-border-color-base) !important;
+  }
+
+  .ant-select-selection-placeholder {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-select-selection-item {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-select-arrow {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-select-clear {
+    background: var(--datav-bg-color-secondary);
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-select-clear:hover {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 下拉面板 */
+  .ant-select-dropdown {
+    background-color: var(--datav-bg-color-primary);
+    box-shadow: var(--datav-box-shadow-base);
+    border: 1px solid var(--datav-border-color-base);
+  }
+
+  .ant-select-item {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: var(--ant-primary-2);
+    color: var(--ant-primary-color);
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-select-item-option-disabled {
+    color: var(--datav-text-color-disabled);
+  }
+
+  /* 分组 */
+  .ant-select-item-group {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 多选 */
+  .ant-select-multiple .ant-select-selection-item {
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-base);
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-select-multiple .ant-select-selection-item-remove {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-select-multiple .ant-select-selection-item-remove:hover {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 禁用状态 */
+  .ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: var(--datav-bg-color-tertiary);
+    color: var(--datav-text-color-disabled);
+  }
+}
+

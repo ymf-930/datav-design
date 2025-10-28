@@ -194,7 +194,7 @@ const onRotate = e => {
 
     .dv-com {
       .dv-event-disable {
-        border: 1px solid var(--datav-primary-color);
+        border: 1px solid var(--ant-primary-color);
       }
     }
 
@@ -206,7 +206,7 @@ const onRotate = e => {
       bottom: 0;
       left: 0;
       z-index: -1;
-      border: 1px dashed var(--datav-primary-color);
+      border: 1px dashed var(--ant-primary-color);
     }
   }
 
@@ -253,7 +253,7 @@ const onRotate = e => {
       bottom: 0;
       left: 0;
       z-index: -1;
-      border: 1px dashed var(--datav-primary-color);
+      border: 1px dashed var(--ant-primary-color);
     }
   }
 }
@@ -288,7 +288,7 @@ const onRotate = e => {
       transform: translate(-50%, 0);
       width: 1px;
       height: 18px;
-      background-color: var(--datav-primary-color);
+      background-color: var(--ant-primary-color);
     }
   }
 
@@ -299,7 +299,7 @@ const onRotate = e => {
     height: var(--datav-border-radius-lg);
     background: #fff;
     border-radius: 5px;
-    border: 1px solid var(--datav-primary-color);
+    border: 1px solid var(--ant-primary-color);
 
     &.top-handler {
       top: 0;

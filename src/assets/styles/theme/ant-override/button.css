@@ -1,0 +1,165 @@
+/* Ant Design Vue Button 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 默认按钮 */
+  .ant-btn {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-btn:hover {
+    color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-btn:active {
+    color: var(--ant-primary-color-active);
+    border-color: var(--ant-primary-color-active);
+  }
+
+  .ant-btn:focus {
+    color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 主要按钮 */
+  .ant-btn-primary {
+    color: #fff;
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-btn-primary:hover {
+    color: #fff;
+    background-color: var(--ant-primary-color-hover);
+    border-color: var(--ant-primary-color-hover);
+  }
+
+  .ant-btn-primary:active {
+    color: #fff;
+    background-color: var(--ant-primary-color-active);
+    border-color: var(--ant-primary-color-active);
+  }
+
+  /* 虚线按钮 */
+  .ant-btn-dashed {
+    color: var(--datav-text-color-primary);
+    background-color: transparent;
+    border-color: var(--datav-border-color-base);
+    border-style: dashed;
+  }
+
+  .ant-btn-dashed:hover {
+    color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 文本按钮 */
+  .ant-btn-text {
+    color: var(--datav-text-color-primary);
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .ant-btn-text:hover {
+    color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-tertiary);
+  }
+
+  /* 链接按钮 */
+  .ant-btn-link {
+    color: var(--ant-primary-color);
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .ant-btn-link:hover {
+    color: var(--ant-primary-color-hover);
+  }
+
+  /* 危险按钮 */
+  .ant-btn-dangerous {
+    color: var(--ant-error-color);
+    border-color: var(--ant-error-color);
+  }
+
+  .ant-btn-dangerous:hover {
+    color: var(--ant-error-color-hover);
+    border-color: var(--ant-error-color-hover);
+    background-color: rgba(255, 77, 79, 0.1);
+  }
+
+  .ant-btn-primary.ant-btn-dangerous {
+    color: #fff;
+    background-color: var(--ant-error-color);
+    border-color: var(--ant-error-color);
+  }
+
+  .ant-btn-primary.ant-btn-dangerous:hover {
+    color: #fff;
+    background-color: var(--ant-error-color-hover);
+    border-color: var(--ant-error-color-hover);
+  }
+
+  /* 禁用按钮 */
+  .ant-btn-disabled,
+  .ant-btn[disabled] {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-btn-disabled:hover,
+  .ant-btn[disabled]:hover {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  /* 加载状态 */
+  .ant-btn-loading {
+    opacity: 0.7;
+  }
+
+  /* 按钮图标 */
+  .ant-btn > .anticon {
+    color: inherit;
+  }
+
+  /* 按钮组 */
+  .ant-btn-group .ant-btn {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-btn-group .ant-btn:not(:first-child) {
+    border-left-color: var(--datav-border-color-split);
+  }
+
+  .ant-btn-group .ant-btn:hover {
+    border-color: var(--ant-primary-color);
+    z-index: 1;
+  }
+
+  .ant-btn-group .ant-btn-primary:not(:first-child) {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* 圆形按钮 */
+  .ant-btn-circle,
+  .ant-btn-round {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 背景透明按钮（用于 icon-only） */
+  .ant-btn-icon-only {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-btn-icon-only:hover {
+    color: var(--ant-primary-color);
+  }
+}
+

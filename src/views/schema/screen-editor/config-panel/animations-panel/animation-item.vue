@@ -63,8 +63,8 @@ const addAnimation = item => {
   border-radius: 3px;
   cursor: pointer;
   &.active {
-    color: var(--datav-primary-color);
-    border: 1px solid var(--datav-primary-color);
+    color: var(--ant-primary-color);
+    border: 1px solid var(--ant-primary-color);
   }
 }
 .animation-item {

@@ -130,7 +130,7 @@ const click = comp => emit('click', comp)
       }
     }
     &:hover {
-      border-color: var(--datav-primary-color-active);
+      border-color: var(--ant-primary-color-active);
       background: #2a292f;
       .hover-layer {
         display: block;

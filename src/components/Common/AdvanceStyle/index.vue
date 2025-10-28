@@ -50,12 +50,12 @@
               <AntIcon name="FileTextOutlined"></AntIcon>
               说明
             </a-tag>
-            <span class="pl-5" style="color: var(--datav-error-color)">
+            <span class="pl-5" style="color: var(--ant-error-color)">
               高级样式配置，格式为style对象，会覆盖默认配置
             </span>
           </div>
           <div>
-            <a-button @click="visible = false">关闭</a-button>
+            <a-button @click="visible = false" ghost>关闭</a-button>
             <a-button type="primary" @click="handleSave">保存</a-button>
           </div>
         </div>
@@ -136,7 +136,7 @@ async function handleSave() {
     font-size: var(--datav-font-size-base);
     color: #b478cf;
     .params {
-      color: var(--datav-primary-color);
+      color: var(--ant-primary-color);
     }
     .code {
       padding: 5px 5px 5px 0;

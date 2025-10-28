@@ -103,13 +103,13 @@ const toggleShow = () => {
       bottom: 10px;
       width: 3px;
       border-radius: 2px;
-      background-color: var(--datav-primary-color);
+      background-color: var(--ant-primary-color);
       transition: 0.2s;
     }
     &.active {
       border-bottom: 1px solid var(--s-color-1);
       &::before {
-        background-color: var(--datav-primary-color);
+        background-color: var(--ant-primary-color);
       }
     }
     .wrap-name {

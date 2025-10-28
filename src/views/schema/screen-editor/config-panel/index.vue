@@ -128,7 +128,7 @@ watch(
             left: 0px;
             width: var(--datav-border-radius-base);
             height: var(--datav-border-radius-base);
-            background: var(--datav-primary-color);
+            background: var(--ant-primary-color);
           }
         }
       }

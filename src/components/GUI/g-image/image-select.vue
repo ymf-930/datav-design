@@ -202,7 +202,7 @@ defineExpose({ open })
         max-height: 100%;
       }
       &:hover {
-        border-color: var(--datav-primary-color);
+        border-color: var(--ant-primary-color);
       }
     }
   }

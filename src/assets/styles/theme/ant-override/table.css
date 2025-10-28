@@ -1,0 +1,108 @@
+/* Ant Design Vue Table 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 表格容器 */
+  .ant-table-wrapper {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 表格 */
+  .ant-table {
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  /* 表头 */
+  .ant-table-thead > tr > th {
+    background-color: var(--datav-bg-color-secondary);
+    color: var(--datav-text-color-primary);
+    border-bottom-color: var(--datav-border-color-base);
+  }
+
+  .ant-table-thead > tr > th::before {
+    background-color: var(--datav-border-color-base);
+  }
+
+  /* 表格行 */
+  .ant-table-tbody > tr > td {
+    border-bottom-color: var(--datav-border-color-split);
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-table-tbody > tr.ant-table-row-selected > td {
+    background-color: var(--ant-primary-2);
+  }
+
+  /* 空数据 */
+  .ant-table-placeholder {
+    background-color: var(--datav-bg-color-primary);
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-empty-description {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 固定列阴影 */
+  .ant-table-cell-fix-left,
+  .ant-table-cell-fix-right {
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  /* 排序图标 */
+  .ant-table-column-sorter-up,
+  .ant-table-column-sorter-down {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-table-column-sorter-up.active,
+  .ant-table-column-sorter-down.active {
+    color: var(--ant-primary-color);
+  }
+
+  /* 筛选图标 */
+  .ant-table-filter-trigger {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-table-filter-trigger.active {
+    color: var(--ant-primary-color);
+  }
+
+  /* 筛选下拉 */
+  .ant-table-filter-dropdown {
+    background-color: var(--datav-bg-color-primary);
+    border: 1px solid var(--datav-border-color-base);
+    box-shadow: var(--datav-box-shadow-base);
+  }
+
+  .ant-table-filter-dropdown .ant-dropdown-menu {
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  .ant-table-filter-dropdown .ant-dropdown-menu-item {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-table-filter-dropdown .ant-dropdown-menu-item:hover {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 分页 */
+  .ant-table-pagination {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 展开行 */
+  .ant-table-expanded-row > td {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 小号表格 */
+  .ant-table-small .ant-table-thead > tr > th {
+    background-color: var(--datav-bg-color-secondary);
+  }
+}
+

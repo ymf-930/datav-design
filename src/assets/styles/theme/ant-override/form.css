@@ -1,0 +1,100 @@
+/* Ant Design Vue Form 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 表单项标签 */
+  .ant-form-item-label > label {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    color: var(--ant-error-color);
+  }
+
+  /* 表单项说明 */
+  .ant-form-item-explain,
+  .ant-form-item-extra {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 错误提示 */
+  .ant-form-item-explain-error {
+    color: var(--ant-error-color);
+  }
+
+  /* 成功提示 */
+  .ant-form-item-explain-success {
+    color: var(--ant-success-color);
+  }
+
+  /* 警告提示 */
+  .ant-form-item-explain-warning {
+    color: var(--ant-warning-color);
+  }
+
+  /* 校验状态 */
+  .ant-form-item-has-error .ant-input,
+  .ant-form-item-has-error .ant-input-affix-wrapper,
+  .ant-form-item-has-error .ant-input:hover,
+  .ant-form-item-has-error .ant-input-affix-wrapper:hover {
+    border-color: var(--ant-error-color);
+  }
+
+  .ant-form-item-has-error .ant-input:focus,
+  .ant-form-item-has-error .ant-input-affix-wrapper-focused {
+    border-color: var(--ant-error-color);
+    box-shadow: 0 0 0 2px var(--ant-error-color-outline);
+  }
+
+  /* Checkbox & Radio */
+  .ant-checkbox-wrapper,
+  .ant-radio-wrapper {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-checkbox-inner {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-checkbox-disabled .ant-checkbox-inner {
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-radio-inner {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-radio-checked .ant-radio-inner {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-inner::after {
+    background-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-disabled .ant-radio-inner {
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  /* Switch */
+  .ant-switch {
+    background-color: var(--datav-border-color-base);
+  }
+
+  .ant-switch-checked {
+    background-color: var(--ant-primary-color);
+  }
+
+  .ant-switch-disabled {
+    opacity: 0.5;
+  }
+}
+

@@ -314,7 +314,7 @@ onBeforeUnmount(cancelListen)
       letter-spacing: 1px;
     }
     &:hover {
-      border-color: var(--datav-primary-color);
+      border-color: var(--ant-primary-color);
       &::after {
         content: '';
         position: absolute;
@@ -347,9 +347,9 @@ onBeforeUnmount(cancelListen)
         max-width: 200px;
         font-size: 20px;
         letter-spacing: 2px;
-        color: var(--datav-primary-color);
+        color: var(--ant-primary-color);
         padding: 0 10px;
-        border-left: 2px solid var(--datav-primary-color);
+        border-left: 2px solid var(--ant-primary-color);
         font-weight: normal;
       }
     }
@@ -386,7 +386,7 @@ onBeforeUnmount(cancelListen)
       outline: 1px solid transparent;
       transition: 0.2s;
       &:hover {
-        outline: 1px solid var(--datav-primary-color);
+        outline: 1px solid var(--ant-primary-color);
         .list-item-img .list-item-mask {
           opacity: 1;
         }
@@ -443,7 +443,7 @@ onBeforeUnmount(cancelListen)
               margin-left: var(--datav-border-radius-lg);
             }
             &:hover {
-              color: var(--datav-primary-color);
+              color: var(--ant-primary-color);
             }
           }
         }
@@ -462,7 +462,7 @@ onBeforeUnmount(cancelListen)
               margin-left: var(--datav-font-size-sm);
             }
             &:hover {
-              color: var(--datav-primary-color);
+              color: var(--ant-primary-color);
             }
           }
         }

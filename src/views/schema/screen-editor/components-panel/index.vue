@@ -277,10 +277,10 @@ function closePanel() {
         }
 
         &.active {
-          color: var(--datav-primary-color);
+          color: var(--ant-primary-color);
           background: var(--s-color-1);
           .com-tab-icon {
-            color: var(--datav-primary-color);
+            color: var(--ant-primary-color);
           }
         }
       }

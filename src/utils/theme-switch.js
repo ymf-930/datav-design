@@ -96,32 +96,14 @@ export function watchSystemTheme() {
 /**
  * 动态加载主题样式
  * @param {string} theme - 主题类型
+ * @deprecated 已使用 antd.variable.css，不再需要动态加载样式文件
+ * 
+ * 新的主题系统通过 CSS 变量实现，无需动态加载不同的 CSS 文件
  */
 export function loadThemeStyles(theme) {
-  // 移除现有的主题样式
-  const existingLink = document.querySelector('link[data-theme-styles]')
-  if (existingLink) {
-    existingLink.remove()
-  }
-  
-  // 动态加载新的主题样式
-  const link = document.createElement('link')
-  link.rel = 'stylesheet'
-  link.setAttribute('data-theme-styles', 'true')
-  
-  if (theme === THEME_TYPES.DARK) {
-    link.href = '/node_modules/ant-design-vue/dist/antd.dark.css'
-  } else {
-    link.href = '/node_modules/ant-design-vue/dist/antd.css'
-  }
-  
-  document.head.appendChild(link)
+  console.warn('loadThemeStyles is deprecated. Theme switching is now handled by CSS variables in antd.variable.css')
+  // 不再需要动态加载样式，主题切换通过 CSS 变量实现
 }
-
-// 监听主题切换事件，动态加载样式
-window.addEventListener('theme-change', (e) => {
-  loadThemeStyles(e.detail.theme)
-})
 
 // 导出默认对象
 export default {

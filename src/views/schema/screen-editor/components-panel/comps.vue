@@ -65,7 +65,7 @@ const click = name => emit('click', name)
       width: 100%;
     }
     &:hover {
-      border-color: var(--datav-primary-color-active);
+      border-color: var(--ant-primary-color-active);
       background: #2a292f;
     }
   }

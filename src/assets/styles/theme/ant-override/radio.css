@@ -1,0 +1,153 @@
+/* Ant Design Vue Radio 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* Radio 基础样式 */
+  .ant-radio-wrapper {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-radio-wrapper:hover .ant-radio-inner {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Radio 圆形框 */
+  .ant-radio-inner {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-radio:hover .ant-radio-inner {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Radio 选中状态 */
+  .ant-radio-checked .ant-radio-inner {
+    border-color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  .ant-radio-inner::after {
+    background-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-checked::after {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Radio 禁用状态 */
+  .ant-radio-disabled .ant-radio-inner {
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-radio-disabled + span {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-radio-disabled.ant-radio-checked .ant-radio-inner::after {
+    background-color: var(--datav-text-color-disabled);
+  }
+
+  /* Radio Group */
+  .ant-radio-group {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* Radio Button 样式 */
+  .ant-radio-button-wrapper {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-radio-button-wrapper::before {
+    background-color: var(--datav-border-color-base);
+  }
+
+  .ant-radio-button-wrapper:hover {
+    color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-button-wrapper:first-child {
+    border-left-color: var(--datav-border-color-base);
+  }
+
+  /* Radio Button 选中状态 */
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+    background-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+    color: var(--ant-primary-color-hover);
+    border-color: var(--ant-primary-color-hover);
+  }
+
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Radio Button Focus 状态 */
+  .ant-radio-button-wrapper:focus-within {
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+
+  /* Radio Button 禁用状态 */
+  .ant-radio-button-wrapper-disabled {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-radio-button-wrapper-disabled:first-child {
+    border-left-color: var(--datav-border-color-split);
+  }
+
+  .ant-radio-button-wrapper-disabled.ant-radio-button-wrapper-checked {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  /* Radio Button Solid 样式 */
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: #fff;
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+    color: #fff;
+    background-color: var(--ant-primary-color-hover);
+    border-color: var(--ant-primary-color-hover);
+  }
+
+  .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):active {
+    color: #fff;
+    background-color: var(--ant-primary-color-active);
+    border-color: var(--ant-primary-color-active);
+  }
+
+  /* Radio Button Large Size */
+  .ant-radio-button-wrapper-lg {
+    font-size: var(--datav-font-size-lg);
+  }
+
+  /* Radio Button Small Size */
+  .ant-radio-button-wrapper-sm {
+    font-size: var(--datav-font-size-sm);
+  }
+
+  /* Radio 输入框 */
+  .ant-radio-input:focus + .ant-radio-inner {
+    border-color: var(--ant-primary-color);
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+}
+

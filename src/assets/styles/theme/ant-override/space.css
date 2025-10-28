@@ -1,0 +1,79 @@
+/* Ant Design Vue Space 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* Space 组件基础样式 */
+  .ant-space {
+    color: var(--datav-text-color-primary)!important;
+  }
+
+  /* Space 分割线 */
+  .ant-space-item-split {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* Compact 模式 */
+  .ant-space-compact {
+    background-color: transparent;
+  }
+
+  /* Compact 模式下的按钮组 */
+  .ant-space-compact .ant-btn {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-space-compact .ant-btn:not(:first-child) {
+    border-left-color: var(--datav-border-color-split);
+  }
+
+  .ant-space-compact .ant-btn:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Compact 模式下的输入框组 */
+  .ant-space-compact .ant-input,
+  .ant-space-compact .ant-input-number {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-space-compact .ant-input:not(:first-child),
+  .ant-space-compact .ant-input-number:not(:first-child) {
+    border-left-color: var(--datav-border-color-split);
+  }
+
+  .ant-space-compact .ant-input:hover,
+  .ant-space-compact .ant-input-number:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Compact 模式下的选择框组 */
+  .ant-space-compact .ant-select .ant-select-selector {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-space-compact .ant-select:not(:first-child) .ant-select-selector {
+    border-left-color: var(--datav-border-color-split);
+  }
+
+  .ant-space-compact .ant-select:hover .ant-select-selector {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* Space 垂直布局 */
+  .ant-space-vertical {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* Space 水平布局 */
+  .ant-space-horizontal {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* Space 对齐方式 */
+  .ant-space-align-start,
+  .ant-space-align-end,
+  .ant-space-align-center,
+  .ant-space-align-baseline {
+    color: inherit;
+  }
+}
+
