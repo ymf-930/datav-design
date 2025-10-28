@@ -184,6 +184,7 @@ const currentNameEn = computed(() => {
       margin-bottom: 8px;
       .color-pinyin {
         font-size: 13px;
+        color: var(--datav-text-color-primary);
       }
     }
   }

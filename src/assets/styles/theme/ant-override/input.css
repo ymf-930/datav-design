@@ -39,12 +39,39 @@
     color: var(--datav-text-color-secondary);
   }
 
-  /* 清除图标 */
-  .ant-input-clear-icon {
+  /* 前后缀中的图标 */
+  .ant-input-prefix .anticon,
+  .ant-input-suffix .anticon {
     color: var(--datav-text-color-secondary);
   }
 
+  /* 前后缀中的图标 hover 状态 */
+  .ant-input-affix-wrapper:hover .ant-input-prefix .anticon,
+  .ant-input-affix-wrapper:hover .ant-input-suffix .anticon {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* Focus 状态下的图标 */
+  .ant-input-affix-wrapper-focused .ant-input-prefix .anticon,
+  .ant-input-affix-wrapper-focused .ant-input-suffix .anticon {
+    color: var(--ant-primary-color);
+  }
+
+  /* 清除图标 */
+  .ant-input-clear-icon {
+    color: var(--datav-text-color-secondary) !important;
+  }
+
   .ant-input-clear-icon:hover {
+    color: var(--datav-text-color-primary) !important;
+  }
+
+  /* 允许清除的输入框后缀图标 */
+  .ant-input-affix-wrapper-allow-clear .ant-input-suffix {
+    color: var(--datav-text-color-secondary);
+  }
+
+  .ant-input-affix-wrapper-allow-clear:hover .ant-input-suffix {
     color: var(--datav-text-color-primary);
   }
 
@@ -159,6 +186,44 @@
   /* 搜索框 */
   .ant-input-search .ant-input-group-addon {
     background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-search-button {
+    color: var(--datav-text-color-primary);
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-input-search-button:hover {
+    background-color: var(--ant-primary-color-hover);
+    border-color: var(--ant-primary-color-hover);
+  }
+
+  /* 搜索图标 */
+  .ant-input-search-icon {
+    color: var(--datav-text-color-primary) !important;
+  }
+
+  .ant-input-search-button .anticon {
+    color: #fff !important;
+  }
+
+  .ant-input-search-button:hover .anticon {
+    color: #fff !important;
+  }
+
+  /* 搜索框内的图标（非按钮模式） */
+  .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    color: #fff;
+  }
+
+  .ant-input-search > .ant-input-group > .ant-input-affix-wrapper:not(:last-child) {
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-input-search > .ant-input-group > .ant-input-affix-wrapper:not(:last-child):hover {
+    border-color: var(--ant-primary-color);
   }
 
   /* 密码输入框 */

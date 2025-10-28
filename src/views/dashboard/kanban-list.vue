@@ -9,17 +9,17 @@
         <h2>{{ group ? group.name : '' }} ({{ listData.total }})</h2>
       </div>
       <div class="header-manager">
-        <a-input-search
+        <a-input
           v-model:value="query.name"
           placeholder="搜索"
           allowClear
-          @search="
-            () => {
-              noData = true
-              getSearchList()
-            }
-          "
-        ></a-input-search>
+          @keyup.enter="handleSearch"
+          @clear="handleClear"
+        >
+          <template #suffix>
+            <AntIcon name="SearchOutlined" style="cursor: pointer" @click="handleSearch" />
+          </template>
+        </a-input>
       </div>
     </div>
     <!--列表-->
@@ -176,6 +176,21 @@ const getSearchList = async () => {
 
 const pageChange = async page => {
   query.page = page
+  await getSearchList()
+}
+
+// 搜索处理
+const handleSearch = async () => {
+  query.page = 1
+  noData.value = true
+  await getSearchList()
+}
+
+// 清除搜索
+const handleClear = async () => {
+  query.name = ''
+  query.page = 1
+  noData.value = false
   await getSearchList()
 }
 

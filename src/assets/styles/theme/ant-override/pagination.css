@@ -1,0 +1,194 @@
+/* Ant Design Vue Pagination 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 分页容器 */
+  .ant-pagination {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 分页项 */
+  .ant-pagination-item {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-pagination-item a {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-item:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-item:hover a {
+    color: var(--ant-primary-color);
+  }
+
+  /* 分页当前项 */
+  .ant-pagination-item-active {
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-item-active a {
+    color: #fff;
+  }
+
+  .ant-pagination-item-active:hover {
+    background-color: var(--ant-primary-color-hover);
+    border-color: var(--ant-primary-color-hover);
+  }
+
+  .ant-pagination-item-active:hover a {
+    color: #fff;
+  }
+
+  /* 分页省略号 */
+  .ant-pagination-jump-prev,
+  .ant-pagination-jump-next {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-pagination-jump-prev:hover,
+  .ant-pagination-jump-next:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+  .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-link-icon,
+  .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-link-icon {
+    color: var(--ant-primary-color);
+  }
+
+  /* 上一页/下一页按钮 */
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-prev button,
+  .ant-pagination-next button {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-pagination-prev:hover button,
+  .ant-pagination-next:hover button {
+    color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-prev button[disabled],
+  .ant-pagination-next button[disabled] {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-pagination-prev button[disabled]:hover,
+  .ant-pagination-next button[disabled]:hover {
+    color: var(--datav-text-color-disabled);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-pagination-disabled .ant-pagination-item-link {
+    color: var(--datav-text-color-disabled);
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  /* 快速跳转 */
+  .ant-pagination-options-quick-jumper {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-options-quick-jumper input {
+    color: var(--datav-text-color-primary);
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-pagination-options-quick-jumper input:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-options-quick-jumper input:focus {
+    border-color: var(--ant-primary-color);
+    box-shadow: 0 0 0 2px var(--ant-primary-color-outline);
+  }
+
+  /* 每页显示数选择器 */
+  .ant-pagination-options-size-changer {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-options-size-changer .ant-select-selector {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-options-size-changer:hover .ant-select-selector {
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 总数显示 */
+  .ant-pagination-total-text {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 简洁模式 */
+  .ant-pagination-simple .ant-pagination-simple-pager {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-simple .ant-pagination-simple-pager input {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-pagination-simple .ant-pagination-simple-pager input:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-simple .ant-pagination-slash {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* Mini 尺寸 */
+  .ant-pagination-mini .ant-pagination-item {
+    background-color: var(--datav-bg-color-secondary);
+    border-color: var(--datav-border-color-base);
+  }
+
+  .ant-pagination-mini .ant-pagination-item:hover {
+    border-color: var(--ant-primary-color);
+  }
+
+  .ant-pagination-mini .ant-pagination-item-active {
+    background-color: var(--ant-primary-color);
+    border-color: var(--ant-primary-color);
+  }
+
+  /* 禁用状态 */
+  .ant-pagination-disabled {
+    opacity: 0.5;
+  }
+
+  .ant-pagination-disabled .ant-pagination-item {
+    background-color: var(--datav-bg-color-tertiary);
+    border-color: var(--datav-border-color-split);
+  }
+
+  .ant-pagination-disabled .ant-pagination-item a {
+    color: var(--datav-text-color-disabled);
+  }
+}
+
