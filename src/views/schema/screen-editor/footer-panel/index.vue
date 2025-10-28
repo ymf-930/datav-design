@@ -14,8 +14,8 @@
     <div flex="cross:center">
       <a-dropdown :trigger="['click']">
         <div class="scale-input-wp">
-          <input
-            v-model="inputScale"
+          <a-input
+            v-model:value="inputScale"
             type="number"
             class="scale-input"
             @keydown.enter="submitScale(0)"
@@ -34,7 +34,7 @@
       </a-dropdown>
       <div class="scale-slider-wp">
         <a-slider
-          v-model="scale"
+          v-model:value="scale"
           :min="10"
           :max="200"
           :step="5"
