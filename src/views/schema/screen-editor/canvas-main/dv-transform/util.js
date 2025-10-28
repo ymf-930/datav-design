@@ -140,6 +140,11 @@ const setAttr = (ev, dir, com, scale, grid) => {
   const pos = Object.create(null)
   const startX = ev.clientX
   const startY = ev.clientY
+  
+  // 记录直线组件的原始宽度
+  const isStraightLine = com.name === 'VStraightLine'
+  const originalLineWidth = isStraightLine ? (com.config?.width || 5) : null
+  const originalLineAttr = isStraightLine ? { w: attr.w, h: attr.h } : null
 
   let hasMove = false
   const move = e => {
@@ -164,6 +169,17 @@ const setAttr = (ev, dir, com, scale, grid) => {
         pos,
         ratio,
       )
+      
+      // 直线组件的等比缩放逻辑
+      if (isStraightLine && originalLineWidth && originalLineAttr) {
+        // 计算当前容器尺寸的缩放比例
+        const scaleW = pos.w ? pos.w / originalLineAttr.w : attr.w / originalLineAttr.w
+        const scaleH = pos.h ? pos.h / originalLineAttr.h : attr.h / originalLineAttr.h
+        // 使用平均缩放比例，保证等比
+        const avgScale = (scaleW + scaleH) / 2
+        // 缩放线条宽度
+        com.config.width = Math.max(1, Math.min(20, Math.round(originalLineWidth * avgScale)))
+      }
     } else {
       if (ctrlKey) {
         pos.x = attr.x + moveX

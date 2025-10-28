@@ -1,5 +1,10 @@
 <template>
-  <div class="dv-wrapper" :style="wrapperStyle">
+  <div 
+    class="dv-wrapper" 
+    :style="wrapperStyle"
+    @mouseenter="showHandles = true"
+    @mouseleave="showHandles = false"
+  >
     <svg
       :width="svgWidth"
       :height="svgHeight"
@@ -8,13 +13,14 @@
     >
       <!-- 定义箭头标记 -->
       <defs>
+        <!-- 终点箭头（向右）- 箭头后端对准线段端点 -->
         <marker
-          v-if="config.arrowStyle !== 'none'"
-          id="arrowhead-straight"
+          v-if="config.arrowStyle === 'end' || config.arrowStyle === 'both'"
+          id="arrowhead-end"
           :markerWidth="arrowSize"
           :markerHeight="arrowSize"
-          refX="8"
-          refY="3"
+          refX="0"
+          :refY="arrowSize / 2"
           orient="auto"
           markerUnits="userSpaceOnUse"
         >
@@ -23,27 +29,61 @@
             :fill="config.color"
           />
         </marker>
+        
+        <!-- 起点箭头（向左）- 箭头后端对准线段端点 -->
+        <marker
+          v-if="config.arrowStyle === 'start' || config.arrowStyle === 'both'"
+          id="arrowhead-start"
+          :markerWidth="arrowSize"
+          :markerHeight="arrowSize"
+          :refX="arrowSize"
+          :refY="arrowSize / 2"
+          orient="auto"
+          markerUnits="userSpaceOnUse"
+        >
+          <polygon
+            :points="arrowPointsStart"
+            :fill="config.color"
+          />
+        </marker>
       </defs>
       
       <!-- 主线段 -->
       <line
-        :x1="lineConfig.x1"
-        :y1="lineConfig.y1"
-        :x2="lineConfig.x2"
-        :y2="lineConfig.y2"
+        :x1="actualCoords.x1"
+        :y1="actualCoords.y1"
+        :x2="actualCoords.x2"
+        :y2="actualCoords.y2"
         :stroke="config.color"
         :stroke-width="strokeWidth"
         :stroke-dasharray="dashArray"
-        stroke-linecap="round"
-        :marker-end="config.arrowStyle === 'end' || config.arrowStyle === 'both' ? 'url(#arrowhead-straight)' : undefined"
-        :marker-start="config.arrowStyle === 'start' || config.arrowStyle === 'both' ? 'url(#arrowhead-straight)' : undefined"
+        stroke-linecap="butt"
+        :marker-end="config.arrowStyle === 'end' || config.arrowStyle === 'both' ? 'url(#arrowhead-end)' : undefined"
+        :marker-start="config.arrowStyle === 'start' || config.arrowStyle === 'both' ? 'url(#arrowhead-start)' : undefined"
       />
+
+      <!-- 编辑模式：悬浮时显示可拖拽端点 -->
+      <template v-if="isEditorMode && showHandles">
+        <circle
+          v-for="(point, index) in endpoints"
+          :key="index"
+          :cx="actualCoords[index === 0 ? 'x1' : 'x2']"
+          :cy="actualCoords[index === 0 ? 'y1' : 'y2']"
+          :r="8"
+          :fill="config.color"
+          stroke="#fff"
+          :stroke-width="2"
+          class="endpoint-control"
+          :style="{ cursor: 'move' }"
+          @mousedown.stop="startDragEndpoint($event, index)"
+        />
+      </template>
     </svg>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch, inject } from 'vue'
 
 defineOptions({
   name: 'VStraightLine',
@@ -58,6 +98,27 @@ const props = defineProps({
 
 // config 配置项
 const config = computed(() => props.data.config)
+
+// 获取渲染模式
+const renderMode = inject('RenderModel', 'editor')
+const isEditorMode = computed(() => renderMode === 'editor')
+
+// 悬停时显示手柄
+const showHandles = ref(false)
+
+// 解析端点坐标
+const endpoints = ref([{ x: 10, y: 50 }, { x: 90, y: 50 }])
+
+watch(
+  () => [config.value.startX, config.value.startY, config.value.endX, config.value.endY],
+  () => {
+    endpoints.value = [
+      { x: config.value.startX || 10, y: config.value.startY || 50 },
+      { x: config.value.endX || 90, y: config.value.endY || 50 }
+    ]
+  },
+  { immediate: true }
+)
 
 const wrapperStyle = computed(() => {
   return {
@@ -75,46 +136,33 @@ const svgStyle = computed(() => {
   }
 })
 
-// SVG尺寸计算
+// SVG尺寸计算 - 扩展SVG尺寸以容纳箭头
 const svgWidth = computed(() => {
   const { w } = props.data.attr
-  return w
+  // 如果有箭头，给SVG增加额外空间
+  const hasArrow = config.value.arrowStyle && config.value.arrowStyle !== 'none'
+  return hasArrow ? w + arrowSize.value * 2 : w
 })
 
 const svgHeight = computed(() => {
   const { h } = props.data.attr
-  return h
+  // 如果有箭头，给SVG增加额外空间
+  const hasArrow = config.value.arrowStyle && config.value.arrowStyle !== 'none'
+  return hasArrow ? h + arrowSize.value * 2 : h
 })
 
-// 计算线段的位置
-const lineConfig = computed(() => {
+// 将百分比坐标转换为实际像素坐标
+const actualCoords = computed(() => {
   const { w, h } = props.data.attr
-  const { direction } = config.value
+  const hasArrow = config.value.arrowStyle && config.value.arrowStyle !== 'none'
+  // 如果有箭头，需要偏移坐标以适应扩展的SVG空间
+  const offset = hasArrow ? arrowSize.value : 0
   
-  if (direction === 'horizontal') {
-    // 水平线段
-    return {
-      x1: 0,
-      y1: h / 2,
-      x2: w,
-      y2: h / 2
-    }
-  } else if (direction === 'vertical') {
-    // 垂直线段
-    return {
-      x1: w / 2,
-      y1: 0,
-      x2: w / 2,
-      y2: h
-    }
-  }
-  
-  // 默认水平
   return {
-    x1: 0,
-    y1: h / 2,
-    x2: w,
-    y2: h / 2
+    x1: (endpoints.value[0].x / 100) * w + offset,
+    y1: (endpoints.value[0].y / 100) * h + offset,
+    x2: (endpoints.value[1].x / 100) * w + offset,
+    y2: (endpoints.value[1].y / 100) * h + offset,
   }
 })
 
@@ -137,15 +185,80 @@ const arrowSize = computed(() => {
   return Math.max(strokeWidth * 2, 6)
 })
 
-// 计算箭头形状点坐标
+// 计算箭头形状点坐标（终点箭头，向右）
 const arrowPoints = computed(() => {
   const size = arrowSize.value
   return `0,0 ${size},${size/2} 0,${size}`
 })
+
+// 计算箭头形状点坐标（起点箭头，向左）
+const arrowPointsStart = computed(() => {
+  const size = arrowSize.value
+  return `${size},0 0,${size/2} ${size},${size}`
+})
+
+// 拖拽端点逻辑
+let isDragging = false
+let draggedIndex = -1
+
+function startDragEndpoint(event, index) {
+  if (!isEditorMode.value) return
+  
+  isDragging = true
+  draggedIndex = index
+  showHandles.value = true  // 拖拽时保持手柄显示
+  
+  const svg = event.target.parentElement
+  const rect = svg.getBoundingClientRect()
+  const { w, h } = props.data.attr
+  const hasArrow = config.value.arrowStyle && config.value.arrowStyle !== 'none'
+  const offset = hasArrow ? arrowSize.value : 0
+  
+  const handleMouseMove = (e) => {
+    if (!isDragging) return
+    
+    // 转换为百分比坐标（考虑箭头偏移）
+    const x = ((e.clientX - rect.left - offset) / w) * 100
+    const y = ((e.clientY - rect.top - offset) / h) * 100
+    
+    // 更新端点位置（限制范围2-98%以容纳手柄和箭头）
+    if (draggedIndex === 0) {
+      config.value.startX = Math.max(2, Math.min(98, x))
+      config.value.startY = Math.max(2, Math.min(98, y))
+    } else {
+      config.value.endX = Math.max(2, Math.min(98, x))
+      config.value.endY = Math.max(2, Math.min(98, y))
+    }
+    
+    // 同步更新endpoints
+    endpoints.value[draggedIndex] = {
+      x: draggedIndex === 0 ? config.value.startX : config.value.endX,
+      y: draggedIndex === 0 ? config.value.startY : config.value.endY
+    }
+  }
+  
+  const handleMouseUp = () => {
+    isDragging = false
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseup', handleMouseUp)
+  }
+  
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
+}
 </script>
 
 <style scoped>
 .dv-wrapper {
   position: relative;
+}
+
+.endpoint-control {
+  pointer-events: all;
+  transition: r 0.2s;
+}
+
+.endpoint-control:hover {
+  r: 10;
 }
 </style>

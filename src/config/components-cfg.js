@@ -134,3 +134,27 @@ export function createGroup(areaData, components) {
   console.log('----------createGroup: ', config)
   return config
 }
+
+/**
+ * 初始化直线组件的端点坐标
+ * @param {Object} com - 组件对象（仅处理 VStraightLine 类型）
+ */
+export function initLineEndpoints(com) {
+  if (com.name === 'VStraightLine') {
+    const direction = com.config.direction || 'horizontal'
+    
+    if (direction === 'horizontal') {
+      // 水平：左边10%，右边90%，垂直居中50%
+      com.config.startX = 10
+      com.config.startY = 50
+      com.config.endX = 90
+      com.config.endY = 50
+    } else {
+      // 垂直：顶部10%，底部90%，水平居中50%
+      com.config.startX = 50
+      com.config.startY = 10
+      com.config.endX = 50
+      com.config.endY = 90
+    }
+  }
+}

@@ -9,7 +9,7 @@
         <g-input-number
           v-model="config.width"
           :min="1"
-          :max="20"
+          :max="999"
           :step="1"
           suffix="px"
           inline

@@ -45,7 +45,7 @@ import Ruler from '@/views/schema/screen-editor/canvas-main/ruler/index.vue'
 import MarkLine from '@/views/schema/screen-editor/canvas-main/mark-line/index.vue'
 import DvTransform from '@/views/schema/screen-editor/canvas-main/dv-transform/index.vue'
 import ActionBar from '@/views/schema/screen-editor/canvas-main/action-bar/index.vue'
-import { createComponent } from '@/config/components-cfg'
+import { createComponent, initLineEndpoints } from '@/config/components-cfg'
 import { ApiType } from '@/config/data-source'
 import { animationsClass, animationsStyles } from '@/config/animations'
 import { getStaticData } from '@/api/database.api'
@@ -191,6 +191,10 @@ function dropCom(e, com) {
   const offsetY = (e.clientY - getPanelOffsetTop.value + canvasWpRef.value.scrollTop) / scale
   com.attr.x = Math.round(offsetX - com.attr.w / 2)
   com.attr.y = Math.round(offsetY - com.attr.h / 2)
+  
+  // 初始化直线端点
+  initLineEndpoints(com)
+  
   schemaStore.addCom({ component: com })
   // 选中当前
   schemaStore.selectCom(com)

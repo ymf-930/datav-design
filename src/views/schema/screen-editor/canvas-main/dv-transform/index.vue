@@ -99,13 +99,14 @@ const handlerStyle = computed(() => ({
 }))
 
 const disableEventStyle = computed(() => {
-  // 折线组件需要禁用事件蒙版层，以便折点可以正常交互
-  if (props.data.name === 'VBrokenLine') {
+  // 直线、折线组件需要禁用事件蒙版层，以便端点可以正常交互
+  if (props.data.name === 'VStraightLine' || props.data.name === 'VBrokenLine') {
     return {
       width: '0px',
       height: '0px',
     }
   }
+  
   return {
     width: `${props.data.attr.w}px`,
     height: `${props.data.attr.h}px`,

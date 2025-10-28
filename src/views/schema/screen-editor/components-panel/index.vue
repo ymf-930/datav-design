@@ -73,7 +73,7 @@
 import { useStore } from '@/store'
 import { componentList } from '@/config/components-list'
 import { computed, ref } from 'vue'
-import { createComponent } from '@/config/components-cfg'
+import { createComponent, initLineEndpoints } from '@/config/components-cfg'
 import { getStaticData } from '@/api/database.api'
 import { ApiType } from '@/config/data-source'
 import { getNewCopyCom } from '@/store/schema/page'
@@ -118,6 +118,10 @@ async function toAddCom(comName) {
     const com = createComponent(comName)
     com.attr.x = Math.floor((pageConfig.value.width - com.attr.w) / 2)
     com.attr.y = Math.floor((pageConfig.value.height - com.attr.h) / 2)
+    
+    // 初始化直线端点
+    initLineEndpoints(com)
+    
     // 如是静态数据，且存在staticPath，则填充一次数据
     if (com.apiData && com.apiData.type === ApiType.static && com.apiData.staticPath) {
       const { data } = await getStaticData(com.id, com.apiData.staticPath)
