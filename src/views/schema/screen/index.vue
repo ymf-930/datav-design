@@ -1,6 +1,6 @@
 <template>
   <div class="screen-wrapper">
-    <div class="dv-loading" v-show="loading">
+    <div class="dv-loading" v-show="true">
       <g-loading spinning type="dna"></g-loading>
     </div>
     <div class="dv-layout" :style="{ visibility: loading ? 'hidden' : 'visible' }">
