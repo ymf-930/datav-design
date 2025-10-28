@@ -5,20 +5,35 @@
     @mouseenter="isEditorMode && (showHandles = true)"
     @mouseleave="isEditorMode && (showHandles = false)"
   >
-    <svg :width="svgWidth" :height="svgHeight" xmlns="http://www.w3.org/2000/svg">
+    <svg :width="svgWidth" :height="svgHeight" :style="svgStyle" xmlns="http://www.w3.org/2000/svg">
       <!-- 定义箭头标记 -->
       <defs>
+        <!-- 终点箭头（向右）- 箭头后端对准线段端点 -->
         <marker
-          v-if="config.arrowStyle !== 'none'"
-          id="arrowhead-broken"
+          v-if="config.arrowStyle === 'end' || config.arrowStyle === 'both'"
+          id="arrowhead-broken-end"
           :markerWidth="arrowSize"
           :markerHeight="arrowSize"
-          refX="8"
-          refY="3"
+          refX="0"
+          :refY="arrowSize / 2"
           orient="auto"
           markerUnits="userSpaceOnUse"
         >
           <polygon :points="arrowPoints" :fill="config.color" />
+        </marker>
+        
+        <!-- 起点箭头（向左）- 箭头后端对准线段端点 -->
+        <marker
+          v-if="config.arrowStyle === 'start' || config.arrowStyle === 'both'"
+          id="arrowhead-broken-start"
+          :markerWidth="arrowSize"
+          :markerHeight="arrowSize"
+          :refX="arrowSize"
+          :refY="arrowSize / 2"
+          orient="auto"
+          markerUnits="userSpaceOnUse"
+        >
+          <polygon :points="arrowPointsStart" :fill="config.color" />
         </marker>
       </defs>
 
@@ -28,17 +43,17 @@
         :stroke="config.color"
         :stroke-width="config.width"
         :stroke-dasharray="dashArray"
-        stroke-linecap="round"
+        stroke-linecap="butt"
         stroke-linejoin="round"
         fill="none"
         :marker-end="
           config.arrowStyle === 'end' || config.arrowStyle === 'both'
-            ? 'url(#arrowhead-broken)'
+            ? 'url(#arrowhead-broken-end)'
             : undefined
         "
         :marker-start="
           config.arrowStyle === 'start' || config.arrowStyle === 'both'
-            ? 'url(#arrowhead-broken)'
+            ? 'url(#arrowhead-broken-start)'
             : undefined
         "
       />
@@ -61,8 +76,8 @@
         <circle
           v-for="(point, index) in pointsArray"
           :key="`point-${index}`"
-          :cx="(point.x / 100) * contentWidth"
-          :cy="(point.y / 100) * contentHeight"
+          :cx="(point.x / 100) * contentWidth + arrowOffset"
+          :cy="(point.y / 100) * contentHeight + arrowOffset"
           :r="8"
           :fill="config.color"
           stroke="#fff"
@@ -116,13 +131,36 @@ watch(
   { immediate: true },
 )
 
-// SVG尺寸，使用容器尺寸，不超出
-const svgWidth = computed(() => props.data.attr.w)
-const svgHeight = computed(() => props.data.attr.h)
+// 计算箭头尺寸
+const arrowSize = computed(() => {
+  const strokeWidth = config.value.width
+  return Math.max(strokeWidth * 2, 6)
+})
 
-// 用于坐标计算的实际显示区域宽高
+// 判断是否有箭头
+const hasArrow = computed(() => config.value.arrowStyle && config.value.arrowStyle !== 'none')
+
+// 箭头偏移量
+const arrowOffset = computed(() => hasArrow.value ? arrowSize.value : 0)
+
+// SVG尺寸 - 扩展以容纳箭头
+const svgWidth = computed(() => {
+  const { w } = props.data.attr
+  return hasArrow.value ? w + arrowSize.value * 2 : w
+})
+
+const svgHeight = computed(() => {
+  const { h } = props.data.attr
+  return hasArrow.value ? h + arrowSize.value * 2 : h
+})
+
+// 用于坐标计算的实际显示区域宽高（不含箭头空间）
 const contentWidth = computed(() => props.data.attr.w)
 const contentHeight = computed(() => props.data.attr.h)
+
+const svgStyle = computed(() => ({
+  overflow: 'visible',
+}))
 
 const wrapperStyle = computed(() => ({
   width: '100%',
@@ -133,27 +171,29 @@ const wrapperStyle = computed(() => ({
   overflow: 'visible',
 }))
 
-// 将百分比坐标转换为实际像素坐标
+// 将百分比坐标转换为实际像素坐标（考虑箭头偏移）
 const polylinePoints = computed(() => {
+  const offset = arrowOffset.value
   return pointsArray.value
     .map(point => {
-      const x = (point.x / 100) * contentWidth.value
-      const y = (point.y / 100) * contentHeight.value
+      const x = (point.x / 100) * contentWidth.value + offset
+      const y = (point.y / 100) * contentHeight.value + offset
       return `${x},${y}`
     })
     .join(' ')
 })
 
-// 计算线段用于点击添加折点
+// 计算线段用于点击添加折点（考虑箭头偏移）
 const lineSegments = computed(() => {
   const segments = []
+  const offset = arrowOffset.value
   for (let i = 0; i < pointsArray.value.length - 1; i++) {
     const p1 = pointsArray.value[i]
     const p2 = pointsArray.value[i + 1]
-    const x1 = (p1.x / 100) * contentWidth.value
-    const y1 = (p1.y / 100) * contentHeight.value
-    const x2 = (p2.x / 100) * contentWidth.value
-    const y2 = (p2.y / 100) * contentHeight.value
+    const x1 = (p1.x / 100) * contentWidth.value + offset
+    const y1 = (p1.y / 100) * contentHeight.value + offset
+    const x2 = (p2.x / 100) * contentWidth.value + offset
+    const y2 = (p2.y / 100) * contentHeight.value + offset
     segments.push({
       pathData: `M ${x1} ${y1} L ${x2} ${y2}`,
     })
@@ -169,16 +209,16 @@ const dashArray = computed(() => {
   return 'none'
 })
 
-// 计算箭头尺寸
-const arrowSize = computed(() => {
-  const strokeWidth = config.value.width
-  return Math.max(strokeWidth * 2, 6)
-})
-
-// 计算箭头形状点坐标
+// 计算箭头形状点坐标（终点箭头，向右）
 const arrowPoints = computed(() => {
   const size = arrowSize.value
   return `0,0 ${size},${size / 2} 0,${size}`
+})
+
+// 计算箭头形状点坐标（起点箭头，向左）
+const arrowPointsStart = computed(() => {
+  const size = arrowSize.value
+  return `${size},0 0,${size / 2} ${size},${size}`
 })
 
 // 拖拽功能
@@ -198,11 +238,12 @@ function startDrag(event, index) {
     if (!isDragging) return
 
     const rect = svg.getBoundingClientRect()
-    // 使用内容区域宽高计算百分比
-    const x = ((e.clientX - rect.left) / contentWidth.value) * 100
-    const y = ((e.clientY - rect.top) / contentHeight.value) * 100
+    const offset = arrowOffset.value
+    // 使用内容区域宽高计算百分比（考虑箭头偏移）
+    const x = ((e.clientX - rect.left - offset) / contentWidth.value) * 100
+    const y = ((e.clientY - rect.top - offset) / contentHeight.value) * 100
 
-    // 更新折点位置，限制范围避免折点太靠近边界
+    // 更新折点位置，限制范围避免折点太靠近边界和箭头
     if (draggedPointIndex >= 0 && draggedPointIndex < pointsArray.value.length) {
       pointsArray.value[draggedPointIndex] = {
         x: Math.max(2, Math.min(98, x)), // 限制在2%-98%之间
@@ -231,9 +272,10 @@ function addPointAtSegment(event, segmentIndex) {
   
   const svg = event.target.parentElement
   const rect = svg.getBoundingClientRect()
-  // 使用内容区域宽高计算百分比
-  const x = ((event.clientX - rect.left) / contentWidth.value) * 100
-  const y = ((event.clientY - rect.top) / contentHeight.value) * 100
+  const offset = arrowOffset.value
+  // 使用内容区域宽高计算百分比（考虑箭头偏移）
+  const x = ((event.clientX - rect.left - offset) / contentWidth.value) * 100
+  const y = ((event.clientY - rect.top - offset) / contentHeight.value) * 100
 
   // 在指定线段后插入新点
   pointsArray.value.splice(segmentIndex + 1, 0, {

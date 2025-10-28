@@ -16,7 +16,7 @@ export default {
     // 线条方向：horizontal(水平), vertical(垂直)
     direction: 'horizontal',
     // 线条宽度（粗细）
-    width: 5,
+    width: 2,
     // 线段颜色
     color: '#008bff',
     // 线条样式：solid(实线), dashed(虚线)
