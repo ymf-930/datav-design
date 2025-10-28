@@ -1,7 +1,7 @@
 <template>
   <div class="system-error-page">
-    <div class="bin-result">
-      <div class="bin-result-icon bin-result-image">
+    <div class="ant-result">
+      <div class="ant-result-image">
         <img v-if="$route.path === '/403'" src="@/assets/images/default/auth.svg" alt="403" />
         <img
           v-else-if="$route.path === '/500'"
@@ -15,9 +15,9 @@
         />
         <img v-else src="@/assets/images/default/error404.svg" alt="404" />
       </div>
-      <div class="bin-result-title">{{ status }}</div>
-      <div class="bin-result-subtitle">{{ errorMessage }}</div>
-      <div class="bin-result-extra">
+      <div class="ant-result-title">{{ status }}</div>
+      <div class="ant-result-subtitle">{{ errorMessage }}</div>
+      <div class="ant-result-extra">
         <a-space>
           <router-link :to="{ name: HOME_PATH }">
             <a-button type="primary">返回首页</a-button>
