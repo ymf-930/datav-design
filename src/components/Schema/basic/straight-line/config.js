@@ -18,7 +18,7 @@ export default {
     // 线条宽度（粗细）
     width: 2,
     // 线段颜色
-    color: '#008bff',
+    color: '#8d8d9b',
     // 线条样式：solid(实线), dashed(虚线)
     dashStyle: 'solid',
     // 箭头样式：none(无), start(起点), end(终点), both(双向)
@@ -27,9 +27,9 @@ export default {
     // 动画配置
     enableAnimation: false,  // 开启动画
     animationType: 'electric', // 动画类型：electric(电流), track(轨迹), water(水珠)
-    animationColor: '#4a4a9b', // 动画颜色
+    animationColor: '#1890ff', // 动画颜色
     animationReverse: false, // 动画翻转
-    animationDelay: 10, // 动画延迟(毫秒)
+    animationDelay: 10, // 动画延迟(秒)
     trackBallRadius: 4, // 轨迹球半径
   },
   apiData: {},

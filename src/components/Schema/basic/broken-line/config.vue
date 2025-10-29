@@ -5,7 +5,7 @@
         <g-input-number
           v-model="config.width"
           :min="1"
-          :max="20"
+          :max="99"
           :step="1"
           suffix="px"
           inline
@@ -44,13 +44,14 @@
         <g-input-number
           v-model="config.animationDelay"
           :min="1"
-          :max="1000"
+          :max="60"
           :step="1"
+          suffix="秒"
           inline
         />
       </g-field>
       
-      <g-field label="轨迹球半径" flat>
+      <g-field label="轨迹球半径" flat v-if="config.animationType === 'track'">
         <g-input-number
           v-model="config.trackBallRadius"
           :min="1"

@@ -61,6 +61,64 @@
         :marker-end="config.arrowStyle === 'end' || config.arrowStyle === 'both' ? 'url(#arrowhead-end)' : undefined"
         :marker-start="config.arrowStyle === 'start' || config.arrowStyle === 'both' ? 'url(#arrowhead-start)' : undefined"
       />
+      
+      <!-- 电流动画 - 短虚线流动 -->
+      <line
+        v-if="config.enableAnimation && config.animationType === 'electric'"
+        :x1="actualCoords.x1"
+        :y1="actualCoords.y1"
+        :x2="actualCoords.x2"
+        :y2="actualCoords.y2"
+        :stroke="config.animationColor"
+        :stroke-width="strokeWidth"
+        :stroke-dasharray="electricDashArray"
+        stroke-linecap="butt"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          :from="config.animationReverse ? '0' : '1000'"
+          :to="config.animationReverse ? '1000' : '0'"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+        />
+      </line>
+      
+      <!-- 水珠动画 - 流动虚线（圆角） -->
+      <line
+        v-if="config.enableAnimation && config.animationType === 'water'"
+        :x1="actualCoords.x1"
+        :y1="actualCoords.y1"
+        :x2="actualCoords.x2"
+        :y2="actualCoords.y2"
+        :stroke="config.animationColor"
+        :stroke-width="strokeWidth"
+        :stroke-dasharray="waterDashArray"
+        stroke-linecap="round"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          :from="config.animationReverse ? '0' : '1000'"
+          :to="config.animationReverse ? '1000' : '0'"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+        />
+      </line>
+      
+      <!-- 轨迹动画 - 圆点移动 -->
+      <circle
+        v-if="config.enableAnimation && config.animationType === 'track'"
+        :r="config.trackBallRadius"
+        :fill="config.animationColor"
+      >
+        <animateMotion
+          :path="`M ${actualCoords.x1} ${actualCoords.y1} L ${actualCoords.x2} ${actualCoords.y2}`"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+          :keyPoints="animationReverse ? '1;0' : '0;1'"
+          keyTimes="0;1"
+          calcMode="linear"
+        />
+      </circle>
 
       <!-- 编辑模式：悬浮时显示可拖拽端点 -->
       <template v-if="isEditorMode && showHandles">
@@ -206,6 +264,25 @@ const arrowPoints = computed(() => {
 const arrowPointsStart = computed(() => {
   const size = arrowSize.value
   return `${size},0 0,${size/2} ${size},${size}`
+})
+
+// 动画翻转状态
+const animationReverse = computed(() => config.value.animationReverse)
+
+// 电流动画虚线样式（短虚线，大间隔）
+const electricDashArray = computed(() => {
+  const width = config.value.width
+  const dash = width * 4
+  const gap = width * 4
+  return `${dash} ${gap}`
+})
+
+// 水珠动画虚线样式（较长虚线，圆角）
+const waterDashArray = computed(() => {
+  const width = config.value.width
+  const dash = width * 4
+  const gap = width * 4
+  return `${dash} ${gap}`
 })
 
 // 拖拽端点逻辑

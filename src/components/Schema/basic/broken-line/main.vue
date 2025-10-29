@@ -57,6 +57,62 @@
             : undefined
         "
       />
+      
+      <!-- 电流动画 - 短虚线流动 -->
+      <polyline
+        v-if="config.enableAnimation && config.animationType === 'electric'"
+        :points="polylinePoints"
+        :stroke="config.animationColor"
+        :stroke-width="config.width"
+        :stroke-dasharray="electricDashArray"
+        stroke-linecap="butt"
+        stroke-linejoin="round"
+        fill="none"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          :from="config.animationReverse ? '0' : '1000'"
+          :to="config.animationReverse ? '1000' : '0'"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+        />
+      </polyline>
+      
+      <!-- 水珠动画 - 流动虚线（圆角） -->
+      <polyline
+        v-if="config.enableAnimation && config.animationType === 'water'"
+        :points="polylinePoints"
+        :stroke="config.animationColor"
+        :stroke-width="config.width"
+        :stroke-dasharray="waterDashArray"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          :from="config.animationReverse ? '0' : '1000'"
+          :to="config.animationReverse ? '1000' : '0'"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+        />
+      </polyline>
+      
+      <!-- 轨迹动画 - 圆点移动 -->
+      <circle
+        v-if="config.enableAnimation && config.animationType === 'track'"
+        :r="config.trackBallRadius"
+        :fill="config.animationColor"
+      >
+        <animateMotion
+          :path="animationPath"
+          :dur="`${config.animationDelay}s`"
+          repeatCount="indefinite"
+          :keyPoints="animationReverse ? '1;0' : '0;1'"
+          keyTimes="0;1"
+          calcMode="linear"
+        />
+      </circle>
 
       <!-- 折线可悬停区域（用于添加新折点，仅编辑模式） -->
       <path
@@ -230,6 +286,36 @@ const arrowPoints = computed(() => {
 const arrowPointsStart = computed(() => {
   const size = arrowSize.value
   return `${size},0 0,${size / 2} ${size},${size}`
+})
+
+// 动画翻转状态
+const animationReverse = computed(() => config.value.animationReverse)
+
+// 计算动画路径（用于轨迹动画）
+const animationPath = computed(() => {
+  const offset = arrowOffset.value
+  const pathParts = pointsArray.value.map((point, index) => {
+    const x = (point.x / 100) * contentWidth.value + offset
+    const y = (point.y / 100) * contentHeight.value + offset
+    return index === 0 ? `M ${x} ${y}` : `L ${x} ${y}`
+  })
+  return pathParts.join(' ')
+})
+
+// 电流动画虚线样式（短虚线，大间隔）
+const electricDashArray = computed(() => {
+  const width = config.value.width
+  const dash = width * 4
+  const gap = width * 4
+  return `${dash} ${gap}`
+})
+
+// 水珠动画虚线样式（较长虚线，圆角）
+const waterDashArray = computed(() => {
+  const width = config.value.width
+  const dash = width * 4
+  const gap = width * 4
+  return `${dash} ${gap}`
 })
 
 // 拖拽功能
