@@ -197,6 +197,9 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+:deep(.ant-space) {
+  color: var(--datav-text-color-primary);
+}
 .action-bar-wrap {
   position: fixed;
   right: var(--schema-options-width);

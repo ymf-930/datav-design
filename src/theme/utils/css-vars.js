@@ -94,12 +94,12 @@ export function getPalette(color) {
     lighten(color, -20), // 2
     lighten(color, -10), // 3 - active
     color,               // 4 - 原色
-    lighten(color, 15),  // 5 - light1
-    lighten(color, 30),  // 6 - light2
-    lighten(color, 50),  // 7 - light3
-    lighten(color, 70),  // 8 - light4
-    lighten(color, 90),  // 9 - light5
-    lighten(color, 110), // 10 - light6 (最亮)
+    lighten(color, 20),  // 5 - light1
+    lighten(color, 40),  // 6 - light2
+    lighten(color, 60),  // 7 - light3
+    lighten(color, 80),  // 8 - light4
+    lighten(color, 100), // 9 - light5
+    lighten(color, 130), // 10 - light6 (最亮，增强浅色)
   ]
 }
 
@@ -134,14 +134,15 @@ export function generateDerivedColors(varName, color) {
   // outline（用于聚焦外发光，20% 透明度）
   derived[`${varName}-outline`] = alpha(color, 0.2)
   
-  // 色板（1-7，1最浅，6是原色，7最深）
-  derived[`--ant-${colorType}-1`] = palette[10] // 最浅
-  derived[`--ant-${colorType}-2`] = palette[9]
-  derived[`--ant-${colorType}-3`] = palette[7]
-  derived[`--ant-${colorType}-4`] = palette[6]
-  derived[`--ant-${colorType}-5`] = palette[5]
-  derived[`--ant-${colorType}-6`] = palette[4]  // 原色
-  derived[`--ant-${colorType}-7`] = palette[2]  // 最深
+  // 色板（1-7，使用 rgba 透明度渐变）
+  // --ant-primary-color 是原色（最深），1-7 逐渐变浅
+  derived[`--ant-${colorType}-1`] = alpha(color, 0.9)    // 90%
+  derived[`--ant-${colorType}-2`] = alpha(color, 0.8)    // 80%
+  derived[`--ant-${colorType}-3`] = alpha(color, 0.65)   // 65%
+  derived[`--ant-${colorType}-4`] = alpha(color, 0.5)    // 50%
+  derived[`--ant-${colorType}-5`] = alpha(color, 0.35)   // 35%
+  derived[`--ant-${colorType}-6`] = alpha(color, 0.2)    // 20%
+  derived[`--ant-${colorType}-7`] = alpha(color, 0.1)    // 10% 最浅
   
   return derived
 }

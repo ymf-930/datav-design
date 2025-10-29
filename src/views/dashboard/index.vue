@@ -4,7 +4,9 @@
       <div class="folder-manage">
         <div class="folder-manage-group">
           <span>大屏分组</span>
-          <AntIcon name="PlusOutlined" class="btn-add-icon"
+          <AntIcon
+            name="PlusOutlined"
+            class="btn-add-icon"
             title="新增文件夹"
             @click="adding = true"
           ></AntIcon>
@@ -39,11 +41,14 @@
             <template v-else>
               <span class="folder-name">{{ item.name }}</span>
               <span class="group-btns">
-                <AntIcon name="EditOutlined" title="编辑" @click="item.editing = true"></AntIcon>
-                <AntIcon name="DeleteOutlined"
-                  title="删除"
-                  @click="confirmDeleteGroup(item)"
-                ></AntIcon>
+                <a-space>
+                  <AntIcon name="EditOutlined" title="编辑" @click="item.editing = true"></AntIcon>
+                  <AntIcon
+                    name="DeleteOutlined"
+                    title="删除"
+                    @click="confirmDeleteGroup(item)"
+                  ></AntIcon>
+                </a-space>
               </span>
             </template>
           </div>
@@ -136,7 +141,7 @@ export default {
     }
 
     &.folder-item-checked-color {
-      background: var(--s-color-1);
+      background: var(--ant-primary-7);
       color: var(--ant-primary-color);
       &:hover {
         color: var(--ant-primary-color) !important;

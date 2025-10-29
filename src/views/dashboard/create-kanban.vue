@@ -302,6 +302,7 @@ defineExpose({
   font-size: 18px;
   margin-bottom: var(--datav-border-radius-lg);
   font-weight: normal;
+  color: var(--datav-text-color-primary);
 }
 .preset-wp {
   display: flex;

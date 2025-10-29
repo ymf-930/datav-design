@@ -12,6 +12,7 @@
     border: 1px solid var(--datav-border-color-base);
     box-shadow: var(--datav-box-shadow-base);
     backdrop-filter: blur(20px);
+    color: var(--datav-text-color-primary);
   }
 
   /* 模态框头部 */
