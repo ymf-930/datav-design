@@ -5,13 +5,13 @@ export default {
   alias: '图标',
   icon: 'SmileOutlined',
   type: ComType.com,
-  attr: { w: 100, h: 100, lockedRatio: true },
+  attr: { w: 80, h: 80, lockedRatio: true },
   config: {
-    attr: { w: 100, h: 100 },
+    attr: { w: 80, h: 80 },
     pointerType: 'other', // 取值为image和border
-    src: 'smile',
+    src: 'SmileOutlined',
     color: '#fff',
-    size: 180,
+    size: 80,
     urlConfig: {
       url: '',
       ifBlank: false,

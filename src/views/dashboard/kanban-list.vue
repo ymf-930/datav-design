@@ -66,9 +66,9 @@
           </div>
           <div class="list-item-info">
             <div class="item-title" t-ellipsis :title="item.name">
-              <iconfont
-                :icon="item.directory === 'Y' ? 'FolderOutlined' : 'LineChartOutlined'"
-                :color="item.directory === 'Y' ? '#fa8c16' : '#1089ff'"
+              <AntIcon
+                :name="item.directory === 'Y' ? 'FolderOutlined' : 'LineChartOutlined'"
+                :style="{ color: item.directory === 'Y' ? '#fa8c16' : '#1089ff' }"
               />
               <span>
                 {{ item.name }}
@@ -116,7 +116,6 @@ import {
 } from '@/api/modules/analysis-dashboard.api'
 import { useRouter, useRoute } from 'vue-router'
 import { message, Modal } from 'ant-design-vue'
-import Iconfont from '@/components/Common/Iconfont/iconfont.vue'
 import CreateKanban from './create-kanban.vue'
 import { listenMsg } from '@/utils/cross-tab-msg'
 
