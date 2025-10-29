@@ -1,6 +1,6 @@
 <template>
   <div class="setting-panel-gui">
-    <g-field-collapse label="属性设置" default-open>
+    <g-field-collapse label="属性" default-open>
       <g-field label="方向">
         <g-select v-model="config.direction" :data="directionOptions" />
       </g-field>
@@ -24,6 +24,44 @@
       
       <g-field label="箭头样式">
         <g-select v-model="config.arrowStyle" :data="arrowStyleOptions" />
+      </g-field>
+    </g-field-collapse>
+    
+    <g-field-collapse label="动画">
+      <g-field label="开启动画">
+        <g-switch v-model="config.enableAnimation" />
+      </g-field>
+      
+      <g-field label="动画类型">
+        <g-select v-model="config.animationType" :data="animationTypeOptions" />
+      </g-field>
+      
+      <g-field label="动画颜色">
+        <g-color-picker v-model="config.animationColor" />
+      </g-field>
+      
+      <g-field label="动画翻转">
+        <g-switch v-model="config.animationReverse" />
+      </g-field>
+      
+      <g-field label="动画延迟" flat>
+        <g-input-number
+          v-model="config.animationDelay"
+          :min="1"
+          :max="1000"
+          :step="1"
+          inline
+        />
+      </g-field>
+      
+      <g-field label="轨迹球半径" flat>
+        <g-input-number
+          v-model="config.trackBallRadius"
+          :min="1"
+          :max="20"
+          :step="1"
+          inline
+        />
       </g-field>
     </g-field-collapse>
   </div>
@@ -59,5 +97,12 @@ const arrowStyleOptions = [
   { value: 'start', label: '起点箭头' },
   { value: 'end', label: '终点箭头' },
   { value: 'both', label: '双向箭头' },
+]
+
+// 动画类型选项
+const animationTypeOptions = [
+  { value: 'electric', label: '电流' },
+  { value: 'track', label: '轨迹' },
+  { value: 'water', label: '水珠' },
 ]
 </script>
