@@ -8,7 +8,7 @@ export default {
   },
   getters: {
     undoDisable() {
-      return this.snapshotIndex === 0
+      return this.snapshotData.length === 0 || this.snapshotIndex <= 0
     },
     // 当前选中的组件是不是group组
     redoDisable() {

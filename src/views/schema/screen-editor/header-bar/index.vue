@@ -137,6 +137,15 @@ const saveVisible = ref(false)
 const saveStatus = ref('edit')
 const tempVisible = ref(false)
 
+// 后退和前进功能
+const undo = () => {
+  schemaStore.undo()
+}
+
+const redo = () => {
+  schemaStore.redo()
+}
+
 const handleBack = () => {
   const path = props.backUrl || '/'
   if (props.backTarget === '_blank') {
