@@ -1,8 +1,8 @@
 <template>
   <div class="setting-panel-gui">
     <g-field-collapse label="属性" default-open>
-      <g-field label="图标颜色">
-        <AntIconSelect v-model="config.src" style="width: 100%" />
+      <g-field label="图标名称">
+        <g-input v-model="config.src" />
       </g-field>
       <g-field label="图标颜色">
         <g-color-picker v-model="config.color" />

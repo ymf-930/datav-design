@@ -93,7 +93,7 @@ defineProps({
         display: flex;
         width: 100%;
         align-items: center;
-        .ant-radio-wrapper {
+        .ant-radio-button-wrapper {
           text-align: center;
           flex: 1;
         }
