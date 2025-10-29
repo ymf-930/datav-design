@@ -141,7 +141,7 @@
           class="control-point"
           :style="{ cursor: 'move' }"
           @mousedown.stop="startDrag($event, index)"
-          @contextmenu.prevent="deletePoint($event, index)"
+          @dblclick="deletePoint($event, index)"
         />
       </template>
     </svg>
