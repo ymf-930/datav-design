@@ -1,13 +1,16 @@
 <template>
   <div class="dv-wrapper">
-    <a-progress type="circle" :percent="realNumber"
-      :size="attr.w"
+    <a-progress 
+      :type="config.type"
+      :percent="realNumber"
+      :width="config.type !== 'line' ? attr.w : undefined"
       :stroke-linecap="config.linecap"
-      :strokeWidth="config.width"
-      :strokeColor="config.color"
-      :trail-width="config.trailWidth"
-      :trailColor="config.trailColor"
-      :dashboard="config.dashboard"
+      :stroke-width="config.strokeWidth"
+      :stroke-color="config.strokeColor"
+      :trail-color="config.trailColor"
+      :show-info="config.showInfo"
+      :gap-degree="config.type === 'dashboard' ? config.gapDegree : undefined"
+      :gap-position="config.type === 'dashboard' ? config.gapPosition : undefined"
     >
       <div
         class="circle-title mb-5"
@@ -44,7 +47,7 @@ import { usePolling } from '@/hooks/schema/usePolling'
 import { useScriptAction } from '@/hooks/schema/useScriptAction'
 
 defineOptions({
-  name: 'VProgressCircle',
+  name: 'VProgress',
 })
 
 const props = defineProps({

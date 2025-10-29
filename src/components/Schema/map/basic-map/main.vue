@@ -1,6 +1,6 @@
 <template>
   <div class="dv-wrapper">
-    <b-charts v-if="render" :options="options" style="width: 100%; height: 100%" ref="chartRef" />
+    <v-chart v-if="render" :option="options" :autoresize="true" style="width: 100%; height: 100%" ref="chartRef" />
   </div>
 </template>
 

@@ -1,11 +1,13 @@
 <template>
   <div class="dv-wrapper">
-    <b-charts
+    <v-chart
       v-if="render"
-      :options="config"
+      :option="config"
+      :autoresize="true"
+      @click="onClick"
       style="width: 100%; height: 100%"
       ref="chartRef"
-    ></b-charts>
+    ></v-chart>
     <g-breadcrumb
       v-if="couldDrill"
       v-bind="{ drillData, drillIndex, drillFilters }"
@@ -15,7 +17,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useDataCenter } from '@/hooks/schema/useDataCenter'
 import { getEventParamsSexact, useEventBus } from '@/hooks/schema/useEventBus'
 import { useChartThemeColor } from '@/theme'
@@ -139,16 +141,12 @@ watch([() => pageConfig.value.chartThemeColor, () => props.data.attr.chartThemeC
   initCharts()
 })
 
+// 点击事件处理（vue-echarts 8.x 直接使用 @click 绑定）
 const onClick = params => {
-  dvEmit('click', params)
-}
-// 注册点击事件
-onMounted(() => {
-  // 如果click事件存在，则绑定事件
   if (events.value.click) {
-    chartRef.value && chartRef.value.getInstance().on('click', onClick)
+    dvEmit('click', params)
   }
-})
+}
 
 // 获取响应事件
 const actions = {

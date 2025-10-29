@@ -5,7 +5,13 @@
         返回
       </a-button>
     </div>
-    <b-charts :options="{}" style="width: 100%; height: 100%" ref="bChartsRef"></b-charts>
+    <v-chart 
+      :option="{}"
+      :autoresize="true"
+      :manual-update="true"
+      style="width: 100%; height: 100%"
+      ref="bChartsRef"
+    ></v-chart>
   </div>
 </template>
 

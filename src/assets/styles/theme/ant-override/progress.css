@@ -1,0 +1,175 @@
+/* Ant Design Vue Progress 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* ========== 通用样式 ========== */
+  
+  /* 进度条容器 */
+  .ant-progress {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 进度条外层（轨道背景） */
+  .ant-progress-outer {
+    background-color: transparent;
+  }
+
+  /* ========== 线形进度条 ========== */
+  
+  /* 线形进度条容器 */
+  .ant-progress-line {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 线形进度条轨道 */
+  .ant-progress-inner {
+    border-radius: 100px;
+  }
+
+  /* 线形进度条填充部分 */
+  .ant-progress-bg {
+    background-color: var(--ant-primary-color);
+    border-radius: 100px;
+  }
+
+  /* 进度条成功状态 */
+  .ant-progress-success-bg {
+    background-color: var(--ant-success-color);
+  }
+
+  /* 进度条文本 */
+  .ant-progress-text {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* ========== 圆形/仪表盘进度条 ========== */
+  
+  /* 圆形进度条容器 */
+  .ant-progress-circle,
+  .ant-progress-dashboard {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 圆形进度条轨道 */
+  .ant-progress-circle-trail {
+    stroke: var(--datav-bg-color-secondary);
+  }
+
+  /* 圆形进度条填充路径 */
+  .ant-progress-circle-path {
+    stroke: var(--ant-primary-color);
+  }
+
+  /* 圆形进度条文本 */
+  .ant-progress-circle .ant-progress-text,
+  .ant-progress-dashboard .ant-progress-text {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* ========== 不同状态的颜色 ========== */
+  
+  /* 成功状态 */
+  .ant-progress-status-success .ant-progress-bg {
+    background-color: var(--ant-success-color);
+  }
+
+  .ant-progress-status-success .ant-progress-circle-path {
+    stroke: var(--ant-success-color);
+  }
+
+  .ant-progress-status-success .ant-progress-text {
+    color: var(--ant-success-color);
+  }
+
+  /* 异常状态 */
+  .ant-progress-status-exception .ant-progress-bg {
+    background-color: var(--ant-error-color);
+  }
+
+  .ant-progress-status-exception .ant-progress-circle-path {
+    stroke: var(--ant-error-color);
+  }
+
+  .ant-progress-status-exception .ant-progress-text {
+    color: var(--ant-error-color);
+  }
+
+  /* 激活状态 */
+  .ant-progress-status-active .ant-progress-bg::before {
+    background: var(--datav-bg-color-primary);
+  }
+
+  /* ========== 步骤进度条 ========== */
+  
+  /* 步骤进度条容器 */
+  .ant-progress-steps {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 步骤项 */
+  .ant-progress-steps-item {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 已完成步骤 */
+  .ant-progress-steps-item-active {
+    background-color: var(--ant-primary-color);
+  }
+
+  /* ========== 小尺寸样式 ========== */
+  
+  /* 小尺寸进度条 */
+  .ant-progress-small.ant-progress-line,
+  .ant-progress-small.ant-progress-line .ant-progress-text {
+    font-size: 12px;
+  }
+
+  /* ========== 进度条图标 ========== */
+  
+  /* 进度条图标（成功/失败） */
+  .ant-progress .anticon {
+    color: inherit;
+  }
+
+  .ant-progress-status-success .anticon {
+    color: var(--ant-success-color);
+  }
+
+  .ant-progress-status-exception .anticon {
+    color: var(--ant-error-color);
+  }
+
+  /* ========== 百分比文本样式 ========== */
+  
+  /* 百分比数值 */
+  .ant-progress-text .ant-progress-text-inner {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 圆形进度条中间的内容 */
+  .ant-progress-circle .ant-progress-inner,
+  .ant-progress-dashboard .ant-progress-inner {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* ========== 渐变色进度条支持 ========== */
+  
+  /* 渐变色背景 */
+  .ant-progress-bg[style*="background-image"] {
+    /* 保持用户自定义的渐变色 */
+    opacity: 0.95;
+  }
+
+  /* ========== RTL 支持 ========== */
+  
+  .ant-progress-rtl {
+    direction: rtl;
+  }
+
+  .ant-progress-rtl.ant-progress-show-info .ant-progress-outer {
+    margin-right: 0;
+    margin-left: calc(-2em - 8px);
+    padding-right: 0;
+    padding-left: calc(2em + 8px);
+  }
+}
+

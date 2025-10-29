@@ -1,11 +1,12 @@
 <template>
   <div class="dv-wrapper">
-    <b-charts
+    <v-chart
       v-if="render"
-      :options="config"
+      :option="config"
+      :autoresize="true"
       style="width: 100%; height: 100%"
       ref="chartRef"
-    ></b-charts>
+    ></v-chart>
   </div>
 </template>
 

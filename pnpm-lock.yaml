@@ -28,9 +28,6 @@ dependencies:
   big.js:
     specifier: ^6.2.2
     version: 6.2.2
-  bin-charts-next:
-    specifier: ^1.1.0
-    version: 1.1.0(echarts@5.6.0)(vue@3.5.22)
   bin-datav:
     specifier: ^0.2.0
     version: 0.2.0(vue@3.5.22)
@@ -47,14 +44,14 @@ dependencies:
     specifier: ^1.11.13
     version: 1.11.13
   echarts:
-    specifier: ^5.6.0
-    version: 5.6.0
+    specifier: ^6.0.0
+    version: 6.0.0
   echarts-stat:
     specifier: ^1.2.0
     version: 1.2.0
   echarts-wordcloud:
     specifier: ^2.1.0
-    version: 2.1.0(echarts@5.6.0)
+    version: 2.1.0(echarts@6.0.0)
   gsap:
     specifier: ^3.13.0
     version: 3.13.0
@@ -100,6 +97,9 @@ dependencies:
   vue:
     specifier: ^3.5.22
     version: 3.5.22
+  vue-echarts:
+    specifier: ^8.0.1
+    version: 8.0.1(echarts@6.0.0)(vue@3.5.22)
   vue-router:
     specifier: ^4.6.3
     version: 4.6.3(vue@3.5.22)
@@ -2186,17 +2186,6 @@ packages:
     resolution: {integrity: sha512-y/ie+Faknx7sZA5MfGA2xKlu0GDv8RWrXGsmlteyJQ2lvoKv9GBK/fpRMc2qlSoBAgNxrixICFCBefIq8WCQpQ==}
     dev: false
 
-  /bin-charts-next@1.1.0(echarts@5.6.0)(vue@3.5.22):
-    resolution: {integrity: sha512-jlhh4vpEJBw1Dtb0oTQY+aqVI600Wdp91kxqiTx9795CETdFwwQYz6IIlthj4INW+BZwWgHweUXK8hGesj3WnA==}
-    peerDependencies:
-      echarts: ^5.2.1
-      vue: ^3.2.20
-    dependencies:
-      echarts: 5.6.0
-      resize-observer-polyfill: 1.5.1
-      vue: 3.5.22
-    dev: false
-
   /bin-datav@0.2.0(vue@3.5.22):
     resolution: {integrity: sha512-msxwzGRHh+dSOBU7ELKyXkoi4vsMJq5TX8RZ3wvJcLUPfstYEUkZjBAy78ij56Cc97YH512Cvnwu1BXgXvIbNA==}
     peerDependencies:
@@ -2554,19 +2543,19 @@ packages:
     resolution: {integrity: sha512-zLd7Kgs+tuTSeaK0VQEMNmnMivEkhvHIk1gpBtLzpRerfcIQ+Bd5XudOMmtwpaTc1WDZbA7d1V//iiBccR46Qg==}
     dev: false
 
-  /echarts-wordcloud@2.1.0(echarts@5.6.0):
+  /echarts-wordcloud@2.1.0(echarts@6.0.0):
     resolution: {integrity: sha512-Kt1JmbcROgb+3IMI48KZECK2AP5lG6bSsOEs+AsuwaWJxQom31RTNd6NFYI01E/YaI1PFZeueaupjlmzSQasjQ==}
     peerDependencies:
       echarts: ^5.0.1
     dependencies:
-      echarts: 5.6.0
+      echarts: 6.0.0
     dev: false
 
-  /echarts@5.6.0:
-    resolution: {integrity: sha512-oTbVTsXfKuEhxftHqL5xprgLoc0k7uScAwtryCgWF6hPYFLRwOUHiFmHGCBKP5NPFNkDVopOieyUqYGH8Fa3kA==}
+  /echarts@6.0.0:
+    resolution: {integrity: sha512-Tte/grDQRiETQP4xz3iZWSvoHrkCQtwqd6hs+mifXcjrCuo2iKWbajFObuLJVBlDIJlOzgQPd1hsaKt/3+OMkQ==}
     dependencies:
       tslib: 2.3.0
-      zrender: 5.6.1
+      zrender: 6.0.0
     dev: false
 
   /electron-to-chromium@1.5.238:
@@ -4727,6 +4716,16 @@ packages:
       vue: 3.5.22
     dev: false
 
+  /vue-echarts@8.0.1(echarts@6.0.0)(vue@3.5.22):
+    resolution: {integrity: sha512-23rJTFLu1OUEGRWjJGmdGt8fP+8+ja1gVgzMYPIPaHWpXegcO1viIAaeu2H4QHESlVeHzUAHIxKXGrwjsyXAaA==}
+    peerDependencies:
+      echarts: ^6.0.0
+      vue: ^3.3.0
+    dependencies:
+      echarts: 6.0.0
+      vue: 3.5.22
+    dev: false
+
   /vue-eslint-parser@7.11.0(eslint@7.32.0):
     resolution: {integrity: sha512-qh3VhDLeh773wjgNTl7ss0VejY9bMMa0GoDG2fQVyDzRFdiU3L7fw74tWZDHNQXdZqxO3EveQroa9ct39D2nqg==}
     engines: {node: '>=8.10'}
@@ -4877,8 +4876,8 @@ packages:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
     dev: true
 
-  /zrender@5.6.1:
-    resolution: {integrity: sha512-OFXkDJKcrlx5su2XbzJvj/34Q3m6PvyCZkVPHGYpcCJ52ek4U/ymZyfuV1nKE23AyBJ51E/6Yr0mhZ7xGTO4ag==}
+  /zrender@6.0.0:
+    resolution: {integrity: sha512-41dFXEEXuJpNecuUQq6JlbybmnHaqqpGlbH1yxnA5V9MMP4SbohSVZsJIwz+zdjQXSSlR1Vc34EgH1zxyTDvhg==}
     dependencies:
       tslib: 2.3.0
     dev: false

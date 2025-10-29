@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="chart-box" v-if="render">
-      <b-charts :options="options" height="150px" ref="chartRef"></b-charts>
+      <v-chart :option="options" :autoresize="true" height="150px" ref="chartRef"></v-chart>
     </div>
   </div>
 </template>
@@ -98,9 +98,7 @@ function initCharts() {
   options.value = opts
 
   render.value = true
-  nextTick(() => {
-    chartRef.value && chartRef.value.refresh()
-  })
+  // vue-echarts 8.x: option 改变会自动更新，无需手动 refresh
 }
 
 watch(

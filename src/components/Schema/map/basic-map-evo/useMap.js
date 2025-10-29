@@ -53,9 +53,12 @@ export function useMap(props) {
   // const { emitDefault, emitClickRegion } = useEvent(props)
 
   onMounted(async () => {
-    const chart = bChartsRef.value.getInstance()
-    initMap(chart, regionName.value)
-    // emitDefault(regionName.value)
+    // vue-echarts 8.x: 使用 .chart 获取 echarts 实例
+    const chart = bChartsRef.value?.chart
+    if (chart) {
+      initMap(chart, regionName.value)
+      // emitDefault(regionName.value)
+    }
   })
 
   watch(
@@ -65,8 +68,10 @@ export function useMap(props) {
       options.value = deepMerge(options.value, {
         geo: newVal,
       })
-      const chart = bChartsRef.value.getInstance()
-      chart.setOption(options.value)
+      // vue-echarts 8.x: 使用组件实例的 setOption（需要 manual-update=true）
+      if (bChartsRef.value && bChartsRef.value.setOption) {
+        bChartsRef.value.setOption(options.value)
+      }
     },
     {
       deep: true,
@@ -77,19 +82,25 @@ export function useMap(props) {
   watch(
     () => props.config.province,
     newVal => {
-      const chart = bChartsRef.value.getInstance()
-      initMap(chart, newVal)
+      // vue-echarts 8.x: 使用 .chart 获取 echarts 实例
+      const chart = bChartsRef.value?.chart
+      if (chart) {
+        initMap(chart, newVal)
+      }
     },
   )
 
   watch(
     () => props.config.cityValue,
     newVal => {
-      const chart = bChartsRef.value.getInstance()
-      if (newVal) {
-        initMap(chart, newVal)
-      } else {
-        initMap(chart, props.config.province)
+      // vue-echarts 8.x: 使用 .chart 获取 echarts 实例
+      const chart = bChartsRef.value?.chart
+      if (chart) {
+        if (newVal) {
+          initMap(chart, newVal)
+        } else {
+          initMap(chart, props.config.province)
+        }
       }
     },
   )
@@ -123,14 +134,20 @@ export function useMap(props) {
    * @param {*} regionName
    */
   async function getGeoJson(regionName) {
-    bChartsRef.value.showLoading({
-      color: '#1089ff',
-      maskColor: 'rgba(255, 255, 255, 0)',
-    })
+    // vue-echarts 8.x: showLoading 和 hideLoading 可以直接在组件实例上调用
+    const chart = bChartsRef.value
+    if (chart && chart.showLoading) {
+      chart.showLoading({
+        color: '#1089ff',
+        maskColor: 'rgba(255, 255, 255, 0)',
+      })
+    }
     const path = getPublicPath(`/data/map/province/${props.config.province}/${regionName}.json`)
     // console.log(path)
     const res = await requireJson(path)
-    bChartsRef.value.hideLoading()
+    if (chart && chart.hideLoading) {
+      chart.hideLoading()
+    }
     return res
   }
 
@@ -185,9 +202,12 @@ export function useMap(props) {
   function handleBackBtnClick() {
     // TODO: 需要通过事件总线发送事件
     const regionName = regionStack.value.pop()
-    const chart = bChartsRef.value.getInstance()
-    initMap(chart, regionName)
-    // emitClickRegion(regionName)
+    // vue-echarts 8.x: 使用 .chart 获取 echarts 实例
+    const chart = bChartsRef.value?.chart
+    if (chart) {
+      initMap(chart, regionName)
+      // emitClickRegion(regionName)
+    }
   }
 
   return {

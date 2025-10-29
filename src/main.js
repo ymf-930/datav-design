@@ -5,7 +5,7 @@ import { setupStore } from '@/store'
 import { registerDirectives } from '@/directives'
 import { registerLazy } from '@/plugins/lazy-load'
 import { registerAntd } from '@/plugins/ant-design-vue'
-import { registerCharts } from '@/plugins/bin-charts-next'
+import { registerCharts } from '@/plugins/vue-echarts'
 import { registerEditor } from '@/plugins/bin-editor-next'
 import { registerDatav } from '@/plugins/bin-datav'
 

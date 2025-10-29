@@ -110,10 +110,10 @@ const VBasicGauge = {
 }
 
 // -------------------------指标-------------------------//
-// 进度环
-const VProgressCircle = {
-  name: 'VProgressCircle',
-  alias: '进度环',
+// 进度条
+const VProgress = {
+  name: 'VProgress',
+  alias: '进度条',
   img: getComPath('pie-one-value.svg'),
 }
 // 信息-数字指标
@@ -247,7 +247,7 @@ export const componentList = [
     group: [
       {
         name: '指标',
-        comps: [VNumberTitleFlop, VProgressCircle],
+        comps: [VNumberTitleFlop, VProgress],
       },
       {
         name: '柱图',

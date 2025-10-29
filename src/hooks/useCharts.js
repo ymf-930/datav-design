@@ -11,9 +11,13 @@ export function useChartMain(data) {
   const render = ref(false)
 
   // 刷新图表
+  // vue-echarts 8.x: 默认是响应式的，option 改变会自动更新
+  // 不需要手动调用 setOption（除非设置了 manual-update="true"）
   function refreshChart() {
+    // vue-echarts 会自动监听 option 的变化并更新图表
+    // 如果需要强制重新渲染，可以触发 nextTick
     nextTick(() => {
-      chartRef.value && chartRef.value.refresh()
+      // 图表会自动更新，这里只是确保 DOM 更新完成
     })
   }
 
