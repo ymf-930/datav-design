@@ -10,6 +10,7 @@
 @import './ant-override/tree.css';
 @import './ant-override/tabs.css';
 @import './ant-override/drawer.css';
+@import './ant-override/dropdown.css';
 @import './ant-override/collapse.css';
 @import './ant-override/radio.css';
 @import './ant-override/space.css';

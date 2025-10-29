@@ -3,7 +3,7 @@
 [theme-name='dark'] {
   /* 统计数值组件容器 */
   .ant-statistic {
-    color: var(--datav-text-color-primary);
+    color: var(--ant-primary-color);
   }
 
   /* 统计标题 */
@@ -13,12 +13,12 @@
 
   /* 统计内容区域 */
   .ant-statistic-content {
-    color: var(--datav-text-color-primary);
+    color: var(--ant-primary-color);
   }
 
   /* 统计数值 */
   .ant-statistic-content-value {
-    color: var(--datav-text-color-primary);
+    color: var(--ant-primary-color);
   }
 
   /* 统计数值整数部分 */

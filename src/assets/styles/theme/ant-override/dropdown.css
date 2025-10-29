@@ -1,0 +1,146 @@
+/* Ant Design Vue Dropdown 暗黑主题覆盖 */
+
+[theme-name='dark'] {
+  /* 下拉菜单容器 */
+  .ant-dropdown {
+    color: var(--datav-text-color-primary);
+  }
+
+  /* 下拉菜单面板 */
+  .ant-dropdown-menu {
+    background-color: var(--datav-bg-color-primary);
+    box-shadow: var(--datav-box-shadow-base);
+    border: 1px solid var(--datav-border-color-base);
+  }
+
+  /* 菜单项 */
+  .ant-dropdown-menu-item,
+  .ant-dropdown-menu-submenu-title {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-dropdown-menu-item:hover,
+  .ant-dropdown-menu-submenu-title:hover {
+    color: var(--ant-primary-color);
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 选中状态 */
+  .ant-dropdown-menu-item-selected,
+  .ant-dropdown-menu-submenu-title-selected {
+    background-color: var(--ant-primary-2);
+    color: var(--ant-primary-color);
+  }
+
+  /* 激活状态 */
+  .ant-dropdown-menu-item-active,
+  .ant-dropdown-menu-submenu-title-active {
+    background-color: var(--datav-bg-color-secondary);
+  }
+
+  /* 禁用状态 */
+  .ant-dropdown-menu-item-disabled,
+  .ant-dropdown-menu-submenu-title-disabled {
+    color: var(--datav-text-color-disabled);
+  }
+
+  .ant-dropdown-menu-item-disabled:hover,
+  .ant-dropdown-menu-submenu-title-disabled:hover {
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+
+  /* 菜单分隔线 */
+  .ant-dropdown-menu-item-divider {
+    background-color: var(--datav-border-color-base);
+  }
+
+  /* 菜单分组标题 */
+  .ant-dropdown-menu-item-group-title {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 子菜单 */
+  .ant-dropdown-menu-submenu {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-dropdown-menu-submenu-popup {
+    background-color: var(--datav-bg-color-primary);
+  }
+
+  .ant-dropdown-menu-submenu-arrow {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 子菜单展开箭头 */
+  .ant-dropdown-menu-submenu-expand-icon,
+  .ant-dropdown-menu-submenu-arrow-icon {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 触发器 */
+  .ant-dropdown-trigger {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-dropdown-trigger:hover {
+    color: var(--ant-primary-color);
+  }
+
+  /* 按钮样式的下拉菜单 */
+  .ant-dropdown-button {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-dropdown-button > .ant-btn {
+    border-color: var(--datav-border-color-base);
+  }
+
+  /* 下拉菜单链接 */
+  .ant-dropdown-menu-item > a,
+  .ant-dropdown-menu-submenu-title > a {
+    color: var(--datav-text-color-primary);
+  }
+
+  .ant-dropdown-menu-item > a:hover,
+  .ant-dropdown-menu-submenu-title > a:hover {
+    color: var(--ant-primary-color);
+  }
+
+  /* 危险操作 */
+  .ant-dropdown-menu-item-danger {
+    color: var(--ant-error-color);
+  }
+
+  .ant-dropdown-menu-item-danger:hover {
+    background-color: var(--ant-error-1);
+    color: var(--ant-error-color);
+  }
+
+  .ant-dropdown-menu-item-danger.ant-dropdown-menu-item-active {
+    background-color: var(--ant-error-1);
+  }
+
+  /* 下拉菜单图标 */
+  .ant-dropdown-menu-item-icon,
+  .ant-dropdown-menu-submenu-title-icon {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 空状态 */
+  .ant-dropdown-menu-item-empty {
+    color: var(--datav-text-color-disabled);
+  }
+
+  /* RTL 支持 */
+  .ant-dropdown-rtl .ant-dropdown-menu-submenu-arrow {
+    color: var(--datav-text-color-secondary);
+  }
+
+  /* 下拉菜单隐藏状态 */
+  .ant-dropdown-hidden {
+    display: none;
+  }
+}
+
