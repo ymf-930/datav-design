@@ -191,7 +191,7 @@ const handleUpload = file => {
 const downloadCfg = () => {
   const { templateName, pageJson } = buildPageJson()
   downloadFile(pageJson, `${templateName}.json`)
-  message.success({ message: '模板文件已保存！', showClose: true })
+  message.success('模板文件已保存！')
 }
 
 // 保存

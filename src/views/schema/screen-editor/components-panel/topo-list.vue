@@ -39,6 +39,7 @@ const groups = ref([
   { key: 'sewage', value: '污水处理' },
   { key: 'icon', value: '2.5D-2D图标' },
   { key: 'city', value: '城市图标' },
+  { key: 'other', value: '其他' },
 ])
 
 useCollapse()

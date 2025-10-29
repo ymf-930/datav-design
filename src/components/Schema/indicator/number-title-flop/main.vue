@@ -1,13 +1,13 @@
 <template>
   <div class="dv-wrapper" :style="wrapperStyle">
     <div :style="titleStyle">{{ titleText }}</div>
-    <div :style="counterStyle" v-if="render">
-      <a-statistic :startVal="0"
-        :endVal="realNumber"
-        :animationDuration="counter.duration"
+    <div :style="counterContainerStyle" v-if="render">
+      <a-statistic 
+        :value="realNumber"
+        :value-style="counterValueStyle"
         :precision="counter.decimals"
-        :decimal="counter.decimal"
-        :separator="counter.separator"
+        :decimal-separator="counter.decimal"
+        :group-separator="counter.separator"
         :prefix="counter.prefix"
         :suffix="counter.suffix"
       ></a-statistic>
@@ -100,15 +100,13 @@ const titleStyle = computed(() => {
   return style
 })
 
-const counterStyle = computed(() => {
+// 容器样式（布局相关）
+const counterContainerStyle = computed(() => {
   const { title, counter, global } = config.value
   const style = {
     whiteSpace: 'nowrap',
-    color: counter.textStyle.color,
     textAlign: counter.textStyle.textAlign,
-    fontFamily: counter.textStyle.fontFamily,
-    fontSize: `${counter.textStyle.fontSize}px`,
-    fontWeight: counter.textStyle.fontWeight,
+    color: counter.textStyle.color, // 设置容器颜色，确保继承
   }
 
   const titleContainerH = title.textStyle.fontSize + 10
@@ -121,6 +119,17 @@ const counterStyle = computed(() => {
     style.height = `${attr.value.h}px`
   }
   return style
+})
+
+// 数值样式（传递给 a-statistic 的 valueStyle）
+const counterValueStyle = computed(() => {
+  const { counter } = config.value
+  return {
+    color: counter.textStyle.color,
+    fontFamily: counter.textStyle.fontFamily,
+    fontSize: `${counter.textStyle.fontSize}px`,
+    fontWeight: counter.textStyle.fontWeight,
+  }
 })
 
 const counter = computed(() => config.value.counter)
@@ -156,3 +165,28 @@ usePolling(() => {
   setDvData()
 }, apiData.value.config)
 </script>
+
+<style scoped>
+/* 确保 Statistic 组件的颜色能够正确继承 */
+:deep(.ant-statistic) {
+  color: inherit;
+}
+
+:deep(.ant-statistic-content) {
+  color: inherit !important;
+}
+
+:deep(.ant-statistic-content-value) {
+  color: inherit !important;
+}
+
+:deep(.ant-statistic-content-value-int),
+:deep(.ant-statistic-content-value-decimal) {
+  color: inherit !important;
+}
+
+:deep(.ant-statistic-content-prefix),
+:deep(.ant-statistic-content-suffix) {
+  color: inherit !important;
+}
+</style>

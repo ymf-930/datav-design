@@ -95,14 +95,6 @@
       <g-field label="分隔符">
         <g-input v-model="config.counter.separator" />
       </g-field>
-      <g-field label="开启动画">
-        <div class="pt-5">
-          <a-switch v-model:checked="config.counter.autoplay" size="small" />
-        </div>
-      </g-field>
-      <g-field label="动画时长">
-        <g-slider v-model="config.counter.duration" :min="0" :max="2000" :step="1" suffix="ms" />
-      </g-field>
     </g-field-collapse>
   </div>
 </template>
