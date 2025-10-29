@@ -75,6 +75,7 @@
                 <AntIcon
                   :name="com.locked ? 'LockOutlined' : 'UnlockOutlined'"
                   class="show-toggle-btn"
+                  :class="{ 'locked-icon': com.locked }"
                   :title="com.locked ? '解锁' : '锁定'"
                   @click="com.locked = !com.locked"
                 />
@@ -330,7 +331,7 @@ const cancelSelectCom = () => schemaStore.selectCom()
     &.locked {
       .show-toggle-btn {
         display: block;
-        &.b-icon-lock {
+        &.locked-icon {
           color: var(--ant-primary-color);
         }
       }
