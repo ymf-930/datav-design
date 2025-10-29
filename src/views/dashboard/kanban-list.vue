@@ -38,7 +38,7 @@
             </div>
             <div class="list-item-mask">
               <div class="action">
-                <a-button type="primary" transparent @click="handleEdit(item)">
+                <a-button type="primary" @click="handleEdit(item)">
                   <template #icon>
                     <AntIcon name="EditOutlined" />
                   </template>
