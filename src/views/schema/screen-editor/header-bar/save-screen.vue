@@ -5,6 +5,7 @@
     top="200px"
     class="schema-modal"
     @close="visible = false"
+    :focusable="false"
   >
     <a-form ref="formRef" :model="pageInfo" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" v-if="visible">
       <a-form-item label="所在目录" class="is-required" v-if="!route.query.isShow">
@@ -16,7 +17,7 @@
       </a-form-item>
       <a-form-item
         label="大屏名称"
-        prop="name"
+        name="name"
         :rules="{ required: true, message: '大屏名称不能为空', trigger: 'blur' }"
       >
         <a-input v-model:value="pageInfo.name"></a-input>

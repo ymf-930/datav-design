@@ -1,8 +1,11 @@
 <template>
   <div class="setting-panel">
     <div class="page-config-top">
-      <a-radio-group model-value="多选区域" size="large" style="width: 100%">
-        <a-radio-button value="多选区域"></a-radio-button>
+      <a-radio-group v-model:value="multiSelectValue" style="width: 100%">
+        <a-radio-button :value="0" style="width: 100%;display: flex;" flex="main:center">
+          <span class="mr-16">多选区域</span>
+          <AntIcon name="GroupOutlined"></AntIcon>
+        </a-radio-button>
       </a-radio-group>
     </div>
 
@@ -44,8 +47,10 @@
 
 <script setup>
 import { useStore } from '@/store'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { MultiplAlignOptions } from '@/config/select-options'
+
+const multiSelectValue = ref(0)
 
 const alignIconMap = {
   'align-top': 'VerticalAlignTopOutlined',

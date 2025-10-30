@@ -1,0 +1,3108 @@
+{
+    "pageConfig": {
+      "width": 1920,
+      "height": 1080,
+      "bgColor": "#0d2a42",
+      "bgImage": "",
+      "thumbnail": "",
+      "chartThemeColor": "dark",
+      "customColorsList": [
+        {
+          "id": "custom_color-25",
+          "name": "未命名",
+          "color": [
+            "#4992ff",
+            "#7cffb2",
+            "#fddd60",
+            "#ff6e76",
+            "#58d9f9",
+            "#05c091"
+          ]
+        },
+        {
+          "id": "custom_color-22",
+          "name": "未命名",
+          "color": [
+            "#4992ff",
+            "#7cffb2",
+            "#fddd60",
+            "#ff6e76",
+            "#58d9f9",
+            "#05c091"
+          ]
+        }
+      ],
+      "styles": {
+        "filterShow": true,
+        "blendMode": "normal",
+        "hueRotate": 360,
+        "saturate": 1,
+        "contrast": 1,
+        "brightness": 1,
+        "opacity": 1
+      },
+      "initScript": {
+        "enable": false,
+        "scriptStr": ""
+      },
+      "grid": 1
+    },
+    "components": [
+      {
+        "id": "VBrokenLine_67",
+        "name": "VBrokenLine",
+        "alias": "折线_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1005,
+          "y": 184.25,
+          "w": 104,
+          "h": 713,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":67.13284769168048,\"y\":2},{\"x\":64.49226399841154,\"y\":93.77477378516369}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "none",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_65",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 309,
+          "y": 165.85,
+          "w": 822,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "none",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_63",
+        "name": "VBrokenLine",
+        "alias": "折线",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 256,
+          "y": 146.25,
+          "w": 104,
+          "h": 717,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":67.13284769168048,\"y\":2},{\"x\":65.10603998016873,\"y\":96.6878685487204}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "none",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_57",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 310,
+          "y": 808,
+          "w": 559,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_56",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1064,
+          "y": 819.25,
+          "w": 469,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_53",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1064,
+          "y": 615.25,
+          "w": 469,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":64.70289311597759,\"y\":74.09739168834425},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_54",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1064,
+          "y": 433,
+          "w": 469,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_51",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 310,
+          "y": 621.25,
+          "w": 559,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_45",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 310,
+          "y": 278.25,
+          "w": 559,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_41",
+        "name": "VBrokenLine",
+        "alias": "折线_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 310,
+          "y": 446.75,
+          "w": 559,
+          "h": 41,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VBrokenLine_55",
+        "name": "VBrokenLine",
+        "alias": "折线_copy_copy_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1064,
+          "y": 271,
+          "w": 469,
+          "h": 42,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "EnterOutlined",
+        "config": {
+          "points": "[{\"x\":2.059465448336622,\"y\":72.83370112959956},{\"x\":93.44955683842801,\"y\":69.22619752209596}]",
+          "width": 6,
+          "color": "#8d8d9b",
+          "dashStyle": "solid",
+          "arrowStyle": "end",
+          "enableAnimation": false,
+          "animationType": "electric",
+          "animationColor": "#1890ff",
+          "animationReverse": false,
+          "animationDelay": 10,
+          "trackBallRadius": 4
+        }
+      },
+      {
+        "id": "VTopo_23",
+        "name": "VTopo",
+        "alias": "1号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 757,
+          "y": 264,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_24",
+        "name": "VTopo",
+        "alias": "染缸燃烧器1",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 444,
+          "y": 255.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_28",
+        "name": "VTopo",
+        "alias": "2号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 755,
+          "y": 432,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_29",
+        "name": "VTopo",
+        "alias": "染缸燃烧器2",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 446,
+          "y": 418.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_33",
+        "name": "VTopo",
+        "alias": "3号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 755,
+          "y": 607,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_34",
+        "name": "VTopo",
+        "alias": "染缸燃烧器3",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 444,
+          "y": 593.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_35",
+        "name": "VTopo",
+        "alias": "4号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 755,
+          "y": 793.25,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_36",
+        "name": "VTopo",
+        "alias": "染缸燃烧器4",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 444,
+          "y": 775.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_45",
+        "name": "VTopo",
+        "alias": "5号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1422,
+          "y": 271,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_46",
+        "name": "VTopo",
+        "alias": "染缸燃烧器5",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1134,
+          "y": 255.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_47",
+        "name": "VTopo",
+        "alias": "6号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1422,
+          "y": 433,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_48",
+        "name": "VTopo",
+        "alias": "染缸燃烧器6",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1134,
+          "y": 417.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_49",
+        "name": "VTopo",
+        "alias": "7号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1420,
+          "y": 608,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_50",
+        "name": "VTopo",
+        "alias": "染缸燃烧器7",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1132,
+          "y": 592.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_51",
+        "name": "VTopo",
+        "alias": "8号染缸(图)",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1420,
+          "y": 808,
+          "w": 141,
+          "h": 70.5,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_179.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_52",
+        "name": "VTopo",
+        "alias": "染缸燃烧器8",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1132,
+          "y": 793.25,
+          "w": 150,
+          "h": 100,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 300,
+            "h": 150
+          },
+          "src": "/topology/other/image_180.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VTopo_22",
+        "name": "VTopo",
+        "alias": "图片1",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 292,
+          "y": 72.65,
+          "w": 75,
+          "h": 89.6,
+          "lockedRatio": true,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "ClusterOutlined",
+        "config": {
+          "attr": {
+            "w": 100,
+            "h": 140
+          },
+          "src": "/topology/other/image_36.png",
+          "position": "0 0",
+          "size": "100% 100%",
+          "repeat": "no-repeat"
+        }
+      },
+      {
+        "id": "VMainTitle_23",
+        "name": "VMainTitle",
+        "alias": "日全部用气量",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 346,
+          "y": 112.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "日全部用气量",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_25",
+        "name": "VMainTitle",
+        "alias": "1号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 739,
+          "y": 226,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "1号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_27",
+        "name": "VMainTitle",
+        "alias": "2号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 739,
+          "y": 380.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "2号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_28",
+        "name": "VMainTitle",
+        "alias": "3号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 739,
+          "y": 570,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "3号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_30",
+        "name": "VMainTitle",
+        "alias": "4号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 739,
+          "y": 725.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "4号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_31",
+        "name": "VMainTitle",
+        "alias": "5号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1404,
+          "y": 207.85,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "5号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_32",
+        "name": "VMainTitle",
+        "alias": "6号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1404,
+          "y": 367.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "6号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_33",
+        "name": "VMainTitle",
+        "alias": "7号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1406,
+          "y": 543.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "7号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VMainTitle_34",
+        "name": "VMainTitle",
+        "alias": "8号染缸",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 1404,
+          "y": 725.25,
+          "w": 173,
+          "h": 38,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {},
+        "events": {},
+        "icon": "FileWordOutlined",
+        "config": {
+          "title": "8号染缸",
+          "textStyle": {
+            "fontFamily": "Microsoft Yahei",
+            "fontSize": 14,
+            "color": "#FFFFFF",
+            "fontWeight": "normal",
+            "advanceStyle": ""
+          },
+          "textAlign": "center",
+          "writingMode": "horizontal-tb",
+          "backgroundStyle": {
+            "show": false,
+            "bgColor": "#008bff",
+            "borderRadius": 15,
+            "borderColor": "#fff",
+            "borderStyle": "solid",
+            "borderWidth": 1
+          },
+          "ellipsis": false,
+          "urlConfig": {
+            "url": "",
+            "isBlank": false
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_25",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 918,
+          "y": 245.85,
+          "w": 99,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_25",
+          "id": "api_5",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "温度（℃）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_29",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 918,
+          "y": 306.25,
+          "w": 142,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_29",
+          "id": "api_30",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "日用气量（Nm²）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_33",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 912,
+          "y": 414.85,
+          "w": 99,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_33",
+          "id": "api_34",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "温度（℃）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_35",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 912,
+          "y": 475.25,
+          "w": 142,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_35",
+          "id": "api_36",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "日用气量（Nm²）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_37",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 909,
+          "y": 577.85,
+          "w": 99,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_37",
+          "id": "api_38",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "温度（℃）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_39",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 909,
+          "y": 638.25,
+          "w": 142,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_39",
+          "id": "api_40",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "日用气量（Nm²）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_42",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 906,
+          "y": 758.85,
+          "w": 99,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_42",
+          "id": "api_43",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "温度（℃）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      },
+      {
+        "id": "VNumberTitleFlop_44",
+        "name": "VNumberTitleFlop",
+        "alias": "数字指标_copy_copy_copy_copy",
+        "type": "com",
+        "locked": false,
+        "hided": false,
+        "attr": {
+          "x": 906,
+          "y": 819.25,
+          "w": 142,
+          "h": 74,
+          "lockedRatio": false,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "perspective": 1000,
+          "filterShow": false,
+          "blendMode": "normal",
+          "hueRotate": 0,
+          "saturate": 1,
+          "contrast": 1,
+          "brightness": 1,
+          "opacity": 1
+        },
+        "animation": {
+          "enable": false,
+          "loop": false,
+          "timing": "linear",
+          "direction": "normal",
+          "duration": 2,
+          "delay": 1,
+          "name": "fadeIn"
+        },
+        "apiData": {
+          "comId": "VNumberTitleFlop_44",
+          "id": "api_45",
+          "config": {
+            "polling": false,
+            "pollingInterval": 5000,
+            "data": "{\"title\":\"\",\"value\":0}",
+            "seriesCount": 0,
+            "modelId": "",
+            "modelName": "",
+            "dimensionModel": "",
+            "mappingFieldsModel": {},
+            "tableModelFields": {
+              "header": []
+            },
+            "modelFields": {
+              "dimension": [],
+              "measure": [],
+              "fields": []
+            },
+            "axisFieldsModel": {
+              "x": [],
+              "y": []
+            },
+            "x": [],
+            "y": [],
+            "legend": [],
+            "drill": [],
+            "filters": [],
+            "serviceId": "",
+            "serviceName": "",
+            "interfaceUrl": "",
+            "reqType": "",
+            "reqParam": [],
+            "resParam": [],
+            "dimension": "",
+            "axisFields": {
+              "x": [],
+              "y": []
+            },
+            "boxFields": {
+              "x": [],
+              "y": [],
+              "nAmE": []
+            },
+            "tableFields": {
+              "header": []
+            },
+            "mappingFields": {}
+          },
+          "type": "static",
+          "flushFlag": false,
+          "staticPath": "text/number-title-flop",
+          "compType": "Indicator"
+        },
+        "events": {
+          "onEvents": [],
+          "defaultAction": true,
+          "actions": {
+            "getData": {
+              "title": "更新数据",
+              "params": []
+            }
+          },
+          "customScript": {
+            "augments": [
+              "curComp",
+              "components"
+            ],
+            "enable": false
+          }
+        },
+        "icon": "OrderedListOutlined",
+        "config": {
+          "global": {
+            "fontFamily": "Microsoft Yahei",
+            "arrangement": "top",
+            "distance": 0
+          },
+          "title": {
+            "content": "日用气量（Nm²）",
+            "textStyle": {
+              "fontSize": 18,
+              "color": "#79daff",
+              "fontWeight": "normal",
+              "textAlign": "flex-start"
+            }
+          },
+          "counter": {
+            "textStyle": {
+              "fontFamily": "Microsoft Yahei",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "fontWeight": "normal",
+              "textAlign": "left"
+            },
+            "value": 0,
+            "decimals": 2,
+            "decimal": ".",
+            "separator": ",",
+            "prefix": "",
+            "suffix": ""
+          }
+        }
+      }
+    ]
+  }
