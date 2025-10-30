@@ -20,7 +20,7 @@ export default {
     // 线段颜色
     color: '#8d8d9b',
     // 线条样式：solid(实线), dashed(虚线)
-    dashStyle: 'solid',
+    lineStyle: 'solid',
     // 箭头样式：none(无), start(起点), end(终点), both(双向)
     arrowStyle: 'none',
     

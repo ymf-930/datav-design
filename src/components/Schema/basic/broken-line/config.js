@@ -18,10 +18,14 @@ export default {
     width: 2,
     // 线段颜色
     color: '#8d8d9b',
+    // 路径类型：straight(直角折线), roundCorner(圆角折线), bezier(贝塞尔曲线)
+    pathType: 'straight',
     // 线条样式：solid(实线), dashed(虚线)
-    dashStyle: 'solid',
+    lineStyle: 'solid',
     // 箭头样式：none(无), start(起点), end(终点), both(双向)
     arrowStyle: 'none',
+    // 圆角半径（仅圆角折线使用）
+    cornerRadius: 30,
     
     // 动画配置
     enableAnimation: false,  // 开启动画

@@ -14,8 +14,22 @@
         <g-color-picker v-model="config.color" inline label="颜色"/>
       </g-field>
       
+      <g-field label="路径类型">
+        <g-select v-model="config.pathType" :data="pathTypeOptions" />
+      </g-field>
+      
       <g-field label="线条样式">
-        <g-select v-model="config.dashStyle" :data="dashStyleOptions" />
+        <g-select v-model="config.lineStyle" :data="lineStyleOptions" />
+      </g-field>
+      
+      <g-field label="圆角半径" v-if="config.pathType === 'roundCorner'">
+        <g-input-number
+          v-model="config.cornerRadius"
+          :min="5"
+          :max="200"
+          :step="5"
+          suffix="px"
+        />
       </g-field>
       
       <g-field label="箭头样式">
@@ -76,8 +90,15 @@ const props = defineProps({
 
 const config = computed(() => props.data.config)
 
+// 路径类型选项
+const pathTypeOptions = [
+  { value: 'straight', label: '直角折线' },
+  { value: 'roundCorner', label: '圆角折线' },
+  { value: 'bezier', label: '贝塞尔曲线' },
+]
+
 // 线条样式选项
-const dashStyleOptions = [
+const lineStyleOptions = [
   { value: 'solid', label: '实线' },
   { value: 'dashed', label: '虚线' },
 ]

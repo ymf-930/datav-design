@@ -38,9 +38,9 @@
       </defs>
 
       <!-- 折线 - 仅当电流动画启用时隐藏 -->
-      <polyline
+      <path
         v-if="!(config.enableAnimation && config.animationType === 'electric')"
-        :points="polylinePoints"
+        :d="pathString"
         :stroke="config.color"
         :stroke-width="config.width"
         :stroke-dasharray="dashArray"
@@ -60,9 +60,9 @@
       />
       
       <!-- 电流动画 - 短虚线流动 -->
-      <polyline
+      <path
         v-if="config.enableAnimation && config.animationType === 'electric'"
-        :points="polylinePoints"
+        :d="pathString"
         :stroke="config.animationColor"
         :stroke-width="config.width"
         :stroke-dasharray="electricDashArray"
@@ -77,12 +77,12 @@
           :dur="`${config.animationDelay}s`"
           repeatCount="indefinite"
         />
-      </polyline>
+      </path>
       
       <!-- 水珠动画 - 流动虚线（圆角） -->
-      <polyline
+      <path
         v-if="config.enableAnimation && config.animationType === 'water'"
-        :points="polylinePoints"
+        :d="pathString"
         :stroke="config.animationColor"
         :stroke-width="config.width"
         :stroke-dasharray="waterDashArray"
@@ -97,7 +97,7 @@
           :dur="`${config.animationDelay}s`"
           repeatCount="indefinite"
         />
-      </polyline>
+      </path>
       
       <!-- 轨迹动画 - 圆点移动 -->
       <circle
@@ -266,15 +266,107 @@ const lineSegments = computed(() => {
 
 // 计算虚线样式 - 根据线条宽度动态调整
 const dashArray = computed(() => {
-  const { dashStyle, width } = config.value
-  if (dashStyle === 'solid') return 'none'
-  if (dashStyle === 'dashed') {
+  const { lineStyle, width } = config.value
+  if (lineStyle === 'solid') return 'none'
+  if (lineStyle === 'dashed') {
     // 虚线长度 = 线条宽度 × 3，间隙 = 线条宽度 × 2
     const dash = width * 3
     const gap = width * 2
     return `${dash},${gap}`
   }
   return 'none'
+})
+
+// 计算不同路径类型的路径字符串
+const pathString = computed(() => {
+  const { pathType, cornerRadius } = config.value
+  const offset = arrowOffset.value
+  const points = pointsArray.value.map(point => ({
+    x: (point.x / 100) * contentWidth.value + offset,
+    y: (point.y / 100) * contentHeight.value + offset
+  }))
+  
+  if (points.length < 2) return ''
+  
+  switch (pathType) {
+    case 'straight': {
+      // 直角折线 - 保持原始折点
+      let path = `M ${points[0].x} ${points[0].y}`
+      for (let i = 1; i < points.length; i++) {
+        path += ` L ${points[i].x} ${points[i].y}`
+      }
+      return path
+    }
+    
+    case 'roundCorner': {
+      // 圆角折线
+      if (points.length === 2) {
+        return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y}`
+      }
+      
+      let path = `M ${points[0].x} ${points[0].y}`
+      
+      for (let i = 1; i < points.length - 1; i++) {
+        const prev = points[i - 1]
+        const curr = points[i]
+        const next = points[i + 1]
+        
+        // 计算到前一个点和下一个点的距离
+        const d1 = Math.sqrt(Math.pow(curr.x - prev.x, 2) + Math.pow(curr.y - prev.y, 2))
+        const d2 = Math.sqrt(Math.pow(next.x - curr.x, 2) + Math.pow(next.y - curr.y, 2))
+        
+        // 圆角半径不能超过线段长度的一半
+        const r = Math.min(cornerRadius, d1 / 2, d2 / 2)
+        
+        // 计算圆角起点（从当前点向前一个点方向偏移）
+        const ratio1 = r / d1
+        const p1x = curr.x - (curr.x - prev.x) * ratio1
+        const p1y = curr.y - (curr.y - prev.y) * ratio1
+        
+        // 计算圆角终点（从当前点向下一个点方向偏移）
+        const ratio2 = r / d2
+        const p2x = curr.x + (next.x - curr.x) * ratio2
+        const p2y = curr.y + (next.y - curr.y) * ratio2
+        
+        // 画线到圆角起点，然后用二次贝塞尔曲线连接到圆角终点
+        path += ` L ${p1x} ${p1y} Q ${curr.x} ${curr.y} ${p2x} ${p2y}`
+      }
+      
+      // 连接到最后一个点
+      path += ` L ${points[points.length - 1].x} ${points[points.length - 1].y}`
+      return path
+    }
+    
+    case 'bezier': {
+      // 贝塞尔曲线 - 平滑曲线
+      if (points.length === 2) {
+        return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y}`
+      }
+      
+      // 使用 Catmull-Rom 样条插值创建平滑曲线
+      let path = `M ${points[0].x} ${points[0].y}`
+      
+      for (let i = 0; i < points.length - 1; i++) {
+        const p0 = points[Math.max(0, i - 1)]
+        const p1 = points[i]
+        const p2 = points[i + 1]
+        const p3 = points[Math.min(points.length - 1, i + 2)]
+        
+        // 计算控制点
+        const cp1x = p1.x + (p2.x - p0.x) / 6
+        const cp1y = p1.y + (p2.y - p0.y) / 6
+        const cp2x = p2.x - (p3.x - p1.x) / 6
+        const cp2y = p2.y - (p3.y - p1.y) / 6
+        
+        path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`
+      }
+      
+      return path
+    }
+    
+    default:
+      return polylinePoints.value
+  }
 })
 
 // 计算箭头形状点坐标（终点箭头，向右）
@@ -293,15 +385,8 @@ const arrowPointsStart = computed(() => {
 const animationReverse = computed(() => config.value.animationReverse)
 
 // 计算动画路径（用于轨迹动画）
-const animationPath = computed(() => {
-  const offset = arrowOffset.value
-  const pathParts = pointsArray.value.map((point, index) => {
-    const x = (point.x / 100) * contentWidth.value + offset
-    const y = (point.y / 100) * contentHeight.value + offset
-    return index === 0 ? `M ${x} ${y}` : `L ${x} ${y}`
-  })
-  return pathParts.join(' ')
-})
+// 动画路径使用 pathString 以支持不同路径类型
+const animationPath = computed(() => pathString.value)
 
 // 电流动画虚线样式（短虚线，大间隔）
 const electricDashArray = computed(() => {

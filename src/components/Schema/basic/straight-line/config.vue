@@ -19,7 +19,7 @@
       </g-field>
       
       <g-field label="线条样式">
-        <g-select v-model="config.dashStyle" :data="dashStyleOptions" />
+        <g-select v-model="config.lineStyle" :data="lineStyleOptions" />
       </g-field>
       
       <g-field label="箭头样式">
@@ -87,7 +87,7 @@ const directionOptions = [
 ]
 
 // 线条样式选项
-const dashStyleOptions = [
+const lineStyleOptions = [
   { value: 'solid', label: '实线' },
   { value: 'dashed', label: '虚线' },
 ]

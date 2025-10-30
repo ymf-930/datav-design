@@ -238,9 +238,9 @@ const strokeWidth = computed(() => {
 
 // 计算虚线样式 - 根据线条宽度动态调整
 const dashArray = computed(() => {
-  const { dashStyle, width } = config.value
-  if (dashStyle === 'solid') return 'none'
-  if (dashStyle === 'dashed') {
+  const { lineStyle, width } = config.value
+  if (lineStyle === 'solid') return 'none'
+  if (lineStyle === 'dashed') {
     // 虚线长度 = 线条宽度 × 3，间隙 = 线条宽度 × 2
     const dash = width * 3
     const gap = width * 2
