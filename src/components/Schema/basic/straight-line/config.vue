@@ -1,10 +1,6 @@
 <template>
   <div class="setting-panel-gui">
     <g-field-collapse label="属性" default-open>
-      <g-field label="方向">
-        <g-select v-model="config.direction" :data="directionOptions" />
-      </g-field>
-      
       <g-field label="线条" flat>
         <g-input-number
           v-model="config.width"
@@ -79,12 +75,6 @@ const props = defineProps({
 })
 
 const config = computed(() => props.data.config)
-
-// 方向选项
-const directionOptions = [
-  { value: 'horizontal', label: '水平' },
-  { value: 'vertical', label: '垂直' },
-]
 
 // 线条样式选项
 const lineStyleOptions = [

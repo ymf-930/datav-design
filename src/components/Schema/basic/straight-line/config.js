@@ -13,8 +13,6 @@ export default {
     endX: 90,     // 终点X百分比
     endY: 50,     // 终点Y百分比
     
-    // 线条方向：horizontal(水平), vertical(垂直)
-    direction: 'horizontal',
     // 线条宽度（粗细）
     width: 2,
     // 线段颜色
