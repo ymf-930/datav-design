@@ -122,7 +122,7 @@ export function createGroup(areaData, components) {
     name: 'Group',
     type: 'group',
     alias: `组合_${id}`,
-    icon: 'group',
+    icon: 'GroupOutlined',
     attr: {
       x: areaData.x,
       y: areaData.y,

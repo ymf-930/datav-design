@@ -5,6 +5,7 @@
   .ant-collapse {
     background-color: transparent;
     border: none;
+    color: var(--datav-text-color-primary);
     /* border-color: var(--datav-border-color-base); */
   }
 
