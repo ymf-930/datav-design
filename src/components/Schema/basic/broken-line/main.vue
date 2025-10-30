@@ -37,8 +37,9 @@
         </marker>
       </defs>
 
-      <!-- 折线 -->
+      <!-- 折线 - 仅当电流动画启用时隐藏 -->
       <polyline
+        v-if="!(config.enableAnimation && config.animationType === 'electric')"
         :points="polylinePoints"
         :stroke="config.color"
         :stroke-width="config.width"

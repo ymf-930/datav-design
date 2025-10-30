@@ -48,8 +48,9 @@
         </marker>
       </defs>
       
-      <!-- 主线段 -->
+      <!-- 主线段 - 仅当电流动画启用时隐藏 -->
       <line
+        v-if="!(config.enableAnimation && config.animationType === 'electric')"
         :x1="actualCoords.x1"
         :y1="actualCoords.y1"
         :x2="actualCoords.x2"
