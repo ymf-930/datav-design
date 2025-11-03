@@ -1,12 +1,6 @@
 <template>
-  <a-modal
-    v-model:visible="visible"
-    title="新建大屏"
-    width="1000px"
-    class="schema-modal"
-    destroyOnClose
-  >
-    <a-dropdown trigger="click">
+  <a-modal v-model:visible="visible" title="新建大屏" width="1000px" class="schema-modal" destroyOnClose>
+    <a-dropdown :trigger="['click']" :getPopupContainer="trigger => trigger.parentNode">
       <a class="ant-dropdown-link" @click.prevent>
         Hover me
         <AntIcon name="DownOutlined" size="16"></AntIcon>
@@ -28,30 +22,19 @@
     <div>
       <h2 class="title-bar">预设</h2>
       <div class="preset-wp">
-        <div
-          class="preset-item web-box"
-          :class="{ selected: createValue.type === 'web' }"
-          @click="selectPreset('web')"
-        >
+        <div class="preset-item web-box" :class="{ selected: createValue.type === 'web' }" @click="selectPreset('web')">
           <AntIcon name="LaptopOutlined" size="36"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ webValue.label }}</div>
             <div class="h4">{{ webValue.width }}x{{ webValue.height }}</div>
           </div>
-          <a-dropdown
-            trigger="click"
-            placement="bottomEnd"
-          >
-            <a class="dropdown-trigger" @click.stop.prevent>
+          <a-dropdown :trigger="['click']" placement="bottomRight" :getPopupContainer="trigger => trigger.parentNode">
+            <a class="dropdown-trigger" @click.prevent>
               <AntIcon name="DownOutlined" size="16"></AntIcon>
             </a>
             <template #overlay>
               <a-menu>
-                <a-menu-item
-                  v-for="item in webScreenMap"
-                  :key="item.label"
-                  @click="handleWebTrigger(item)"
-                >
+                <a-menu-item v-for="item in webScreenMap" :key="item.label" @click="handleWebTrigger(item)">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -61,30 +44,20 @@
             </template>
           </a-dropdown>
         </div>
-        <div
-          class="preset-item mobile-box"
-          :class="{ selected: createValue.type === 'mobile' }"
-          @click="selectPreset('mobile')"
-        >
+        <div class="preset-item mobile-box" :class="{ selected: createValue.type === 'mobile' }"
+          @click="selectPreset('mobile')">
           <AntIcon name="MobileOutlined" size="36"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ mobileValue.label }}</div>
             <div class="h4">{{ mobileValue.width }}x{{ mobileValue.height }}</div>
           </div>
-          <a-dropdown
-            trigger="click"
-            placement="bottomEnd"
-          >
-            <a class="dropdown-trigger" @click.stop.prevent>
+          <a-dropdown :trigger="['click']" placement="bottomRight" :getPopupContainer="trigger => trigger.parentNode">
+            <a class="dropdown-trigger" @click.prevent>
               <AntIcon name="DownOutlined" size="16"></AntIcon>
             </a>
             <template #overlay>
               <a-menu>
-                <a-menu-item
-                  v-for="item in mobileScreenMap"
-                  :key="item.label"
-                  @click="handleMobileTrigger(item)"
-                >
+                <a-menu-item v-for="item in mobileScreenMap" :key="item.label" @click="handleMobileTrigger(item)">
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -94,33 +67,18 @@
             </template>
           </a-dropdown>
         </div>
-        <div
-          class="preset-item custom-box"
-          :class="{ selected: createValue.type === 'custom' }"
-          @click="selectPreset('custom')"
-        >
+        <div class="preset-item custom-box" :class="{ selected: createValue.type === 'custom' }"
+          @click="selectPreset('custom')">
           <AntIcon name="GatewayOutlined" size="36"></AntIcon>
           <div>
             <p class="mb-5">自定义大小</p>
             <p class="custom-input">
               <span class="mr-5">W:</span>
-              <a-input-number
-                v-model:value="customValue.width"
-                :min="100"
-                :step="1"
-                :precision="0"
-                size="small"
-                @change="changeSize(customValue)"
-              />
+              <a-input-number v-model:value="customValue.width" :min="100" :step="1" :precision="0" size="small"
+                @change="changeSize(customValue)" />
               <span class="ml-5 mr-5">H:</span>
-              <a-input-number
-                v-model:value="customValue.height"
-                :min="100"
-                :step="1"
-                :precision="0"
-                size="small"
-                @change="changeSize(customValue)"
-              />
+              <a-input-number v-model:value="customValue.height" :min="100" :step="1" :precision="0" size="small"
+                @change="changeSize(customValue)" />
             </p>
           </div>
           <div style="width: 24px"></div>
@@ -129,28 +87,18 @@
       <h2 class="title-bar">模板</h2>
       <div class="template-list">
         <div class="template-grid" v-for="tpl in templates" :key="tpl.template.id">
-          <div
-            class="template-item"
+          <div class="template-item"
             :class="{ selected: createValue.type === 'tpl' && createValue.tpl === tpl.template.id }"
-            @click="selectTpl(tpl)"
-          >
+            @click="selectTpl(tpl)">
             <div class="template-image">
               <div class="preview-image">
                 <img v-if="getThumb(tpl.pageConfig)" :src="getThumb(tpl.pageConfig)" alt="" />
-                <img
-                  v-else
-                  src="@/assets/images/logo.png"
-                  alt="default"
-                  style="width: 147px; height: 147px; padding: 30px"
-                />
+                <img v-else src="@/assets/images/logo.png" alt="default"
+                  style="width: 147px; height: 147px; padding: 30px" />
               </div>
               <div class="tpl-remove pt-5">
-                <AntIcon
-                  name="DeleteOutlined"
-                  size="14"
-                  @click="removeTpl(tpl)"
-                  style="color: #f5222d; cursor: pointer"
-                />
+                <AntIcon name="DeleteOutlined" size="14" @click="removeTpl(tpl)"
+                  style="color: #f5222d; cursor: pointer" />
               </div>
             </div>
             <div class="template-info">
@@ -335,10 +283,12 @@ defineExpose({
   font-weight: normal;
   color: var(--datav-text-color-primary);
 }
+
 .preset-wp {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--datav-border-radius-lg);
+
   .preset-item {
     display: flex;
     align-items: center;
@@ -350,37 +300,47 @@ defineExpose({
     border: 1px solid var(--s-border-color);
     border-radius: var(--datav-border-radius-base);
     transition: 0.2s;
+
     &.selected {
       border: 1px solid var(--ant-primary-color);
     }
-    > .anticon {
+
+    >.anticon {
       font-size: 40px;
       padding: 0 20px;
       font-weight: lighter;
     }
+
     .label-title {
       width: 140px;
+
       .h2 {
         font-size: var(--datav-font-size-base);
       }
+
       .h4 {
         color: var(--s-text-color-2);
       }
     }
+
     .b-icon-down {
       width: 24px;
       text-align: center;
+
       &:hover {
         color: var(--ant-primary-color);
         background: var(--s-color-1);
         border-radius: 5px;
       }
     }
+
     .custom-input {
       display: flex;
       align-items: center;
+
       :deep(.ant-input-number) {
         width: 75px;
+
         .ant-input-number-handler {
           display: none;
         }
@@ -388,6 +348,7 @@ defineExpose({
     }
   }
 }
+
 .template-list {
   display: flex;
   flex-wrap: wrap;
@@ -399,10 +360,12 @@ defineExpose({
   margin-right: -var(--datav-border-radius-lg);
   color: #fff;
   font-size: var(--datav-font-size-sm);
+
   .template-grid {
     width: 25%;
     padding: 0 var(--datav-border-radius-lg);
   }
+
   .template-item {
     cursor: pointer;
     height: 184px;
@@ -412,12 +375,15 @@ defineExpose({
     transition: 0.2s;
     border-radius: var(--datav-border-radius-base);
     overflow: hidden;
+
     &:hover {
       border: 1px solid var(--ant-primary-color);
+
       .preview-image img {
         transform: scale(1.15);
       }
     }
+
     .template-image {
       padding: var(--datav-border-radius-lg);
       width: 100%;
@@ -438,17 +404,20 @@ defineExpose({
       background: var(--s-color-1);
       transition: 0.2s;
     }
+
     .tpl-remove {
       position: absolute;
       top: var(--datav-border-radius-sm);
       right: var(--datav-border-radius-lg);
     }
+
     .preview-image {
       width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden;
       text-align: center;
+
       img {
         width: 100%;
         height: 100%;
@@ -457,9 +426,11 @@ defineExpose({
         object-fit: cover;
       }
     }
+
     .template-name {
       font-size: var(--datav-font-size-sm);
     }
+
     .template-size {
       font-size: var(--datav-font-size-sm);
       transform: scale(0.8);
@@ -470,10 +441,12 @@ defineExpose({
       font-family: Orbitron-Bold, PingFangSC-Medium, PingFang SC, Microsoft YaHei, Arial, Helvetica,
         sans-serif;
     }
+
     &.selected {
       border: 1px solid var(--ant-primary-color);
     }
   }
+
   .template-item-placeholder {
     width: 258px;
     margin: var(--datav-font-size-lg);
