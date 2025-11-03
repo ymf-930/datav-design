@@ -13,13 +13,21 @@
                 <span class="mr-5">动画</span>
                 <AntIcon name="ShakeOutlined"></AntIcon>
               </a-radio-button>
-              <a-radio-button :value="2" :disabled="curComIsGroup">
+              <a-radio-button :value="2" :disabled="curComIsGroup" v-if="!isTopologyCom">
                 <span class="mr-5">数据</span>
                 <AntIcon name="ThunderboltOutlined"></AntIcon>
               </a-radio-button>
-              <a-radio-button :value="3" :disabled="curComIsGroup">
+              <a-radio-button :value="3" :disabled="curComIsGroup" v-if="!isTopologyCom">
                 <span class="mr-5">事件</span>
                 <AntIcon name="RocketOutlined"></AntIcon>
+              </a-radio-button>
+              <a-radio-button :value="4" v-if="isTopologyCom">
+                <span class="mr-5">端点</span>
+                <AntIcon name="ApartmentOutlined"></AntIcon>
+              </a-radio-button>
+              <a-radio-button :value="5" v-if="isTopologyCom">
+                <span class="mr-5">测点</span>
+                <AntIcon name="RadarChartOutlined"></AntIcon>
               </a-radio-button>
             </a-radio-group>
           </div>
@@ -27,8 +35,14 @@
             <ScrollContainer height="100%" :scrollbar-size="6">
               <SettingPanel :key="selectedCom.id" v-if="curTabIndex === 0" />
               <AnimationsPanel :key="selectedCom.id" v-if="curTabIndex === 1" />
-              <DataCenterPanel :key="selectedCom.id" v-if="curTabIndex === 2" />
-              <EventsPanel :key="selectedCom.id" v-if="curTabIndex === 3" />
+              <DataCenterPanel :key="selectedCom.id" v-if="curTabIndex === 2 && !isTopologyCom" />
+              <EventsPanel :key="selectedCom.id" v-if="curTabIndex === 3 && !isTopologyCom" />
+              <div v-if="isTopologyCom && curTabIndex === 4" class="empty-panel">
+                <a-empty description="端点配置（待开发）"></a-empty>
+              </div>
+              <div v-if="isTopologyCom && curTabIndex === 5" class="empty-panel">
+                <a-empty description="测点配置（待开发）"></a-empty>
+              </div>
             </ScrollContainer>
           </div>
         </template>
@@ -69,6 +83,11 @@ const { toolbar, selectedCom, isMultiSelect, curComIsGroup } = storeToRefs(schem
 const curTabIndex = ref(0)
 
 const isGroupChild = computed(() => !isEmpty(selectedCom.value.groupStyle))
+
+// 判断是否是组态类型组件
+const isTopologyCom = computed(() => {
+  return selectedCom.value && selectedCom.value.name === 'VTopo'
+})
 
 watch(
   () => selectedCom.value,
@@ -131,6 +150,12 @@ watch(
             background: var(--ant-primary-color);
           }
         }
+      }
+      .empty-panel {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
