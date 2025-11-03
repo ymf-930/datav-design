@@ -150,6 +150,12 @@
     :component-id="selectedCom?.id"
     @save="handlePointAssociationSave"
   />
+  <!-- 限值动画弹窗 -->
+  <LimitAnimationModal
+    v-model:modelValue="limitAnimationVisible"
+    :component-id="selectedCom?.id"
+    @save="handleLimitAnimationSave"
+  />
 </template>
 
 <script setup>
@@ -166,6 +172,7 @@ import { dataURLtoFile } from '@/utils/file-helper'
 import { EventBus, EventMap } from '@/utils/event-bus'
 import { MultiplAlignOptions } from '@/config/select-options'
 import PointAssociationModal from './PointAssociationModal.vue'
+import LimitAnimationModal from './LimitAnimationModal.vue'
 
 // map align action to Ant Design icons
 const alignIconMap = {
@@ -193,6 +200,8 @@ const isNumberTitleFlop = computed(() => {
 
 // 测点关联弹窗显示状态
 const pointAssociationVisible = ref(false)
+// 限值动画弹窗显示状态
+const limitAnimationVisible = ref(false)
 
 const moveCom = moveType => {
   if (selectedCom.value) {
@@ -319,14 +328,23 @@ const handlePointAssociationSave = data => {
     Object.assign(selectedCom.value.config.pointAssociation, data)
     // 记录快照，确保保存时包含最新数据
     schemaStore.recordSnapshot()
-    message.success('测点关联配置已保存')
   }
 }
 
 // 限值动画
 const handleLimitAnimation = () => {
-  message.info('限值动画功能待开发')
   contextMenu.value.show = false
+  limitAnimationVisible.value = true
+}
+
+// 限值动画保存回调
+const handleLimitAnimationSave = data => {
+  if (selectedCom.value) {
+    // 保存到组件配置中，会在保存页面时自动序列化到 componentContent 中
+    selectedCom.value.config.limitAnimation = data
+    // 记录快照，确保保存时包含最新数据
+    schemaStore.recordSnapshot()
+  }
 }
 
 const handleContextmenu = ev => {

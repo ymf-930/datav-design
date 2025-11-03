@@ -230,9 +230,10 @@ function handleColorChange(color) {
 }
 
 .color-preview-inner {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .color-preview {
@@ -245,6 +246,10 @@ function handleColorChange(color) {
   transition: all 0.2s ease;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .color-preview:hover {
@@ -260,6 +265,10 @@ function handleColorChange(color) {
   transition: all 0.2s ease;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .color-preview-only:hover {

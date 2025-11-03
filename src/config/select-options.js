@@ -239,3 +239,18 @@ export const RefreshFrequencyOptions = [
   { value: '300', label: '5分钟' },
   { value: '900', label: '15分钟' },
 ]
+
+// 限制规则类型
+export const LimitRuleOptions = [
+  { value: 'eq', label: '等于' },
+  { value: 'gt', label: '大于' },
+  { value: 'lt', label: '小于' },
+  { value: 'between', label: '介于' },
+]
+
+// 动画样式
+export const AnimationStyleOptions = [
+  { value: 'blink', label: '闪烁' },
+  { value: 'bounce', label: '弹跳' },
+  { value: 'none', label: '无' },
+]
