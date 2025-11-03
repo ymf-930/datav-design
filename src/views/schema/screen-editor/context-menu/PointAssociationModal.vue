@@ -87,6 +87,7 @@
 import { computed, reactive, ref, watch } from 'vue'
 import { message } from 'ant-design-vue'
 import { PointLocationOptions, RefreshFrequencyOptions } from '@/config/select-options'
+import { useStore } from '@/store'
 
 defineOptions({
   name: 'PointAssociationModal',
@@ -154,14 +155,11 @@ const handleSave = async () => {
     await formRef.value.validate()
     loading.value = true
     
-    // TODO: 调用API保存数据
-    // await savePointAssociation(props.componentId, formData)
-    
-    // 模拟API调用
-    await new Promise(resolve => setTimeout(resolve, 500))
+    // 数据会通过 emit 传递给父组件，保存到组件配置中
+    // 配置会在页面保存时自动序列化到 componentContent 和 pageJson 中
+    emit('save', { ...formData })
     
     message.success('保存成功')
-    emit('save', { ...formData })
     handleClose()
   } catch (error) {
     console.error('表单验证失败:', error)
@@ -170,17 +168,36 @@ const handleSave = async () => {
   }
 }
 
-// 监听弹窗打开，重置表单
+// 监听弹窗打开，加载已有配置
 watch(
   () => props.modelValue,
   val => {
     if (val) {
+      // 加载已有配置
+      loadPointAssociation()
+    } else {
       resetForm()
-      // TODO: 如果已有数据，可以在这里加载
-      // loadPointAssociation(props.componentId)
     }
   },
 )
+
+// 从组件配置中加载测点关联数据
+const loadPointAssociation = () => {
+  const { schemaStore, storeToRefs } = useStore()
+  const { selectedCom } = storeToRefs(schemaStore)
+  
+  if (selectedCom.value && selectedCom.value.config?.pointAssociation) {
+    const pa = selectedCom.value.config.pointAssociation
+    formData.location = pa.location || ''
+    formData.deviceName = pa.deviceName || ''
+    formData.pointName = pa.pointName || ''
+    formData.refreshFrequency = pa.refreshFrequency || ''
+    formData.displayName = pa.displayName || ''
+    formData.displayUnit = pa.displayUnit || ''
+  } else {
+    resetForm()
+  }
+}
 </script>
 
 <style scoped>

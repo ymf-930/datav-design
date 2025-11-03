@@ -304,21 +304,21 @@ const toCopyCom = () => {
 
 // 测点关联
 const handlePointAssociation = () => {
-  message.info('测点关联功能待开发')
+  // message.info('测点关联功能待开发')
   contextMenu.value.show = false
-  // pointAssociationVisible.value = true
+  pointAssociationVisible.value = true
 }
 
 // 测点关联保存回调
 const handlePointAssociationSave = data => {
-  console.log('测点关联数据:', data)
-  // TODO: 保存测点关联数据到组件配置中
-  // 可以保存到 selectedCom.value.config.pointAssociation 或类似的位置
   if (selectedCom.value) {
+    // 保存到组件配置中，会在保存页面时自动序列化到 componentContent 中
     if (!selectedCom.value.config.pointAssociation) {
       selectedCom.value.config.pointAssociation = {}
     }
     Object.assign(selectedCom.value.config.pointAssociation, data)
+    // 记录快照，确保保存时包含最新数据
+    schemaStore.recordSnapshot()
     message.success('测点关联配置已保存')
   }
 }
