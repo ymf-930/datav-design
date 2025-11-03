@@ -220,3 +220,22 @@ export const DateTypeOptions = [
   { value: 'month', label: '月份' },
   { value: 'date', label: '日期' },
 ]
+
+// 测点位置
+export const PointLocationOptions = [
+  { value: 'accounting_unit', label: '核算单元' },
+  { value: 'device', label: '设备' },
+  { value: 'device_system', label: '设备系统' },
+]
+
+// 实时数据刷新频率
+export const RefreshFrequencyOptions = [
+  { value: '5', label: '5秒' },
+  { value: '10', label: '10秒' },
+  { value: '30', label: '30秒' },
+  { value: '60', label: '1分钟' },
+  { value: '120', label: '2分钟' },
+  { value: '180', label: '3分钟' },
+  { value: '300', label: '5分钟' },
+  { value: '900', label: '15分钟' },
+]

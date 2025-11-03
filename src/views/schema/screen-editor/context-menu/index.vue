@@ -117,6 +117,23 @@
           </span>
           <span class="key-code">Ctrl + C,V</span>
         </div>
+        <!-- 数字指标组件专用菜单 -->
+        <template v-if="isNumberTitleFlop">
+          <div class="context-menu-divider"></div>
+          <div class="context-menu-item" @click="handlePointAssociation">
+            <span>
+              <AntIcon name="LinkOutlined" class="menu-icon" />
+              测点关联
+            </span>
+          </div>
+          <div class="context-menu-item" @click="handleLimitAnimation">
+            <span>
+              <AntIcon name="ThunderboltOutlined" class="menu-icon" />
+              限值动画
+            </span>
+          </div>
+        </template>
+        <div class="context-menu-divider" v-if="isNumberTitleFlop"></div>
         <div class="context-menu-item" @click="toDeleteCom">
           <span>
             <AntIcon name="DeleteOutlined" class="menu-icon" />
@@ -127,11 +144,17 @@
       </template>
     </div>
   </transition>
+  <!-- 测点关联弹窗 -->
+  <PointAssociationModal
+    v-model:modelValue="pointAssociationVisible"
+    :component-id="selectedCom?.id"
+    @save="handlePointAssociationSave"
+  />
 </template>
 
 <script setup>
 import useSchemaContextMenu from '@/hooks/schema/useSchemaContextMenu'
-import { h, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, h, onBeforeUnmount, onMounted, ref } from 'vue'
 import { on, off, throwError } from '@/utils/util'
 import { MoveType } from '@/config/enum'
 import { useStore } from '@/store'
@@ -142,6 +165,7 @@ import { createPreviewThumb } from '@/hooks/usePreviewImg'
 import { dataURLtoFile } from '@/utils/file-helper'
 import { EventBus, EventMap } from '@/utils/event-bus'
 import { MultiplAlignOptions } from '@/config/select-options'
+import PointAssociationModal from './PointAssociationModal.vue'
 
 // map align action to Ant Design icons
 const alignIconMap = {
@@ -161,6 +185,14 @@ const { selectedCom, selectedComs, curComIsGroup, isMultiSelect, areaData } =
   storeToRefs(schemaStore)
 
 const { isLocked, isHided, contextMenu, contextMenuStyle } = useSchemaContextMenu()
+
+// 判断是否是数字指标组件
+const isNumberTitleFlop = computed(() => {
+  return selectedCom.value && selectedCom.value.name === 'VNumberTitleFlop'
+})
+
+// 测点关联弹窗显示状态
+const pointAssociationVisible = ref(false)
 
 const moveCom = moveType => {
   if (selectedCom.value) {
@@ -268,6 +300,33 @@ const renameCom = () => {
 
 const toCopyCom = () => {
   schemaStore.copyComs(selectedComs.value)
+}
+
+// 测点关联
+const handlePointAssociation = () => {
+  message.info('测点关联功能待开发')
+  contextMenu.value.show = false
+  // pointAssociationVisible.value = true
+}
+
+// 测点关联保存回调
+const handlePointAssociationSave = data => {
+  console.log('测点关联数据:', data)
+  // TODO: 保存测点关联数据到组件配置中
+  // 可以保存到 selectedCom.value.config.pointAssociation 或类似的位置
+  if (selectedCom.value) {
+    if (!selectedCom.value.config.pointAssociation) {
+      selectedCom.value.config.pointAssociation = {}
+    }
+    Object.assign(selectedCom.value.config.pointAssociation, data)
+    message.success('测点关联配置已保存')
+  }
+}
+
+// 限值动画
+const handleLimitAnimation = () => {
+  message.info('限值动画功能待开发')
+  contextMenu.value.show = false
 }
 
 const handleContextmenu = ev => {
