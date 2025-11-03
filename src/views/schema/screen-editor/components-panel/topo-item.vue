@@ -1,6 +1,6 @@
 <template>
   <div class="group-comps">
-    <div class="comp-wrap">
+    <div class="comp-wrap" v-if="list.length > 0">
       <div class="comp-item" v-for="(com, index) in list" :key="index">
         <div class="inner">
           <div
@@ -15,6 +15,9 @@
           <div class="comp-item-text" :title="JSON.stringify(com, null, 2)">{{ com.name }}</div>
         </div>
       </div>
+    </div>
+    <div class="empty-wrap" v-else-if="!listLoading">
+      <a-empty description="暂无数据" />
     </div>
   </div>
 </template>
@@ -134,6 +137,19 @@ const click = comp => emit('click', comp)
       .hover-layer {
         display: block;
       }
+    }
+  }
+}
+.empty-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  padding: var(--datav-border-radius-lg);
+  :deep(.ant-empty-image) {
+    height: 50px;
+    img {
+      height: 50px;
     }
   }
 }

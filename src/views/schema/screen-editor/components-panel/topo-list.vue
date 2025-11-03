@@ -39,7 +39,9 @@ const groups = ref([
   { key: 'sewage', value: '污水处理' },
   { key: 'icon', value: '2.5D-2D图标' },
   { key: 'city', value: '城市图标' },
-  { key: 'other', value: '其他' },
+  { key: 'other', value: '自定义图元' },
+  { key: 'common', value: '通用' },
+  { key: 'model-jump', value: '图模跳转' },
 ])
 
 useCollapse()
