@@ -22,7 +22,7 @@
         />
 
         <template v-if="event.eventSource !== ''">
-          <div flex="main:justify">
+          <div flex="main:justify" style="width: 100%">
             <g-select
               v-model="event.eventName"
               :data="emitListAllFilter(event.eventSource)"
@@ -44,8 +44,9 @@
           <div style="width: 100%" flex="main:justify cross:center">
             <g-switch v-model="event.customScript.enable" label="是否执行脚本" />
             <g-button
+              type="link"
               v-if="event.customScript.enable"
-              icon="edit"
+              icon="EditOutlined"
               title="编辑"
               label="脚本配置"
               :style="{ textAlign: 'right' }"
@@ -122,6 +123,7 @@
 <script setup>
 import { deepCopy } from '@/utils/util'
 import { computed, ref } from 'vue'
+import CustomScriptsEditor from '@/components/Common/CustomScripts/EditorModal.vue'
 import { emitList, eventSourceList } from '@/hooks/schema/useEventBus'
 import { message } from 'ant-design-vue'
 import ParamsMap from '../components/ParamsMap.vue'

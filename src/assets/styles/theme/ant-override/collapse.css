@@ -87,6 +87,7 @@
 
   .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-header {
     background-color: transparent;
+    color: var(--datav-text-color-primary);
   }
 
   /* 禁用状态 */

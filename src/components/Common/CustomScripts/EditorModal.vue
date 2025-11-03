@@ -7,7 +7,6 @@
     width="1200px"
     top="50px"
     destroyOnClose
-    @opened="render = true"
   >
     <div class="code-editor">
       <template v-if="render">
@@ -32,7 +31,7 @@
           <p class="bottom">}</p>
         </div>
         <div class="right-tip">
-          <a-radio-group v-model:value="tipType" size="large" style="width: 100%">
+          <a-radio-group v-model:value="tipType"  style="width: 100%" flex="main:justify cross:center">
             <a-radio-button :value="0">变量说明</a-radio-button>
             <a-radio-button :value="1">脚本示例</a-radio-button>
           </a-radio-group>
@@ -70,7 +69,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import ScrollContainer from '@/components/Common/ScrollContainer/index.vue'
 defineOptions({
   name: 'CustomScriptsEditor',
@@ -119,9 +118,12 @@ const params = computed(() => [...props.augments, 'userInfo', 'util'].join(', ')
 function open(val, index) {
   curIndex.value = index
   data.value = val
-  render.value = false
   tipType.value = 0
   visible.value = true
+  // 兜底：确保打开后渲染内容，避免仅依赖事件不触发
+  nextTick(() => {
+    render.value = true
+  })
 }
 
 // 保存关闭

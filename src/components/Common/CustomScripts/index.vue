@@ -2,7 +2,7 @@
   <g-field-collapse label="初始化脚本" default-open>
     <g-field label="脚本配置">
       <div class="func-name" flex="main:justify cross:center">
-        <a-checkbox v-model="pageConfig.initScript.enable" />
+        <a-checkbox v-model:checked="pageConfig.initScript.enable" />
         <a-button type="text" size="small" @click="openEditor">
         <template #icon>
           <AntIcon name="EditOutlined" />

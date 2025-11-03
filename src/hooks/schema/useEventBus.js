@@ -22,6 +22,7 @@ const eventSourceList = computed(() => {
   // 组件id作为key，值的结构需要调整，需要添加组件名称，用于下拉框选择
   const res = []
   const map = [...emitMap]
+  console.log('-----eventSourceList-----', map)
   map.forEach(([key, value]) => {
     res.push({
       compId: key,

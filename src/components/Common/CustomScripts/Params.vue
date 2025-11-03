@@ -3,7 +3,7 @@
     <a-collapse :v-model:activeKey="'0'" ghost>
       <a-collapse-panel v-for="(item, index) in newParams"
         :key="index"
-        :title="item.name"
+        :header="item.name"
       >
         <div class="tip">{{ item.desc }}</div>
         <div class="code">
@@ -23,7 +23,7 @@
         </div>
       </a-collapse-panel>
 
-      <a-collapse-panel :key="(newParams.length + 1).toString()" title="util">
+      <a-collapse-panel :key="(newParams.length + 1).toString()" header="util">
         <div class="tip">工具对象，包含了便于处理业务的相关可用对象</div>
         <div class="code" style="padding: 8px">
           <div class="param-item mb-5" v-for="(p, index) in utilDesc" :key="index">
@@ -37,7 +37,7 @@
                 >
                   <a-tag color="processing">{{ p.name }}</a-tag>
                 </a>
-                <a-tag v-else color="info">{{ p.name }}</a-tag>
+                <a-tag v-else color="default">{{ p.name }}</a-tag>
               </div>
               <a-tag>{{ p.type }}</a-tag>
             </div>
