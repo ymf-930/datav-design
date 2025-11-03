@@ -6,6 +6,25 @@
     class="schema-modal"
     destroyOnClose
   >
+    <a-dropdown trigger="click">
+      <a class="ant-dropdown-link" @click.prevent>
+        Hover me
+        <AntIcon name="DownOutlined" size="16"></AntIcon>
+      </a>
+      <template #overlay>
+        <a-menu>
+          <a-menu-item>
+            <a href="javascript:;">1st menu item</a>
+          </a-menu-item>
+          <a-menu-item>
+            <a href="javascript:;">2nd menu item</a>
+          </a-menu-item>
+          <a-menu-item>
+            <a href="javascript:;">3rd menu item</a>
+          </a-menu-item>
+        </a-menu>
+      </template>
+    </a-dropdown>
     <div>
       <h2 class="title-bar">预设</h2>
       <div class="preset-wp">
@@ -14,19 +33,25 @@
           :class="{ selected: createValue.type === 'web' }"
           @click="selectPreset('web')"
         >
-          <AntIcon name="LaptopOutlined"></AntIcon>
+          <AntIcon name="LaptopOutlined" size="36"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ webValue.label }}</div>
             <div class="h4">{{ webValue.width }}x{{ webValue.height }}</div>
           </div>
-          <a-dropdown :trigger="['click']"
-            :placement="'bottom-end'"
-            style="width: 24px; height: 46px; line-height: 46px"
+          <a-dropdown
+            trigger="click"
+            placement="bottomEnd"
           >
-            <AntIcon name="DownOutlined"></AntIcon>
+            <a class="dropdown-trigger" @click.stop.prevent>
+              <AntIcon name="DownOutlined" size="16"></AntIcon>
+            </a>
             <template #overlay>
               <a-menu>
-                <a-menu-item v-for="item in webScreenMap" :key="item.label" @click="handleWebTrigger(item)">
+                <a-menu-item
+                  v-for="item in webScreenMap"
+                  :key="item.label"
+                  @click="handleWebTrigger(item)"
+                >
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -41,19 +66,25 @@
           :class="{ selected: createValue.type === 'mobile' }"
           @click="selectPreset('mobile')"
         >
-          <AntIcon name="MobileOutlined"></AntIcon>
+          <AntIcon name="MobileOutlined" size="36"></AntIcon>
           <div class="label-title">
             <div class="h2">{{ mobileValue.label }}</div>
             <div class="h4">{{ mobileValue.width }}x{{ mobileValue.height }}</div>
           </div>
-          <a-dropdown :trigger="['click']"
-            :placement="'bottom-end'"
-            style="width: 24px; height: 46px; line-height: 46px"
+          <a-dropdown
+            trigger="click"
+            placement="bottomEnd"
           >
-            <AntIcon name="DownOutlined"></AntIcon>
+            <a class="dropdown-trigger" @click.stop.prevent>
+              <AntIcon name="DownOutlined" size="16"></AntIcon>
+            </a>
             <template #overlay>
               <a-menu>
-                <a-menu-item v-for="item in mobileScreenMap" :key="item.label" @click="handleMobileTrigger(item)">
+                <a-menu-item
+                  v-for="item in mobileScreenMap"
+                  :key="item.label"
+                  @click="handleMobileTrigger(item)"
+                >
                   <div flex="main:justify" style="width: 180px">
                     <span>{{ item.label }}</span>
                     <span>{{ item.width }}x{{ item.height }}</span>
@@ -68,7 +99,7 @@
           :class="{ selected: createValue.type === 'custom' }"
           @click="selectPreset('custom')"
         >
-          <AntIcon name="GatewayOutlined"></AntIcon>
+          <AntIcon name="GatewayOutlined" size="36"></AntIcon>
           <div>
             <p class="mb-5">自定义大小</p>
             <p class="custom-input">
@@ -110,16 +141,16 @@
                   v-else
                   src="@/assets/images/logo.png"
                   alt="default"
-                  style="width: 147px; height: 147px; padding: 30px;"
+                  style="width: 147px; height: 147px; padding: 30px"
                 />
               </div>
-              <div class="tpl-remove">
-                <a-button type="text"
-                  text-color="#f5222d"
-                  title="移除模板" @click="removeTpl(tpl)">
-        <template #icon>
-          <AntIcon name="DeleteOutlined" />
-        </template></a-button>
+              <div class="tpl-remove pt-5">
+                <AntIcon
+                  name="DeleteOutlined"
+                  size="14"
+                  @click="removeTpl(tpl)"
+                  style="color: #f5222d; cursor: pointer"
+                />
               </div>
             </div>
             <div class="template-info">
@@ -258,7 +289,7 @@ const removeTpl = tpl => {
     },
     onCancel() {
       console.log('取消删除')
-    }
+    },
   })
 }
 

@@ -116,7 +116,11 @@ export default function useFolder() {
   // 获取模型分组列表
   const getFolders = () => {
     getKanbanDir().then(res => {
-      folderData.folderList = (res.children || []).map(v => ({ id: v.id, name: v.text }))
+      folderData.folderList = (res.children || []).map(v => ({
+        id: v.id,
+        name: v.text,
+        isSystem: v.isSystem || false, // 系统目录标识，不可编辑删除
+      }))
     })
   }
 

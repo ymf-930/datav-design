@@ -29,7 +29,7 @@
             :class="{ 'folder-item-checked-color': selectedPid === item.id }"
             @click="toggleProject(item)"
           >
-            <template v-if="item.editing">
+            <template v-if="item.editing && !item.isSystem">
               <input
                 v-focus
                 :default-value="item.name"
@@ -40,13 +40,13 @@
             </template>
             <template v-else>
               <span class="folder-name">{{ item.name }}</span>
-              <span class="group-btns">
+              <span class="group-btns" v-if="!item.isSystem">
                 <a-space>
-                  <AntIcon name="EditOutlined" title="编辑" @click="item.editing = true"></AntIcon>
+                  <AntIcon name="EditOutlined" title="编辑" @click.stop="item.editing = true"></AntIcon>
                   <AntIcon
                     name="DeleteOutlined"
                     title="删除"
-                    @click="confirmDeleteGroup(item)"
+                    @click.stop="confirmDeleteGroup(item)"
                   ></AntIcon>
                 </a-space>
               </span>
