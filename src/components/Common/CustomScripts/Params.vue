@@ -7,18 +7,20 @@
       >
         <div class="tip">{{ item.desc }}</div>
         <div class="code">
-          <b-ace-editor
+          <v-ace-editor
             v-if="item.json"
+            :value="item.code"
             theme="tomorrow_night"
-            wrap
-            readonly
-            lang="json"
-            :height="height"
-            :font-size="13"
-            :model-value="item.code"
-            :options="{ showLineNumbers: false }"
-            :styles="{ border: 'none' }"
-          ></b-ace-editor>
+            mode="json"
+            :readonly="true"
+            :style="{ height: height + 'px', border: 'none' }"
+            :options="{
+              showLineNumbers: false,
+              fontSize: 13,
+              wrap: true,
+              useWorker: false
+            }"
+          />
           <highlightjs v-else language="js" :code="item.code" />
         </div>
       </a-collapse-panel>

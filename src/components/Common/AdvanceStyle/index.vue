@@ -13,11 +13,13 @@
       <div class="code-editor">
         <template v-if="render">
           <div class="fun">
-            <b-ace-editor
-              v-model="str"
-              height="320px"
+            <v-ace-editor
+              v-model:value="str"
               theme="tomorrow_night"
-              :styles="{ border: 'none' }"
+              :style="{ height: '320px', border: 'none' }"
+              :options="{
+                useWorker: false
+              }"
             />
           </div>
           <div class="right-tip">

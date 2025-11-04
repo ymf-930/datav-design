@@ -17,16 +17,18 @@
             ){
           </p>
           <p class="code">
-            <b-ace-editor
+            <v-ace-editor
+              v-model:value="data"
               theme="tomorrow_night"
-              wrap
-              lang="typescript"
-              height="500"
-              v-model="data"
-              :font-size="14"
-              :options="{ showLineNumbers: false }"
-              :styles="{ border: 'none' }"
-            ></b-ace-editor>
+              mode="typescript"
+              :style="{ height: '500px', border: 'none' }"
+              :options="{
+                showLineNumbers: false,
+                fontSize: 14,
+                wrap: true,
+                useWorker: false
+              }"
+            />
           </p>
           <p class="bottom">}</p>
         </div>

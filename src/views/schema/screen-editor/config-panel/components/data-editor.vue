@@ -1,13 +1,15 @@
 <template>
   <div class="data-editor">
     <span class="data-refresh" @click="handleChange">刷新数据</span>
-    <b-ace-editor
-      v-model="jsonData"
+    <v-ace-editor
+      v-model:value="jsonData"
       theme="tomorrow_night"
-      wrap
-      :styles="{ border: 'none' }"
-      :height="height"
-    ></b-ace-editor>
+      :style="{ height: height, border: 'none' }"
+      :options="{
+        wrap: true,
+        useWorker: false
+      }"
+    />
   </div>
 </template>
 

@@ -30,12 +30,15 @@
       @opened="render = true"
     >
       <div class="data-editor" style="margin: 0; height: 350px">
-        <b-ace-editor
+        <v-ace-editor
           v-if="render"
-          v-model="compJson"
+          v-model:value="compJson"
           theme="tomorrow_night"
-          wrap
-          :styles="{ border: 'none' }"
+          :style="{ border: 'none' }"
+          :options="{
+            wrap: true,
+            useWorker: false
+          }"
         />
       </div>
       <div class="t-right pt-8">

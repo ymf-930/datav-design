@@ -78,11 +78,13 @@
       :footer="null"
     >
       <div class="data-editor" style="margin: 0">
-        <b-ace-editor
-          v-model="compJson"
+        <v-ace-editor
+          v-model:value="compJson"
           theme="tomorrow_night"
-          :height="staticEditorHeight"
-          :styles="{ border: 'none' }"
+          :style="{ height: staticEditorHeight, border: 'none' }"
+          :options="{
+            useWorker: false
+          }"
         />
       </div>
       <div class="t-right pt-16">

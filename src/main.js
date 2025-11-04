@@ -6,7 +6,7 @@ import { registerDirectives } from '@/directives'
 import { registerLazy } from '@/plugins/lazy-load'
 import { registerAntd } from '@/plugins/ant-design-vue'
 import { registerCharts } from '@/plugins/vue-echarts'
-import { registerEditor } from '@/plugins/bin-editor-next'
+import { registerEditor } from '@/plugins/vue3-ace-editor'
 import { registerDatav } from '@/plugins/bin-datav'
 
 import { registerCommonComps } from '@/components/Common'
