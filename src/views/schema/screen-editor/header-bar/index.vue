@@ -32,12 +32,12 @@
 
         <a-tooltip title="后退">
           <div class="head-btn" :class="{ disabled: undoDisable }" @click="undo">
-            <AntIcon name="LeftOutlined"></AntIcon>
+            <AntIcon name="UndoOutlined"></AntIcon>
           </div>
         </a-tooltip>
         <a-tooltip title="前进">
           <div class="head-btn" :class="{ disabled: redoDisable }" @click="redo">
-            <AntIcon name="RightOutlined"></AntIcon>
+            <AntIcon name="RedoOutlined"></AntIcon>
           </div>
         </a-tooltip>
       </a-space>
