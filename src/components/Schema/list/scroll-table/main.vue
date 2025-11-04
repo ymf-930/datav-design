@@ -82,25 +82,28 @@ const scrollBoardConfig = computed(() => {
   
   // 根据是否显示行号，拼接宽度及对齐方式
   const columnWidth = cfg.index ? [cfg.indexWidth, ...cfg.columnWidth] : [...cfg.columnWidth]
-  const textAlign = cfg.index ? [cfg.indexAlign, ...cfg.align] : [...cfg.align]
+  const align = cfg.index ? [cfg.indexAlign, ...cfg.align] : [...cfg.align]
   
   // @kjgl77/datav-vue3 的 dv-scroll-board 使用 config prop，格式为：
   // { header: [], data: [], index: boolean, rowNum: number, ... }
+  // 注意：属性名必须与组件源码中的定义一致
   const result = {
     header: tableData.header,
     data: tableData.data,
-    index: cfg.index,
-    rowNum: cfg.rowNum,
-    titleBG: cfg.headerBGC,
-    oddBG: cfg.oddRowBGC,
-    evenBG: cfg.evenRowBGC,
-    columnWidth: columnWidth.length > 0 ? columnWidth.join(',') : '',
-    textAlign: textAlign.length > 0 ? textAlign.join(',') : '',
-    carousel: cfg.carousel ? 'single' : 'none',
+    index: cfg.index || false,
+    rowNum: cfg.rowNum || 5,
+    headerBGC: cfg.headerBGC || '#00BAFF',  // 正确属性名：headerBGC（不是 titleBG）
+    oddRowBGC: cfg.oddRowBGC || '#003B51',  // 正确属性名：oddRowBGC（不是 oddBG）
+    evenRowBGC: cfg.evenRowBGC || '#0A2732', // 正确属性名：evenRowBGC（不是 evenBG）
+    waitTime: cfg.waitTime || 2000,
+    headerHeight: cfg.headerHeight || 35,
+    columnWidth: columnWidth,  // Array<number> 类型
+    align: align,  // Array<string> 类型（不是 textAlign，且不是字符串）
+    indexHeader: cfg.indexHeader || '#',
+    // carousel 应该是 'single' 或 'page'，不支持 'none'
+    carousel: cfg.carousel === 'page' ? 'page' : 'single',
+    hoverPause: cfg.hoverPause !== undefined ? cfg.hoverPause : true,
   }
-  
-  console.log('转换后的配置:', result)
-  console.log('表格数据:', tableData)
   
   return result
 })
