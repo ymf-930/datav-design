@@ -1,4 +1,5 @@
 import { VAceEditor } from 'vue3-ace-editor'
+
 // 导入 Ace Editor 的模式
 import 'ace-builds/src-noconflict/mode-json'
 import 'ace-builds/src-noconflict/mode-javascript'
@@ -10,7 +11,7 @@ import 'ace-builds/src-noconflict/ext-emmet'
 import 'ace-builds/src-noconflict/theme-chrome'
 import 'ace-builds/src-noconflict/theme-sqlserver'
 import 'ace-builds/src-noconflict/theme-tomorrow_night'
-
+ 
 import HljsVuePlugin from '@highlightjs/vue-plugin'
 import 'highlight.js/styles/xcode.min.css'
 import 'highlight.js/lib/common'

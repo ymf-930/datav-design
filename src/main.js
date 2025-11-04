@@ -7,7 +7,7 @@ import { registerLazy } from '@/plugins/lazy-load'
 import { registerAntd } from '@/plugins/ant-design-vue'
 import { registerCharts } from '@/plugins/vue-echarts'
 import { registerEditor } from '@/plugins/vue3-ace-editor'
-import { registerDatav } from '@/plugins/bin-datav'
+import { registerDatav } from '@/plugins/datav-vue3'
 
 import { registerCommonComps } from '@/components/Common'
 import { registerGUI } from '@/components/GUI'
