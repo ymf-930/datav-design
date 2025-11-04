@@ -79,7 +79,7 @@ export default ({ mode }) => {
               // 设置需要独立打包的npm包
               const expansions = [
                 'ant-design-vue',
-                'bin-datav',
+                '@kjgl77/datav-vue3',
                 'ace-builds',
                 'vue3-ace-editor',
                 'particles.vue3',

@@ -15,7 +15,8 @@ import { registerVCharts } from '@/components/Schema'
 
 // 使用 variable 版本支持动态主题切换
 import 'ant-design-vue/dist/antd.variable.css'
-import 'bin-datav/lib/styles/index.css'
+// @kjgl77/datav-vue3 的样式需要单独导入
+import '@kjgl77/datav-vue3/dist/style.css'
 // 引入动画
 import 'animate.css'
 

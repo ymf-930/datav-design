@@ -1,10 +1,10 @@
 <template>
   <div class="dv-wrapper">
-    <bv-capsule-chart
-      :config="options"
+    <dv-capsule-chart
+      :config="capsuleChartConfig"
       :style="wrapperStyle"
       :class="[{ 'x-hide': !config.xAxis.show }, { 'y-hide': !config.yAxis.show }]"
-    ></bv-capsule-chart>
+    ></dv-capsule-chart>
   </div>
 </template>
 
@@ -58,15 +58,60 @@ const wrapperStyle = computed(() => {
   }
 })
 
-const options = computed(() => {
-  const { global } = config.value
-  return {
-    data: dvData.value,
-    unit: global.unit,
-    showValue: global.label.show,
-    valuePosition: global.label.position,
-    colors: themeColors.value,
+// 解析数据
+const parsedCapsuleData = computed(() => {
+  // 优先使用 dvData
+  const data = dvData.value || []
+  
+  // 如果 dvData 是数组格式，需要转换
+  if (Array.isArray(data)) {
+    return data.map((item, index) => ({
+      name: item.name || item.title || item.x || `项目${index + 1}`,
+      value: item.value || item.y || 0,
+    }))
   }
+  
+  // 如果 dvData 为空，尝试从 apiData.config.data 解析
+  if (props.data.apiData?.config?.data) {
+    try {
+      const rawData = props.data.apiData.config.data
+      const parsedData = typeof rawData === 'string' ? JSON.parse(rawData) : rawData
+      
+      if (Array.isArray(parsedData)) {
+        return parsedData.map((item, index) => ({
+          name: item.name || item.title || item.x || `项目${index + 1}`,
+          value: item.value || item.y || 0,
+        }))
+      }
+    } catch (e) {
+      console.error('解析胶囊图数据失败:', e)
+    }
+  }
+  
+  // 如果已经是对象格式，直接使用
+  if (data && data.data && Array.isArray(data.data)) {
+    return data.data
+  }
+  
+  return []
+})
+
+// 转换数据格式为 capsuleChart 需要的格式
+const capsuleChartConfig = computed(() => {
+  const { global } = config.value
+  const data = parsedCapsuleData.value
+  
+  // @kjgl77/datav-vue3 的 dv-capsule-chart 使用 config prop，格式为：
+  // { data: [{ name, value }], color: [] }
+  const result = {
+    data: data,
+    color: themeColors.value,
+  }
+  
+  console.log('胶囊图配置:', result)
+  console.log('胶囊图数据:', data)
+  
+  return result
 })
 
 // 获取响应事件
@@ -87,7 +132,7 @@ usePolling(() => {
 </script>
 
 <style scoped>
-:deep(.bv-capsule-chart) {
+:deep(.dv-capsule-chart) {
   .label-column div {
     line-height: var(--label-height);
     flex-shrink: 0;
