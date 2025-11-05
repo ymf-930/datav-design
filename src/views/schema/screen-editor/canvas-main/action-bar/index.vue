@@ -81,6 +81,7 @@
         <v-ace-editor
           v-model:value="compJson"
           theme="tomorrow_night"
+          lang="json"
           :style="{ height: staticEditorHeight, border: 'none' }"
           :options="{
             useWorker: false

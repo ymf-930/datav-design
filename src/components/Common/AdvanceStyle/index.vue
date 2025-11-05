@@ -16,6 +16,7 @@
             <v-ace-editor
               v-model:value="str"
               theme="tomorrow_night"
+              lang="json"
               :style="{ height: '320px', border: 'none' }"
               :options="{
                 useWorker: false

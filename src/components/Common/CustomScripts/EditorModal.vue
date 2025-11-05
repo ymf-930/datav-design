@@ -20,7 +20,7 @@
             <v-ace-editor
               v-model:value="data"
               theme="tomorrow_night"
-              mode="typescript"
+              lang="typescript"
               :style="{ height: '500px', border: 'none' }"
               :options="{
                 showLineNumbers: false,

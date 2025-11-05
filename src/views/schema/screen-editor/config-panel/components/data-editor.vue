@@ -4,10 +4,11 @@
     <v-ace-editor
       v-model:value="jsonData"
       theme="tomorrow_night"
+      lang="json"
       :style="{ height: height, border: 'none' }"
       :options="{
         wrap: true,
-        useWorker: false
+        useWorker: false,
       }"
     />
   </div>
@@ -61,7 +62,15 @@ watch(
 </script>
 
 <style>
+.data-editor {
+  position: relative;
+}
 .data-refresh {
   cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  color: var(--ant-primary-color);
+  z-index: 1000;
 }
 </style>

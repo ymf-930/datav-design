@@ -11,7 +11,7 @@
             v-if="item.json"
             :value="item.code"
             theme="tomorrow_night"
-            mode="json"
+            lang="json"
             :readonly="true"
             :style="{ height: height + 'px', border: 'none' }"
             :options="{

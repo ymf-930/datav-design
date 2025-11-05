@@ -34,6 +34,7 @@
           v-if="render"
           v-model:value="compJson"
           theme="tomorrow_night"
+          lang="json"
           :style="{ border: 'none' }"
           :options="{
             wrap: true,
