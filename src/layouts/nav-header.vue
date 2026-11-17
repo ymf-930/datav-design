@@ -230,7 +230,7 @@ function handleLogout() {
     align-items: center;
 
     >img {
-      height: 100px;
+      height: 120px;
       margin-right: 20px;
       padding: 15px;
     }
